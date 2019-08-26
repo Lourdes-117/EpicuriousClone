@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="I6P-Sx-mMQ">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="vSa-09-tq3">
+            <objects>
+                <viewController storyboardIdentifier="HomeTabNewestVideosViewController" id="WM3-hZ-UOQ" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kls-aH-HPM">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.12451567500829697" green="0.11206658929586411" blue="0.66029578447341919" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="Gq6-o7-HBY"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5hD-FZ-jR1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1359" y="-2251"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="qbx-gC-cnb">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XMb-Dp-Sgf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController storyboardIdentifier="HomeTabNewestRecipiesViewController" id="8I8-FM-Ro6" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tRt-vk-YRo">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.55634254220000001" green="0.97934550050000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="M2b-Hd-1Pz"/>
+                    </view>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="1359" y="-3997"/>
+        </scene>
+        <!--Home Tab Page View Controller-->
+        <scene sceneID="19d-p5-Asg">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="I6P-Sx-mMQ" customClass="HomeTabPageViewController" customModule="EpicuriousClone" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="Home_Icon" id="Qed-0y-hqU"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                </pageViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XWL-sZ-TIA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="448" y="-3118"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="niL-Yp-KWQ">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8XT-8k-PNF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController storyboardIdentifier="HomeTabBestGrilledVegetablesViewController" id="kl5-Zf-lkc" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yf0-Ne-ElT">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="0.2755226844" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="g3m-uK-aWb"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="ltZ-So-owW"/>
+                    <navigationItem key="navigationItem" id="3Rs-aC-wFT"/>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="1359" y="-3119"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Home_Icon" width="24" height="24"/>
+    </resources>
+</document>
