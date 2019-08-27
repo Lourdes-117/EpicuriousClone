@@ -12,6 +12,7 @@ class SelectIngredientsViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     var ingredientsArray:[CategoriesModel] = []
     let segueIdentifier:String = "CookingStepsSegueIdentifier"
+    var selectedIngrdientName:String!
 
     override func viewDidLoad() {
         tabBarController?.tabBar.setTabBarVisibility(false)
@@ -40,6 +41,14 @@ extension SelectIngredientsViewController:UITableViewDataSource {
 
 extension SelectIngredientsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedIngrdientName = ingredientsArray[indexPath.row].categoryTitle
         performSegue(withIdentifier: segueIdentifier, sender: self)
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let recipeDescriptionViewController = segue.destination as? RecipeDescriptionViewController else {
+            return;
+        }
+        recipeDescriptionViewController.allDescriptionData = DescriptionDataModel.getDescription(ofRecipe: selectedIngrdientName)
     }
 }

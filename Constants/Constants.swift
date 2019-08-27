@@ -32,7 +32,7 @@ struct Constants {
         public static let BEETS:String = "Beets"
         public static let BROCOLLI:String = "Brocolli"
         public static let BRUSSEL_SPROUTS:String = "BrusselSprouts"
-        public static let BUTTERNET_SQUASH:String = "Butternet_Squash"
+        public static let BUTTERNUT_SQUASH:String = "Butternet_Squash"
         public static let CARROTS_OR_PARSNIPS:String = "Carrots_Or_Parsnips"
         public static let CAULIFLOWER:String = "Cauliflower"
         public static let EGGPLANT:String = "Eggplant"

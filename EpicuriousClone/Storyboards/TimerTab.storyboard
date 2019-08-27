@@ -200,7 +200,7 @@
                                                 <rect key="frame" x="0.0" y="459" width="414" height="50"/>
                                                 <color key="backgroundColor" red="0.12774941325187683" green="0.12753510475158691" blue="0.25021019577980042" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="50" id="W0B-3g-E09"/>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="W0B-3g-E09"/>
                                                 </constraints>
                                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="30" id="CWn-ZY-r3y">
                                                     <size key="itemSize" width="150" height="30"/>
@@ -314,6 +314,9 @@
                                                 <state key="normal" title="PREVIEW ALL STEPS">
                                                     <color key="titleColor" red="0.8980392157" green="0.0084072236049999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="onClickPreviewAllSteps:" destination="bFa-jG-S8b" eventType="touchUpInside" id="giw-7o-H5M"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="COOK TIME" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3tl-kz-Ytr">
                                                 <rect key="frame" x="161" y="842.5" width="92" height="21"/>
@@ -348,6 +351,9 @@
                                                 <state key="normal" title="START SMART TIMER">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="onClickStartSmartTimer:" destination="bFa-jG-S8b" eventType="touchUpInside" id="W7M-wg-n94"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.25200790577945209" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -409,13 +415,69 @@
                         <viewLayoutGuide key="safeArea" id="Q5A-Qe-eZR"/>
                     </view>
                     <connections>
+                        <outlet property="cookTimeMinutes" destination="iuU-Am-2hx" id="fl0-I0-bJk"/>
+                        <outlet property="cookTimeSeconds" destination="47w-bi-0HN" id="RJd-um-vi8"/>
                         <outlet property="cookingDeepnessCollectionView" destination="evA-OX-dIQ" id="CUw-V8-Uax"/>
+                        <outlet property="preparationStepOne" destination="k0S-FK-U5r" id="nX2-xl-VcH"/>
+                        <outlet property="recipeDescription" destination="2nJ-s6-Zbo" id="QNa-5o-fkA"/>
+                        <outlet property="recipeImage" destination="Sdq-Qx-VSl" id="4DF-pN-dTc"/>
+                        <outlet property="recipeName" destination="s6f-QZ-fHx" id="NTe-6p-PcQ"/>
                         <outlet property="thicknessCollectionView" destination="3OH-BU-KX9" id="NZC-4Y-cyH"/>
+                        <segue destination="dVu-gJ-dAR" kind="presentation" identifier="PreparationStepsSegueIdentifier" modalTransitionStyle="coverVertical" id="kHd-9W-RVx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qtq-kB-pmc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3476.811594202899" y="-1418.3035714285713"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="deF-Lu-uvh">
+            <objects>
+                <viewController id="dVu-gJ-dAR" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8BE-c2-v56">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vhP-fD-nEw">
+                                <rect key="frame" x="172.5" y="60" width="69.5" height="34"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="28"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ExP-vU-VGS">
+                                <rect key="frame" x="10" y="54" width="46" height="46"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="46" id="BpB-4D-I5G"/>
+                                    <constraint firstAttribute="width" constant="46" id="UMx-e3-DAs"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="28"/>
+                                <state key="normal" title="X">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="amR-Hw-WQy">
+                                <rect key="frame" x="0.0" y="94" width="414" height="768"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.81368967450558383" green="0.093937565174660967" blue="0.0023104549269975998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="ob4-OO-TWy" firstAttribute="bottom" secondItem="amR-Hw-WQy" secondAttribute="bottom" id="0rf-S9-6fQ"/>
+                            <constraint firstItem="vhP-fD-nEw" firstAttribute="top" secondItem="ob4-OO-TWy" secondAttribute="top" constant="16" id="29c-Lv-Bjv"/>
+                            <constraint firstItem="ExP-vU-VGS" firstAttribute="centerY" secondItem="vhP-fD-nEw" secondAttribute="centerY" id="3NC-Zc-PDS"/>
+                            <constraint firstItem="amR-Hw-WQy" firstAttribute="top" secondItem="vhP-fD-nEw" secondAttribute="bottom" id="3Ud-gL-5zS"/>
+                            <constraint firstItem="ob4-OO-TWy" firstAttribute="trailing" secondItem="amR-Hw-WQy" secondAttribute="trailing" id="7li-g8-au8"/>
+                            <constraint firstItem="ExP-vU-VGS" firstAttribute="leading" secondItem="ob4-OO-TWy" secondAttribute="leading" constant="10" id="GhY-4o-zGI"/>
+                            <constraint firstItem="vhP-fD-nEw" firstAttribute="centerX" secondItem="ob4-OO-TWy" secondAttribute="centerX" id="Jva-mc-hK3"/>
+                            <constraint firstItem="amR-Hw-WQy" firstAttribute="leading" secondItem="ob4-OO-TWy" secondAttribute="leading" id="Xbj-oo-ObO"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ob4-OO-TWy"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pG5-C6-FPW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4579.7101449275369" y="-1418.3035714285713"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="8T2-I6-zqO">
