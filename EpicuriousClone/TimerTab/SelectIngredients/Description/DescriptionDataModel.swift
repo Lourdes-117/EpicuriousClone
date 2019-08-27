@@ -13,7 +13,7 @@ protocol DescriptionDataModelProtocol {
     var recipeDescription:String{get}
     var thicknessArray:[(String,Int,Int)]{get}
     var cookingDeepnessArray:[(String,Int,Int)]{get}
-    var steps:[String]{get}
+    var steps:[(String, String)]{get}
     var defaultMinutes:String{get}
     var defaultSeconds:String{get}
     var recipeImage:UIImage{get}
@@ -27,7 +27,7 @@ class DescriptionDataModel {
         var recipeDescription: String = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
         var thicknessArray: [(String, Int, Int)] = [("1 pound", 0, 0), ("11/4 pound", 1, 0), ("11/2 pound", 1, 30)]
         var cookingDeepnessArray: [(String, Int, Int)] = [("Rare", 0, 0), ("Medium-Rare", 1, 0), ("Medium", 1, 0), ("Medium-Well", 1, 0)]
-        var steps: [String] = ["It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.", "The point of using Lorem Ipsum is that it has a more-or-less normal distribution o letters", "As opposed to using 'Content here, content here', making it look like readable English."]
+        var steps: [(String, String)] = [("Text1", "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."), ("Text2","The point of using Lorem Ipsum is that it has a more-or-less normal distribution o letters"), ("Text3","As opposed to using 'Content here, content here', making it look like readable English.")]
         var defaultMinutes: String = "6"
         var defaultSeconds: String = "30"
         var recipeImage: UIImage = UIImage(named: Constants.Images.FLANK_STEAK)!
@@ -37,7 +37,7 @@ class DescriptionDataModel {
         var recipeDescription: String = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
         var thicknessArray: [(String, Int, Int)] = [("1 pound", 0, 0), ("11/4 pound", 1, 0), ("11/2 pound", 1, 30)]
         var cookingDeepnessArray: [(String, Int, Int)] = [("Rare", 0, 0), ("Medium-Rare", 1, 0), ("Medium", 1, 0), ("Medium-Well", 1, 0)]
-        var steps: [String] = ["It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.", "The point of using Lorem Ipsum is that it has a more-or-less normal distribution o letters", "As opposed to using 'Content here, content here', making it look like readable English."]
+        var steps: [(String, String)] = [("Text1", "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."), ("Text2","The point of using Lorem Ipsum is that it has a more-or-less normal distribution o letters"), ("Text3","As opposed to using 'Content here, content here', making it look like readable English.")]
         var defaultMinutes: String = "6"
         var defaultSeconds: String = "30"
         var recipeImage: UIImage = UIImage(named: Constants.Images.NY_FLANK_STEAK)!
@@ -48,7 +48,7 @@ class DescriptionDataModel {
         var recipeDescription: String = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
         var thicknessArray: [(String, Int, Int)] = [("1 pound", 0, 0), ("11/4 pound", 1, 0), ("11/2 pound", 1, 30)]
         var cookingDeepnessArray: [(String, Int, Int)] = [("Rare", 0, 0), ("Medium-Rare", 1, 0), ("Medium", 1, 0), ("Medium-Well", 1, 0)]
-        var steps: [String] = ["It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.", "The point of using Lorem Ipsum is that it has a more-or-less normal distribution o letters", "As opposed to using 'Content here, content here', making it look like readable English."]
+        var steps: [(String, String)] = [("Text1", "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."), ("Text2","The point of using Lorem Ipsum is that it has a more-or-less normal distribution o letters"), ("Text3","As opposed to using 'Content here, content here', making it look like readable English.")]
         var defaultMinutes: String = "6"
         var defaultSeconds: String = "30"
         var recipeImage: UIImage = UIImage(named: Constants.Images.PORTERHOUSE)!
@@ -59,7 +59,7 @@ class DescriptionDataModel {
         var recipeDescription: String = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
         var thicknessArray: [(String, Int, Int)] = [("1 pound", 0, 0), ("11/4 pound", 1, 0), ("11/2 pound", 1, 30)]
         var cookingDeepnessArray: [(String, Int, Int)] = [("Rare", 0, 0), ("Medium-Rare", 1, 0), ("Medium", 1, 0), ("Medium-Well", 1, 0)]
-        var steps: [String] = ["It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.", "The point of using Lorem Ipsum is that it has a more-or-less normal distribution o letters", "As opposed to using 'Content here, content here', making it look like readable English."]
+        var steps: [(String, String)] = [("Text1", "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."), ("Text2","The point of using Lorem Ipsum is that it has a more-or-less normal distribution o letters"), ("Text3","As opposed to using 'Content here, content here', making it look like readable English.")]
         var defaultMinutes: String = "6"
         var defaultSeconds: String = "30"
         var recipeImage: UIImage = UIImage(named: Constants.Images.RIBEYE_STEAK_BONELESS)!
@@ -70,7 +70,7 @@ class DescriptionDataModel {
         var recipeDescription: String = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
         var thicknessArray: [(String, Int, Int)] = [("1 pound", 0, 0), ("11/4 pound", 1, 0), ("11/2 pound", 1, 30)]
         var cookingDeepnessArray: [(String, Int, Int)] = [("Rare", 0, 0), ("Medium-Rare", 1, 0), ("Medium", 1, 0), ("Medium-Well", 1, 0)]
-        var steps: [String] = ["It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.", "The point of using Lorem Ipsum is that it has a more-or-less normal distribution o letters", "As opposed to using 'Content here, content here', making it look like readable English."]
+        var steps: [(String, String)] = [("Text1", "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."), ("Text2","The point of using Lorem Ipsum is that it has a more-or-less normal distribution o letters"), ("Text3","As opposed to using 'Content here, content here', making it look like readable English.")]
         var defaultMinutes: String = "6"
         var defaultSeconds: String = "30"
         var recipeImage: UIImage = UIImage(named: Constants.Images.SKIRT_STEAK)!
@@ -82,7 +82,7 @@ class DescriptionDataModel {
         var recipeDescription: String = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
         var thicknessArray: [(String, Int, Int)] = [("1 pound", 0, 0), ("11/4 pound", 1, 0), ("11/2 pound", 1, 30)]
         var cookingDeepnessArray: [(String, Int, Int)] = [("Rare", 0, 0), ("Medium-Rare", 1, 0), ("Medium", 1, 0), ("Medium-Well", 1, 0)]
-        var steps: [String] = ["It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.", "The point of using Lorem Ipsum is that it has a more-or-less normal distribution o letters", "As opposed to using 'Content here, content here', making it look like readable English."]
+        var steps: [(String, String)] = [("Text1", "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."), ("Text2","The point of using Lorem Ipsum is that it has a more-or-less normal distribution o letters"), ("Text3","As opposed to using 'Content here, content here', making it look like readable English.")]
         var defaultMinutes: String = "6"
         var defaultSeconds: String = "30"
         var recipeImage: UIImage = UIImage(named: Constants.Images.ACRON_SQUASH)!
@@ -93,7 +93,7 @@ class DescriptionDataModel {
         var recipeDescription: String = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
         var thicknessArray: [(String, Int, Int)] = [("1 pound", 0, 0), ("11/4 pound", 1, 0), ("11/2 pound", 1, 30)]
         var cookingDeepnessArray: [(String, Int, Int)] = [("Rare", 0, 0), ("Medium-Rare", 1, 0), ("Medium", 1, 0), ("Medium-Well", 1, 0)]
-        var steps: [String] = ["It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.", "The point of using Lorem Ipsum is that it has a more-or-less normal distribution o letters", "As opposed to using 'Content here, content here', making it look like readable English."]
+        var steps: [(String, String)] = [("Text1", "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."), ("Text2","The point of using Lorem Ipsum is that it has a more-or-less normal distribution o letters"), ("Text3","As opposed to using 'Content here, content here', making it look like readable English.")]
         var defaultMinutes: String = "6"
         var defaultSeconds: String = "30"
         var recipeImage: UIImage = UIImage(named: Constants.Images.BEETS)!
@@ -104,7 +104,7 @@ class DescriptionDataModel {
         var recipeDescription: String = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
         var thicknessArray: [(String, Int, Int)] = [("1 pound", 0, 0), ("11/4 pound", 1, 0), ("11/2 pound", 1, 30)]
         var cookingDeepnessArray: [(String, Int, Int)] = [("Rare", 0, 0), ("Medium-Rare", 1, 0), ("Medium", 1, 0), ("Medium-Well", 1, 0)]
-        var steps: [String] = ["It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.", "The point of using Lorem Ipsum is that it has a more-or-less normal distribution o letters", "As opposed to using 'Content here, content here', making it look like readable English."]
+        var steps: [(String, String)] = [("Text1", "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."), ("Text2","The point of using Lorem Ipsum is that it has a more-or-less normal distribution o letters"), ("Text3","As opposed to using 'Content here, content here', making it look like readable English.")]
         var defaultMinutes: String = "6"
         var defaultSeconds: String = "30"
         var recipeImage: UIImage = UIImage(named: Constants.Images.BROCOLLI)!
@@ -115,7 +115,7 @@ class DescriptionDataModel {
         var recipeDescription: String = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
         var thicknessArray: [(String, Int, Int)] = [("1 pound", 0, 0), ("11/4 pound", 1, 0), ("11/2 pound", 1, 30)]
         var cookingDeepnessArray: [(String, Int, Int)] = [("Rare", 0, 0), ("Medium-Rare", 1, 0), ("Medium", 1, 0), ("Medium-Well", 1, 0)]
-        var steps: [String] = ["It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.", "The point of using Lorem Ipsum is that it has a more-or-less normal distribution o letters", "As opposed to using 'Content here, content here', making it look like readable English."]
+        var steps: [(String, String)] = [("Text1", "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."), ("Text2","The point of using Lorem Ipsum is that it has a more-or-less normal distribution o letters"), ("Text3","As opposed to using 'Content here, content here', making it look like readable English.")]
         var defaultMinutes: String = "6"
         var defaultSeconds: String = "30"
         var recipeImage: UIImage = UIImage(named: Constants.Images.BRUSSEL_SPROUTS)!
@@ -126,7 +126,7 @@ class DescriptionDataModel {
         var recipeDescription: String = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
         var thicknessArray: [(String, Int, Int)] = [("1 pound", 0, 0), ("11/4 pound", 1, 0), ("11/2 pound", 1, 30)]
         var cookingDeepnessArray: [(String, Int, Int)] = [("Rare", 0, 0), ("Medium-Rare", 1, 0), ("Medium", 1, 0), ("Medium-Well", 1, 0)]
-        var steps: [String] = ["It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.", "The point of using Lorem Ipsum is that it has a more-or-less normal distribution o letters", "As opposed to using 'Content here, content here', making it look like readable English."]
+        var steps: [(String, String)] = [("Text1", "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."), ("Text2","The point of using Lorem Ipsum is that it has a more-or-less normal distribution o letters"), ("Text3","As opposed to using 'Content here, content here', making it look like readable English.")]
         var defaultMinutes: String = "6"
         var defaultSeconds: String = "30"
         var recipeImage: UIImage = UIImage(named: Constants.Images.BUTTERNUT_SQUASH)!
@@ -137,7 +137,7 @@ class DescriptionDataModel {
         var recipeDescription: String = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
         var thicknessArray: [(String, Int, Int)] = [("1 pound", 0, 0), ("11/4 pound", 1, 0), ("11/2 pound", 1, 30)]
         var cookingDeepnessArray: [(String, Int, Int)] = [("Rare", 0, 0), ("Medium-Rare", 1, 0), ("Medium", 1, 0), ("Medium-Well", 1, 0)]
-        var steps: [String] = ["It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.", "The point of using Lorem Ipsum is that it has a more-or-less normal distribution o letters", "As opposed to using 'Content here, content here', making it look like readable English."]
+        var steps: [(String, String)] = [("Text1", "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."), ("Text2","The point of using Lorem Ipsum is that it has a more-or-less normal distribution o letters"), ("Text3","As opposed to using 'Content here, content here', making it look like readable English.")]
         var defaultMinutes: String = "6"
         var defaultSeconds: String = "30"
         var recipeImage: UIImage = UIImage(named: Constants.Images.CARROTS_OR_PARSNIPS)!
@@ -148,7 +148,7 @@ class DescriptionDataModel {
         var recipeDescription: String = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
         var thicknessArray: [(String, Int, Int)] = [("1 pound", 0, 0), ("11/4 pound", 1, 0), ("11/2 pound", 1, 30)]
         var cookingDeepnessArray: [(String, Int, Int)] = [("Rare", 0, 0), ("Medium-Rare", 1, 0), ("Medium", 1, 0), ("Medium-Well", 1, 0)]
-        var steps: [String] = ["It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.", "The point of using Lorem Ipsum is that it has a more-or-less normal distribution o letters", "As opposed to using 'Content here, content here', making it look like readable English."]
+        var steps: [(String, String)] = [("Text1", "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."), ("Text2","The point of using Lorem Ipsum is that it has a more-or-less normal distribution o letters"), ("Text3","As opposed to using 'Content here, content here', making it look like readable English.")]
         var defaultMinutes: String = "6"
         var defaultSeconds: String = "30"
         var recipeImage: UIImage = UIImage(named: Constants.Images.CAULIFLOWER)!
@@ -159,7 +159,7 @@ class DescriptionDataModel {
         var recipeDescription: String = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
         var thicknessArray: [(String, Int, Int)] = [("1 pound", 0, 0), ("11/4 pound", 1, 0), ("11/2 pound", 1, 30)]
         var cookingDeepnessArray: [(String, Int, Int)] = [("Rare", 0, 0), ("Medium-Rare", 1, 0), ("Medium", 1, 0), ("Medium-Well", 1, 0)]
-        var steps: [String] = ["It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.", "The point of using Lorem Ipsum is that it has a more-or-less normal distribution o letters", "As opposed to using 'Content here, content here', making it look like readable English."]
+        var steps: [(String, String)] = [("Text1", "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."), ("Text2","The point of using Lorem Ipsum is that it has a more-or-less normal distribution o letters"), ("Text3","As opposed to using 'Content here, content here', making it look like readable English.")]
         var defaultMinutes: String = "6"
         var defaultSeconds: String = "30"
         var recipeImage: UIImage = UIImage(named: Constants.Images.EGGPLANT)!
@@ -170,7 +170,7 @@ class DescriptionDataModel {
         var recipeDescription: String = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
         var thicknessArray: [(String, Int, Int)] = [("1 pound", 0, 0), ("11/4 pound", 1, 0), ("11/2 pound", 1, 30)]
         var cookingDeepnessArray: [(String, Int, Int)] = [("Rare", 0, 0), ("Medium-Rare", 1, 0), ("Medium", 1, 0), ("Medium-Well", 1, 0)]
-        var steps: [String] = ["It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.", "The point of using Lorem Ipsum is that it has a more-or-less normal distribution o letters", "As opposed to using 'Content here, content here', making it look like readable English."]
+        var steps: [(String, String)] = [("Text1", "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."), ("Text2","The point of using Lorem Ipsum is that it has a more-or-less normal distribution o letters"), ("Text3","As opposed to using 'Content here, content here', making it look like readable English.")]
         var defaultMinutes: String = "6"
         var defaultSeconds: String = "30"
         var recipeImage: UIImage = UIImage(named: Constants.Images.MUSHROOMS)!
@@ -181,7 +181,7 @@ class DescriptionDataModel {
         var recipeDescription: String = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
         var thicknessArray: [(String, Int, Int)] = [("1 pound", 0, 0), ("11/4 pound", 1, 0), ("11/2 pound", 1, 30)]
         var cookingDeepnessArray: [(String, Int, Int)] = [("Rare", 0, 0), ("Medium-Rare", 1, 0), ("Medium", 1, 0), ("Medium-Well", 1, 0)]
-        var steps: [String] = ["It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.", "The point of using Lorem Ipsum is that it has a more-or-less normal distribution o letters", "As opposed to using 'Content here, content here', making it look like readable English."]
+        var steps: [(String, String)] = [("Text1", "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."), ("Text2","The point of using Lorem Ipsum is that it has a more-or-less normal distribution o letters"), ("Text3","As opposed to using 'Content here, content here', making it look like readable English.")]
         var defaultMinutes: String = "6"
         var defaultSeconds: String = "30"
         var recipeImage: UIImage = UIImage(named: Constants.Images.SPAGETTI_SQUASH)!
@@ -192,7 +192,7 @@ class DescriptionDataModel {
         var recipeDescription: String = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
         var thicknessArray: [(String, Int, Int)] = [("1 pound", 0, 0), ("11/4 pound", 1, 0), ("11/2 pound", 1, 30)]
         var cookingDeepnessArray: [(String, Int, Int)] = [("Rare", 0, 0), ("Medium-Rare", 1, 0), ("Medium", 1, 0), ("Medium-Well", 1, 0)]
-        var steps: [String] = ["It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.", "The point of using Lorem Ipsum is that it has a more-or-less normal distribution o letters", "As opposed to using 'Content here, content here', making it look like readable English."]
+        var steps: [(String, String)] = [("Text1", "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."), ("Text2","The point of using Lorem Ipsum is that it has a more-or-less normal distribution o letters"), ("Text3","As opposed to using 'Content here, content here', making it look like readable English.")]
         var defaultMinutes: String = "6"
         var defaultSeconds: String = "30"
         var recipeImage: UIImage = UIImage(named: Constants.Images.SWEET_POTATOES)!
@@ -203,7 +203,7 @@ class DescriptionDataModel {
         var recipeDescription: String = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
         var thicknessArray: [(String, Int, Int)] = [("1 pound", 0, 0), ("11/4 pound", 1, 0), ("11/2 pound", 1, 30)]
         var cookingDeepnessArray: [(String, Int, Int)] = [("Rare", 0, 0), ("Medium-Rare", 1, 0), ("Medium", 1, 0), ("Medium-Well", 1, 0)]
-        var steps: [String] = ["It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.", "The point of using Lorem Ipsum is that it has a more-or-less normal distribution o letters", "As opposed to using 'Content here, content here', making it look like readable English."]
+        var steps: [(String, String)] = [("Text1", "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."), ("Text2","The point of using Lorem Ipsum is that it has a more-or-less normal distribution o letters"), ("Text3","As opposed to using 'Content here, content here', making it look like readable English.")]
         var defaultMinutes: String = "6"
         var defaultSeconds: String = "30"
         var recipeImage: UIImage = UIImage(named: Constants.Images.TOMATOES)!
@@ -214,7 +214,7 @@ class DescriptionDataModel {
         var recipeDescription: String = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
         var thicknessArray: [(String, Int, Int)] = [("1 pound", 0, 0), ("11/4 pound", 1, 0), ("11/2 pound", 1, 30)]
         var cookingDeepnessArray: [(String, Int, Int)] = [("Rare", 0, 0), ("Medium-Rare", 1, 0), ("Medium", 1, 0), ("Medium-Well", 1, 0)]
-        var steps: [String] = ["It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.", "The point of using Lorem Ipsum is that it has a more-or-less normal distribution o letters", "As opposed to using 'Content here, content here', making it look like readable English."]
+        var steps: [(String, String)] = [("Text1", "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."), ("Text2","The point of using Lorem Ipsum is that it has a more-or-less normal distribution o letters"), ("Text3","As opposed to using 'Content here, content here', making it look like readable English.")]
         var defaultMinutes: String = "6"
         var defaultSeconds: String = "30"
         var recipeImage: UIImage = UIImage(named: Constants.Images.ZUCHENNI_OR_SUMMER_SQUASH)!
@@ -226,7 +226,7 @@ class DescriptionDataModel {
         var recipeDescription: String = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
         var thicknessArray: [(String, Int, Int)] = [("1 pound", 0, 0), ("11/4 pound", 1, 0), ("11/2 pound", 1, 30)]
         var cookingDeepnessArray: [(String, Int, Int)] = [("Rare", 0, 0), ("Medium-Rare", 1, 0), ("Medium", 1, 0), ("Medium-Well", 1, 0)]
-        var steps: [String] = ["It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.", "The point of using Lorem Ipsum is that it has a more-or-less normal distribution o letters", "As opposed to using 'Content here, content here', making it look like readable English."]
+        var steps: [(String, String)] = [("Text1", "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."), ("Text2","The point of using Lorem Ipsum is that it has a more-or-less normal distribution o letters"), ("Text3","As opposed to using 'Content here, content here', making it look like readable English.")]
         var defaultMinutes: String = "6"
         var defaultSeconds: String = "30"
         var recipeImage: UIImage = UIImage(named: Constants.Images.CHICKEN_BREAST_BONE_IN_AND_SKIN_ON)!
@@ -236,7 +236,7 @@ class DescriptionDataModel {
         var recipeDescription: String = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
         var thicknessArray: [(String, Int, Int)] = [("1 pound", 0, 0), ("11/4 pound", 1, 0), ("11/2 pound", 1, 30)]
         var cookingDeepnessArray: [(String, Int, Int)] = [("Rare", 0, 0), ("Medium-Rare", 1, 0), ("Medium", 1, 0), ("Medium-Well", 1, 0)]
-        var steps: [String] = ["It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.", "The point of using Lorem Ipsum is that it has a more-or-less normal distribution o letters", "As opposed to using 'Content here, content here', making it look like readable English."]
+        var steps: [(String, String)] = [("Text1", "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."), ("Text2","The point of using Lorem Ipsum is that it has a more-or-less normal distribution o letters"), ("Text3","As opposed to using 'Content here, content here', making it look like readable English.")]
         var defaultMinutes: String = "6"
         var defaultSeconds: String = "30"
         var recipeImage: UIImage = UIImage(named: Constants.Images.CHICKEN_BREASTS_BONELESS_AND_SKINLESS)!
@@ -246,7 +246,7 @@ class DescriptionDataModel {
         var recipeDescription: String = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
         var thicknessArray: [(String, Int, Int)] = [("1 pound", 0, 0), ("11/4 pound", 1, 0), ("11/2 pound", 1, 30)]
         var cookingDeepnessArray: [(String, Int, Int)] = [("Rare", 0, 0), ("Medium-Rare", 1, 0), ("Medium", 1, 0), ("Medium-Well", 1, 0)]
-        var steps: [String] = ["It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.", "The point of using Lorem Ipsum is that it has a more-or-less normal distribution o letters", "As opposed to using 'Content here, content here', making it look like readable English."]
+        var steps: [(String, String)] = [("Text1", "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."), ("Text2","The point of using Lorem Ipsum is that it has a more-or-less normal distribution o letters"), ("Text3","As opposed to using 'Content here, content here', making it look like readable English.")]
         var defaultMinutes: String = "6"
         var defaultSeconds: String = "30"
         var recipeImage: UIImage = UIImage(named: Constants.Images.CHICKEN_CUTLETS)!
@@ -256,7 +256,7 @@ class DescriptionDataModel {
         var recipeDescription: String = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
         var thicknessArray: [(String, Int, Int)] = [("1 pound", 0, 0), ("11/4 pound", 1, 0), ("11/2 pound", 1, 30)]
         var cookingDeepnessArray: [(String, Int, Int)] = [("Rare", 0, 0), ("Medium-Rare", 1, 0), ("Medium", 1, 0), ("Medium-Well", 1, 0)]
-        var steps: [String] = ["It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.", "The point of using Lorem Ipsum is that it has a more-or-less normal distribution o letters", "As opposed to using 'Content here, content here', making it look like readable English."]
+        var steps: [(String, String)] = [("Text1", "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."), ("Text2","The point of using Lorem Ipsum is that it has a more-or-less normal distribution o letters"), ("Text3","As opposed to using 'Content here, content here', making it look like readable English.")]
         var defaultMinutes: String = "6"
         var defaultSeconds: String = "30"
         var recipeImage: UIImage = UIImage(named: Constants.Images.CHICKEN_DRUMSTICKS)!
@@ -266,7 +266,7 @@ class DescriptionDataModel {
         var recipeDescription: String = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
         var thicknessArray: [(String, Int, Int)] = [("1 pound", 0, 0), ("11/4 pound", 1, 0), ("11/2 pound", 1, 30)]
         var cookingDeepnessArray: [(String, Int, Int)] = [("Rare", 0, 0), ("Medium-Rare", 1, 0), ("Medium", 1, 0), ("Medium-Well", 1, 0)]
-        var steps: [String] = ["It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.", "The point of using Lorem Ipsum is that it has a more-or-less normal distribution o letters", "As opposed to using 'Content here, content here', making it look like readable English."]
+        var steps: [(String, String)] = [("Text1", "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."), ("Text2","The point of using Lorem Ipsum is that it has a more-or-less normal distribution o letters"), ("Text3","As opposed to using 'Content here, content here', making it look like readable English.")]
         var defaultMinutes: String = "6"
         var defaultSeconds: String = "30"
         var recipeImage: UIImage = UIImage(named: Constants.Images.CHICKEN_THIGH_BONE_IN_AND_SKIN_ON)!
@@ -276,7 +276,7 @@ class DescriptionDataModel {
         var recipeDescription: String = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
         var thicknessArray: [(String, Int, Int)] = [("1 pound", 0, 0), ("11/4 pound", 1, 0), ("11/2 pound", 1, 30)]
         var cookingDeepnessArray: [(String, Int, Int)] = [("Rare", 0, 0), ("Medium-Rare", 1, 0), ("Medium", 1, 0), ("Medium-Well", 1, 0)]
-        var steps: [String] = ["It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.", "The point of using Lorem Ipsum is that it has a more-or-less normal distribution o letters", "As opposed to using 'Content here, content here', making it look like readable English."]
+        var steps: [(String, String)] = [("Text1", "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."), ("Text2","The point of using Lorem Ipsum is that it has a more-or-less normal distribution o letters"), ("Text3","As opposed to using 'Content here, content here', making it look like readable English.")]
         var defaultMinutes: String = "6"
         var defaultSeconds: String = "30"
         var recipeImage: UIImage = UIImage(named: Constants.Images.CHICKEN_THIGHS_BONELESS_AND_SKINLESS)!
@@ -286,7 +286,7 @@ class DescriptionDataModel {
         var recipeDescription: String = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
         var thicknessArray: [(String, Int, Int)] = [("1 pound", 0, 0), ("11/4 pound", 1, 0), ("11/2 pound", 1, 30)]
         var cookingDeepnessArray: [(String, Int, Int)] = [("Rare", 0, 0), ("Medium-Rare", 1, 0), ("Medium", 1, 0), ("Medium-Well", 1, 0)]
-        var steps: [String] = ["It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.", "The point of using Lorem Ipsum is that it has a more-or-less normal distribution o letters", "As opposed to using 'Content here, content here', making it look like readable English."]
+        var steps: [(String, String)] = [("Text1", "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."), ("Text2","The point of using Lorem Ipsum is that it has a more-or-less normal distribution o letters"), ("Text3","As opposed to using 'Content here, content here', making it look like readable English.")]
         var defaultMinutes: String = "6"
         var defaultSeconds: String = "30"
         var recipeImage: UIImage = UIImage(named: Constants.Images.WHOLE_CHICKEN)!
@@ -296,7 +296,7 @@ class DescriptionDataModel {
         var recipeDescription: String = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
         var thicknessArray: [(String, Int, Int)] = [("1 pound", 0, 0), ("11/4 pound", 1, 0), ("11/2 pound", 1, 30)]
         var cookingDeepnessArray: [(String, Int, Int)] = [("Rare", 0, 0), ("Medium-Rare", 1, 0), ("Medium", 1, 0), ("Medium-Well", 1, 0)]
-        var steps: [String] = ["It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.", "The point of using Lorem Ipsum is that it has a more-or-less normal distribution o letters", "As opposed to using 'Content here, content here', making it look like readable English."]
+        var steps: [(String, String)] = [("Text1", "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."), ("Text2","The point of using Lorem Ipsum is that it has a more-or-less normal distribution o letters"), ("Text3","As opposed to using 'Content here, content here', making it look like readable English.")]
         var defaultMinutes: String = "6"
         var defaultSeconds: String = "30"
         var recipeImage: UIImage = UIImage(named: Constants.Images.PORK_CHOPS_BONE_IN)!
@@ -306,7 +306,7 @@ class DescriptionDataModel {
         var recipeDescription: String = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
         var thicknessArray: [(String, Int, Int)] = [("1 pound", 0, 0), ("11/4 pound", 1, 0), ("11/2 pound", 1, 30)]
         var cookingDeepnessArray: [(String, Int, Int)] = [("Rare", 0, 0), ("Medium-Rare", 1, 0), ("Medium", 1, 0), ("Medium-Well", 1, 0)]
-        var steps: [String] = ["It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.", "The point of using Lorem Ipsum is that it has a more-or-less normal distribution o letters", "As opposed to using 'Content here, content here', making it look like readable English."]
+        var steps: [(String, String)] = [("Text1", "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."), ("Text2","The point of using Lorem Ipsum is that it has a more-or-less normal distribution o letters"), ("Text3","As opposed to using 'Content here, content here', making it look like readable English.")]
         var defaultMinutes: String = "6"
         var defaultSeconds: String = "30"
         var recipeImage: UIImage = UIImage(named: Constants.Images.PORK_CHOPS_BONELESS)!
@@ -316,7 +316,7 @@ class DescriptionDataModel {
         var recipeDescription: String = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
         var thicknessArray: [(String, Int, Int)] = [("1 pound", 0, 0), ("11/4 pound", 1, 0), ("11/2 pound", 1, 30)]
         var cookingDeepnessArray: [(String, Int, Int)] = [("Rare", 0, 0), ("Medium-Rare", 1, 0), ("Medium", 1, 0), ("Medium-Well", 1, 0)]
-        var steps: [String] = ["It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.", "The point of using Lorem Ipsum is that it has a more-or-less normal distribution o letters", "As opposed to using 'Content here, content here', making it look like readable English."]
+        var steps: [(String, String)] = [("Text1", "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."), ("Text2","The point of using Lorem Ipsum is that it has a more-or-less normal distribution o letters"), ("Text3","As opposed to using 'Content here, content here', making it look like readable English.")]
         var defaultMinutes: String = "6"
         var defaultSeconds: String = "30"
         var recipeImage: UIImage = UIImage(named: Constants.Images.PORK_LOINS_BONELESS_AND_TIED)!
@@ -326,7 +326,7 @@ class DescriptionDataModel {
         var recipeDescription: String = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
         var thicknessArray: [(String, Int, Int)] = [("1 pound", 0, 0), ("11/4 pound", 1, 0), ("11/2 pound", 1, 30)]
         var cookingDeepnessArray: [(String, Int, Int)] = [("Rare", 0, 0), ("Medium-Rare", 1, 0), ("Medium", 1, 0), ("Medium-Well", 1, 0)]
-        var steps: [String] = ["It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.", "The point of using Lorem Ipsum is that it has a more-or-less normal distribution o letters", "As opposed to using 'Content here, content here', making it look like readable English."]
+        var steps: [(String, String)] = [("Text1", "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."), ("Text2","The point of using Lorem Ipsum is that it has a more-or-less normal distribution o letters"), ("Text3","As opposed to using 'Content here, content here', making it look like readable English.")]
         var defaultMinutes: String = "6"
         var defaultSeconds: String = "30"
         var recipeImage: UIImage = UIImage(named: Constants.Images.PORK_TENDERLOIN)!
@@ -338,7 +338,7 @@ class DescriptionDataModel {
         var recipeDescription: String = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
         var thicknessArray: [(String, Int, Int)] = [("1 pound", 0, 0), ("11/4 pound", 1, 0), ("11/2 pound", 1, 30)]
         var cookingDeepnessArray: [(String, Int, Int)] = [("Rare", 0, 0), ("Medium-Rare", 1, 0), ("Medium", 1, 0), ("Medium-Well", 1, 0)]
-        var steps: [String] = ["It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.", "The point of using Lorem Ipsum is that it has a more-or-less normal distribution o letters", "As opposed to using 'Content here, content here', making it look like readable English."]
+        var steps: [(String, String)] = [("Text1", "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."), ("Text2","The point of using Lorem Ipsum is that it has a more-or-less normal distribution o letters"), ("Text3","As opposed to using 'Content here, content here', making it look like readable English.")]
         var defaultMinutes: String = "6"
         var defaultSeconds: String = "30"
         var recipeImage: UIImage = UIImage(named: Constants.Images.COD_FILLETS)!
@@ -348,7 +348,7 @@ class DescriptionDataModel {
         var recipeDescription: String = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
         var thicknessArray: [(String, Int, Int)] = [("1 pound", 0, 0), ("11/4 pound", 1, 0), ("11/2 pound", 1, 30)]
         var cookingDeepnessArray: [(String, Int, Int)] = [("Rare", 0, 0), ("Medium-Rare", 1, 0), ("Medium", 1, 0), ("Medium-Well", 1, 0)]
-        var steps: [String] = ["It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.", "The point of using Lorem Ipsum is that it has a more-or-less normal distribution o letters", "As opposed to using 'Content here, content here', making it look like readable English."]
+        var steps: [(String, String)] = [("Text1", "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."), ("Text2","The point of using Lorem Ipsum is that it has a more-or-less normal distribution o letters"), ("Text3","As opposed to using 'Content here, content here', making it look like readable English.")]
         var defaultMinutes: String = "6"
         var defaultSeconds: String = "30"
         var recipeImage: UIImage = UIImage(named: Constants.Images.SALMON_FILLET)!
@@ -358,7 +358,7 @@ class DescriptionDataModel {
         var recipeDescription: String = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
         var thicknessArray: [(String, Int, Int)] = [("1 pound", 0, 0), ("11/4 pound", 1, 0), ("11/2 pound", 1, 30)]
         var cookingDeepnessArray: [(String, Int, Int)] = [("Rare", 0, 0), ("Medium-Rare", 1, 0), ("Medium", 1, 0), ("Medium-Well", 1, 0)]
-        var steps: [String] = ["It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.", "The point of using Lorem Ipsum is that it has a more-or-less normal distribution o letters", "As opposed to using 'Content here, content here', making it look like readable English."]
+        var steps: [(String, String)] = [("Text1", "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."), ("Text2","The point of using Lorem Ipsum is that it has a more-or-less normal distribution o letters"), ("Text3","As opposed to using 'Content here, content here', making it look like readable English.")]
         var defaultMinutes: String = "6"
         var defaultSeconds: String = "30"
         var recipeImage: UIImage = UIImage(named: Constants.Images.SALMON_STEAKS)!
@@ -368,7 +368,7 @@ class DescriptionDataModel {
         var recipeDescription: String = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
         var thicknessArray: [(String, Int, Int)] = [("1 pound", 0, 0), ("11/4 pound", 1, 0), ("11/2 pound", 1, 30)]
         var cookingDeepnessArray: [(String, Int, Int)] = [("Rare", 0, 0), ("Medium-Rare", 1, 0), ("Medium", 1, 0), ("Medium-Well", 1, 0)]
-        var steps: [String] = ["It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.", "The point of using Lorem Ipsum is that it has a more-or-less normal distribution o letters", "As opposed to using 'Content here, content here', making it look like readable English."]
+        var steps: [(String, String)] = [("Text1", "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."), ("Text2","The point of using Lorem Ipsum is that it has a more-or-less normal distribution o letters"), ("Text3","As opposed to using 'Content here, content here', making it look like readable English.")]
         var defaultMinutes: String = "6"
         var defaultSeconds: String = "30"
         var recipeImage: UIImage = UIImage(named: Constants.Images.SHRIMP)!
@@ -378,7 +378,7 @@ class DescriptionDataModel {
         var recipeDescription: String = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
         var thicknessArray: [(String, Int, Int)] = [("1 pound", 0, 0), ("11/4 pound", 1, 0), ("11/2 pound", 1, 30)]
         var cookingDeepnessArray: [(String, Int, Int)] = [("Rare", 0, 0), ("Medium-Rare", 1, 0), ("Medium", 1, 0), ("Medium-Well", 1, 0)]
-        var steps: [String] = ["It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.", "The point of using Lorem Ipsum is that it has a more-or-less normal distribution o letters", "As opposed to using 'Content here, content here', making it look like readable English."]
+        var steps: [(String, String)] = [("Text1", "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."), ("Text2","The point of using Lorem Ipsum is that it has a more-or-less normal distribution o letters"), ("Text3","As opposed to using 'Content here, content here', making it look like readable English.")]
         var defaultMinutes: String = "6"
         var defaultSeconds: String = "30"
         var recipeImage: UIImage = UIImage(named: Constants.Images.SWORDFISH_STEAKS)!
@@ -388,7 +388,7 @@ class DescriptionDataModel {
         var recipeDescription: String = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
         var thicknessArray: [(String, Int, Int)] = [("1 pound", 0, 0), ("11/4 pound", 1, 0), ("11/2 pound", 1, 30)]
         var cookingDeepnessArray: [(String, Int, Int)] = [("Rare", 0, 0), ("Medium-Rare", 1, 0), ("Medium", 1, 0), ("Medium-Well", 1, 0)]
-        var steps: [String] = ["It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.", "The point of using Lorem Ipsum is that it has a more-or-less normal distribution o letters", "As opposed to using 'Content here, content here', making it look like readable English."]
+        var steps: [(String, String)] = [("Text1", "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."), ("Text2","The point of using Lorem Ipsum is that it has a more-or-less normal distribution o letters"), ("Text3","As opposed to using 'Content here, content here', making it look like readable English.")]
         var defaultMinutes: String = "6"
         var defaultSeconds: String = "30"
         var recipeImage: UIImage = UIImage(named: Constants.Images.TILAPA_FILETS)!
@@ -400,7 +400,7 @@ class DescriptionDataModel {
         var recipeDescription: String = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
         var thicknessArray: [(String, Int, Int)] = [("1 pound", 0, 0), ("11/4 pound", 1, 0), ("11/2 pound", 1, 30)]
         var cookingDeepnessArray: [(String, Int, Int)] = [("Rare", 0, 0), ("Medium-Rare", 1, 0), ("Medium", 1, 0), ("Medium-Well", 1, 0)]
-        var steps: [String] = ["It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.", "The point of using Lorem Ipsum is that it has a more-or-less normal distribution o letters", "As opposed to using 'Content here, content here', making it look like readable English."]
+        var steps: [(String, String)] = [("Text1", "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."), ("Text2","The point of using Lorem Ipsum is that it has a more-or-less normal distribution o letters"), ("Text3","As opposed to using 'Content here, content here', making it look like readable English.")]
         var defaultMinutes: String = "6"
         var defaultSeconds: String = "30"
         var recipeImage: UIImage = UIImage(named: Constants.Images.SOFT_BOILED_RUNNY_YOLKS)!
@@ -410,7 +410,7 @@ class DescriptionDataModel {
         var recipeDescription: String = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
         var thicknessArray: [(String, Int, Int)] = [("1 pound", 0, 0), ("11/4 pound", 1, 0), ("11/2 pound", 1, 30)]
         var cookingDeepnessArray: [(String, Int, Int)] = [("Rare", 0, 0), ("Medium-Rare", 1, 0), ("Medium", 1, 0), ("Medium-Well", 1, 0)]
-        var steps: [String] = ["It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.", "The point of using Lorem Ipsum is that it has a more-or-less normal distribution o letters", "As opposed to using 'Content here, content here', making it look like readable English."]
+        var steps: [(String, String)] = [("Text1", "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."), ("Text2","The point of using Lorem Ipsum is that it has a more-or-less normal distribution o letters"), ("Text3","As opposed to using 'Content here, content here', making it look like readable English.")]
         var defaultMinutes: String = "6"
         var defaultSeconds: String = "30"
         var recipeImage: UIImage = UIImage(named: Constants.Images.SOFT_BOILED_CUSTARD_YOLDS)!
@@ -420,7 +420,7 @@ class DescriptionDataModel {
         var recipeDescription: String = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
         var thicknessArray: [(String, Int, Int)] = [("1 pound", 0, 0), ("11/4 pound", 1, 0), ("11/2 pound", 1, 30)]
         var cookingDeepnessArray: [(String, Int, Int)] = [("Rare", 0, 0), ("Medium-Rare", 1, 0), ("Medium", 1, 0), ("Medium-Well", 1, 0)]
-        var steps: [String] = ["It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.", "The point of using Lorem Ipsum is that it has a more-or-less normal distribution o letters", "As opposed to using 'Content here, content here', making it look like readable English."]
+        var steps: [(String, String)] = [("Text1", "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."), ("Text2","The point of using Lorem Ipsum is that it has a more-or-less normal distribution o letters"), ("Text3","As opposed to using 'Content here, content here', making it look like readable English.")]
         var defaultMinutes: String = "6"
         var defaultSeconds: String = "30"
         var recipeImage: UIImage = UIImage(named: Constants.Images.HARD_BOILED_MOIST_YOLKS)!
@@ -430,7 +430,7 @@ class DescriptionDataModel {
         var recipeDescription: String = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
         var thicknessArray: [(String, Int, Int)] = [("1 pound", 0, 0), ("11/4 pound", 1, 0), ("11/2 pound", 1, 30)]
         var cookingDeepnessArray: [(String, Int, Int)] = [("Rare", 0, 0), ("Medium-Rare", 1, 0), ("Medium", 1, 0), ("Medium-Well", 1, 0)]
-        var steps: [String] = ["It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.", "The point of using Lorem Ipsum is that it has a more-or-less normal distribution o letters", "As opposed to using 'Content here, content here', making it look like readable English."]
+        var steps: [(String, String)] = [("Text1", "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."), ("Text2","The point of using Lorem Ipsum is that it has a more-or-less normal distribution o letters"), ("Text3","As opposed to using 'Content here, content here', making it look like readable English.")]
         var defaultMinutes: String = "6"
         var defaultSeconds: String = "30"
         var recipeImage: UIImage = UIImage(named: Constants.Images.HARD_BOILED_FIRM_YOLKS)!

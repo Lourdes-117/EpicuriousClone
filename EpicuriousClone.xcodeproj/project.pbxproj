@@ -24,6 +24,8 @@
 		5E8B52AF231400D700E87646 /* ThinknessReusableCellCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8B52AE231400D700E87646 /* ThinknessReusableCellCollectionViewCell.swift */; };
 		5E8B52B1231400FB00E87646 /* CookingDeepnessReusableCellCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8B52B0231400FB00E87646 /* CookingDeepnessReusableCellCollectionViewCell.swift */; };
 		5E8B52B323140ED900E87646 /* DescriptionDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8B52B223140ED900E87646 /* DescriptionDataModel.swift */; };
+		5E96AE82231502E700FE632D /* PreparationStepsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E96AE81231502E700FE632D /* PreparationStepsViewController.swift */; };
+		5E96AE84231505C600FE632D /* PreparationStepsReusableCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E96AE83231505C600FE632D /* PreparationStepsReusableCellTableViewCell.swift */; };
 		5EDB45902313A10500FA7BBB /* HomeTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EDB458F2313A10500FA7BBB /* HomeTab.storyboard */; };
 		5EDB45922313A12800FA7BBB /* TimerTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EDB45912313A12800FA7BBB /* TimerTab.storyboard */; };
 		5EDB45942313A14000FA7BBB /* SearchTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EDB45932313A14000FA7BBB /* SearchTab.storyboard */; };
@@ -54,6 +56,8 @@
 		5E8B52AE231400D700E87646 /* ThinknessReusableCellCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThinknessReusableCellCollectionViewCell.swift; sourceTree = "<group>"; };
 		5E8B52B0231400FB00E87646 /* CookingDeepnessReusableCellCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookingDeepnessReusableCellCollectionViewCell.swift; sourceTree = "<group>"; };
 		5E8B52B223140ED900E87646 /* DescriptionDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionDataModel.swift; sourceTree = "<group>"; };
+		5E96AE81231502E700FE632D /* PreparationStepsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreparationStepsViewController.swift; sourceTree = "<group>"; };
+		5E96AE83231505C600FE632D /* PreparationStepsReusableCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreparationStepsReusableCellTableViewCell.swift; sourceTree = "<group>"; };
 		5EDB458F2313A10500FA7BBB /* HomeTab.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeTab.storyboard; sourceTree = "<group>"; };
 		5EDB45912313A12800FA7BBB /* TimerTab.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TimerTab.storyboard; sourceTree = "<group>"; };
 		5EDB45932313A14000FA7BBB /* SearchTab.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchTab.storyboard; sourceTree = "<group>"; };
@@ -148,12 +152,22 @@
 		5E8B52AB2313FD8500E87646 /* Description */ = {
 			isa = PBXGroup;
 			children = (
+				5E96AE80231502BF00FE632D /* PreparationSteps */,
 				5E8B52AC2313FDA800E87646 /* RecipeDescriptionViewController.swift */,
 				5E8B52AE231400D700E87646 /* ThinknessReusableCellCollectionViewCell.swift */,
 				5E8B52B0231400FB00E87646 /* CookingDeepnessReusableCellCollectionViewCell.swift */,
 				5E8B52B223140ED900E87646 /* DescriptionDataModel.swift */,
 			);
 			path = Description;
+			sourceTree = "<group>";
+		};
+		5E96AE80231502BF00FE632D /* PreparationSteps */ = {
+			isa = PBXGroup;
+			children = (
+				5E96AE81231502E700FE632D /* PreparationStepsViewController.swift */,
+				5E96AE83231505C600FE632D /* PreparationStepsReusableCellTableViewCell.swift */,
+			);
+			path = PreparationSteps;
 			sourceTree = "<group>";
 		};
 		5EDB458E2313A0A600FA7BBB /* Storyboards */ = {
@@ -256,6 +270,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E96AE82231502E700FE632D /* PreparationStepsViewController.swift in Sources */,
 				5E8B52A42313C1D400E87646 /* SelectIngredientsViewController.swift in Sources */,
 				5E207B8823100E51001D5FDF /* PersistentService.swift in Sources */,
 				5E8B52A82313E3B200E87646 /* SelectIngredientCell.swift in Sources */,
@@ -266,6 +281,7 @@
 				5EDB45A12313B4D100FA7BBB /* CategoriesModel.swift in Sources */,
 				5E207B7323100DE3001D5FDF /* AppDelegate.swift in Sources */,
 				5E8B52B1231400FB00E87646 /* CookingDeepnessReusableCellCollectionViewCell.swift in Sources */,
+				5E96AE84231505C600FE632D /* PreparationStepsReusableCellTableViewCell.swift in Sources */,
 				5E8B52AA2313EE8E00E87646 /* TabBar.swift in Sources */,
 				5E207B9023101515001D5FDF /* Constants.swift in Sources */,
 				5E207B93231016D6001D5FDF /* Strings.swift in Sources */,

@@ -18,10 +18,11 @@ class RecipeDescriptionViewController: UIViewController {
     @IBOutlet weak var cookTimeMinutes: UILabel!
     @IBOutlet weak var cookTimeSeconds: UILabel!
 
+    @IBOutlet weak var preparationStepOneHeading: UILabel!
     var allDescriptionData:DescriptionDataModelProtocol!
     var thicknessArray:[(String,Int,Int)] = []
     var cookingDeepnessArray:[(String,Int,Int)] = []
-    var Steps:[String] = []
+    let segueIdentifier:String = "PreparationStepsSegueIdentifier"
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,15 +31,26 @@ class RecipeDescriptionViewController: UIViewController {
         setDefaultValues()
         print("Recipe Description Page Loaded")
     }
+
     @IBAction func onClickPreviewAllSteps(_ sender: Any) {
+        performSegue(withIdentifier: segueIdentifier, sender: self)
     }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let preparationStepsViewController = segue.destination as? PreparationStepsViewController else {return}
+        preparationStepsViewController.recipeProcedureArray = allDescriptionData.steps
+        preparationStepsViewController.recipeNameString = allDescriptionData.recipeName
+    }
+
     @IBAction func onClickStartSmartTimer(_ sender: Any) {
     }
 
     fileprivate func setDefaultValues() {
         recipeName.text = allDescriptionData.recipeName
         recipeDescription.text = allDescriptionData.recipeDescription
-        preparationStepOne.text = allDescriptionData.steps[0]
+        let (preperationStepOneHeadingString, preparationStepOneDescriptionString):(String, String) = allDescriptionData.steps[0]
+        preparationStepOneHeading.text = "Step 1 | \(preperationStepOneHeadingString)"
+        preparationStepOne.text = preparationStepOneDescriptionString
         cookTimeMinutes.text = allDescriptionData.defaultMinutes
         cookTimeSeconds.text = allDescriptionData.defaultSeconds
         thicknessArray = allDescriptionData.thicknessArray
