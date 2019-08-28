@@ -10,25 +10,157 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Check List View Controller-->
         <scene sceneID="K4O-cf-KoK">
             <objects>
-                <viewController id="cb7-z6-iDF" sceneMemberID="viewController">
+                <viewController id="cb7-z6-iDF" customClass="CheckListViewController" customModule="EpicuriousClone" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sV5-vs-rsa">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mJm-b9-NWQ">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <items>
+                                    <navigationItem title="My Shopping List" id="948-bo-Xu5">
+                                        <barButtonItem key="rightBarButtonItem" title="EDIT" id="bNN-4w-Xss">
+                                            <color key="tintColor" red="0.8980392157" green="0.0084072236049999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <connections>
+                                                <action selector="onClickEditButton:" destination="cb7-z6-iDF" id="jTd-q9-IqS"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="45" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zms-NQ-4UP">
+                                <rect key="frame" x="0.0" y="89" width="414" height="724"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CheckListCellReusableIdentity" id="ctK-1R-KuD" customClass="CheckListReusableCellTableViewCell" customModule="EpicuriousClone" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="45"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ctK-1R-KuD" id="K6k-It-D7P">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="45"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iIn-X9-zg5">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="45"/>
+                                                    <subviews>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AddTask" translatesAutoresizingMaskIntoConstraints="NO" id="oU3-7C-JKU">
+                                                            <rect key="frame" x="5" y="5" width="30" height="35"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="30" id="Izc-t5-GPX"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Add Ingredient" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4fv-fh-f0q">
+                                                            <rect key="frame" x="45" y="14" width="349" height="17"/>
+                                                            <nil key="textColor"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <textInputTraits key="textInputTraits"/>
+                                                            <connections>
+                                                                <action selector="onClickTextField:" destination="ctK-1R-KuD" eventType="touchUpInside" id="tjK-Ng-08A"/>
+                                                                <action selector="onTapTextViewInside:" destination="ctK-1R-KuD" eventType="touchUpInside" id="KFW-eq-DHZ"/>
+                                                                <action selector="onTapTextViewOutside:" destination="ctK-1R-KuD" eventType="touchUpOutside" id="DRI-hI-ycW"/>
+                                                            </connections>
+                                                        </textField>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="bottom" secondItem="oU3-7C-JKU" secondAttribute="bottom" constant="5" id="4Hx-k8-ncj"/>
+                                                        <constraint firstItem="4fv-fh-f0q" firstAttribute="centerY" secondItem="oU3-7C-JKU" secondAttribute="centerY" id="Kud-Eo-kQ4"/>
+                                                        <constraint firstAttribute="trailing" secondItem="4fv-fh-f0q" secondAttribute="trailing" constant="20" id="Ya6-uc-fIT"/>
+                                                        <constraint firstItem="4fv-fh-f0q" firstAttribute="leading" secondItem="oU3-7C-JKU" secondAttribute="trailing" constant="10" id="d5K-L8-fge"/>
+                                                        <constraint firstItem="oU3-7C-JKU" firstAttribute="leading" secondItem="iIn-X9-zg5" secondAttribute="leading" constant="5" id="ddt-1C-P42"/>
+                                                        <constraint firstItem="oU3-7C-JKU" firstAttribute="top" secondItem="iIn-X9-zg5" secondAttribute="top" constant="5" id="flc-nh-XMS"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="iIn-X9-zg5" secondAttribute="bottom" id="Rh9-cb-Pch"/>
+                                                <constraint firstItem="iIn-X9-zg5" firstAttribute="leading" secondItem="K6k-It-D7P" secondAttribute="leading" id="cRT-oR-4be"/>
+                                                <constraint firstAttribute="trailing" secondItem="iIn-X9-zg5" secondAttribute="trailing" id="jiH-Yh-61m"/>
+                                                <constraint firstItem="iIn-X9-zg5" firstAttribute="top" secondItem="K6k-It-D7P" secondAttribute="top" id="wSn-Fp-igD"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="checkListItemName" destination="4fv-fh-f0q" id="Vka-bE-buM"/>
+                                            <outlet property="checkListItemStatus" destination="oU3-7C-JKU" id="Deh-iw-gk6"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CheckListHeaderReusableIdentity" id="BEY-JD-ZB3" customClass="CheckListReusableCellTableViewHeader" customModule="EpicuriousClone" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="73" width="414" height="45"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="BEY-JD-ZB3" id="7d8-9G-O7f">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="45"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7PP-uC-iIo">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="45"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RlN-f6-I8L">
+                                                            <rect key="frame" x="356" y="7.5" width="38" height="30"/>
+                                                            <state key="normal" title="Items">
+                                                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            </state>
+                                                            <connections>
+                                                                <action selector="onClickClearButton:" destination="BEY-JD-ZB3" eventType="touchUpInside" id="PM0-mG-cbB"/>
+                                                            </connections>
+                                                        </button>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8EY-1G-bvU">
+                                                            <rect key="frame" x="20" y="12.5" width="51.5" height="20"/>
+                                                            <fontDescription key="fontDescription" name="CourierNewPSMT" family="Courier New" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="trailing" secondItem="RlN-f6-I8L" secondAttribute="trailing" constant="20" id="Owq-LN-03q"/>
+                                                        <constraint firstItem="8EY-1G-bvU" firstAttribute="centerY" secondItem="7PP-uC-iIo" secondAttribute="centerY" id="Xbf-jQ-p7A"/>
+                                                        <constraint firstItem="RlN-f6-I8L" firstAttribute="centerY" secondItem="7PP-uC-iIo" secondAttribute="centerY" id="jc8-Ux-utE"/>
+                                                        <constraint firstItem="8EY-1G-bvU" firstAttribute="leading" secondItem="7PP-uC-iIo" secondAttribute="leading" constant="20" id="sLt-sK-wId"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="7PP-uC-iIo" firstAttribute="leading" secondItem="7d8-9G-O7f" secondAttribute="leading" id="3dZ-8H-163"/>
+                                                <constraint firstAttribute="bottom" secondItem="7PP-uC-iIo" secondAttribute="bottom" id="SFn-VD-c2i"/>
+                                                <constraint firstAttribute="trailing" secondItem="7PP-uC-iIo" secondAttribute="trailing" id="WR7-vq-lvT"/>
+                                                <constraint firstItem="7PP-uC-iIo" firstAttribute="top" secondItem="7d8-9G-O7f" secondAttribute="top" id="gic-Is-0TP"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="headerTitle" destination="8EY-1G-bvU" id="uuY-Wj-1OL"/>
+                                            <outlet property="numberOfItems" destination="RlN-f6-I8L" id="WT4-IJ-LoK"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="mJm-b9-NWQ" firstAttribute="top" secondItem="pzp-6e-tFi" secondAttribute="top" id="JYA-ge-k3c"/>
+                            <constraint firstItem="pzp-6e-tFi" firstAttribute="trailing" secondItem="zms-NQ-4UP" secondAttribute="trailing" id="OSn-T7-ABB"/>
+                            <constraint firstItem="pzp-6e-tFi" firstAttribute="trailing" secondItem="mJm-b9-NWQ" secondAttribute="trailing" id="SE1-8b-dSx"/>
+                            <constraint firstItem="mJm-b9-NWQ" firstAttribute="leading" secondItem="pzp-6e-tFi" secondAttribute="leading" id="VhS-d2-UhP"/>
+                            <constraint firstItem="zms-NQ-4UP" firstAttribute="top" secondItem="pzp-6e-tFi" secondAttribute="top" constant="45" id="mkN-Km-uXm"/>
+                            <constraint firstItem="zms-NQ-4UP" firstAttribute="leading" secondItem="pzp-6e-tFi" secondAttribute="leading" id="rHa-l1-1xL"/>
+                            <constraint firstItem="pzp-6e-tFi" firstAttribute="bottom" secondItem="zms-NQ-4UP" secondAttribute="bottom" id="rMb-HB-9ww"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="pzp-6e-tFi"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="Checklist_Icon" id="V6C-cO-WYT"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="tasksTableView" destination="zms-NQ-4UP" id="BnZ-D0-F3W"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wdP-em-TFh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="448" y="74"/>
+            <point key="canvasLocation" x="447.82608695652175" y="73.660714285714278"/>
         </scene>
     </scenes>
     <resources>
+        <image name="AddTask" width="48" height="48"/>
         <image name="Checklist_Icon" width="32" height="32"/>
     </resources>
 </document>

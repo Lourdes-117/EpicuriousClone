@@ -66,5 +66,10 @@ struct Constants {
         public static let HARD_BOILED_MOIST_YOLKS:String = "Hard_Boiled_Moist_Yolks"
         public static let SOFT_BOILED_CUSTARD_YOLDS:String = "Soft_Boiled_Custardy_Yolks"
         public static let SOFT_BOILED_RUNNY_YOLKS:String = "Soft_Boiled_Runny_Yolks"
+
+        public static let TASK_COMPLETED:String = "CompletedTask"
+        public static let TASK_INCOMPLETE:String = "IncompleteTask"
+        public static let ADD_TASK:String = "AddTask"
+        public static let DELETE_TASK:String  = "DeleteTask"
     }
 }
