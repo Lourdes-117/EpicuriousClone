@@ -47,7 +47,6 @@ class CheckListViewController: UIViewController {
         if(CheckListViewController.isEditingEnabled) {
             editButton.title = Constants.CheckListTab.DONE
             tabBarController?.tabBar.setTabBarVisibility(false)
-            tabBarController?.tabBar.isHidden = true
         } else {
             editButton.title = Constants.CheckListTab.EDIT
             tabBarController?.tabBar.setTabBarVisibility(true)
@@ -187,6 +186,10 @@ extension CheckListViewController: UITableViewDelegate {
         if(CheckListViewController.allTasksArray.count > 0) {
             editButton.isEnabled = true
         } else {
+            if(editButton.title! == Constants.CheckListTab.EDIT) {
+                editButton.title = Constants.CheckListTab.EDIT
+                tabBarController?.tabBar.setTabBarVisibility(true)
+            }
             editButton.isEnabled = false
         }
         switch section {
