@@ -11,7 +11,8 @@ import CoreData
 
 class CheckListReusableCellTableViewCell: UITableViewCell {
     @IBOutlet weak var checkListItemName: UITextField!
-    @IBOutlet weak var checkListItemStatus: UIImageView!
+    @IBOutlet weak var checkListItemStatus: UIButton!
+
     weak var selectedTask:ToDoCheckList!
     static let reusableIdentity:String = "CheckListCellReusableIdentity"
     var checkListViewController:CheckListViewController!
@@ -24,7 +25,7 @@ class CheckListReusableCellTableViewCell: UITableViewCell {
     public func setValues(data dataOptional:ToDoCheckList?, ofContext context:CheckListViewController) {
         checkListViewController = context
         guard let data = dataOptional else {
-            checkListItemStatus.image = UIImage(named: Constants.Images.ADD_TASK)
+            checkListItemStatus.setImage(UIImage(named: Constants.Images.ADD_TASK), for: .normal)
             checkListItemName.text = ""
             checkListItemName.placeholder = "Add Ingredient"
             checkListItemName.isEnabled = true
@@ -33,15 +34,26 @@ class CheckListReusableCellTableViewCell: UITableViewCell {
         selectedTask = data
         checkListItemName.text = data.checkListItemName
         if(CheckListViewController.isEditingEnabled) {
-            checkListItemStatus.image = UIImage(named: Constants.Images.DELETE_TASK)
+            checkListItemStatus.setImage(UIImage(named: Constants.Images.DELETE_TASK), for: .normal)
             checkListItemName.isEnabled = true
+            checkListItemStatus.isEnabled = true
         } else if(data.checkListItemIsPurchased) {
-            checkListItemStatus.image = UIImage(named: Constants.Images.TASK_COMPLETED)
+            checkListItemStatus.setImage(UIImage(named: Constants.Images.TASK_COMPLETED), for: .normal)
             checkListItemName.isEnabled = false
+            checkListItemStatus.isEnabled = false
         } else {
-            checkListItemStatus.image = UIImage(named: Constants.Images.TASK_INCOMPLETE)
+            checkListItemStatus.setImage(UIImage(named: Constants.Images.TASK_INCOMPLETE), for: .normal)
             checkListItemName.isEnabled = false
+            checkListItemStatus.isEnabled = false
         }
+    }
+
+    @IBAction func onClickDeleteButton(_ sender: Any) {
+        let indexToDelete:Int = CheckListViewController.allTasksArray.firstIndex(of: selectedTask)!
+        PersistentService.context.delete(CheckListViewController.allTasksArray[indexToDelete])
+        CheckListViewController.allTasksArray.remove(at: indexToDelete)
+        checkListViewController.seperateData()
+        checkListViewController.tasksTableView.reloadData()
     }
 
     fileprivate func saveNewEntryInCoreData() {

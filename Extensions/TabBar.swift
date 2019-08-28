@@ -9,12 +9,14 @@
 import UIKit
 extension UITabBar {
     func setTabBarVisibility(_ isVisible: Bool = true){
-        if isVisible {
-            self.layer.zPosition = 0
-            self.isHidden = false
-        } else {
-            self.isHidden = true
-            self.layer.zPosition = -1
+        UIView.animate(withDuration: 0.3) {
+            if isVisible {
+                self.layer.zPosition = 0
+                self.isHidden = false
+            } else {
+                self.isHidden = true
+                self.layer.zPosition = -1
+            }
         }
     }
 }

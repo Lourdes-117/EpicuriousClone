@@ -45,14 +45,8 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iIn-X9-zg5">
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="45"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AddTask" translatesAutoresizingMaskIntoConstraints="NO" id="oU3-7C-JKU">
-                                                            <rect key="frame" x="5" y="5" width="30" height="35"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" constant="30" id="Izc-t5-GPX"/>
-                                                            </constraints>
-                                                        </imageView>
                                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Add Ingredient" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4fv-fh-f0q">
-                                                            <rect key="frame" x="45" y="14" width="349" height="17"/>
+                                                            <rect key="frame" x="75" y="14" width="319" height="17"/>
                                                             <nil key="textColor"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <textInputTraits key="textInputTraits"/>
@@ -62,15 +56,24 @@
                                                                 <action selector="onTapTextViewOutside:" destination="ctK-1R-KuD" eventType="touchUpOutside" id="DRI-hI-ycW"/>
                                                             </connections>
                                                         </textField>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IAS-0T-VJ1">
+                                                            <rect key="frame" x="20" y="5" width="35" height="35"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" secondItem="IAS-0T-VJ1" secondAttribute="height" multiplier="1:1" id="uUs-o4-DuY"/>
+                                                            </constraints>
+                                                            <connections>
+                                                                <action selector="onClickDeleteButton:" destination="ctK-1R-KuD" eventType="touchUpInside" id="pVn-7I-ucR"/>
+                                                            </connections>
+                                                        </button>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="bottom" secondItem="oU3-7C-JKU" secondAttribute="bottom" constant="5" id="4Hx-k8-ncj"/>
-                                                        <constraint firstItem="4fv-fh-f0q" firstAttribute="centerY" secondItem="oU3-7C-JKU" secondAttribute="centerY" id="Kud-Eo-kQ4"/>
+                                                        <constraint firstItem="4fv-fh-f0q" firstAttribute="leading" secondItem="IAS-0T-VJ1" secondAttribute="trailing" constant="20" id="0A1-mO-QXJ"/>
+                                                        <constraint firstItem="4fv-fh-f0q" firstAttribute="centerY" secondItem="IAS-0T-VJ1" secondAttribute="centerY" id="U6p-DH-LRq"/>
+                                                        <constraint firstAttribute="bottom" secondItem="IAS-0T-VJ1" secondAttribute="bottom" constant="5" id="Y4j-YL-3Dp"/>
                                                         <constraint firstAttribute="trailing" secondItem="4fv-fh-f0q" secondAttribute="trailing" constant="20" id="Ya6-uc-fIT"/>
-                                                        <constraint firstItem="4fv-fh-f0q" firstAttribute="leading" secondItem="oU3-7C-JKU" secondAttribute="trailing" constant="10" id="d5K-L8-fge"/>
-                                                        <constraint firstItem="oU3-7C-JKU" firstAttribute="leading" secondItem="iIn-X9-zg5" secondAttribute="leading" constant="5" id="ddt-1C-P42"/>
-                                                        <constraint firstItem="oU3-7C-JKU" firstAttribute="top" secondItem="iIn-X9-zg5" secondAttribute="top" constant="5" id="flc-nh-XMS"/>
+                                                        <constraint firstItem="IAS-0T-VJ1" firstAttribute="leading" secondItem="iIn-X9-zg5" secondAttribute="leading" constant="20" id="dSP-bp-OQr"/>
+                                                        <constraint firstItem="IAS-0T-VJ1" firstAttribute="top" secondItem="iIn-X9-zg5" secondAttribute="top" constant="5" id="dc4-yU-y2Z"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
@@ -83,7 +86,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="checkListItemName" destination="4fv-fh-f0q" id="Vka-bE-buM"/>
-                                            <outlet property="checkListItemStatus" destination="oU3-7C-JKU" id="Deh-iw-gk6"/>
+                                            <outlet property="checkListItemStatus" destination="IAS-0T-VJ1" id="gFR-gH-9pJ"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CheckListHeaderReusableIdentity" id="BEY-JD-ZB3" customClass="CheckListReusableCellTableViewHeader" customModule="EpicuriousClone" customModuleProvider="target">
@@ -102,7 +105,7 @@
                                                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </state>
                                                             <connections>
-                                                                <action selector="onClickClearButton:" destination="BEY-JD-ZB3" eventType="touchUpInside" id="PM0-mG-cbB"/>
+                                                                <action selector="onClickClearButton:" destination="BEY-JD-ZB3" eventType="touchUpInside" id="nt7-ea-f7T"/>
                                                             </connections>
                                                         </button>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8EY-1G-bvU">
@@ -135,22 +138,38 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VM7-E5-LBU">
+                                <rect key="frame" x="0.0" y="813" width="414" height="83"/>
+                                <color key="backgroundColor" red="0.8980392157" green="0.0084072236049999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="DONE">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="onClickDoneButton:" destination="cb7-z6-iDF" eventType="touchUpInside" id="tB9-WZ-Mv5"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="VM7-E5-LBU" secondAttribute="trailing" id="HWP-hW-fdl"/>
                             <constraint firstItem="mJm-b9-NWQ" firstAttribute="top" secondItem="pzp-6e-tFi" secondAttribute="top" id="JYA-ge-k3c"/>
                             <constraint firstItem="pzp-6e-tFi" firstAttribute="trailing" secondItem="zms-NQ-4UP" secondAttribute="trailing" id="OSn-T7-ABB"/>
+                            <constraint firstItem="VM7-E5-LBU" firstAttribute="top" secondItem="zms-NQ-4UP" secondAttribute="bottom" id="Ov8-Qu-V9k"/>
                             <constraint firstItem="pzp-6e-tFi" firstAttribute="trailing" secondItem="mJm-b9-NWQ" secondAttribute="trailing" id="SE1-8b-dSx"/>
                             <constraint firstItem="mJm-b9-NWQ" firstAttribute="leading" secondItem="pzp-6e-tFi" secondAttribute="leading" id="VhS-d2-UhP"/>
+                            <constraint firstAttribute="bottom" secondItem="VM7-E5-LBU" secondAttribute="bottom" id="YR3-i2-qnR"/>
                             <constraint firstItem="zms-NQ-4UP" firstAttribute="top" secondItem="pzp-6e-tFi" secondAttribute="top" constant="45" id="mkN-Km-uXm"/>
+                            <constraint firstItem="VM7-E5-LBU" firstAttribute="leading" secondItem="sV5-vs-rsa" secondAttribute="leading" id="ozl-zo-Kcl"/>
                             <constraint firstItem="zms-NQ-4UP" firstAttribute="leading" secondItem="pzp-6e-tFi" secondAttribute="leading" id="rHa-l1-1xL"/>
                             <constraint firstItem="pzp-6e-tFi" firstAttribute="bottom" secondItem="zms-NQ-4UP" secondAttribute="bottom" id="rMb-HB-9ww"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="pzp-6e-tFi"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="Checklist_Icon" id="V6C-cO-WYT"/>
+                    <tabBarItem key="tabBarItem" title="" image="Checklist_Icon" id="on9-H3-ohn"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="editButton" destination="bNN-4w-Xss" id="f0S-iN-g58"/>
                         <outlet property="tasksTableView" destination="zms-NQ-4UP" id="BnZ-D0-F3W"/>
                     </connections>
                 </viewController>
@@ -160,7 +179,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="AddTask" width="48" height="48"/>
         <image name="Checklist_Icon" width="32" height="32"/>
     </resources>
 </document>

@@ -11,6 +11,7 @@ import CoreData
 
 class CheckListViewController: UIViewController {
 
+    @IBOutlet weak var editButton: UIBarButtonItem!
     @IBOutlet weak var tasksTableView: UITableView!
     public static var allTasksArray:[ToDoCheckList] = []
     var completedTasksArray:[ToDoCheckList] = []
@@ -43,11 +44,19 @@ class CheckListViewController: UIViewController {
 
     @IBAction func onClickEditButton(_ sender: Any) {
         CheckListViewController.isEditingEnabled = !CheckListViewController.isEditingEnabled
+        if(CheckListViewController.isEditingEnabled) {
+            editButton.title = Constants.CheckListTab.DONE
+            tabBarController?.tabBar.setTabBarVisibility(false)
+            tabBarController?.tabBar.isHidden = true
+        } else {
+            editButton.title = Constants.CheckListTab.EDIT
+            tabBarController?.tabBar.setTabBarVisibility(true)
+        }
         tasksTableView.reloadData()
     }
 
-    deinit {
-        print("CheckList View Safe From Memory Leaks")
+    @IBAction func onClickDoneButton(_ sender: Any) {
+        onClickEditButton(0)
     }
 
     public func seperateData() {
@@ -60,10 +69,12 @@ class CheckListViewController: UIViewController {
                 incompleArray.append(task)
             }
         }
-        incompleteTasksArray.removeAll()
-        completedTasksArray.removeAll()
         incompleteTasksArray = incompleArray
         completedTasksArray = completedArray
+    }
+
+    deinit {
+        print("CheckList View Safe From Memory Leaks")
     }
 }
 
@@ -126,31 +137,41 @@ extension CheckListViewController:UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let unpurchased:String = "UNPURCHASED"
-        let purchased:String = "PURCHASED"
-        let item:String = "ITEM"
-        let items:String = "ITEMS"
         let cell = tableView.dequeueReusableCell(withIdentifier: CheckListReusableCellTableViewHeader.reusableIdentity) as! CheckListReusableCellTableViewHeader
         cell.setContext(ofParent: self)
         switch section {
         case 0:
-            cell.headerTitle.text = unpurchased
+            cell.headerTitle.text = Constants.CheckListTab.UNPURCHASED
+            guard !CheckListViewController.isEditingEnabled else {
+                cell.numberOfItems.isEnabled = true
+                cell.numberOfItems.setTitle("CLEAR", for: .normal)
+                cell.numberOfItems.setTitleColor(UIColor.red, for: .normal)
+                return cell
+            }
+            cell.numberOfItems.isEnabled = false
             var textToAppend:String = ""
             if(completedTasksArray.count < 2) {
-                textToAppend = item
+                textToAppend = Constants.CheckListTab.ITEM
             } else {
-                textToAppend = items
+                textToAppend = Constants.CheckListTab.ITEMS
             }
             cell.numberOfItems.setTitle("\(incompleteTasksArray.count) \(textToAppend)", for: .disabled)
             cell.numberOfItems.isEnabled = false
             return cell
         case 2:
-            cell.headerTitle.text = purchased
+            cell.headerTitle.text = Constants.CheckListTab.PURCHASED
+            guard !CheckListViewController.isEditingEnabled else {
+                cell.numberOfItems.isEnabled = true
+                cell.numberOfItems.setTitle("CLEAR", for: .normal)
+                cell.numberOfItems.setTitleColor(UIColor.red, for: .normal)
+                return cell
+            }
+            cell.numberOfItems.isEnabled = false
             var textToAppend:String = ""
             if(completedTasksArray.count < 2) {
-                textToAppend = item
+                textToAppend = Constants.CheckListTab.ITEM
             } else {
-                textToAppend = items
+                textToAppend = Constants.CheckListTab.ITEMS
             }
             cell.numberOfItems.setTitle("\(completedTasksArray.count) \(textToAppend)", for: .disabled)
             cell.numberOfItems.isEnabled = false
@@ -163,13 +184,18 @@ extension CheckListViewController:UITableViewDataSource {
 
 extension CheckListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        if(CheckListViewController.allTasksArray.count > 0) {
+            editButton.isEnabled = true
+        } else {
+            editButton.isEnabled = false
+        }
         switch section {
         case 0:
-            if(incompleteTasksArray.count>0){return 45} else {return 0}
+            if(incompleteTasksArray.count > 0){return 45} else {return 0}
         case 1:
             return 0
-        case 3:
-            if(completedTasksArray.count>0){return 45} else {return 0}
+        case 2:
+            if(completedTasksArray.count > 0){return 45} else {return 0}
         default:
             print("Internal Error")
         }

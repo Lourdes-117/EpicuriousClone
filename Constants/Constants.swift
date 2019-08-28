@@ -72,4 +72,13 @@ struct Constants {
         public static let ADD_TASK:String = "AddTask"
         public static let DELETE_TASK:String  = "DeleteTask"
     }
+
+    struct CheckListTab {
+        public static let UNPURCHASED:String = "UNPURCHASED"
+        public static let PURCHASED:String = "PURCHASED"
+        public static let ITEM:String = "ITEM"
+        public static let ITEMS:String = "ITEMS"
+        public static let EDIT:String = "EDIT"
+        public static let DONE:String = "DONE"
+    }
 }
