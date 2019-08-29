@@ -25,18 +25,57 @@
             </objects>
             <point key="canvasLocation" x="1359" y="-2251"/>
         </scene>
-        <!--View Controller-->
+        <!--Newest Recipies Page View Controller-->
         <scene sceneID="qbx-gC-cnb">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="XMb-Dp-Sgf" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController storyboardIdentifier="HomeTabNewestRecipiesViewController" id="8I8-FM-Ro6" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeTabNewestRecipiesViewController" id="8I8-FM-Ro6" customClass="NewestRecipiesPageViewController" customModule="EpicuriousClone" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tRt-vk-YRo">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.55634254220000001" green="0.97934550050000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Xo1-yu-gFG">
+                                <rect key="frame" x="0.0" y="94" width="414" height="768"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="NewestRecipiesTitleCellReusableIdentity" rowHeight="180" id="0Hx-sa-KcN" customClass="NewestRecipiesTableViewCell" customModule="EpicuriousClone" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="180"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0Hx-sa-KcN" id="PxV-He-Xhy">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="179.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Newest Recipies" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PMb-Ca-fq8">
+                                                    <rect key="frame" x="71.5" y="69.5" width="271.5" height="41"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="34"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstItem="PMb-Ca-fq8" firstAttribute="centerY" secondItem="PxV-He-Xhy" secondAttribute="centerY" id="2Ue-VH-q30"/>
+                                                <constraint firstItem="PMb-Ca-fq8" firstAttribute="centerX" secondItem="PxV-He-Xhy" secondAttribute="centerX" id="Klm-XO-URS"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="M2b-Hd-1Pz" firstAttribute="trailing" secondItem="Xo1-yu-gFG" secondAttribute="trailing" id="ZpC-Bq-B1w"/>
+                            <constraint firstItem="Xo1-yu-gFG" firstAttribute="leading" secondItem="M2b-Hd-1Pz" secondAttribute="leading" id="ix5-Zq-SJx"/>
+                            <constraint firstItem="Xo1-yu-gFG" firstAttribute="top" secondItem="M2b-Hd-1Pz" secondAttribute="top" constant="50" id="t75-7i-i0z"/>
+                            <constraint firstItem="M2b-Hd-1Pz" firstAttribute="bottom" secondItem="Xo1-yu-gFG" secondAttribute="bottom" id="xVc-kw-R8A"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="M2b-Hd-1Pz"/>
                     </view>
+                    <connections>
+                        <outlet property="recipiesTableView" destination="Xo1-yu-gFG" id="F0J-et-eWi"/>
+                    </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XMb-Dp-Sgf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1359" y="-3997"/>
         </scene>
@@ -54,7 +93,6 @@
         <!--Item-->
         <scene sceneID="niL-Yp-KWQ">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8XT-8k-PNF" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="HomeTabBestGrilledVegetablesViewController" id="kl5-Zf-lkc" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yf0-Ne-ElT">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -65,6 +103,7 @@
                     <tabBarItem key="tabBarItem" title="Item" id="ltZ-So-owW"/>
                     <navigationItem key="navigationItem" id="3Rs-aC-wFT"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8XT-8k-PNF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1359" y="-3119"/>
         </scene>

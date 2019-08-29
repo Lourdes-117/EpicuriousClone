@@ -17,6 +17,9 @@
 		5E207B8D231013FD001D5FDF /* HomeTabPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E207B8C231013FD001D5FDF /* HomeTabPageViewController.swift */; };
 		5E207B9023101515001D5FDF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E207B8F23101515001D5FDF /* Constants.swift */; };
 		5E207B93231016D6001D5FDF /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E207B92231016D6001D5FDF /* Strings.swift */; };
+		5E2BFFA723179440009FF188 /* NewestRecipiesPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2BFFA623179440009FF188 /* NewestRecipiesPageViewController.swift */; };
+		5E2BFFA9231794EB009FF188 /* GetDataFromApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2BFFA8231794EB009FF188 /* GetDataFromApi.swift */; };
+		5E2BFFAB2317955A009FF188 /* NewestRecipiesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2BFFAA2317955A009FF188 /* NewestRecipiesTableViewCell.swift */; };
 		5E8B52A42313C1D400E87646 /* SelectIngredientsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8B52A32313C1D400E87646 /* SelectIngredientsViewController.swift */; };
 		5E8B52A82313E3B200E87646 /* SelectIngredientCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8B52A72313E3B200E87646 /* SelectIngredientCell.swift */; };
 		5E8B52AA2313EE8E00E87646 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8B52A92313EE8E00E87646 /* TabBar.swift */; };
@@ -55,6 +58,9 @@
 		5E207B8C231013FD001D5FDF /* HomeTabPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabPageViewController.swift; sourceTree = "<group>"; };
 		5E207B8F23101515001D5FDF /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		5E207B92231016D6001D5FDF /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
+		5E2BFFA623179440009FF188 /* NewestRecipiesPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewestRecipiesPageViewController.swift; sourceTree = "<group>"; };
+		5E2BFFA8231794EB009FF188 /* GetDataFromApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetDataFromApi.swift; sourceTree = "<group>"; };
+		5E2BFFAA2317955A009FF188 /* NewestRecipiesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewestRecipiesTableViewCell.swift; sourceTree = "<group>"; };
 		5E8B52A32313C1D400E87646 /* SelectIngredientsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectIngredientsViewController.swift; sourceTree = "<group>"; };
 		5E8B52A72313E3B200E87646 /* SelectIngredientCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectIngredientCell.swift; sourceTree = "<group>"; };
 		5E8B52A92313EE8E00E87646 /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
@@ -94,6 +100,7 @@
 		5E207B6623100DE3001D5FDF = {
 			isa = PBXGroup;
 			children = (
+				5E2BFFA8231794EB009FF188 /* GetDataFromApi.swift */,
 				5E96AE9023154F3800FE632D /* CoreDataFetch.swift */,
 				5E96AE8B23154C5500FE632D /* ToDoCheckList+CoreDataClass.swift */,
 				5E96AE8C23154C5500FE632D /* ToDoCheckList+CoreDataProperties.swift */,
@@ -117,7 +124,6 @@
 			children = (
 				5E96AE852315304D00FE632D /* TabViewControllers */,
 				5EDB458E2313A0A600FA7BBB /* Storyboards */,
-				5E207B8923101380001D5FDF /* HomeTab */,
 				5E207B7223100DE3001D5FDF /* AppDelegate.swift */,
 				5E207B7423100DE3001D5FDF /* ViewController.swift */,
 				5E207B7C23100DE4001D5FDF /* Assets.xcassets */,
@@ -132,6 +138,7 @@
 		5E207B8923101380001D5FDF /* HomeTab */ = {
 			isa = PBXGroup;
 			children = (
+				5E2BFFA52317940B009FF188 /* NewestRecipiesPage */,
 				5E207B8C231013FD001D5FDF /* HomeTabPageViewController.swift */,
 			);
 			path = HomeTab;
@@ -152,6 +159,15 @@
 				5E8B52A92313EE8E00E87646 /* TabBar.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		5E2BFFA52317940B009FF188 /* NewestRecipiesPage */ = {
+			isa = PBXGroup;
+			children = (
+				5E2BFFA623179440009FF188 /* NewestRecipiesPageViewController.swift */,
+				5E2BFFAA2317955A009FF188 /* NewestRecipiesTableViewCell.swift */,
+			);
+			path = NewestRecipiesPage;
 			sourceTree = "<group>";
 		};
 		5E8B52A22313C16D00E87646 /* SelectIngredients */ = {
@@ -188,6 +204,7 @@
 		5E96AE852315304D00FE632D /* TabViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				5E207B8923101380001D5FDF /* HomeTab */,
 				5E96AE862315306600FE632D /* CheckListTab */,
 				5EDB459B2313A93000FA7BBB /* TimerTab */,
 			);
@@ -311,9 +328,11 @@
 				5E207B7B23100DE3001D5FDF /* EpicuriousClone.xcdatamodeld in Sources */,
 				5E207B8D231013FD001D5FDF /* HomeTabPageViewController.swift in Sources */,
 				5E207B7523100DE3001D5FDF /* ViewController.swift in Sources */,
+				5E2BFFA9231794EB009FF188 /* GetDataFromApi.swift in Sources */,
 				5EDB459F2313AC7700FA7BBB /* TimerTabViewController.swift in Sources */,
 				5EDB45A12313B4D100FA7BBB /* CategoriesModel.swift in Sources */,
 				5E96AE882315308700FE632D /* CheckListViewController.swift in Sources */,
+				5E2BFFAB2317955A009FF188 /* NewestRecipiesTableViewCell.swift in Sources */,
 				5E207B7323100DE3001D5FDF /* AppDelegate.swift in Sources */,
 				5E96AE9123154F3800FE632D /* CoreDataFetch.swift in Sources */,
 				5E8B52B1231400FB00E87646 /* CookingDeepnessReusableCellCollectionViewCell.swift in Sources */,
@@ -329,6 +348,7 @@
 				5E8B52AF231400D700E87646 /* ThinknessReusableCellCollectionViewCell.swift in Sources */,
 				5E96AE8A231549CF00FE632D /* CheckListReusableCellTableViewCell.swift in Sources */,
 				5E8B52AD2313FDA800E87646 /* RecipeDescriptionViewController.swift in Sources */,
+				5E2BFFA723179440009FF188 /* NewestRecipiesPageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
