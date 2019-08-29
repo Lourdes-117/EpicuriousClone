@@ -1,0 +1,32 @@
+[
+    {
+        "recipeName":"Zatar Spice Blend",
+        "recipeImageUrl":"This is just a text now",
+        "rating":"3",
+        "reviews":[
+            {
+                "points":"4",
+                "content":"This is the review content 1"
+            },
+            {
+                "points":"2",
+                "content":"This is the review content 2"
+            }
+        ]
+    },
+    {
+        "recipeName":"Pork",
+        "recipeImageUrl":"This is another text",
+        "rating":"2",
+        "reviews":[
+            {
+                "points":"2",
+                "content":"This is another review content 1"
+            },
+            {
+                "points":"4",
+                "content":"This is another review content 2"
+            }
+        ]
+    }
+]

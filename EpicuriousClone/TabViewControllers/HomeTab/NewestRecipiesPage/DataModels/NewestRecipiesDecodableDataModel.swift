@@ -8,6 +8,8 @@
 
 import Foundation
 struct NewestRecipiesDecodableDataModel: Decodable {
-    var recipeName:String
-    var recipeImageUrl:String
+    var recipeName:String!
+    var recipeImageUrl:String!
+    var rating:String!
+    var reviews:[NewestRecipieReviewDecodableDataModel]!
 }

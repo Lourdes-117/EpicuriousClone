@@ -23,6 +23,7 @@
 		5E2BFFAD2317ACEA009FF188 /* RecipeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2BFFAC2317ACEA009FF188 /* RecipeCollectionViewCell.swift */; };
 		5E2BFFAF2317DCDD009FF188 /* NewestRecipiesDecodableDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2BFFAE2317DCDD009FF188 /* NewestRecipiesDecodableDataModel.swift */; };
 		5E2BFFB82317F0DF009FF188 /* HomeTabNewestRecipePageJSON.json in Resources */ = {isa = PBXBuildFile; fileRef = 5E2BFFB72317F0DF009FF188 /* HomeTabNewestRecipePageJSON.json */; };
+		5E2BFFBB2317F524009FF188 /* NewestRecipieReviewDecodableDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2BFFBA2317F524009FF188 /* NewestRecipieReviewDecodableDataModel.swift */; };
 		5E8B52A42313C1D400E87646 /* SelectIngredientsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8B52A32313C1D400E87646 /* SelectIngredientsViewController.swift */; };
 		5E8B52A82313E3B200E87646 /* SelectIngredientCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8B52A72313E3B200E87646 /* SelectIngredientCell.swift */; };
 		5E8B52AA2313EE8E00E87646 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8B52A92313EE8E00E87646 /* TabBar.swift */; };
@@ -67,6 +68,7 @@
 		5E2BFFAC2317ACEA009FF188 /* RecipeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCollectionViewCell.swift; sourceTree = "<group>"; };
 		5E2BFFAE2317DCDD009FF188 /* NewestRecipiesDecodableDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewestRecipiesDecodableDataModel.swift; sourceTree = "<group>"; };
 		5E2BFFB72317F0DF009FF188 /* HomeTabNewestRecipePageJSON.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = HomeTabNewestRecipePageJSON.json; sourceTree = "<group>"; };
+		5E2BFFBA2317F524009FF188 /* NewestRecipieReviewDecodableDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewestRecipieReviewDecodableDataModel.swift; sourceTree = "<group>"; };
 		5E8B52A32313C1D400E87646 /* SelectIngredientsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectIngredientsViewController.swift; sourceTree = "<group>"; };
 		5E8B52A72313E3B200E87646 /* SelectIngredientCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectIngredientCell.swift; sourceTree = "<group>"; };
 		5E8B52A92313EE8E00E87646 /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
@@ -171,12 +173,21 @@
 		5E2BFFA52317940B009FF188 /* NewestRecipiesPage */ = {
 			isa = PBXGroup;
 			children = (
+				5E2BFFB92317F3EB009FF188 /* DataModels */,
 				5E2BFFA623179440009FF188 /* NewestRecipiesPageViewController.swift */,
 				5E2BFFAA2317955A009FF188 /* NewestRecipiesCollectionViewCell.swift */,
 				5E2BFFAC2317ACEA009FF188 /* RecipeCollectionViewCell.swift */,
-				5E2BFFAE2317DCDD009FF188 /* NewestRecipiesDecodableDataModel.swift */,
 			);
 			path = NewestRecipiesPage;
+			sourceTree = "<group>";
+		};
+		5E2BFFB92317F3EB009FF188 /* DataModels */ = {
+			isa = PBXGroup;
+			children = (
+				5E2BFFAE2317DCDD009FF188 /* NewestRecipiesDecodableDataModel.swift */,
+				5E2BFFBA2317F524009FF188 /* NewestRecipieReviewDecodableDataModel.swift */,
+			);
+			path = DataModels;
 			sourceTree = "<group>";
 		};
 		5E8B52A22313C16D00E87646 /* SelectIngredients */ = {
@@ -337,6 +348,7 @@
 				5E207B8823100E51001D5FDF /* PersistentService.swift in Sources */,
 				5E8B52A82313E3B200E87646 /* SelectIngredientCell.swift in Sources */,
 				5E207B7B23100DE3001D5FDF /* EpicuriousClone.xcdatamodeld in Sources */,
+				5E2BFFBB2317F524009FF188 /* NewestRecipieReviewDecodableDataModel.swift in Sources */,
 				5E207B8D231013FD001D5FDF /* HomeTabPageViewController.swift in Sources */,
 				5E207B7523100DE3001D5FDF /* ViewController.swift in Sources */,
 				5E2BFFA9231794EB009FF188 /* GetDataFromApi.swift in Sources */,
