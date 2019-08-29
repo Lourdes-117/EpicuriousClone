@@ -17,15 +17,15 @@ extension String {
 
     public func getImge() -> UIImage {
         switch self {
-        case Constants.Images.STEAK:
+        case Constants.HomeTab.STEAK:
             return #imageLiteral(resourceName: "Steak_Image")
-        case Constants.Images.VEGETABLES:
+        case Constants.HomeTab.VEGETABLES:
             return #imageLiteral(resourceName: "Vegetables_Image")
-        case Constants.Images.CHICKEN_AND_PORK:
+        case Constants.HomeTab.CHICKEN_AND_PORK:
             return #imageLiteral(resourceName: "Chicken_Image")
-        case Constants.Images.SEAFOOD:
+        case Constants.HomeTab.SEAFOOD:
             return #imageLiteral(resourceName: "Seafood_Image")
-        case Constants.Images.EGGS:
+        case Constants.HomeTab.EGGS:
             return #imageLiteral(resourceName: "Eggs_Image")
         default:
             return #imageLiteral(resourceName: "Steak_Image")

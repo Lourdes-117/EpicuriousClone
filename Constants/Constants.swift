@@ -14,7 +14,7 @@ struct Constants {
         public static let NEWEST_VIDEOS:String = "HomeTabNewestVideosViewController"
     }
 
-    struct Images {
+    struct HomeTab {
         public static let STEAK:String = "Steak_Image"
         public static let VEGETABLES:String = "Vegetables_Image"
         public static let CHICKEN_AND_PORK:String = "Chicken_And_Pork_Image"
@@ -80,5 +80,7 @@ struct Constants {
         public static let ITEMS:String = "ITEMS"
         public static let EDIT:String = "EDIT"
         public static let DONE:String = "DONE"
+        public static let REVIEWS_RED:String = "Reviews_Red"
+        public static let REVIEWS_GREY:String = "Reviews_Grey"
     }
 }

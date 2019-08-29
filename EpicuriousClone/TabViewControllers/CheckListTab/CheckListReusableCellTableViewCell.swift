@@ -25,7 +25,7 @@ class CheckListReusableCellTableViewCell: UITableViewCell {
     public func setValues(data dataOptional:ToDoCheckList?, ofContext context:CheckListViewController) {
         checkListViewController = context
         guard let data = dataOptional else {
-            checkListItemStatus.setImage(UIImage(named: Constants.Images.ADD_TASK), for: .normal)
+            checkListItemStatus.setImage(UIImage(named: Constants.HomeTab.ADD_TASK), for: .normal)
             checkListItemName.text = ""
             checkListItemName.placeholder = "Add Ingredient"
             checkListItemName.isEnabled = true
@@ -34,15 +34,15 @@ class CheckListReusableCellTableViewCell: UITableViewCell {
         selectedTask = data
         checkListItemName.text = data.checkListItemName
         if(CheckListViewController.isEditingEnabled) {
-            checkListItemStatus.setImage(UIImage(named: Constants.Images.DELETE_TASK), for: .normal)
+            checkListItemStatus.setImage(UIImage(named: Constants.HomeTab.DELETE_TASK), for: .normal)
             checkListItemName.isEnabled = true
             checkListItemStatus.isEnabled = true
         } else if(data.checkListItemIsPurchased) {
-            checkListItemStatus.setImage(UIImage(named: Constants.Images.TASK_COMPLETED), for: .normal)
+            checkListItemStatus.setImage(UIImage(named: Constants.HomeTab.TASK_COMPLETED), for: .normal)
             checkListItemName.isEnabled = false
             checkListItemStatus.isEnabled = false
         } else {
-            checkListItemStatus.setImage(UIImage(named: Constants.Images.TASK_INCOMPLETE), for: .normal)
+            checkListItemStatus.setImage(UIImage(named: Constants.HomeTab.TASK_INCOMPLETE), for: .normal)
             checkListItemName.isEnabled = false
             checkListItemStatus.isEnabled = false
         }

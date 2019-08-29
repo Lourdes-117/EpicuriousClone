@@ -19,7 +19,10 @@
 		5E207B93231016D6001D5FDF /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E207B92231016D6001D5FDF /* Strings.swift */; };
 		5E2BFFA723179440009FF188 /* NewestRecipiesPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2BFFA623179440009FF188 /* NewestRecipiesPageViewController.swift */; };
 		5E2BFFA9231794EB009FF188 /* GetDataFromApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2BFFA8231794EB009FF188 /* GetDataFromApi.swift */; };
-		5E2BFFAB2317955A009FF188 /* NewestRecipiesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2BFFAA2317955A009FF188 /* NewestRecipiesTableViewCell.swift */; };
+		5E2BFFAB2317955A009FF188 /* NewestRecipiesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2BFFAA2317955A009FF188 /* NewestRecipiesCollectionViewCell.swift */; };
+		5E2BFFAD2317ACEA009FF188 /* RecipeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2BFFAC2317ACEA009FF188 /* RecipeCollectionViewCell.swift */; };
+		5E2BFFAF2317DCDD009FF188 /* NewestRecipiesDecodableDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2BFFAE2317DCDD009FF188 /* NewestRecipiesDecodableDataModel.swift */; };
+		5E2BFFB82317F0DF009FF188 /* HomeTabNewestRecipePageJSON.json in Resources */ = {isa = PBXBuildFile; fileRef = 5E2BFFB72317F0DF009FF188 /* HomeTabNewestRecipePageJSON.json */; };
 		5E8B52A42313C1D400E87646 /* SelectIngredientsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8B52A32313C1D400E87646 /* SelectIngredientsViewController.swift */; };
 		5E8B52A82313E3B200E87646 /* SelectIngredientCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8B52A72313E3B200E87646 /* SelectIngredientCell.swift */; };
 		5E8B52AA2313EE8E00E87646 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8B52A92313EE8E00E87646 /* TabBar.swift */; };
@@ -60,7 +63,10 @@
 		5E207B92231016D6001D5FDF /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		5E2BFFA623179440009FF188 /* NewestRecipiesPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewestRecipiesPageViewController.swift; sourceTree = "<group>"; };
 		5E2BFFA8231794EB009FF188 /* GetDataFromApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetDataFromApi.swift; sourceTree = "<group>"; };
-		5E2BFFAA2317955A009FF188 /* NewestRecipiesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewestRecipiesTableViewCell.swift; sourceTree = "<group>"; };
+		5E2BFFAA2317955A009FF188 /* NewestRecipiesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewestRecipiesCollectionViewCell.swift; sourceTree = "<group>"; };
+		5E2BFFAC2317ACEA009FF188 /* RecipeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCollectionViewCell.swift; sourceTree = "<group>"; };
+		5E2BFFAE2317DCDD009FF188 /* NewestRecipiesDecodableDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewestRecipiesDecodableDataModel.swift; sourceTree = "<group>"; };
+		5E2BFFB72317F0DF009FF188 /* HomeTabNewestRecipePageJSON.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = HomeTabNewestRecipePageJSON.json; sourceTree = "<group>"; };
 		5E8B52A32313C1D400E87646 /* SelectIngredientsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectIngredientsViewController.swift; sourceTree = "<group>"; };
 		5E8B52A72313E3B200E87646 /* SelectIngredientCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectIngredientCell.swift; sourceTree = "<group>"; };
 		5E8B52A92313EE8E00E87646 /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
@@ -108,6 +114,7 @@
 				5E207B8E23101501001D5FDF /* Constants */,
 				5E207B7123100DE3001D5FDF /* EpicuriousClone */,
 				5E207B7023100DE3001D5FDF /* Products */,
+				5E2BFFB72317F0DF009FF188 /* HomeTabNewestRecipePageJSON.json */,
 			);
 			sourceTree = "<group>";
 		};
@@ -165,7 +172,9 @@
 			isa = PBXGroup;
 			children = (
 				5E2BFFA623179440009FF188 /* NewestRecipiesPageViewController.swift */,
-				5E2BFFAA2317955A009FF188 /* NewestRecipiesTableViewCell.swift */,
+				5E2BFFAA2317955A009FF188 /* NewestRecipiesCollectionViewCell.swift */,
+				5E2BFFAC2317ACEA009FF188 /* RecipeCollectionViewCell.swift */,
+				5E2BFFAE2317DCDD009FF188 /* NewestRecipiesDecodableDataModel.swift */,
 			);
 			path = NewestRecipiesPage;
 			sourceTree = "<group>";
@@ -303,6 +312,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E2BFFB82317F0DF009FF188 /* HomeTabNewestRecipePageJSON.json in Resources */,
 				5EDB45962313A15400FA7BBB /* CheckListTab.storyboard in Resources */,
 				5EDB45922313A12800FA7BBB /* TimerTab.storyboard in Resources */,
 				5E207B8023100DE4001D5FDF /* LaunchScreen.storyboard in Resources */,
@@ -322,6 +332,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5E96AE82231502E700FE632D /* PreparationStepsViewController.swift in Sources */,
+				5E2BFFAF2317DCDD009FF188 /* NewestRecipiesDecodableDataModel.swift in Sources */,
 				5E8B52A42313C1D400E87646 /* SelectIngredientsViewController.swift in Sources */,
 				5E207B8823100E51001D5FDF /* PersistentService.swift in Sources */,
 				5E8B52A82313E3B200E87646 /* SelectIngredientCell.swift in Sources */,
@@ -332,7 +343,7 @@
 				5EDB459F2313AC7700FA7BBB /* TimerTabViewController.swift in Sources */,
 				5EDB45A12313B4D100FA7BBB /* CategoriesModel.swift in Sources */,
 				5E96AE882315308700FE632D /* CheckListViewController.swift in Sources */,
-				5E2BFFAB2317955A009FF188 /* NewestRecipiesTableViewCell.swift in Sources */,
+				5E2BFFAB2317955A009FF188 /* NewestRecipiesCollectionViewCell.swift in Sources */,
 				5E207B7323100DE3001D5FDF /* AppDelegate.swift in Sources */,
 				5E96AE9123154F3800FE632D /* CoreDataFetch.swift in Sources */,
 				5E8B52B1231400FB00E87646 /* CookingDeepnessReusableCellCollectionViewCell.swift in Sources */,
@@ -348,6 +359,7 @@
 				5E8B52AF231400D700E87646 /* ThinknessReusableCellCollectionViewCell.swift in Sources */,
 				5E96AE8A231549CF00FE632D /* CheckListReusableCellTableViewCell.swift in Sources */,
 				5E8B52AD2313FDA800E87646 /* RecipeDescriptionViewController.swift in Sources */,
+				5E2BFFAD2317ACEA009FF188 /* RecipeCollectionViewCell.swift in Sources */,
 				5E2BFFA723179440009FF188 /* NewestRecipiesPageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -494,14 +506,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = D2P9XDG372;
 				INFOPLIST_FILE = EpicuriousClone/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.lourdes.EpicuriousClone;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -511,14 +527,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = D2P9XDG372;
 				INFOPLIST_FILE = EpicuriousClone/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.lourdes.EpicuriousClone;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

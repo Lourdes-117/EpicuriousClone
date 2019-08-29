@@ -8,6 +8,6 @@
 
 import UIKit
 
-class NewestRecipiesTableViewCell: UITableViewCell {
+class NewestRecipiesCollectionViewCell: UICollectionReusableView {
     static let reusableIdentity = "NewestRecipiesTitleCellReusableIdentity"
 }

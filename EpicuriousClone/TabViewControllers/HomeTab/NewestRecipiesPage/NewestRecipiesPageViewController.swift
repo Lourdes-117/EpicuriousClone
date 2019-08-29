@@ -9,27 +9,30 @@
 import UIKit
 
 class NewestRecipiesPageViewController: UIViewController {
-    @IBOutlet weak var recipiesTableView: UITableView!
+    @IBOutlet weak var recipiesCollectionView: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
         print("Newest Recipies Page View Loaded")
-        recipiesTableView.dataSource = self
+        recipiesCollectionView.dataSource = self
     }
 }
 
-extension NewestRecipiesPageViewController: UITableViewDataSource {
-    func numberOfSections(in tableView: UITableView) -> Int {
+extension NewestRecipiesPageViewController: UICollectionViewDataSource {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
-
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 20
     }
 
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = recipiesTableView.dequeueReusableCell(withIdentifier: NewestRecipiesTableViewCell.reusableIdentity) as! NewestRecipiesTableViewCell
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = recipiesCollectionView.dequeueReusableCell(withReuseIdentifier: RecipeCollectionViewCell.reusableIdentity, for: indexPath) as! RecipeCollectionViewCell
         return cell
     }
 
-
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        let cell = recipiesCollectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: NewestRecipiesCollectionViewCell.reusableIdentity, for: indexPath) as! NewestRecipiesCollectionViewCell
+        return cell
+    }
 }

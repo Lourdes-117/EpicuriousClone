@@ -30,7 +30,7 @@ class DescriptionDataModel {
         var steps: [(String, String)] = [("Text1", "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."), ("Text2","The point of using Lorem Ipsum is that it has a more-or-less normal distribution o letters"), ("Text3","As opposed to using 'Content here, content here', making it look like readable English.")]
         var defaultMinutes: String = "6"
         var defaultSeconds: String = "30"
-        var recipeImage: UIImage = UIImage(named: Constants.Images.FLANK_STEAK)!
+        var recipeImage: UIImage = UIImage(named: Constants.HomeTab.FLANK_STEAK)!
     }
     struct StripSteak:DescriptionDataModelProtocol {
         var recipeName: String = "N.Y Strip Steak"
@@ -40,7 +40,7 @@ class DescriptionDataModel {
         var steps: [(String, String)] = [("Text1", "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."), ("Text2","The point of using Lorem Ipsum is that it has a more-or-less normal distribution o letters"), ("Text3","As opposed to using 'Content here, content here', making it look like readable English.")]
         var defaultMinutes: String = "6"
         var defaultSeconds: String = "30"
-        var recipeImage: UIImage = UIImage(named: Constants.Images.NY_FLANK_STEAK)!
+        var recipeImage: UIImage = UIImage(named: Constants.HomeTab.NY_FLANK_STEAK)!
     }
 
     struct PorterHouse:DescriptionDataModelProtocol {
@@ -51,7 +51,7 @@ class DescriptionDataModel {
         var steps: [(String, String)] = [("Text1", "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."), ("Text2","The point of using Lorem Ipsum is that it has a more-or-less normal distribution o letters"), ("Text3","As opposed to using 'Content here, content here', making it look like readable English.")]
         var defaultMinutes: String = "6"
         var defaultSeconds: String = "30"
-        var recipeImage: UIImage = UIImage(named: Constants.Images.PORTERHOUSE)!
+        var recipeImage: UIImage = UIImage(named: Constants.HomeTab.PORTERHOUSE)!
     }
 
     struct RibeyeSteakBoneLess:DescriptionDataModelProtocol {
@@ -62,7 +62,7 @@ class DescriptionDataModel {
         var steps: [(String, String)] = [("Text1", "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."), ("Text2","The point of using Lorem Ipsum is that it has a more-or-less normal distribution o letters"), ("Text3","As opposed to using 'Content here, content here', making it look like readable English.")]
         var defaultMinutes: String = "6"
         var defaultSeconds: String = "30"
-        var recipeImage: UIImage = UIImage(named: Constants.Images.RIBEYE_STEAK_BONELESS)!
+        var recipeImage: UIImage = UIImage(named: Constants.HomeTab.RIBEYE_STEAK_BONELESS)!
     }
 
     struct SkirtSteak:DescriptionDataModelProtocol {
@@ -73,7 +73,7 @@ class DescriptionDataModel {
         var steps: [(String, String)] = [("Text1", "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."), ("Text2","The point of using Lorem Ipsum is that it has a more-or-less normal distribution o letters"), ("Text3","As opposed to using 'Content here, content here', making it look like readable English.")]
         var defaultMinutes: String = "6"
         var defaultSeconds: String = "30"
-        var recipeImage: UIImage = UIImage(named: Constants.Images.SKIRT_STEAK)!
+        var recipeImage: UIImage = UIImage(named: Constants.HomeTab.SKIRT_STEAK)!
     }
 
     //Vegetables
@@ -85,7 +85,7 @@ class DescriptionDataModel {
         var steps: [(String, String)] = [("Text1", "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."), ("Text2","The point of using Lorem Ipsum is that it has a more-or-less normal distribution o letters"), ("Text3","As opposed to using 'Content here, content here', making it look like readable English.")]
         var defaultMinutes: String = "6"
         var defaultSeconds: String = "30"
-        var recipeImage: UIImage = UIImage(named: Constants.Images.ACRON_SQUASH)!
+        var recipeImage: UIImage = UIImage(named: Constants.HomeTab.ACRON_SQUASH)!
     }
 
     struct Beets:DescriptionDataModelProtocol {
@@ -96,7 +96,7 @@ class DescriptionDataModel {
         var steps: [(String, String)] = [("Text1", "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."), ("Text2","The point of using Lorem Ipsum is that it has a more-or-less normal distribution o letters"), ("Text3","As opposed to using 'Content here, content here', making it look like readable English.")]
         var defaultMinutes: String = "6"
         var defaultSeconds: String = "30"
-        var recipeImage: UIImage = UIImage(named: Constants.Images.BEETS)!
+        var recipeImage: UIImage = UIImage(named: Constants.HomeTab.BEETS)!
     }
 
     struct Broccoli:DescriptionDataModelProtocol {
@@ -107,7 +107,7 @@ class DescriptionDataModel {
         var steps: [(String, String)] = [("Text1", "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."), ("Text2","The point of using Lorem Ipsum is that it has a more-or-less normal distribution o letters"), ("Text3","As opposed to using 'Content here, content here', making it look like readable English.")]
         var defaultMinutes: String = "6"
         var defaultSeconds: String = "30"
-        var recipeImage: UIImage = UIImage(named: Constants.Images.BROCOLLI)!
+        var recipeImage: UIImage = UIImage(named: Constants.HomeTab.BROCOLLI)!
     }
 
     struct BrusselSprouts:DescriptionDataModelProtocol {
@@ -118,7 +118,7 @@ class DescriptionDataModel {
         var steps: [(String, String)] = [("Text1", "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."), ("Text2","The point of using Lorem Ipsum is that it has a more-or-less normal distribution o letters"), ("Text3","As opposed to using 'Content here, content here', making it look like readable English.")]
         var defaultMinutes: String = "6"
         var defaultSeconds: String = "30"
-        var recipeImage: UIImage = UIImage(named: Constants.Images.BRUSSEL_SPROUTS)!
+        var recipeImage: UIImage = UIImage(named: Constants.HomeTab.BRUSSEL_SPROUTS)!
     }
 
     struct ButternutSquash:DescriptionDataModelProtocol {
@@ -129,7 +129,7 @@ class DescriptionDataModel {
         var steps: [(String, String)] = [("Text1", "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."), ("Text2","The point of using Lorem Ipsum is that it has a more-or-less normal distribution o letters"), ("Text3","As opposed to using 'Content here, content here', making it look like readable English.")]
         var defaultMinutes: String = "6"
         var defaultSeconds: String = "30"
-        var recipeImage: UIImage = UIImage(named: Constants.Images.BUTTERNUT_SQUASH)!
+        var recipeImage: UIImage = UIImage(named: Constants.HomeTab.BUTTERNUT_SQUASH)!
     }
 
     struct CarrotParsnips:DescriptionDataModelProtocol {
@@ -140,7 +140,7 @@ class DescriptionDataModel {
         var steps: [(String, String)] = [("Text1", "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."), ("Text2","The point of using Lorem Ipsum is that it has a more-or-less normal distribution o letters"), ("Text3","As opposed to using 'Content here, content here', making it look like readable English.")]
         var defaultMinutes: String = "6"
         var defaultSeconds: String = "30"
-        var recipeImage: UIImage = UIImage(named: Constants.Images.CARROTS_OR_PARSNIPS)!
+        var recipeImage: UIImage = UIImage(named: Constants.HomeTab.CARROTS_OR_PARSNIPS)!
     }
 
     struct Cauliflower:DescriptionDataModelProtocol {
@@ -151,7 +151,7 @@ class DescriptionDataModel {
         var steps: [(String, String)] = [("Text1", "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."), ("Text2","The point of using Lorem Ipsum is that it has a more-or-less normal distribution o letters"), ("Text3","As opposed to using 'Content here, content here', making it look like readable English.")]
         var defaultMinutes: String = "6"
         var defaultSeconds: String = "30"
-        var recipeImage: UIImage = UIImage(named: Constants.Images.CAULIFLOWER)!
+        var recipeImage: UIImage = UIImage(named: Constants.HomeTab.CAULIFLOWER)!
     }
 
     struct Eggplant:DescriptionDataModelProtocol {
@@ -162,7 +162,7 @@ class DescriptionDataModel {
         var steps: [(String, String)] = [("Text1", "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."), ("Text2","The point of using Lorem Ipsum is that it has a more-or-less normal distribution o letters"), ("Text3","As opposed to using 'Content here, content here', making it look like readable English.")]
         var defaultMinutes: String = "6"
         var defaultSeconds: String = "30"
-        var recipeImage: UIImage = UIImage(named: Constants.Images.EGGPLANT)!
+        var recipeImage: UIImage = UIImage(named: Constants.HomeTab.EGGPLANT)!
     }
 
     struct Mushrooms:DescriptionDataModelProtocol {
@@ -173,7 +173,7 @@ class DescriptionDataModel {
         var steps: [(String, String)] = [("Text1", "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."), ("Text2","The point of using Lorem Ipsum is that it has a more-or-less normal distribution o letters"), ("Text3","As opposed to using 'Content here, content here', making it look like readable English.")]
         var defaultMinutes: String = "6"
         var defaultSeconds: String = "30"
-        var recipeImage: UIImage = UIImage(named: Constants.Images.MUSHROOMS)!
+        var recipeImage: UIImage = UIImage(named: Constants.HomeTab.MUSHROOMS)!
     }
 
     struct SpaghettiSquash:DescriptionDataModelProtocol {
@@ -184,7 +184,7 @@ class DescriptionDataModel {
         var steps: [(String, String)] = [("Text1", "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."), ("Text2","The point of using Lorem Ipsum is that it has a more-or-less normal distribution o letters"), ("Text3","As opposed to using 'Content here, content here', making it look like readable English.")]
         var defaultMinutes: String = "6"
         var defaultSeconds: String = "30"
-        var recipeImage: UIImage = UIImage(named: Constants.Images.SPAGETTI_SQUASH)!
+        var recipeImage: UIImage = UIImage(named: Constants.HomeTab.SPAGETTI_SQUASH)!
     }
 
     struct SweetPotatoes:DescriptionDataModelProtocol {
@@ -195,7 +195,7 @@ class DescriptionDataModel {
         var steps: [(String, String)] = [("Text1", "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."), ("Text2","The point of using Lorem Ipsum is that it has a more-or-less normal distribution o letters"), ("Text3","As opposed to using 'Content here, content here', making it look like readable English.")]
         var defaultMinutes: String = "6"
         var defaultSeconds: String = "30"
-        var recipeImage: UIImage = UIImage(named: Constants.Images.SWEET_POTATOES)!
+        var recipeImage: UIImage = UIImage(named: Constants.HomeTab.SWEET_POTATOES)!
     }
 
     struct Tomatoes:DescriptionDataModelProtocol {
@@ -206,7 +206,7 @@ class DescriptionDataModel {
         var steps: [(String, String)] = [("Text1", "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."), ("Text2","The point of using Lorem Ipsum is that it has a more-or-less normal distribution o letters"), ("Text3","As opposed to using 'Content here, content here', making it look like readable English.")]
         var defaultMinutes: String = "6"
         var defaultSeconds: String = "30"
-        var recipeImage: UIImage = UIImage(named: Constants.Images.TOMATOES)!
+        var recipeImage: UIImage = UIImage(named: Constants.HomeTab.TOMATOES)!
     }
 
     struct ZuchiniorSummerSquash:DescriptionDataModelProtocol {
@@ -217,7 +217,7 @@ class DescriptionDataModel {
         var steps: [(String, String)] = [("Text1", "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."), ("Text2","The point of using Lorem Ipsum is that it has a more-or-less normal distribution o letters"), ("Text3","As opposed to using 'Content here, content here', making it look like readable English.")]
         var defaultMinutes: String = "6"
         var defaultSeconds: String = "30"
-        var recipeImage: UIImage = UIImage(named: Constants.Images.ZUCHENNI_OR_SUMMER_SQUASH)!
+        var recipeImage: UIImage = UIImage(named: Constants.HomeTab.ZUCHENNI_OR_SUMMER_SQUASH)!
     }
 
     //ChickenAndPork
@@ -229,7 +229,7 @@ class DescriptionDataModel {
         var steps: [(String, String)] = [("Text1", "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."), ("Text2","The point of using Lorem Ipsum is that it has a more-or-less normal distribution o letters"), ("Text3","As opposed to using 'Content here, content here', making it look like readable English.")]
         var defaultMinutes: String = "6"
         var defaultSeconds: String = "30"
-        var recipeImage: UIImage = UIImage(named: Constants.Images.CHICKEN_BREAST_BONE_IN_AND_SKIN_ON)!
+        var recipeImage: UIImage = UIImage(named: Constants.HomeTab.CHICKEN_BREAST_BONE_IN_AND_SKIN_ON)!
     }
     struct ChickenBreastBonelessAndSkinless:DescriptionDataModelProtocol {
         var recipeName: String = "Chicken Breast, Boneless and Skinless"
@@ -239,7 +239,7 @@ class DescriptionDataModel {
         var steps: [(String, String)] = [("Text1", "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."), ("Text2","The point of using Lorem Ipsum is that it has a more-or-less normal distribution o letters"), ("Text3","As opposed to using 'Content here, content here', making it look like readable English.")]
         var defaultMinutes: String = "6"
         var defaultSeconds: String = "30"
-        var recipeImage: UIImage = UIImage(named: Constants.Images.CHICKEN_BREASTS_BONELESS_AND_SKINLESS)!
+        var recipeImage: UIImage = UIImage(named: Constants.HomeTab.CHICKEN_BREASTS_BONELESS_AND_SKINLESS)!
     }
     struct ChickenCutlets:DescriptionDataModelProtocol {
         var recipeName: String = "Chicken Cutlets"
@@ -249,7 +249,7 @@ class DescriptionDataModel {
         var steps: [(String, String)] = [("Text1", "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."), ("Text2","The point of using Lorem Ipsum is that it has a more-or-less normal distribution o letters"), ("Text3","As opposed to using 'Content here, content here', making it look like readable English.")]
         var defaultMinutes: String = "6"
         var defaultSeconds: String = "30"
-        var recipeImage: UIImage = UIImage(named: Constants.Images.CHICKEN_CUTLETS)!
+        var recipeImage: UIImage = UIImage(named: Constants.HomeTab.CHICKEN_CUTLETS)!
     }
     struct ChickenDrumsticks:DescriptionDataModelProtocol {
         var recipeName: String = "Chicken Drumsticks"
@@ -259,7 +259,7 @@ class DescriptionDataModel {
         var steps: [(String, String)] = [("Text1", "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."), ("Text2","The point of using Lorem Ipsum is that it has a more-or-less normal distribution o letters"), ("Text3","As opposed to using 'Content here, content here', making it look like readable English.")]
         var defaultMinutes: String = "6"
         var defaultSeconds: String = "30"
-        var recipeImage: UIImage = UIImage(named: Constants.Images.CHICKEN_DRUMSTICKS)!
+        var recipeImage: UIImage = UIImage(named: Constants.HomeTab.CHICKEN_DRUMSTICKS)!
     }
     struct ChickenThighsBoneInAndSkinOn:DescriptionDataModelProtocol {
         var recipeName: String = "Chicken Thighs, Bone-In and Skin-On"
@@ -269,7 +269,7 @@ class DescriptionDataModel {
         var steps: [(String, String)] = [("Text1", "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."), ("Text2","The point of using Lorem Ipsum is that it has a more-or-less normal distribution o letters"), ("Text3","As opposed to using 'Content here, content here', making it look like readable English.")]
         var defaultMinutes: String = "6"
         var defaultSeconds: String = "30"
-        var recipeImage: UIImage = UIImage(named: Constants.Images.CHICKEN_THIGH_BONE_IN_AND_SKIN_ON)!
+        var recipeImage: UIImage = UIImage(named: Constants.HomeTab.CHICKEN_THIGH_BONE_IN_AND_SKIN_ON)!
     }
     struct ChickenThighsBonelessAndSkiless:DescriptionDataModelProtocol {
         var recipeName: String = "Chicken Thighs, Boneless and Skiless"
@@ -279,7 +279,7 @@ class DescriptionDataModel {
         var steps: [(String, String)] = [("Text1", "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."), ("Text2","The point of using Lorem Ipsum is that it has a more-or-less normal distribution o letters"), ("Text3","As opposed to using 'Content here, content here', making it look like readable English.")]
         var defaultMinutes: String = "6"
         var defaultSeconds: String = "30"
-        var recipeImage: UIImage = UIImage(named: Constants.Images.CHICKEN_THIGHS_BONELESS_AND_SKINLESS)!
+        var recipeImage: UIImage = UIImage(named: Constants.HomeTab.CHICKEN_THIGHS_BONELESS_AND_SKINLESS)!
     }
     struct WholeChicken:DescriptionDataModelProtocol {
         var recipeName: String = "Whole Chicken"
@@ -289,7 +289,7 @@ class DescriptionDataModel {
         var steps: [(String, String)] = [("Text1", "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."), ("Text2","The point of using Lorem Ipsum is that it has a more-or-less normal distribution o letters"), ("Text3","As opposed to using 'Content here, content here', making it look like readable English.")]
         var defaultMinutes: String = "6"
         var defaultSeconds: String = "30"
-        var recipeImage: UIImage = UIImage(named: Constants.Images.WHOLE_CHICKEN)!
+        var recipeImage: UIImage = UIImage(named: Constants.HomeTab.WHOLE_CHICKEN)!
     }
     struct PorkChopsBoneIn:DescriptionDataModelProtocol {
         var recipeName: String = "Pork Chops, Bone In"
@@ -299,7 +299,7 @@ class DescriptionDataModel {
         var steps: [(String, String)] = [("Text1", "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."), ("Text2","The point of using Lorem Ipsum is that it has a more-or-less normal distribution o letters"), ("Text3","As opposed to using 'Content here, content here', making it look like readable English.")]
         var defaultMinutes: String = "6"
         var defaultSeconds: String = "30"
-        var recipeImage: UIImage = UIImage(named: Constants.Images.PORK_CHOPS_BONE_IN)!
+        var recipeImage: UIImage = UIImage(named: Constants.HomeTab.PORK_CHOPS_BONE_IN)!
     }
     struct PorkChopsBoneless:DescriptionDataModelProtocol {
         var recipeName: String = "Pork Chops, Boneless"
@@ -309,7 +309,7 @@ class DescriptionDataModel {
         var steps: [(String, String)] = [("Text1", "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."), ("Text2","The point of using Lorem Ipsum is that it has a more-or-less normal distribution o letters"), ("Text3","As opposed to using 'Content here, content here', making it look like readable English.")]
         var defaultMinutes: String = "6"
         var defaultSeconds: String = "30"
-        var recipeImage: UIImage = UIImage(named: Constants.Images.PORK_CHOPS_BONELESS)!
+        var recipeImage: UIImage = UIImage(named: Constants.HomeTab.PORK_CHOPS_BONELESS)!
     }
     struct PorkLoinBonelessAndTied:DescriptionDataModelProtocol {
         var recipeName: String = "Pork Loin, Boneless and Tied"
@@ -319,7 +319,7 @@ class DescriptionDataModel {
         var steps: [(String, String)] = [("Text1", "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."), ("Text2","The point of using Lorem Ipsum is that it has a more-or-less normal distribution o letters"), ("Text3","As opposed to using 'Content here, content here', making it look like readable English.")]
         var defaultMinutes: String = "6"
         var defaultSeconds: String = "30"
-        var recipeImage: UIImage = UIImage(named: Constants.Images.PORK_LOINS_BONELESS_AND_TIED)!
+        var recipeImage: UIImage = UIImage(named: Constants.HomeTab.PORK_LOINS_BONELESS_AND_TIED)!
     }
     struct PorkTenderloin:DescriptionDataModelProtocol {
         var recipeName: String = "Pork Tenderloin"
@@ -329,7 +329,7 @@ class DescriptionDataModel {
         var steps: [(String, String)] = [("Text1", "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."), ("Text2","The point of using Lorem Ipsum is that it has a more-or-less normal distribution o letters"), ("Text3","As opposed to using 'Content here, content here', making it look like readable English.")]
         var defaultMinutes: String = "6"
         var defaultSeconds: String = "30"
-        var recipeImage: UIImage = UIImage(named: Constants.Images.PORK_TENDERLOIN)!
+        var recipeImage: UIImage = UIImage(named: Constants.HomeTab.PORK_TENDERLOIN)!
     }
 
     //Seafood
@@ -341,7 +341,7 @@ class DescriptionDataModel {
         var steps: [(String, String)] = [("Text1", "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."), ("Text2","The point of using Lorem Ipsum is that it has a more-or-less normal distribution o letters"), ("Text3","As opposed to using 'Content here, content here', making it look like readable English.")]
         var defaultMinutes: String = "6"
         var defaultSeconds: String = "30"
-        var recipeImage: UIImage = UIImage(named: Constants.Images.COD_FILLETS)!
+        var recipeImage: UIImage = UIImage(named: Constants.HomeTab.COD_FILLETS)!
     }
     struct SalmonFillet:DescriptionDataModelProtocol {
         var recipeName: String = "Salmon Fillet"
@@ -351,7 +351,7 @@ class DescriptionDataModel {
         var steps: [(String, String)] = [("Text1", "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."), ("Text2","The point of using Lorem Ipsum is that it has a more-or-less normal distribution o letters"), ("Text3","As opposed to using 'Content here, content here', making it look like readable English.")]
         var defaultMinutes: String = "6"
         var defaultSeconds: String = "30"
-        var recipeImage: UIImage = UIImage(named: Constants.Images.SALMON_FILLET)!
+        var recipeImage: UIImage = UIImage(named: Constants.HomeTab.SALMON_FILLET)!
     }
     struct SalmonSteaks:DescriptionDataModelProtocol {
         var recipeName: String = "Salmon Steaks"
@@ -361,7 +361,7 @@ class DescriptionDataModel {
         var steps: [(String, String)] = [("Text1", "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."), ("Text2","The point of using Lorem Ipsum is that it has a more-or-less normal distribution o letters"), ("Text3","As opposed to using 'Content here, content here', making it look like readable English.")]
         var defaultMinutes: String = "6"
         var defaultSeconds: String = "30"
-        var recipeImage: UIImage = UIImage(named: Constants.Images.SALMON_STEAKS)!
+        var recipeImage: UIImage = UIImage(named: Constants.HomeTab.SALMON_STEAKS)!
     }
     struct Shrimp:DescriptionDataModelProtocol {
         var recipeName: String = "Shrimp"
@@ -371,7 +371,7 @@ class DescriptionDataModel {
         var steps: [(String, String)] = [("Text1", "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."), ("Text2","The point of using Lorem Ipsum is that it has a more-or-less normal distribution o letters"), ("Text3","As opposed to using 'Content here, content here', making it look like readable English.")]
         var defaultMinutes: String = "6"
         var defaultSeconds: String = "30"
-        var recipeImage: UIImage = UIImage(named: Constants.Images.SHRIMP)!
+        var recipeImage: UIImage = UIImage(named: Constants.HomeTab.SHRIMP)!
     }
     struct Swordfish:DescriptionDataModelProtocol {
         var recipeName: String = "Swordfish Steaks"
@@ -381,7 +381,7 @@ class DescriptionDataModel {
         var steps: [(String, String)] = [("Text1", "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."), ("Text2","The point of using Lorem Ipsum is that it has a more-or-less normal distribution o letters"), ("Text3","As opposed to using 'Content here, content here', making it look like readable English.")]
         var defaultMinutes: String = "6"
         var defaultSeconds: String = "30"
-        var recipeImage: UIImage = UIImage(named: Constants.Images.SWORDFISH_STEAKS)!
+        var recipeImage: UIImage = UIImage(named: Constants.HomeTab.SWORDFISH_STEAKS)!
     }
     struct TilapiaFilet:DescriptionDataModelProtocol {
         var recipeName: String = "Tilapia Filets"
@@ -391,7 +391,7 @@ class DescriptionDataModel {
         var steps: [(String, String)] = [("Text1", "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."), ("Text2","The point of using Lorem Ipsum is that it has a more-or-less normal distribution o letters"), ("Text3","As opposed to using 'Content here, content here', making it look like readable English.")]
         var defaultMinutes: String = "6"
         var defaultSeconds: String = "30"
-        var recipeImage: UIImage = UIImage(named: Constants.Images.TILAPA_FILETS)!
+        var recipeImage: UIImage = UIImage(named: Constants.HomeTab.TILAPA_FILETS)!
     }
 
     //Eggs
@@ -403,7 +403,7 @@ class DescriptionDataModel {
         var steps: [(String, String)] = [("Text1", "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."), ("Text2","The point of using Lorem Ipsum is that it has a more-or-less normal distribution o letters"), ("Text3","As opposed to using 'Content here, content here', making it look like readable English.")]
         var defaultMinutes: String = "6"
         var defaultSeconds: String = "30"
-        var recipeImage: UIImage = UIImage(named: Constants.Images.SOFT_BOILED_RUNNY_YOLKS)!
+        var recipeImage: UIImage = UIImage(named: Constants.HomeTab.SOFT_BOILED_RUNNY_YOLKS)!
     }
     struct SoftBoiledCustardyYolks:DescriptionDataModelProtocol {
         var recipeName: String = "Soft Boiled, Custardy Yolks"
@@ -413,7 +413,7 @@ class DescriptionDataModel {
         var steps: [(String, String)] = [("Text1", "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."), ("Text2","The point of using Lorem Ipsum is that it has a more-or-less normal distribution o letters"), ("Text3","As opposed to using 'Content here, content here', making it look like readable English.")]
         var defaultMinutes: String = "6"
         var defaultSeconds: String = "30"
-        var recipeImage: UIImage = UIImage(named: Constants.Images.SOFT_BOILED_CUSTARD_YOLDS)!
+        var recipeImage: UIImage = UIImage(named: Constants.HomeTab.SOFT_BOILED_CUSTARD_YOLDS)!
     }
     struct HardBoiledMoistYolks:DescriptionDataModelProtocol {
         var recipeName: String = "Hard Boiled, Moist Yolks"
@@ -423,7 +423,7 @@ class DescriptionDataModel {
         var steps: [(String, String)] = [("Text1", "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."), ("Text2","The point of using Lorem Ipsum is that it has a more-or-less normal distribution o letters"), ("Text3","As opposed to using 'Content here, content here', making it look like readable English.")]
         var defaultMinutes: String = "6"
         var defaultSeconds: String = "30"
-        var recipeImage: UIImage = UIImage(named: Constants.Images.HARD_BOILED_MOIST_YOLKS)!
+        var recipeImage: UIImage = UIImage(named: Constants.HomeTab.HARD_BOILED_MOIST_YOLKS)!
     }
     struct HardBoiledFirmYolks:DescriptionDataModelProtocol {
         var recipeName: String = "Hard Boiled, Firm Yolks"
@@ -433,7 +433,7 @@ class DescriptionDataModel {
         var steps: [(String, String)] = [("Text1", "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."), ("Text2","The point of using Lorem Ipsum is that it has a more-or-less normal distribution o letters"), ("Text3","As opposed to using 'Content here, content here', making it look like readable English.")]
         var defaultMinutes: String = "6"
         var defaultSeconds: String = "30"
-        var recipeImage: UIImage = UIImage(named: Constants.Images.HARD_BOILED_FIRM_YOLKS)!
+        var recipeImage: UIImage = UIImage(named: Constants.HomeTab.HARD_BOILED_FIRM_YOLKS)!
     }
 
 
