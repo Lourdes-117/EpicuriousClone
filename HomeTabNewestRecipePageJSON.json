@@ -4,6 +4,7 @@
         "pictureCourtesy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
         "recipeImageUrl":"https://assets.epicurious.com/photos/57adefb95100bcdd6bd69603/16:9/w_1600%2Cc_limit/roasted-lemon-tomato-salad-081216.jpg",
         "rating":"3",
+        "makeItAgain":"80"
         "reviews":[
             {
                 "points":"4",

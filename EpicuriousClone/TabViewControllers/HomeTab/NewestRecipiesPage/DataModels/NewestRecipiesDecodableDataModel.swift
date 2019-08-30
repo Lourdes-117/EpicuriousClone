@@ -12,6 +12,7 @@ struct NewestRecipiesDecodableDataModel: Decodable {
     var pictureCourtesy:String!
     var recipeImageUrl:String!
     var rating:String!
+    var makeItAgain:String!
     var reviews:[NewestRecipieReviewDecodableDataModel]!
     var yeild:String!
     var activeTime:String!

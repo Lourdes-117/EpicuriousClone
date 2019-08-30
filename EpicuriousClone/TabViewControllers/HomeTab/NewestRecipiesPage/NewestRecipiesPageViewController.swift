@@ -9,6 +9,7 @@
 import UIKit
 
 class NewestRecipiesPageViewController: UIViewController {
+    let segueIdentifier:String = "RecipeDescriptionSegueIdentifier"
     @IBOutlet weak var recipiesCollectionView: UICollectionView!
     var recipesDataToDisplay:[NewestRecipiesDecodableDataModel] = []
     let dispatchGroup = DispatchGroup()
