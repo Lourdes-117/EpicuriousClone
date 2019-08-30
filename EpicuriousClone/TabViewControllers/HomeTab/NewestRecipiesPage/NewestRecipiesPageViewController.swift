@@ -26,9 +26,6 @@ class NewestRecipiesPageViewController: UIViewController {
         let fileExtension:String = "json"
         let urlObject = Bundle.main.url(forResource: fileName, withExtension: fileExtension)
         GetDataFromApi.getJsonArrayFromFile(fromFile: urlObject!, dispatchGroup: dispatchGroup) { (entries: [NewestRecipiesDecodableDataModel]) in
-            for entry in entries {
-                print(entry.reviews[0].content!)
-            }
             self.recipesDataToDisplay = entries
         }
     }

@@ -9,7 +9,16 @@
 import Foundation
 struct NewestRecipiesDecodableDataModel: Decodable {
     var recipeName:String!
+    var pictureCourtesy:String!
     var recipeImageUrl:String!
     var rating:String!
     var reviews:[NewestRecipieReviewDecodableDataModel]!
+    var yeild:String!
+    var activeTime:String!
+    var totalTime:String!
+    var yeildDesctiption:String!
+    var ingredients:[String]!
+    var preparation:String!
+    var doAhead:String!
+    var keyWords:[String]!
 }
