@@ -12,11 +12,13 @@ class NewestRecipiesPageViewController: UIViewController {
     let segueIdentifier:String = "RecipeDescriptionSegueIdentifier"
     @IBOutlet weak var recipiesCollectionView: UICollectionView!
     var recipesDataToDisplay:[NewestRecipiesDecodableDataModel] = []
+    var selectedIndex:Int = 0
     let dispatchGroup = DispatchGroup()
     override func viewDidLoad() {
         super.viewDidLoad()
         print("Newest Recipies Page View Loaded")
         recipiesCollectionView.dataSource = self
+        recipiesCollectionView.delegate = self
         initializeData()
         dispatchGroup.notify(queue: .main, execute: {
             self.refreshViewController()
@@ -54,5 +56,18 @@ extension NewestRecipiesPageViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         let cell = recipiesCollectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: NewestRecipiesCollectionViewCell.reusableIdentity, for: indexPath) as! NewestRecipiesCollectionViewCell
         return cell
+    }
+}
+
+extension NewestRecipiesPageViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        selectedIndex = indexPath.row
+        performSegue(withIdentifier: segueIdentifier, sender: self)
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let newestRecipeDescriptionViewController = segue.destination as? NewestRecipeDescriptionViewController else {return}
+        newestRecipeDescriptionViewController.allRecipies = self.recipesDataToDisplay
+        newestRecipeDescriptionViewController.selectedIndex = self.selectedIndex
     }
 }
