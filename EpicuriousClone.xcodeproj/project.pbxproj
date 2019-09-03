@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5E11104A231E8B1300524580 /* NewestRecipiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E111049231E8B1300524580 /* NewestRecipiesViewController.swift */; };
+		5E11104D231E8D6700524580 /* NewestVideosDecodableDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E11104C231E8D6700524580 /* NewestVideosDecodableDataModel.swift */; };
+		5E111050231E8EDD00524580 /* HomeTabNewestVideosPageJSON.json in Resources */ = {isa = PBXBuildFile; fileRef = 5E11104F231E8EDD00524580 /* HomeTabNewestVideosPageJSON.json */; };
+		5E111052231E90D700524580 /* VideosTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E111051231E90D700524580 /* VideosTableViewCell.swift */; };
+		5E111054231E948A00524580 /* NewestVideosHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E111053231E948A00524580 /* NewestVideosHeaderTableViewCell.swift */; };
 		5E207B7323100DE3001D5FDF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E207B7223100DE3001D5FDF /* AppDelegate.swift */; };
 		5E207B7523100DE3001D5FDF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E207B7423100DE3001D5FDF /* ViewController.swift */; };
 		5E207B7823100DE3001D5FDF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E207B7623100DE3001D5FDF /* Main.storyboard */; };
@@ -56,6 +61,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5E111049231E8B1300524580 /* NewestRecipiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewestRecipiesViewController.swift; sourceTree = "<group>"; };
+		5E11104C231E8D6700524580 /* NewestVideosDecodableDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewestVideosDecodableDataModel.swift; sourceTree = "<group>"; };
+		5E11104F231E8EDD00524580 /* HomeTabNewestVideosPageJSON.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = HomeTabNewestVideosPageJSON.json; sourceTree = "<group>"; };
+		5E111051231E90D700524580 /* VideosTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideosTableViewCell.swift; sourceTree = "<group>"; };
+		5E111053231E948A00524580 /* NewestVideosHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewestVideosHeaderTableViewCell.swift; sourceTree = "<group>"; };
 		5E207B6F23100DE3001D5FDF /* EpicuriousClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EpicuriousClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E207B7223100DE3001D5FDF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5E207B7423100DE3001D5FDF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -117,6 +127,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5E111048231E8AC700524580 /* NewestVideosPage */ = {
+			isa = PBXGroup;
+			children = (
+				5E111049231E8B1300524580 /* NewestRecipiesViewController.swift */,
+				5E11104C231E8D6700524580 /* NewestVideosDecodableDataModel.swift */,
+				5E111051231E90D700524580 /* VideosTableViewCell.swift */,
+				5E111053231E948A00524580 /* NewestVideosHeaderTableViewCell.swift */,
+			);
+			path = NewestVideosPage;
+			sourceTree = "<group>";
+		};
+		5E11104E231E8EBC00524580 /* JsonData */ = {
+			isa = PBXGroup;
+			children = (
+				5E2BFFB72317F0DF009FF188 /* HomeTabNewestRecipePageJSON.json */,
+				5E11104F231E8EDD00524580 /* HomeTabNewestVideosPageJSON.json */,
+			);
+			path = JsonData;
+			sourceTree = "<group>";
+		};
 		5E207B6623100DE3001D5FDF = {
 			isa = PBXGroup;
 			children = (
@@ -128,7 +158,7 @@
 				5E207B8E23101501001D5FDF /* Constants */,
 				5E207B7123100DE3001D5FDF /* EpicuriousClone */,
 				5E207B7023100DE3001D5FDF /* Products */,
-				5E2BFFB72317F0DF009FF188 /* HomeTabNewestRecipePageJSON.json */,
+				5E11104E231E8EBC00524580 /* JsonData */,
 			);
 			sourceTree = "<group>";
 		};
@@ -159,6 +189,7 @@
 		5E207B8923101380001D5FDF /* HomeTab */ = {
 			isa = PBXGroup;
 			children = (
+				5E111048231E8AC700524580 /* NewestVideosPage */,
 				5E2BFFA52317940B009FF188 /* NewestRecipiesPage */,
 				5E207B8C231013FD001D5FDF /* HomeTabPageViewController.swift */,
 			);
@@ -355,6 +386,7 @@
 				5E207B8023100DE4001D5FDF /* LaunchScreen.storyboard in Resources */,
 				5E207B7D23100DE4001D5FDF /* Assets.xcassets in Resources */,
 				5EDB459A2313A16C00FA7BBB /* FavouritesTab.storyboard in Resources */,
+				5E111050231E8EDD00524580 /* HomeTabNewestVideosPageJSON.json in Resources */,
 				5E207B7823100DE3001D5FDF /* Main.storyboard in Resources */,
 				5EDB45942313A14000FA7BBB /* SearchTab.storyboard in Resources */,
 				5EDB45902313A10500FA7BBB /* HomeTab.storyboard in Resources */,
@@ -371,6 +403,7 @@
 				5E96AE82231502E700FE632D /* PreparationStepsViewController.swift in Sources */,
 				5E2BFFAF2317DCDD009FF188 /* NewestRecipiesDecodableDataModel.swift in Sources */,
 				5E8B52A42313C1D400E87646 /* SelectIngredientsViewController.swift in Sources */,
+				5E111054231E948A00524580 /* NewestVideosHeaderTableViewCell.swift in Sources */,
 				5E207B8823100E51001D5FDF /* PersistentService.swift in Sources */,
 				5E8B52A82313E3B200E87646 /* SelectIngredientCell.swift in Sources */,
 				5E207B7B23100DE3001D5FDF /* EpicuriousClone.xcdatamodeld in Sources */,
@@ -393,6 +426,7 @@
 				5E8B52AA2313EE8E00E87646 /* TabBar.swift in Sources */,
 				5E207B9023101515001D5FDF /* Constants.swift in Sources */,
 				5E96AE8E23154C5500FE632D /* ToDoCheckList+CoreDataProperties.swift in Sources */,
+				5E111052231E90D700524580 /* VideosTableViewCell.swift in Sources */,
 				5E207B93231016D6001D5FDF /* Strings.swift in Sources */,
 				5EDB459D2313A97100FA7BBB /* TimerTabCategoryTableViewCell.swift in Sources */,
 				5E8B52B323140ED900E87646 /* DescriptionDataModel.swift in Sources */,
@@ -400,8 +434,10 @@
 				5EF6BBE323167B7500DACF3D /* CheckListReusableCellTableViewHeader.swift in Sources */,
 				5E8B52AF231400D700E87646 /* ThinknessReusableCellCollectionViewCell.swift in Sources */,
 				5E96AE8A231549CF00FE632D /* CheckListReusableCellTableViewCell.swift in Sources */,
+				5E11104A231E8B1300524580 /* NewestRecipiesViewController.swift in Sources */,
 				5EC4E92D231E34530024CCDD /* IngredientInnerTableViewCell.swift in Sources */,
 				5E8B52AD2313FDA800E87646 /* RecipeDescriptionViewController.swift in Sources */,
+				5E11104D231E8D6700524580 /* NewestVideosDecodableDataModel.swift in Sources */,
 				5E2BFFAD2317ACEA009FF188 /* RecipeCollectionViewCell.swift in Sources */,
 				5E631408231917600045732E /* NewestRecipeDescriptionViewController.swift in Sources */,
 				5E2BFFA723179440009FF188 /* NewestRecipiesPageViewController.swift in Sources */,

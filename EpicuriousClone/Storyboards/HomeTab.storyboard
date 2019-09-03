@@ -10,16 +10,102 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Newest Recipies View Controller-->
         <scene sceneID="vSa-09-tq3">
             <objects>
-                <viewController storyboardIdentifier="HomeTabNewestVideosViewController" id="WM3-hZ-UOQ" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeTabNewestVideosViewController" id="WM3-hZ-UOQ" customClass="NewestRecipiesViewController" customModule="EpicuriousClone" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kls-aH-HPM">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6Dv-Ld-0SF">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="NewestVideosHeaderIdentifier" rowHeight="150" id="eMc-0a-ibt" customClass="NewestVideosHeaderTableViewCell" customModule="EpicuriousClone" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="150"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eMc-0a-ibt" id="LnZ-hB-PeD">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="149.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NEWEST VIDEOS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SDR-Wp-iQp">
+                                                    <rect key="frame" x="83" y="57" width="248" height="36"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="30"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" red="0.12451567500829697" green="0.11206658929586411" blue="0.66029578447341919" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstItem="SDR-Wp-iQp" firstAttribute="centerX" secondItem="LnZ-hB-PeD" secondAttribute="centerX" id="5sL-2F-mQo"/>
+                                                <constraint firstItem="SDR-Wp-iQp" firstAttribute="centerY" secondItem="LnZ-hB-PeD" secondAttribute="centerY" id="wtU-kl-hg2"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="videoCellIdentity" rowHeight="250" id="hgA-i2-NS9" customClass="VideosTableViewCell" customModule="EpicuriousClone" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="178" width="414" height="250"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hgA-i2-NS9" id="4ZK-gW-fSq">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="249.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Acorn_Squash" translatesAutoresizingMaskIntoConstraints="NO" id="CH9-aJ-sUI">
+                                                    <rect key="frame" x="20" y="11" width="374" height="178"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="178" id="zBF-qg-EUa"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is a placeholder text to check how the user interface look with two lines" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q4I-05-oSq">
+                                                    <rect key="frame" x="20" y="194" width="374" height="41"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" relation="lessThanOrEqual" constant="42" id="yfS-dP-ix4"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Play_Icon" translatesAutoresizingMaskIntoConstraints="NO" id="NtM-HK-pb0">
+                                                    <rect key="frame" x="169.5" y="62.5" width="75" height="75"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="75" id="3lV-k1-5ho"/>
+                                                        <constraint firstAttribute="width" constant="75" id="EBD-5E-bKP"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="q4I-05-oSq" firstAttribute="leading" secondItem="CH9-aJ-sUI" secondAttribute="leading" id="4i7-ha-GmC"/>
+                                                <constraint firstItem="NtM-HK-pb0" firstAttribute="centerY" secondItem="CH9-aJ-sUI" secondAttribute="centerY" id="6E8-uF-kL0"/>
+                                                <constraint firstItem="q4I-05-oSq" firstAttribute="top" secondItem="CH9-aJ-sUI" secondAttribute="bottom" constant="5" id="D7u-MT-jrU"/>
+                                                <constraint firstItem="q4I-05-oSq" firstAttribute="trailing" secondItem="CH9-aJ-sUI" secondAttribute="trailing" id="Gze-9O-aCj"/>
+                                                <constraint firstItem="NtM-HK-pb0" firstAttribute="centerX" secondItem="CH9-aJ-sUI" secondAttribute="centerX" id="O43-Sq-uhe"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="CH9-aJ-sUI" secondAttribute="bottom" constant="50" id="QI2-6b-3MV"/>
+                                                <constraint firstItem="CH9-aJ-sUI" firstAttribute="top" secondItem="4ZK-gW-fSq" secondAttribute="topMargin" id="U6e-w2-88h"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="CH9-aJ-sUI" secondAttribute="trailing" id="fDy-9M-Bgd"/>
+                                                <constraint firstItem="CH9-aJ-sUI" firstAttribute="leading" secondItem="4ZK-gW-fSq" secondAttribute="leadingMargin" id="hfK-af-cz1"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="videoDescription" destination="q4I-05-oSq" id="ByG-vH-iof"/>
+                                            <outlet property="videoThumbnail" destination="CH9-aJ-sUI" id="1uP-xi-JQT"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" red="0.12451567500829697" green="0.11206658929586411" blue="0.66029578447341919" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Gq6-o7-HBY" firstAttribute="trailing" secondItem="6Dv-Ld-0SF" secondAttribute="trailing" id="0P6-eH-sQF"/>
+                            <constraint firstItem="Gq6-o7-HBY" firstAttribute="bottom" secondItem="6Dv-Ld-0SF" secondAttribute="bottom" id="FIE-CH-NVZ"/>
+                            <constraint firstItem="6Dv-Ld-0SF" firstAttribute="leading" secondItem="Gq6-o7-HBY" secondAttribute="leading" id="SMK-5r-IOa"/>
+                            <constraint firstItem="6Dv-Ld-0SF" firstAttribute="top" secondItem="Gq6-o7-HBY" secondAttribute="top" id="xZi-cK-e6R"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Gq6-o7-HBY"/>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="6Dv-Ld-0SF" id="AlT-r2-yh7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5hD-FZ-jR1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -515,27 +601,11 @@
                     <size key="freeformSize" width="414" height="1200"/>
                     <connections>
                         <outlet property="recipeDescriptionTableView" destination="9wf-NQ-cPI" id="aMy-Mz-R8k"/>
-                        <segue destination="hOD-2l-PpW" kind="presentation" identifier="ReviewsSegueIdentifier" id="5yW-5H-e4f"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zkt-bT-3M5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3313.04347826087" y="-3997.0982142857142"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="oQ0-mw-C5l">
-            <objects>
-                <viewController id="hOD-2l-PpW" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="FUP-vo-BY8">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="NTO-Vc-E5j"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0fX-Pd-yBE" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4259" y="-3997"/>
         </scene>
         <!--Home Tab Page View Controller-->
         <scene sceneID="19d-p5-Asg">
@@ -589,6 +659,7 @@
     <resources>
         <image name="Acorn_Squash" width="2000" height="1333"/>
         <image name="Home_Icon" width="24" height="24"/>
+        <image name="Play_Icon" width="48" height="48"/>
         <image name="Reviews_Grey" width="30" height="30"/>
     </resources>
 </document>
