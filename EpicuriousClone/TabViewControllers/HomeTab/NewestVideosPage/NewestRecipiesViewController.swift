@@ -79,5 +79,7 @@ extension NewestRecipiesViewController: UITableViewDataSource {
 extension NewestRecipiesViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        let videoPlayer:VideoLauncher = VideoLauncher()
+        videoPlayer.showVideoPlayer()
     }
 }

@@ -11,4 +11,6 @@ struct NewestVideosDecodableDataModel: Decodable{
     var imageUrl:String!
     var videoUrl:String!
     var description:String!
+    var videoDurationMinutes:String!
+    var videoDurationSeconds:String!
 }
