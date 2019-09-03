@@ -220,11 +220,11 @@
             <objects>
                 <viewController id="jBh-bg-XcH" customClass="NewestRecipeDescriptionViewController" customModule="EpicuriousClone" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZAR-gn-Njz">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="1200"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9wf-NQ-cPI">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="1078"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="headingCellReusableIdentity" rowHeight="200" id="Z22-XF-yPw" customClass="HeadingImageTableViewCell" customModule="EpicuriousClone" customModuleProvider="target">
@@ -448,6 +448,58 @@
                                             <outletCollection property="reviewStarImages" destination="uzj-DJ-ik1" collectionClass="NSMutableArray" id="0M6-Rv-KkJ"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="IngredientsListReusableIdentity" rowHeight="250" id="p9v-4q-G69" customClass="IngredientsListTableViewCell" customModule="EpicuriousClone" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="478" width="414" height="250"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="p9v-4q-G69" id="wyT-Aa-wKd">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="249.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <tableView clipsSubviews="YES" tag="1" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Fo6-7o-x65">
+                                                    <rect key="frame" x="20" y="11" width="374" height="228"/>
+                                                    <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="tintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <prototypes>
+                                                        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="IngredientTableViewReusableIdentity" rowHeight="50" id="yUb-gw-qx8" customClass="IngredientInnerTableViewCell">
+                                                            <rect key="frame" x="0.0" y="28" width="374" height="50"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yUb-gw-qx8" id="jjy-2z-Gsq">
+                                                                <rect key="frame" x="0.0" y="0.0" width="374" height="49.5"/>
+                                                                <autoresizingMask key="autoresizingMask"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is an ingredient" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ktb-23-3tk">
+                                                                        <rect key="frame" x="10" y="14.5" width="153.5" height="21"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                        <nil key="textColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                                <constraints>
+                                                                    <constraint firstItem="Ktb-23-3tk" firstAttribute="leading" secondItem="jjy-2z-Gsq" secondAttribute="leading" constant="10" id="85I-wB-Q3Y"/>
+                                                                    <constraint firstItem="Ktb-23-3tk" firstAttribute="centerY" secondItem="jjy-2z-Gsq" secondAttribute="centerY" id="t4b-09-lRL"/>
+                                                                </constraints>
+                                                            </tableViewCellContentView>
+                                                            <connections>
+                                                                <outlet property="ingredientLabel" destination="Ktb-23-3tk" id="fJi-z2-QFW"/>
+                                                            </connections>
+                                                        </tableViewCell>
+                                                    </prototypes>
+                                                    <connections>
+                                                        <outlet property="dataSource" destination="jBh-bg-XcH" id="Lxp-nb-Byf"/>
+                                                    </connections>
+                                                </tableView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Fo6-7o-x65" secondAttribute="trailing" id="NIB-sW-puy"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Fo6-7o-x65" secondAttribute="bottom" id="UuA-Ru-1gH"/>
+                                                <constraint firstItem="Fo6-7o-x65" firstAttribute="leading" secondItem="wyT-Aa-wKd" secondAttribute="leadingMargin" id="Wq5-2V-xiC"/>
+                                                <constraint firstItem="Fo6-7o-x65" firstAttribute="top" secondItem="wyT-Aa-wKd" secondAttribute="topMargin" id="lJo-Y9-33p"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="ingredientsTableView" destination="Fo6-7o-x65" id="r3j-86-Mxd"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </prototypes>
                             </tableView>
                         </subviews>
@@ -460,8 +512,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="BP1-n8-zOJ"/>
                     </view>
+                    <size key="freeformSize" width="414" height="1200"/>
                     <connections>
                         <outlet property="recipeDescriptionTableView" destination="9wf-NQ-cPI" id="aMy-Mz-R8k"/>
+                        <segue destination="hOD-2l-PpW" kind="presentation" identifier="ReviewsSegueIdentifier" id="5yW-5H-e4f"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zkt-bT-3M5" userLabel="First Responder" sceneMemberID="firstResponder"/>

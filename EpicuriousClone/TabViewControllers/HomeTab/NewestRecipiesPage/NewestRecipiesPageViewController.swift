@@ -14,6 +14,7 @@ class NewestRecipiesPageViewController: UIViewController {
     var recipesDataToDisplay:[NewestRecipiesDecodableDataModel] = []
     var selectedIndex:Int = 0
     let dispatchGroup = DispatchGroup()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         print("Newest Recipies Page View Loaded")
@@ -24,6 +25,7 @@ class NewestRecipiesPageViewController: UIViewController {
             self.refreshViewController()
         })
     }
+
     fileprivate func initializeData() {
         let fileName:String = "HomeTabNewestRecipePageJSON"
         let fileExtension:String = "json"

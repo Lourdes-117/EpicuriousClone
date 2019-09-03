@@ -25,6 +25,19 @@ class HomeTabPageViewController: UIPageViewController {
         print("HomeTab PageViewController Loaded")
     }
 
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(animated)
+//        pageControl.isHidden = false
+//        tabBarController?.tabBar.setTabBarVisibility(true)
+//    }
+//
+//    override func viewDidDisappear(_ animated: Bool) {
+//        super.viewDidDisappear(animated)
+//        pageControl.isHidden = true
+//        tabBarController?.tabBar.setTabBarVisibility(false)
+//
+//    }
+
     fileprivate func instantiatePageViewController() {
         if let firstViewController = orderedViewControllers.first {
             setViewControllers([firstViewController], direction: .forward, animated: true, completion: nil)
