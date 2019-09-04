@@ -76,6 +76,8 @@ struct Constants {
     struct HomeTab {
         public static let REVIEWS_RED:String = "Reviews_Red"
         public static let REVIEWS_GREY:String = "Reviews_Grey"
+        public static let PLAY_ICON:String = "Play_Icon"
+        public static let PAUSE_ICON:String = "Pause_Icon"
     }
 
     struct CheckListTab {

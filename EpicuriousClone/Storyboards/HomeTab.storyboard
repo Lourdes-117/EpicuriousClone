@@ -66,7 +66,7 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Play_Icon" translatesAutoresizingMaskIntoConstraints="NO" id="NtM-HK-pb0">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Video_Icon" translatesAutoresizingMaskIntoConstraints="NO" id="NtM-HK-pb0">
                                                     <rect key="frame" x="169.5" y="62.5" width="75" height="75"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="75" id="3lV-k1-5ho"/>
@@ -137,11 +137,23 @@
                                     <action selector="onClickCloseButton:" destination="dfj-Hs-qcL" eventType="touchUpInside" id="7Y4-31-iha"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dPC-p3-SKb">
+                                <rect key="frame" x="8" y="579.5" width="398" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="49" id="gAb-ge-pVG"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                         <constraints>
                             <constraint firstItem="S8I-ex-Wmm" firstAttribute="trailing" secondItem="ecZ-cZ-bnk" secondAttribute="trailing" constant="15" id="5Ac-fb-ETZ"/>
                             <constraint firstItem="S8I-ex-Wmm" firstAttribute="trailing" secondItem="yFf-sC-GYT" secondAttribute="trailing" id="GFo-mY-O4o"/>
+                            <constraint firstItem="dPC-p3-SKb" firstAttribute="top" secondItem="yFf-sC-GYT" secondAttribute="bottom" constant="10" id="aYZ-Ib-NPR"/>
+                            <constraint firstItem="dPC-p3-SKb" firstAttribute="leading" secondItem="S8I-ex-Wmm" secondAttribute="leading" constant="8" id="hZv-E9-gJJ"/>
+                            <constraint firstItem="S8I-ex-Wmm" firstAttribute="trailing" secondItem="dPC-p3-SKb" secondAttribute="trailing" constant="8" id="jzn-hZ-Ket"/>
                             <constraint firstItem="yFf-sC-GYT" firstAttribute="centerY" secondItem="S8I-ex-Wmm" secondAttribute="centerY" id="kXf-tB-Bxq"/>
                             <constraint firstItem="ecZ-cZ-bnk" firstAttribute="top" secondItem="S8I-ex-Wmm" secondAttribute="top" id="udE-zj-hkR"/>
                             <constraint firstItem="yFf-sC-GYT" firstAttribute="leading" secondItem="S8I-ex-Wmm" secondAttribute="leading" id="xFO-QA-BU9"/>
@@ -149,6 +161,7 @@
                         <viewLayoutGuide key="safeArea" id="S8I-ex-Wmm"/>
                     </view>
                     <connections>
+                        <outlet property="videoDescription" destination="dPC-p3-SKb" id="UF0-Nd-a2t"/>
                         <outlet property="videoPlayerView" destination="yFf-sC-GYT" id="O6j-eu-iUz"/>
                     </connections>
                 </viewController>
@@ -704,7 +717,7 @@
     <resources>
         <image name="Acorn_Squash" width="2000" height="1333"/>
         <image name="Home_Icon" width="24" height="24"/>
-        <image name="Play_Icon" width="48" height="48"/>
         <image name="Reviews_Grey" width="30" height="30"/>
+        <image name="Video_Icon" width="48" height="48"/>
     </resources>
 </document>
