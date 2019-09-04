@@ -87,6 +87,6 @@ extension NewestVideosPageViewController: UITableViewDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let videoPlayerViewController = segue.destination as? VideoPlayerViewController else {return}
         videoPlayerViewController.urlString = allVideos[selectedIndex].videoUrl
-//        videoPlayerViewController.videoDescription.text = allVideos[selectedIndex].description
+        videoPlayerViewController.descriptionString = allVideos[selectedIndex].description
     }
 }

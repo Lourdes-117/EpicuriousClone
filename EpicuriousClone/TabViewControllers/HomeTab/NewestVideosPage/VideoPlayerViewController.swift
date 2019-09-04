@@ -16,6 +16,7 @@ class VideoPlayerViewController: UIViewController {
     var videoIsPlaying:Bool = true
     var player:AVPlayer!
     var urlString:String!
+    var descriptionString:String!
     let controlsContainerView:UIView = {
         let view = UIView()
         view.backgroundColor = UIColor.init(white: 0, alpha: 0.5)
@@ -72,6 +73,7 @@ class VideoPlayerViewController: UIViewController {
     }
 
     fileprivate func initializePlayer() {
+        videoDescription.text = descriptionString
         let url = URL(string: urlString)
         guard let urlObject = url
             else {
