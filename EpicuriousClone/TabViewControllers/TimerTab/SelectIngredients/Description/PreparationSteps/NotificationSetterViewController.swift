@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import UserNotifications
 
 class NotificationSetterViewController: UIViewController {
 
@@ -21,11 +22,14 @@ class NotificationSetterViewController: UIViewController {
     var recipeNameToSet:String!
     var recipeProcedureArray:[(String,String)]!
     let segueIdentifier:String = "showProcedureSegueIdentifier"
+
+    let notificationCenter = UNUserNotificationCenter.current()
     override func viewDidLoad() {
         super.viewDidLoad()
         print("Notification Timer View Loaded")
         initializeScreen()
         applyDesigns()
+        initializeNotification()
     }
 
     fileprivate func initializeScreen() {
@@ -42,7 +46,34 @@ class NotificationSetterViewController: UIViewController {
         }
     }
 
+    fileprivate func initializeNotification() {
+        notificationCenter.requestAuthorization(options: [.alert, .sound]) { (isGranted, error) in
+            if isGranted {
+                print("Permission is granted")
+            } else {
+                print("Permission not granted")
+            }
+        }
+    }
+
+    fileprivate func setNotification() {
+        let content = UNMutableNotificationContent()
+        content.title = "Done"
+        content.body = "Your Recipe Is Ready"
+        let totalSecondsToCook = minutesToCook*60 + secondsToCook
+        let triggerDate = Date().addingTimeInterval(TimeInterval(totalSecondsToCook))
+        let triggerDateComponents = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: triggerDate)
+        let notificationTrigger = UNCalendarNotificationTrigger(dateMatching: triggerDateComponents, repeats: false)
+        let notificationId = UUID().uuidString
+        let notificationRequest = UNNotificationRequest(identifier: notificationId, content: content, trigger: notificationTrigger)
+        notificationCenter.add(notificationRequest) { (error) in
+            guard let errorUnwrapped = error else{return}
+            print("There is an error in Notification Center", errorUnwrapped)
+        }
+    }
+
     @IBAction func onClickPlayOrPauseButton(_ sender: Any) {
+        setNotification()
     }
 
     @IBAction func onClickStopButton(_ sender: Any) {
