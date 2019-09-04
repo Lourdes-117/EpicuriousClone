@@ -33,6 +33,7 @@
 		5E6314052318E84C0045732E /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6314042318E84C0045732E /* ImageView.swift */; };
 		5E631408231917600045732E /* NewestRecipeDescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E631407231917600045732E /* NewestRecipeDescriptionViewController.swift */; };
 		5E63140A231919490045732E /* HeadingImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E631409231919490045732E /* HeadingImageTableViewCell.swift */; };
+		5E856F6F231FE06B00A2DFC0 /* NotificationSetterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E856F6E231FE06B00A2DFC0 /* NotificationSetterViewController.swift */; };
 		5E8B52A42313C1D400E87646 /* SelectIngredientsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8B52A32313C1D400E87646 /* SelectIngredientsViewController.swift */; };
 		5E8B52A82313E3B200E87646 /* SelectIngredientCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8B52A72313E3B200E87646 /* SelectIngredientCell.swift */; };
 		5E8B52AA2313EE8E00E87646 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8B52A92313EE8E00E87646 /* TabBar.swift */; };
@@ -90,6 +91,7 @@
 		5E6314042318E84C0045732E /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 		5E631407231917600045732E /* NewestRecipeDescriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewestRecipeDescriptionViewController.swift; sourceTree = "<group>"; };
 		5E631409231919490045732E /* HeadingImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadingImageTableViewCell.swift; sourceTree = "<group>"; };
+		5E856F6E231FE06B00A2DFC0 /* NotificationSetterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NotificationSetterViewController.swift; path = PreparationSteps/NotificationSetterViewController.swift; sourceTree = "<group>"; };
 		5E8B52A32313C1D400E87646 /* SelectIngredientsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectIngredientsViewController.swift; sourceTree = "<group>"; };
 		5E8B52A72313E3B200E87646 /* SelectIngredientCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectIngredientCell.swift; sourceTree = "<group>"; };
 		5E8B52A92313EE8E00E87646 /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
@@ -263,6 +265,7 @@
 		5E8B52AB2313FD8500E87646 /* Description */ = {
 			isa = PBXGroup;
 			children = (
+				5E856F6E231FE06B00A2DFC0 /* NotificationSetterViewController.swift */,
 				5E96AE80231502BF00FE632D /* PreparationSteps */,
 				5E8B52AC2313FDA800E87646 /* RecipeDescriptionViewController.swift */,
 				5E8B52AE231400D700E87646 /* ThinknessReusableCellCollectionViewCell.swift */,
@@ -426,6 +429,7 @@
 				5E8B52B1231400FB00E87646 /* CookingDeepnessReusableCellCollectionViewCell.swift in Sources */,
 				5E96AE8D23154C5500FE632D /* ToDoCheckList+CoreDataClass.swift in Sources */,
 				5E16E025231EA8100000D3D8 /* VideoPlayerViewController.swift in Sources */,
+				5E856F6F231FE06B00A2DFC0 /* NotificationSetterViewController.swift in Sources */,
 				5E96AE84231505C600FE632D /* PreparationStepsReusableCellTableViewCell.swift in Sources */,
 				5E8B52AA2313EE8E00E87646 /* TabBar.swift in Sources */,
 				5E207B9023101515001D5FDF /* Constants.swift in Sources */,

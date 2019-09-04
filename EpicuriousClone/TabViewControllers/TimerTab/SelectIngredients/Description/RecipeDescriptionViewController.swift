@@ -22,7 +22,8 @@ class RecipeDescriptionViewController: UIViewController {
     var allDescriptionData:DescriptionDataModelProtocol!
     var thicknessArray:[(String,Int,Int)] = []
     var cookingDeepnessArray:[(String,Int,Int)] = []
-    let segueIdentifier:String = "PreparationStepsSegueIdentifier"
+    let preparationSegueIdentifier:String = "PreparationStepsSegueIdentifier"
+    let timerSegueIdentifier:String = "setTimerSegueIdentifier"
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,16 +34,24 @@ class RecipeDescriptionViewController: UIViewController {
     }
 
     @IBAction func onClickPreviewAllSteps(_ sender: Any) {
-        performSegue(withIdentifier: segueIdentifier, sender: self)
+        performSegue(withIdentifier: preparationSegueIdentifier, sender: self)
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let preparationStepsViewController = segue.destination as? PreparationStepsViewController else {return}
-        preparationStepsViewController.recipeProcedureArray = allDescriptionData.steps
-        preparationStepsViewController.recipeNameString = allDescriptionData.recipeName
+        if let preparationStepsViewController = segue.destination as? PreparationStepsViewController {
+            preparationStepsViewController.recipeProcedureArray = allDescriptionData.steps
+            preparationStepsViewController.recipeNameString = allDescriptionData.recipeName
+        } else if let notificationViewController = segue.destination as? NotificationSetterViewController {
+            notificationViewController.minutesToCook = Int(cookTimeMinutes.text!)!
+            notificationViewController.secondsToCook = Int(cookTimeSeconds.text!)!
+            notificationViewController.recipeImageToSet = allDescriptionData.recipeImage
+            notificationViewController.recipeNameToSet = allDescriptionData.recipeName
+            notificationViewController.recipeProcedureArray = allDescriptionData.steps
+        }
     }
 
     @IBAction func onClickStartSmartTimer(_ sender: Any) {
+        performSegue(withIdentifier: timerSegueIdentifier, sender: self)
     }
 
     fileprivate func setDefaultValues() {
