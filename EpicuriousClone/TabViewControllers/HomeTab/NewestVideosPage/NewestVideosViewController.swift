@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NewestVideosViewController: UIViewController {
+class NewestVideosPageViewController: UIViewController {
     var allVideos:[NewestVideosDecodableDataModel] = []
     @IBOutlet weak var tableView: UITableView!
 
@@ -42,7 +42,7 @@ class NewestVideosViewController: UIViewController {
     }
 }
 
-extension NewestRecipiesViewController: UITableViewDataSource {
+extension NewestVideosPageViewController: UITableViewDataSource {
 
     func numberOfSections(in tableView: UITableView) -> Int {
         return 2
@@ -76,9 +76,11 @@ extension NewestRecipiesViewController: UITableViewDataSource {
     }
 }
 
-extension NewestRecipiesViewController: UITableViewDelegate {
+extension NewestVideosPageViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+//        let videoPlayer:VideoLauncher = VideoLauncher()
+//        videoPlayer.showVideoPlayer()
         performSegue(withIdentifier: "VideoPlayerSegueIdentifier", sender: self)
     }
 }

@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Newest Recipies View Controller-->
+        <!--Newest Videos Page View Controller-->
         <scene sceneID="vSa-09-tq3">
             <objects>
-                <viewController storyboardIdentifier="HomeTabNewestVideosViewController" id="WM3-hZ-UOQ" customClass="NewestRecipiesViewController" customModule="EpicuriousClone" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeTabNewestVideosViewController" id="WM3-hZ-UOQ" customClass="NewestVideosPageViewController" customModule="EpicuriousClone" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kls-aH-HPM">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -104,12 +104,57 @@
                         <viewLayoutGuide key="safeArea" id="Gq6-o7-HBY"/>
                     </view>
                     <connections>
-                        <outlet property="tableView" destination="6Dv-Ld-0SF" id="AlT-r2-yh7"/>
+                        <outlet property="tableView" destination="6Dv-Ld-0SF" id="m45-nY-nQL"/>
+                        <segue destination="dfj-Hs-qcL" kind="presentation" identifier="VideoPlayerSegueIdentifier" id="ugF-71-pqX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5hD-FZ-jR1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1359" y="-2251"/>
+        </scene>
+        <!--Video Player View Controller-->
+        <scene sceneID="SzT-C3-7p7">
+            <objects>
+                <viewController id="dfj-Hs-qcL" customClass="VideoPlayerViewController" customModule="EpicuriousClone" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ASf-Ol-uqe">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yFf-sC-GYT">
+                                <rect key="frame" x="0.0" y="336.5" width="414" height="233"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="yFf-sC-GYT" secondAttribute="height" multiplier="16:9" id="Lcc-Hl-0YF"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ecZ-cZ-bnk">
+                                <rect key="frame" x="369" y="44" width="30" height="52"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="33"/>
+                                <state key="normal" title="X">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="onClickCloseButton:" destination="dfj-Hs-qcL" eventType="touchUpInside" id="7Y4-31-iha"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <constraints>
+                            <constraint firstItem="S8I-ex-Wmm" firstAttribute="trailing" secondItem="ecZ-cZ-bnk" secondAttribute="trailing" constant="15" id="5Ac-fb-ETZ"/>
+                            <constraint firstItem="S8I-ex-Wmm" firstAttribute="trailing" secondItem="yFf-sC-GYT" secondAttribute="trailing" id="GFo-mY-O4o"/>
+                            <constraint firstItem="yFf-sC-GYT" firstAttribute="centerY" secondItem="S8I-ex-Wmm" secondAttribute="centerY" id="kXf-tB-Bxq"/>
+                            <constraint firstItem="ecZ-cZ-bnk" firstAttribute="top" secondItem="S8I-ex-Wmm" secondAttribute="top" id="udE-zj-hkR"/>
+                            <constraint firstItem="yFf-sC-GYT" firstAttribute="leading" secondItem="S8I-ex-Wmm" secondAttribute="leading" id="xFO-QA-BU9"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="S8I-ex-Wmm"/>
+                    </view>
+                    <connections>
+                        <outlet property="videoPlayerView" destination="yFf-sC-GYT" id="O6j-eu-iUz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hd0-Og-hmx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2360.8695652173915" y="-2251.3392857142858"/>
         </scene>
         <!--Newest Recipies Page View Controller-->
         <scene sceneID="qbx-gC-cnb">

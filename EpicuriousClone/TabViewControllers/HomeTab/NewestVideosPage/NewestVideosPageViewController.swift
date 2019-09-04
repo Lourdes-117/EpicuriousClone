@@ -8,11 +8,12 @@
 
 import UIKit
 
-class NewestVideosViewController: UIViewController {
+class NewestVideosPageViewController: UIViewController {
     var allVideos:[NewestVideosDecodableDataModel] = []
-    @IBOutlet weak var tableView: UITableView!
 
+    @IBOutlet weak var tableView: UITableView!
     let dispatchGroup = DispatchGroup()
+    var selectedIndex:Int!
     override func viewDidLoad() {
         super.viewDidLoad()
         print("Newest Videos View Loaded")
@@ -42,7 +43,7 @@ class NewestVideosViewController: UIViewController {
     }
 }
 
-extension NewestRecipiesViewController: UITableViewDataSource {
+extension NewestVideosPageViewController: UITableViewDataSource {
 
     func numberOfSections(in tableView: UITableView) -> Int {
         return 2
@@ -76,9 +77,15 @@ extension NewestRecipiesViewController: UITableViewDataSource {
     }
 }
 
-extension NewestRecipiesViewController: UITableViewDelegate {
+extension NewestVideosPageViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        selectedIndex = indexPath.row
         performSegue(withIdentifier: "VideoPlayerSegueIdentifier", sender: self)
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let videoPlayerViewController = segue.destination as? VideoPlayerViewController else {return}
+        videoPlayerViewController.urlString = allVideos[selectedIndex].videoUrl
     }
 }

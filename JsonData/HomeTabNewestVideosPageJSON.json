@@ -2,14 +2,14 @@
 [
     {
         "imageUrl":"https://images.pexels.com/photos/461198/pexels-photo-461198.jpeg",
-        "videoUrl":"This is also an url",
+        "videoUrl":"https://dp8hsntg6do36.cloudfront.net/5d643b7034e79415d47819d6/8ba49744-295e-49f7-baf5-62fa66af910fmanifest-ios.m3u8?videoIndex=0&requester=oo",
         "description":"This is an descriprion",
         "videoDurationMinutes":"12",
         "videoDurationSeconds":"23"
     },
     {
         "imageUrl":"https://img.huffingtonpost.com/asset/5cd373a32300003000b7a9d7.jpeg",
-        "videoUrl":"This is also an url",
+        "videoUrl":"https://dp8hsntg6do36.cloudfront.net/5d643b7034e79415d47819d6/8ba49744-295e-49f7-baf5-62fa66af910fmanifest-ios.m3u8?videoIndex=0&requester=oo",
         "description":"This is an descriprion",
         "videoDurationMinutes":"04",
         "videoDurationSeconds":"36"
