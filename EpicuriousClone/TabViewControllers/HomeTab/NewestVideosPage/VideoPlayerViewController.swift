@@ -37,6 +37,17 @@ class VideoPlayerViewController: UIViewController {
         let label = UILabel()
         label.text = "00:00"
         label.textColor = UIColor.white
+        label.font = UIFont.boldSystemFont(ofSize: 13)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textAlignment = NSTextAlignment.right
+        return label
+    }()
+
+    lazy var currentTimeLabel:UILabel = {
+        let label = UILabel()
+        label.text = "00:00"
+        label.textColor = UIColor.white
+        label.font = UIFont.boldSystemFont(ofSize: 13)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -73,6 +84,18 @@ class VideoPlayerViewController: UIViewController {
         playerLayer.frame = CGRect(x: 0, y: 0, width: videoPlayerView.frame.width, height: videoPlayerView.frame.height)
         player.play()
         player.addObserver(self, forKeyPath: "currentItem.loadedTimeRanges", options: .new, context: nil)
+
+        let interval = CMTime(value: 1, timescale: 2)
+        player.addPeriodicTimeObserver(forInterval: interval, queue: DispatchQueue.main) { (progressTime) in
+            let seconds = CMTimeGetSeconds(progressTime)
+            let secondsString:String = String(format: "%02d", Int(seconds.truncatingRemainder(dividingBy: 60)))
+            let minuteString:String = String(format: "%02d", Int(seconds / 60))
+            self.currentTimeLabel.text = "\(minuteString):\(secondsString)"
+
+            guard let duration = self.player.currentItem?.duration else {return}
+            let durationSeconds = CMTimeGetSeconds(duration)
+            self.videoSlider.value = Float(seconds / durationSeconds)
+        }
     }
 
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
@@ -92,6 +115,7 @@ class VideoPlayerViewController: UIViewController {
     fileprivate func initializeControlLayer() {
         controlsContainerView.frame = CGRect(x: 0, y: 0, width: videoPlayerView.frame.width, height: videoPlayerView.frame.height)
         videoPlayerView.addSubview(controlsContainerView)
+        setUpGradientLayer()
     }
 
     fileprivate func initalizePlayerControls() {
@@ -106,15 +130,21 @@ class VideoPlayerViewController: UIViewController {
         controlsContainerView.addSubview(videoLengthLabel)
         videoLengthLabel.rightAnchor.constraint(equalTo: controlsContainerView.rightAnchor).isActive = true
         videoLengthLabel.bottomAnchor.constraint(equalTo: controlsContainerView.bottomAnchor).isActive = true
-        videoLengthLabel.widthAnchor.constraint(equalToConstant: 60).isActive = true
+        videoLengthLabel.widthAnchor.constraint(equalToConstant: 50).isActive = true
         videoLengthLabel.heightAnchor.constraint(equalToConstant: 25).isActive = true
+
+        controlsContainerView.addSubview(currentTimeLabel)
+        currentTimeLabel.leftAnchor.constraint(equalTo: controlsContainerView.leftAnchor).isActive = true
+        currentTimeLabel.bottomAnchor.constraint(equalTo: controlsContainerView.bottomAnchor).isActive = true
+        currentTimeLabel.widthAnchor.constraint(equalToConstant: 50).isActive = true
+        currentTimeLabel.heightAnchor.constraint(equalToConstant: 25).isActive = true
     }
 
     fileprivate func initializeSlider() {
         controlsContainerView.addSubview(videoSlider)
         videoSlider.rightAnchor.constraint(equalTo: videoLengthLabel.leftAnchor).isActive = true
+        videoSlider.leftAnchor.constraint(equalTo: currentTimeLabel.rightAnchor).isActive = true
         videoSlider.bottomAnchor.constraint(equalTo: controlsContainerView.bottomAnchor).isActive = true
-        videoSlider.leftAnchor.constraint(equalTo: controlsContainerView.leftAnchor).isActive = true
         videoSlider.heightAnchor.constraint(equalToConstant: 30).isActive = true
     }
 
@@ -136,6 +166,14 @@ class VideoPlayerViewController: UIViewController {
         let value = totalSeconds * Float64(videoSlider.value)
         let seekTime = CMTime(value: Int64(value), timescale: 1)
         player.seek(to: seekTime)
+    }
+
+    fileprivate func setUpGradientLayer() {
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.frame = controlsContainerView.bounds
+        gradientLayer.colors = [UIColor.clear.cgColor, UIColor.black.cgColor]
+        gradientLayer.locations = [0.7, 1.2]
+        controlsContainerView.layer.addSublayer(gradientLayer)
     }
 
     @IBAction func onClickCloseButton(_ sender: Any) {
