@@ -536,6 +536,7 @@
                         <viewLayoutGuide key="safeArea" id="jUb-x2-dri"/>
                     </view>
                     <connections>
+                        <outlet property="playButton" destination="j9J-jR-Twi" id="K4F-wx-XmF"/>
                         <outlet property="recipeCookingTime" destination="fCT-Rr-V7b" id="MZZ-pL-PmX"/>
                         <outlet property="recipeImage" destination="VRM-4X-zUq" id="2dw-7w-PgM"/>
                         <outlet property="recipeName" destination="23O-fZ-IIh" id="rU7-BP-wZ3"/>

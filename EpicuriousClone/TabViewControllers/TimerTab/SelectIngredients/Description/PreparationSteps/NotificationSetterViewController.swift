@@ -15,12 +15,14 @@ class NotificationSetterViewController: UIViewController {
     @IBOutlet weak var recipeName: UILabel!
     @IBOutlet weak var recipeCookingTime: UILabel!
     @IBOutlet var buttons: [UIButton]!
+    @IBOutlet weak var playButton: UIButton!
 
     var recipeImageToSet:UIImage!
     var minutesToCook:Int!
     var secondsToCook:Int!
     var recipeNameToSet:String!
     var recipeProcedureArray:[(String,String)]!
+    var isNotificationRequested:Bool = false
     let segueIdentifier:String = "showProcedureSegueIdentifier"
 
     let notificationCenter = UNUserNotificationCenter.current()
@@ -28,8 +30,8 @@ class NotificationSetterViewController: UIViewController {
         super.viewDidLoad()
         print("Notification Timer View Loaded")
         initializeScreen()
-        applyDesigns()
         initializeNotification()
+        applyDesigns()
     }
 
     fileprivate func initializeScreen() {
@@ -44,6 +46,11 @@ class NotificationSetterViewController: UIViewController {
         buttons.forEach { (button) in
             button.layer.cornerRadius = button.frame.height/2
         }
+        if isNotificationRequested {
+            playButton.setImage(UIImage(named: Constants.HomeTab.PAUSE_ICON), for: .normal)
+        } else {
+            playButton.setImage(UIImage(named: Constants.HomeTab.PLAY_FILLED_ICON), for: .normal)
+        }
     }
 
     fileprivate func initializeNotification() {
@@ -52,6 +59,13 @@ class NotificationSetterViewController: UIViewController {
                 print("Permission is granted")
             } else {
                 print("Permission not granted")
+            }
+        }
+        notificationCenter.getPendingNotificationRequests { (requestedNotifications) in
+            if requestedNotifications.count > 0 {
+                self.isNotificationRequested = true
+            } else {
+                self.isNotificationRequested = false
             }
         }
     }
@@ -73,10 +87,17 @@ class NotificationSetterViewController: UIViewController {
     }
 
     @IBAction func onClickPlayOrPauseButton(_ sender: Any) {
-        setNotification()
+        if(isNotificationRequested) {
+            notificationCenter.removeAllPendingNotificationRequests()
+            playButton.setImage(UIImage(named: Constants.HomeTab.PLAY_FILLED_ICON), for: .normal)
+        } else {
+            setNotification()
+            playButton.setImage(UIImage(named: Constants.HomeTab.PAUSE_ICON), for: .normal)
+        }
     }
 
     @IBAction func onClickStopButton(_ sender: Any) {
+        notificationCenter.removeAllPendingNotificationRequests()
     }
 
     @IBAction func onClickProcedureButton(_ sender: Any) {
