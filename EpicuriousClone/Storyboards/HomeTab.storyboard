@@ -352,7 +352,7 @@
                     <navigationItem key="navigationItem" id="uIo-yv-ERU"/>
                     <connections>
                         <outlet property="recipiesCollectionView" destination="CJx-h1-8W3" id="7Se-Ua-qSR"/>
-                        <segue destination="jBh-bg-XcH" kind="show" identifier="RecipeDescriptionSegueIdentifier" id="Y9i-r6-v7E"/>
+                        <segue destination="jBh-bg-XcH" kind="presentation" identifier="RecipeDescriptionSegueIdentifier" customClass="ScaleSegue" customModule="EpicuriousClone" customModuleProvider="target" modalPresentationStyle="formSheet" id="Y9i-r6-v7E"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XMb-Dp-Sgf" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -368,7 +368,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9wf-NQ-cPI">
-                                <rect key="frame" x="0.0" y="88" width="414" height="1078"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="1122"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="headingCellReusableIdentity" rowHeight="200" id="Z22-XF-yPw" customClass="HeadingImageTableViewCell" customModule="EpicuriousClone" customModuleProvider="target">
@@ -656,6 +656,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="BP1-n8-zOJ"/>
                     </view>
+                    <navigationItem key="navigationItem" id="mms-a1-1v4"/>
                     <size key="freeformSize" width="414" height="1200"/>
                     <connections>
                         <outlet property="recipeDescriptionTableView" destination="9wf-NQ-cPI" id="aMy-Mz-R8k"/>

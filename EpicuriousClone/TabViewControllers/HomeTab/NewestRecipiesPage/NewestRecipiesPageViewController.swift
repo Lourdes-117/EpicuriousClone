@@ -8,7 +8,11 @@
 
 import UIKit
 
+protocol viewScalable {
+    var scaleView:UIView! { get set }
+}
 class NewestRecipiesPageViewController: UIViewController {
+    public var scaleView: UIView!
     let segueIdentifier:String = "RecipeDescriptionSegueIdentifier"
     @IBOutlet weak var recipiesCollectionView: UICollectionView!
     var recipesDataToDisplay:[NewestRecipiesDecodableDataModel] = []
@@ -63,9 +67,12 @@ extension NewestRecipiesPageViewController: UICollectionViewDataSource {
     }
 }
 
-extension NewestRecipiesPageViewController: UICollectionViewDelegate {
+extension NewestRecipiesPageViewController: UICollectionViewDelegate, viewScalable {
+
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         selectedIndex = indexPath.row
+        let selectedCell = collectionView.cellForItem(at: indexPath) as! RecipeCollectionViewCell
+        scaleView = selectedCell.recipeImage
         performSegue(withIdentifier: segueIdentifier, sender: self)
     }
 
