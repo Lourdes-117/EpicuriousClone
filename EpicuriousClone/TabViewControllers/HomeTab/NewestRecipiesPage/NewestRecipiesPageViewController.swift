@@ -24,6 +24,8 @@ class NewestRecipiesPageViewController: UIViewController {
         dispatchGroup.notify(queue: .main, execute: {
             self.refreshViewController()
         })
+        let layout = recipiesCollectionView.collectionViewLayout as! UICollectionViewFlowLayout
+        layout.itemSize = CGSize(width: view.frame.width/2, height: (view.frame.width/2)+70)
     }
 
     fileprivate func initializeData() {

@@ -19,33 +19,44 @@ class NewestRecipeDescriptionViewController: UIViewController {
         recipeDescriptionTableView.dataSource = self
         print("Recipe Description View Loaded")
     }
+
+    override func viewWillAppear(_ animated: Bool) {
+        print("Recipe Description View Will Appear")
+        super.viewWillAppear(animated)
+        hideTabBarController()
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        print("Recipe Description View Will Disappear")
+        super.viewWillDisappear(animated)
+        showTabBarController()
+    }
+
+    fileprivate func hideTabBarController() {
+        tabBarController?.tabBar.setTabBarVisibility(false)
+    }
+
+    fileprivate func showTabBarController() {
+        tabBarController?.tabBar.setTabBarVisibility(true)
+    }
+
+    deinit {
+        print("Recipe Description View Safe From Memory Leaks")
+    }
 }
 
 extension NewestRecipeDescriptionViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        if(tableView.tag == 0) {
-            return 3
-        } else {
-            return 1
-        }
+        return 3
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if(tableView.tag == 0) {
-            return 1
-        } else {
-            print("Works here also")
-            return allRecipies[selectedIndex].ingredients.count
-        }
+        return 1
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         print(tableView.tag)
-        if(tableView.tag == 0) {
-            return getCellForDescriptionPage(forSection: indexPath.section, atIndex: indexPath.row)
-        } else {
-            return getCellForIngredientsTableView(atIndex: indexPath.row)
-        }
+    return getCellForDescriptionPage(forSection: indexPath.section, atIndex: indexPath.row)
     }
 
     fileprivate func getCellForDescriptionPage(forSection section:Int, atIndex row:Int) ->UITableViewCell {
@@ -68,13 +79,4 @@ extension NewestRecipeDescriptionViewController: UITableViewDataSource {
             return cell
         }
     }
-
-    fileprivate func getCellForIngredientsTableView(atIndex row:Int) -> UITableViewCell{
-        print("CellForRowAt")
-        let ingredientsCell = recipeDescriptionTableView.dequeueReusableCell(withIdentifier: IngredientsListTableViewCell.reusableIdentity) as! IngredientsListTableViewCell
-        let cell = ingredientsCell.ingredientsTableView.dequeueReusableCell(withIdentifier: IngredientInnerTableViewCell.reusableIdentity) as! IngredientInnerTableViewCell
-        cell.setValues(ingredient: allRecipies[selectedIndex].ingredients[row])
-        return cell
-    }
-
 }

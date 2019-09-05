@@ -13,6 +13,12 @@ class IngredientsListTableViewCell: UITableViewCell {
     public static let reusableIdentity:String = "IngredientsListReusableIdentity"
 
     @IBOutlet weak var ingredientsTableView: UITableView!
+
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        ingredientsTableView.dataSource = self
+        ingredientsTableView.delegate = self
+    }
     public func setValues(ingredients:[String]) {
         self.ingredients = ingredients
     }
@@ -33,5 +39,12 @@ extension IngredientsListTableViewCell: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: IngredientInnerTableViewCell.reusableIdentity) as! IngredientInnerTableViewCell
         cell.setValues(ingredient: ingredients[indexPath.row])
         return cell
+    }
+}
+
+extension IngredientsListTableViewCell: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        print("Setting height for cell in TableView")
+        return 75
     }
 }

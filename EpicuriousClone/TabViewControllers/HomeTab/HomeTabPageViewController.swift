@@ -35,7 +35,6 @@ class HomeTabPageViewController: UIPageViewController {
 //        super.viewDidDisappear(animated)
 //        pageControl.isHidden = true
 //        tabBarController?.tabBar.setTabBarVisibility(false)
-//
 //    }
 
     fileprivate func instantiatePageViewController() {
@@ -45,7 +44,7 @@ class HomeTabPageViewController: UIPageViewController {
     }
 
     fileprivate func configurePageControl() {
-        pageControl = UIPageControl(frame: CGRect(x: 0, y: 30 , width: UIScreen.main.bounds.width, height: 50))
+        pageControl = UIPageControl(frame: CGRect(x: (view.frame.width/2)-50, y: 30 , width: 100, height: 50))
         pageControl.numberOfPages = orderedViewControllers.count
         pageControl.currentPage = 0
         pageControl.tintColor = UIColor.black
