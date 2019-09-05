@@ -487,7 +487,7 @@
                                 <rect key="frame" x="169.5" y="546.5" width="75" height="75"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" image="play_Filled_Icon">
+                                <state key="normal" image="Pause_Icon">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
@@ -536,6 +536,7 @@
                         <viewLayoutGuide key="safeArea" id="jUb-x2-dri"/>
                     </view>
                     <connections>
+                        <outlet property="backgroundUIView" destination="kUb-hp-qWw" id="4or-R1-XXT"/>
                         <outlet property="playButton" destination="j9J-jR-Twi" id="K4F-wx-XmF"/>
                         <outlet property="recipeCookingTime" destination="fCT-Rr-V7b" id="MZZ-pL-PmX"/>
                         <outlet property="recipeImage" destination="VRM-4X-zUq" id="2dw-7w-PgM"/>
@@ -690,9 +691,9 @@
         <image name="Acorn_Squash" width="2000" height="1333"/>
         <image name="Chicken_And_Pork_Image" width="1180" height="800"/>
         <image name="List_Icon" width="50" height="50"/>
+        <image name="Pause_Icon" width="50" height="50"/>
         <image name="Stop_Icon" width="50" height="50"/>
         <image name="Timer_Icon" width="24" height="24"/>
-        <image name="play_Filled_Icon" width="50" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="n8e-Pg-Mii"/>
