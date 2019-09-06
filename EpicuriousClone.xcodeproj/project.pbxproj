@@ -49,6 +49,7 @@
 		5E96AE8E23154C5500FE632D /* ToDoCheckList+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E96AE8C23154C5500FE632D /* ToDoCheckList+CoreDataProperties.swift */; };
 		5E96AE9123154F3800FE632D /* CoreDataFetch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E96AE9023154F3800FE632D /* CoreDataFetch.swift */; };
 		5EADEAEC2319256600112B62 /* RecipeReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EADEAEB2319256600112B62 /* RecipeReviewTableViewCell.swift */; };
+		5EB937582322465900AF75E8 /* FloatingButtonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB937572322465900AF75E8 /* FloatingButtonController.swift */; };
 		5EBBBCBC2321332A00DB8A80 /* ScaleSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EBBBCBB2321332A00DB8A80 /* ScaleSegue.swift */; };
 		5EC4E92A231E318E0024CCDD /* IngredientsListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC4E929231E318E0024CCDD /* IngredientsListTableViewCell.swift */; };
 		5EC4E92D231E34530024CCDD /* IngredientInnerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC4E92C231E34530024CCDD /* IngredientInnerTableViewCell.swift */; };
@@ -108,6 +109,7 @@
 		5E96AE8C23154C5500FE632D /* ToDoCheckList+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ToDoCheckList+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		5E96AE9023154F3800FE632D /* CoreDataFetch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataFetch.swift; sourceTree = "<group>"; };
 		5EADEAEB2319256600112B62 /* RecipeReviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeReviewTableViewCell.swift; sourceTree = "<group>"; };
+		5EB937572322465900AF75E8 /* FloatingButtonController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingButtonController.swift; sourceTree = "<group>"; };
 		5EBBBCBB2321332A00DB8A80 /* ScaleSegue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaleSegue.swift; sourceTree = "<group>"; };
 		5EC4E929231E318E0024CCDD /* IngredientsListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsListTableViewCell.swift; sourceTree = "<group>"; };
 		5EC4E92C231E34530024CCDD /* IngredientInnerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientInnerTableViewCell.swift; sourceTree = "<group>"; };
@@ -275,6 +277,7 @@
 				5E8B52AE231400D700E87646 /* ThinknessReusableCellCollectionViewCell.swift */,
 				5E8B52B0231400FB00E87646 /* CookingDeepnessReusableCellCollectionViewCell.swift */,
 				5E8B52B223140ED900E87646 /* DescriptionDataModel.swift */,
+				5EB937572322465900AF75E8 /* FloatingButtonController.swift */,
 			);
 			path = Description;
 			sourceTree = "<group>";
@@ -417,6 +420,7 @@
 				5E111054231E948A00524580 /* NewestVideosHeaderTableViewCell.swift in Sources */,
 				5E207B8823100E51001D5FDF /* PersistentService.swift in Sources */,
 				5E8B52A82313E3B200E87646 /* SelectIngredientCell.swift in Sources */,
+				5EB937582322465900AF75E8 /* FloatingButtonController.swift in Sources */,
 				5E207B7B23100DE3001D5FDF /* EpicuriousClone.xcdatamodeld in Sources */,
 				5E2BFFBB2317F524009FF188 /* NewestRecipieReviewDecodableDataModel.swift in Sources */,
 				5E207B8D231013FD001D5FDF /* HomeTabPageViewController.swift in Sources */,
