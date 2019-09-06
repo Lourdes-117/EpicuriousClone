@@ -23,7 +23,6 @@ class FloatingButtonController: UIViewController {
         window.windowLevel = UIWindow.Level(rawValue: CGFloat.greatestFiniteMagnitude)
         window.isHidden = false
         window.rootViewController = self
-        NotificationCenter.default.addObserver(self, selector: "keyboardDidShow:", name: UIResponder.keyboardDidShowNotification, object: nil)
     }
 
     override func loadView() {

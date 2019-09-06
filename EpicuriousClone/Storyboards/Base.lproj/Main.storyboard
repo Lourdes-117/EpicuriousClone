@@ -12,8 +12,8 @@
         <!--Tab Bar Controller-->
         <scene sceneID="s80-hw-35y">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2hR-mK-Q5H" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tabBarController hidesBottomBarWhenPushed="YES" id="vQZ-q8-6pt" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="sry-fj-Ejy"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="DGJ-on-CSw">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -28,6 +28,7 @@
                         <segue destination="Hxu-je-Yz4" kind="relationship" relationship="viewControllers" id="x1s-dA-EqL"/>
                     </connections>
                 </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2hR-mK-Q5H" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1816" y="-713"/>
         </scene>

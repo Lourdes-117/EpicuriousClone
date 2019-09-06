@@ -28,10 +28,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     @objc func floatingButtonWasTapped() {
-        let alert = UIAlertController(title: "Warning", message: "Don't do that!", preferredStyle: .alert)
-        let action = UIAlertAction(title: "Sorry…", style: .default, handler: nil)
+        let alert = UIAlertController(title: "Check", message: "This works1", preferredStyle: .alert)
+        let action = UIAlertAction(title: "Ok", style: .default, handler: nil)
         alert.addAction(action)
-        window?.rootViewController?.present(alert, animated: true, completion: nil)
+        guard  let mainViewController = window?.rootViewController as? UITabBarController else {
+            return
+        }
+        if let presentedViewController = mainViewController.presentedViewController {
+            presentedViewController.present(alert, animated: true, completion: nil)
+        } else {
+            mainViewController.present(alert, animated: true, completion: nil)
+        }
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

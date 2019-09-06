@@ -352,7 +352,7 @@
                     <navigationItem key="navigationItem" id="uIo-yv-ERU"/>
                     <connections>
                         <outlet property="recipiesCollectionView" destination="CJx-h1-8W3" id="7Se-Ua-qSR"/>
-                        <segue destination="jBh-bg-XcH" kind="presentation" identifier="RecipeDescriptionSegueIdentifier" customClass="ScaleSegue" customModule="EpicuriousClone" customModuleProvider="target" modalPresentationStyle="formSheet" id="Y9i-r6-v7E"/>
+                        <segue destination="jBh-bg-XcH" kind="presentation" identifier="RecipeDescriptionSegueIdentifier" customClass="ScaleSegue" customModule="EpicuriousClone" customModuleProvider="target" id="Y9i-r6-v7E"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XMb-Dp-Sgf" userLabel="First Responder" sceneMemberID="firstResponder"/>
