@@ -142,7 +142,8 @@
 				5E111053231E948A00524580 /* NewestVideosHeaderTableViewCell.swift */,
 				5E16E024231EA8100000D3D8 /* VideoPlayerViewController.swift */,
 			);
-			path = NewestVideosPage;
+			name = NewestVideosPage;
+			path = DataModels/NewestVideosPage;
 			sourceTree = "<group>";
 		};
 		5E11104E231E8EBC00524580 /* JsonData */ = {
@@ -198,7 +199,6 @@
 			isa = PBXGroup;
 			children = (
 				5E2BFFA52317940B009FF188 /* NewestRecipiesPage */,
-				5E111048231E8AC700524580 /* NewestVideosPage */,
 				5E207B8C231013FD001D5FDF /* HomeTabPageViewController.swift */,
 			);
 			path = HomeTab;
@@ -227,6 +227,7 @@
 			children = (
 				5E6314062319173A0045732E /* RecipesDescriptionPage */,
 				5E2BFFB92317F3EB009FF188 /* DataModels */,
+				5E111048231E8AC700524580 /* NewestVideosPage */,
 				5E2BFFA623179440009FF188 /* NewestRecipiesPageViewController.swift */,
 				5E2BFFAA2317955A009FF188 /* NewestRecipiesCollectionViewCell.swift */,
 				5E2BFFAC2317ACEA009FF188 /* RecipeCollectionViewCell.swift */,

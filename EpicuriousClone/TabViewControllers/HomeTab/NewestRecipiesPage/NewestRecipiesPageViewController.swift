@@ -81,4 +81,6 @@ extension NewestRecipiesPageViewController: UICollectionViewDelegate {
         newestRecipeDescriptionViewController.allRecipies = self.recipesDataToDisplay
         newestRecipeDescriptionViewController.selectedIndex = self.selectedIndex
     }
+
+    @IBAction func unwindToNewestRecipiesViewController(for unwindSegue: UIStoryboardSegue, towards subsequentVC: UIViewController) {}
 }

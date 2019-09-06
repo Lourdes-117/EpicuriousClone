@@ -37,6 +37,10 @@ class ScalePresentAnimator: NSObject, UIViewControllerAnimatedTransitioning {
         }
 
         var startFrame:CGRect = CGRect.zero
+
+        let duration = transitionDuration(using: transitionContext)
+        let finalFrame = transitionContext.finalFrame(for: toViewController)
+
         if let startFrameToAnimate = ScaleSegue.startFrameToAnimate {
             startFrame = startFrameToAnimate
             ScaleSegue.startFrameToAnimate = nil
@@ -47,8 +51,6 @@ class ScalePresentAnimator: NSObject, UIViewControllerAnimatedTransitioning {
         toView?.frame = startFrame
         toView?.layoutIfNeeded()
 
-        let duration = transitionDuration(using: transitionContext)
-        let finalFrame = transitionContext.finalFrame(for: toViewController)
         UIView.animate(withDuration: duration, animations: {
             toView?.frame = finalFrame
             toView?.layoutIfNeeded()

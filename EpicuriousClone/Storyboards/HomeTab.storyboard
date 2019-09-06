@@ -663,8 +663,18 @@
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DHd-Ph-gua">
                                 <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                                 <items>
-                                    <navigationItem title="Title" leftItemsSupplementBackButton="YES" largeTitleDisplayMode="always" id="M7V-2w-e1H">
+                                    <navigationItem title="Title" largeTitleDisplayMode="always" id="M7V-2w-e1H">
                                         <barButtonItem key="backBarButtonItem" title="Back" id="jhg-gl-zMv"/>
+                                        <barButtonItem key="leftBarButtonItem" style="plain" id="Mdl-ZU-UkT">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="u2E-d7-uNC">
+                                                <rect key="frame" x="20" y="7" width="92" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="&lt;"/>
+                                                <connections>
+                                                    <action selector="onClickBackButton:" destination="jBh-bg-XcH" eventType="touchUpInside" id="bIF-0b-laD"/>
+                                                </connections>
+                                            </button>
+                                        </barButtonItem>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="barPosition">
                                                 <integer key="value" value="3"/>
@@ -692,9 +702,11 @@
                     <navigationItem key="navigationItem" id="mms-a1-1v4"/>
                     <connections>
                         <outlet property="recipeDescriptionTableView" destination="9wf-NQ-cPI" id="aMy-Mz-R8k"/>
+                        <segue destination="Fog-hn-w9y" kind="unwind" identifier="unwindToNewestRecipiesSegueIdentifier" customClass="ScaleSegue" customModule="EpicuriousClone" customModuleProvider="target" unwindAction="unwindToNewestRecipiesViewControllerFor:towards:" id="GI7-4C-gCR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zkt-bT-3M5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Fog-hn-w9y" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3313.04347826087" y="-3997.0982142857142"/>
         </scene>

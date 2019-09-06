@@ -13,6 +13,7 @@ class NewestRecipeDescriptionViewController: UIViewController {
     var allRecipies:[NewestRecipiesDecodableDataModel] = []
     var selectedIndex:Int! = nil
     private let segueIdentifier:String = "ReviewsSegueIdentifier"
+    private let unwindSegueIdentifier:String = "unwindToNewestRecipiesSegueIdentifier"
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +39,10 @@ class NewestRecipeDescriptionViewController: UIViewController {
 
     fileprivate func showTabBarController() {
         tabBarController?.tabBar.setTabBarVisibility(true)
+    }
+
+    @IBAction func onClickBackButton(_ sender: Any) {
+        performSegue(withIdentifier: unwindSegueIdentifier, sender: self)
     }
 
     deinit {
