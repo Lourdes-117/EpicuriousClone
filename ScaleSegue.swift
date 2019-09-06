@@ -7,6 +7,7 @@
 //
 
 import UIKit
+
 class ScaleSegue:UIStoryboardSegue {
     override func perform() {
         print("Performing Custom Segue Animation")
@@ -23,7 +24,7 @@ extension ScaleSegue: UIViewControllerTransitioningDelegate {
 
 class ScalePresentAnimator: NSObject, UIViewControllerAnimatedTransitioning {
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
-        return 2.0
+        return 0.3
     }
 
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
@@ -34,7 +35,9 @@ class ScalePresentAnimator: NSObject, UIViewControllerAnimatedTransitioning {
             transitionContext.containerView.addSubview(toView)
         }
 
-        toView?.frame = CGRect.zero
+        var startFrame:CGRect = CGRect.zero
+        startFrame = NewestRecipiesPageViewController.scaleView
+        toView?.frame = startFrame
         toView?.layoutIfNeeded()
 
         let duration = transitionDuration(using: transitionContext)
