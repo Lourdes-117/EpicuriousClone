@@ -39,6 +39,7 @@ class ScalePresentAnimator: NSObject, UIViewControllerAnimatedTransitioning {
         var startFrame:CGRect = CGRect.zero
         if let startFrameToAnimate = ScaleSegue.startFrameToAnimate {
             startFrame = startFrameToAnimate
+            ScaleSegue.startFrameToAnimate = nil
         } else {
             print("Start Frame To Animate Is Not set")
             print("Animation Will Start From (0,0)")
