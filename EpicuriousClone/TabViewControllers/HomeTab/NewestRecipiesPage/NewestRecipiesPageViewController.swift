@@ -9,8 +9,6 @@
 import UIKit
 
 class NewestRecipiesPageViewController: UIViewController {
-    public static var scaleView: CGRect!
-
     let segueIdentifier:String = "RecipeDescriptionSegueIdentifier"
     @IBOutlet weak var recipiesCollectionView: UICollectionView!
     var recipesDataToDisplay:[NewestRecipiesDecodableDataModel] = []
@@ -73,7 +71,7 @@ extension NewestRecipiesPageViewController: UICollectionViewDelegate {
 
         let tap = CGPoint(x: 0, y: 0)
         let point:CGPoint = selectedCell.recipeImage.convert(tap, to: self.view)
-        NewestRecipiesPageViewController.scaleView = CGRect(x: point.x, y: point.y, width: selectedCell.recipeImage.frame.width, height: selectedCell.recipeImage.frame.height)
+        ScaleSegue.startFrameToAnimate = CGRect(x: point.x, y: point.y, width: selectedCell.recipeImage.frame.width, height: selectedCell.recipeImage.frame.height)
 
         performSegue(withIdentifier: segueIdentifier, sender: self)
     }
