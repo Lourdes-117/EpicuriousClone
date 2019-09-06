@@ -12,16 +12,30 @@ class FloatingButtonController: UIViewController {
 
 
     private(set) var button: UIButton!
-    private let window = FloatingButtonWindow()
+    private let window:FloatingButtonWindow = FloatingButtonWindow()
+    private static let instance:FloatingButtonController = FloatingButtonController()
 
     required init?(coder aDecoder: NSCoder) {
         fatalError()
     }
 
-    init() {
+    private init() {
         super.init(nibName: nil, bundle: nil)
+    }
+
+    public static func getInstance() -> FloatingButtonController {
+        return instance
+    }
+
+    public func showFloatingButton() {
         window.windowLevel = UIWindow.Level(rawValue: CGFloat.greatestFiniteMagnitude)
         window.isHidden = false
+        window.rootViewController = self
+    }
+
+    public func hideFloatingButton() {
+        window.windowLevel = UIWindow.Level(rawValue: 0)
+        window.isHidden = true
         window.rootViewController = self
     }
 
@@ -39,7 +53,16 @@ class FloatingButtonController: UIViewController {
     }
 
     @objc public func onClickStickyButton() {
-        print("Sticky Button Tapped")
+        let mainStoryboard = UIStoryboard(name: "TimerTab", bundle: Bundle.main)
+        let notificationSetterViewController = mainStoryboard.instantiateViewController(withIdentifier: "NotificationSetterViewController") as! UIViewController
+        guard  let mainViewController = UIApplication.shared.keyWindow!.rootViewController as? UITabBarController else {
+            return
+        }
+        if let presentedViewController = mainViewController.presentedViewController {
+            presentedViewController.present(notificationSetterViewController, animated: true, completion: nil)
+        } else {
+            mainViewController.present(notificationSetterViewController, animated: true, completion: nil)
+        }
     }
 
     override func viewDidLayoutSubviews() {

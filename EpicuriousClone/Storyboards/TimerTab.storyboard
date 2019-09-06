@@ -436,7 +436,7 @@
         <!--Notification Setter View Controller-->
         <scene sceneID="ZbV-QJ-nOq">
             <objects>
-                <viewController id="50f-Pf-BBf" customClass="NotificationSetterViewController" customModule="EpicuriousClone" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NotificationSetterViewController" id="50f-Pf-BBf" customClass="NotificationSetterViewController" customModule="EpicuriousClone" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kUb-hp-qWw">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -563,6 +563,7 @@
                             <constraint firstItem="jUb-x2-dri" firstAttribute="bottom" secondItem="g8q-fh-tnO" secondAttribute="bottom" id="JrM-Br-eVX"/>
                             <constraint firstItem="jUb-x2-dri" firstAttribute="leading" secondItem="g8q-fh-tnO" secondAttribute="leading" id="ao4-D8-NEu"/>
                             <constraint firstItem="jUb-x2-dri" firstAttribute="top" secondItem="g8q-fh-tnO" secondAttribute="top" id="jfi-gL-2LN"/>
+                            <constraint firstItem="jUb-x2-dri" firstAttribute="bottom" secondItem="LcQ-lm-OE8" secondAttribute="bottom" id="xJv-QI-O05"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="jUb-x2-dri"/>
                     </view>
@@ -705,7 +706,6 @@
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="WRv-zS-fR9">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

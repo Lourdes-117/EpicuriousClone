@@ -16,13 +16,7 @@ class NotificationSetterViewController: UIViewController {
     @IBOutlet weak var recipeCookingTime: UILabel!
     @IBOutlet var buttons: [UIButton]!
     @IBOutlet weak var playButton: UIButton!
-    let stickyView:UIButton = {
-        let button = UIButton()
-        button.backgroundColor = UIColor(white: 0, alpha: 0.5)
-        button.addTarget(self, action: #selector(onClickStickyButton), for: .touchUpInside)
-        return button
-    }()
-
+    
     var recipeImageToSet:UIImage!
     var minutesToCook:Int!
     var secondsToCook:Int!
@@ -36,11 +30,16 @@ class NotificationSetterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         print("Notification Timer View Loaded")
-        setNotification()
-        initializeScreen()
-        initializeNotification()
-        initializeButtons()
-        let _ = FloatingButtonController()
+//        setNotification()
+//        initializeScreen()
+//        initializeNotification()
+//        initializeButtons()
+        initializeFloatingButton()
+    }
+
+    fileprivate func initializeFloatingButton() {
+        let floatingButton = FloatingButtonController.getInstance()
+        floatingButton.showFloatingButton()
     }
 
     fileprivate func initializeScreen() {
@@ -102,23 +101,21 @@ class NotificationSetterViewController: UIViewController {
 
     @IBAction func onClickPlayOrPauseButton(_ sender: Any) {
         if(isNotificationRequested) {
-            UIApplication.shared.keyWindow!.willRemoveSubview(stickyView)
-            print("Notification Removed")
             notificationCenter.removeAllPendingNotificationRequests()
             playButton.setImage(UIImage(named: Constants.HomeTab.PLAY_FILLED_ICON), for: .normal)
         } else {
             print("Notification Requested")
             setNotification()
+            let floatingButton = FloatingButtonController.getInstance()
+            floatingButton.showFloatingButton()
             playButton.setImage(UIImage(named: Constants.HomeTab.PAUSE_ICON), for: .normal)
         }
         isNotificationRequested = !isNotificationRequested
     }
 
-    @objc public func onClickStickyButton() {
-        print("Sticky Button Tapped")
-    }
-
     @IBAction func onClickStopButton(_ sender: Any) {
+        let floatingButton = FloatingButtonController.getInstance()
+        floatingButton.hideFloatingButton()
         createAlertForDeletionConfirmation()
     }
 
@@ -131,6 +128,8 @@ class NotificationSetterViewController: UIViewController {
         let cancelButton:UIAlertAction  = UIAlertAction(title: cancel, style: .cancel, handler: nil)
         let deleteButton:UIAlertAction = UIAlertAction(title: stop, style: .default) { (button) in
             print("Notification Removed")
+            let floatingButton = FloatingButtonController.getInstance()
+            floatingButton.showFloatingButton()
             self.notificationCenter.removeAllPendingNotificationRequests()
             self.isNotificationRequested = false
             self.playButton.setImage(UIImage(named: Constants.HomeTab.PLAY_FILLED_ICON), for: .normal)
