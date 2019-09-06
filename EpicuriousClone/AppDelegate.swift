@@ -21,24 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         print("Application Launched")
 
-        floatingButtonController = FloatingButtonController()
-        floatingButtonController?.button.addTarget(self, action: #selector(floatingButtonWasTapped), for: .touchUpInside)
-
         return true
-    }
-
-    @objc func floatingButtonWasTapped() {
-        let alert = UIAlertController(title: "Check", message: "This works1", preferredStyle: .alert)
-        let action = UIAlertAction(title: "Ok", style: .default, handler: nil)
-        alert.addAction(action)
-        guard  let mainViewController = window?.rootViewController as? UITabBarController else {
-            return
-        }
-        if let presentedViewController = mainViewController.presentedViewController {
-            presentedViewController.present(alert, animated: true, completion: nil)
-        } else {
-            mainViewController.present(alert, animated: true, completion: nil)
-        }
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

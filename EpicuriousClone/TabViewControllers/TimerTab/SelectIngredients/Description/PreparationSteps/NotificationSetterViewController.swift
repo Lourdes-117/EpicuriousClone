@@ -40,14 +40,7 @@ class NotificationSetterViewController: UIViewController {
         initializeScreen()
         initializeNotification()
         initializeButtons()
-    }
-
-    fileprivate func createSticky() {
-        stickyView.frame = CGRect(x: (UIApplication.shared.keyWindow?.frame.width)!-50, y: (UIApplication.shared.keyWindow?.frame.height)!/2, width: 50, height: 50)
-        stickyView.layer.cornerRadius = stickyView.frame.height/2
-//        stickyView.window?.windowLevel = UIWindow.Level.alert
-//        view.addSubview(stickyView)
-        UIApplication.shared.keyWindow!.addSubview(stickyView)
+        let _ = FloatingButtonController()
     }
 
     fileprivate func initializeScreen() {
@@ -92,7 +85,6 @@ class NotificationSetterViewController: UIViewController {
     }
 
     fileprivate func setNotification() {
-        createSticky()
         let content = UNMutableNotificationContent()
         content.title = "Done"
         content.body = "Your Recipe Is Ready"
@@ -115,7 +107,6 @@ class NotificationSetterViewController: UIViewController {
             notificationCenter.removeAllPendingNotificationRequests()
             playButton.setImage(UIImage(named: Constants.HomeTab.PLAY_FILLED_ICON), for: .normal)
         } else {
-            createSticky()
             print("Notification Requested")
             setNotification()
             playButton.setImage(UIImage(named: Constants.HomeTab.PAUSE_ICON), for: .normal)
