@@ -127,6 +127,8 @@ extension NewestRecipeDescriptionViewController: UITableViewDelegate {
             return 550
         case 5:
             return 75
+        case 6:
+            return 350
         default:
             return 250
         }
