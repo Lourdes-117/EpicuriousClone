@@ -31,6 +31,13 @@ class AddToCartViewController: UIViewController {
 
     @IBAction func onClickAddToCartButton(_ sender: Any) {
         print("Add To Cart Button is clicked")
+        selectedIngredients.forEach { (entry) in
+            let newTasks = ToDoCheckList(context: PersistentService.context)
+            newTasks.checkListItemIsPurchased = false
+            newTasks.checkListItemName = entry
+            PersistentService.saveContext()
+            self.dismiss(animated: true, completion: true)
+        }
     }
 }
 
