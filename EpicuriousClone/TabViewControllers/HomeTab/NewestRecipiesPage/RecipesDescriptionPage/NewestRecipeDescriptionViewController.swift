@@ -12,7 +12,8 @@ class NewestRecipeDescriptionViewController: UIViewController {
     @IBOutlet weak var recipeDescriptionTableView: UITableView!
     var allRecipies:[NewestRecipiesDecodableDataModel] = []
     var selectedIndex:Int! = nil
-    private let segueIdentifier:String = "ReviewsSegueIdentifier"
+    private let addToCartSegue:String = "addToShoppingListSegueIdentifier"
+    private let reviewSegue:String = "ReviewsSegueIdentifier"
     private let unwindSegueIdentifier:String = "unwindToNewestRecipiesSegueIdentifier"
 
     override func viewDidLoad() {
@@ -48,19 +49,31 @@ class NewestRecipeDescriptionViewController: UIViewController {
     deinit {
         print("Recipe Description View Safe From Memory Leaks")
     }
+
+    @IBAction func onClickAddToShoppingListButton(_ sender: Any) {
+        performSegue(withIdentifier: addToCartSegue, sender: self)
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let addToCartViewController = segue.destination as? AddToCartViewController {
+            addToCartViewController.allIngredients = allRecipies[selectedIndex].ingredients
+        }
+    }
 }
 
 extension NewestRecipeDescriptionViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 3
+        return 4
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if(section == 2) {
+            return allRecipies[selectedIndex].ingredients.count
+        }
         return 1
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        print(tableView.tag)
     return getCellForDescriptionPage(forSection: indexPath.section, atIndex: indexPath.row)
     }
 
@@ -75,8 +88,12 @@ extension NewestRecipeDescriptionViewController: UITableViewDataSource {
             cell.setValue(data: allRecipies[selectedIndex])
             return cell
         case 2:
-            let cell = recipeDescriptionTableView.dequeueReusableCell(withIdentifier: IngredientsListTableViewCell.reusableIdentity) as! IngredientsListTableViewCell
-            cell.setValues(ingredients: allRecipies[selectedIndex].ingredients)
+            let cell = recipeDescriptionTableView.dequeueReusableCell(withIdentifier: IngredientInnerTableViewCell.reusableIdentity) as! IngredientInnerTableViewCell
+            cell.setValues(ingredient: allRecipies[selectedIndex].ingredients[row])
+            return cell
+        case 3:
+            let cell = recipeDescriptionTableView.dequeueReusableCell(withIdentifier: AddToCartButtonTableViewCell.reusableIdentity) as! AddToCartButtonTableViewCell
+            cell.setValues(ingredientArray: allRecipies[selectedIndex].ingredients)
             return cell
         default:
             print("Internal Error In CollectionView")

@@ -9,10 +9,16 @@
 import UIKit
 
 class IngredientInnerTableViewCell: UITableViewCell {
-    @IBOutlet weak var ingredientLabel:UILabel!
+    @IBOutlet weak var ingredientLabel: UILabel!
     static let reusableIdentity:String = "IngredientTableViewReusableIdentity"
     
+    @IBOutlet weak var bulletView: UIView!
     public func setValues(ingredient:String) {
+        setbulletStyle()
         ingredientLabel.text = ingredient
+    }
+
+    fileprivate func setbulletStyle() {
+        bulletView.layer.cornerRadius = bulletView.frame.height/2
     }
 }
