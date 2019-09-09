@@ -17,6 +17,7 @@ class AddToCartViewController: UIViewController {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        initializeSeledtedIngredients()
     }
 
     fileprivate func initializeSeledtedIngredients() {
@@ -24,10 +25,12 @@ class AddToCartViewController: UIViewController {
     }
 
     @IBAction func onClickCancelButton(_ sender: Any) {
+        print("Cancel button is clicked")
         self.dismiss(animated: true, completion: nil)
     }
 
     @IBAction func onClickAddToCartButton(_ sender: Any) {
+        print("Add To Cart Button is clicked")
     }
 }
 
@@ -50,11 +53,25 @@ extension AddToCartViewController: UITableViewDataSource {
         cell.setValues(itemName: allIngredients[indexPath.row])
         return cell
     }
+
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        let height:CGFloat = 50
+        return height
+    }
 }
 
 extension AddToCartViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedCell = tableView.cellForRow(at: indexPath) as! IngredientTableViewCell
-        selectedCell.buyingStatusImageView.image = UIImage(named: Constants.CheckListTab.UNPURCHASED)
+        let ingredientInSelectedCell:String = selectedCell.itemName.text!
+        if(selectedIngredients.contains(ingredientInSelectedCell)) {
+            selectedIngredients.remove(at: selectedIngredients.firstIndex(of: ingredientInSelectedCell)!)
+            selectedCell.buyingStatusImageView.image = UIImage(named: Constants.CheckListTab.UNPURCHASED)
+
+        } else {
+            selectedIngredients.append(ingredientInSelectedCell)
+            selectedCell.buyingStatusImageView.image = UIImage(named: Constants.TimerTab.TASK_COMPLETED)
+        }
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
