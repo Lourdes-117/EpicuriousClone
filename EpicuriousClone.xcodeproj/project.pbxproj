@@ -63,6 +63,8 @@
 		5EE1B6A523265750008AE177 /* AddToCartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE1B6A423265750008AE177 /* AddToCartViewController.swift */; };
 		5EE1B6A8232658C3008AE177 /* IngredientTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE1B6A7232658C3008AE177 /* IngredientTableViewCell.swift */; };
 		5EE1B6AA23267DB9008AE177 /* PreparationTextTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE1B6A923267DB9008AE177 /* PreparationTextTableViewCell.swift */; };
+		5EE1B6AD232684E0008AE177 /* keywordCollectionViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE1B6AC232684E0008AE177 /* keywordCollectionViewTableViewCell.swift */; };
+		5EE1B6AF23268635008AE177 /* keywordCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE1B6AE23268635008AE177 /* keywordCollectionViewCell.swift */; };
 		5EF6BBE323167B7500DACF3D /* CheckListReusableCellTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF6BBE223167B7500DACF3D /* CheckListReusableCellTableViewHeader.swift */; };
 /* End PBXBuildFile section */
 
@@ -125,6 +127,8 @@
 		5EE1B6A423265750008AE177 /* AddToCartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToCartViewController.swift; sourceTree = "<group>"; };
 		5EE1B6A7232658C3008AE177 /* IngredientTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientTableViewCell.swift; sourceTree = "<group>"; };
 		5EE1B6A923267DB9008AE177 /* PreparationTextTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreparationTextTableViewCell.swift; sourceTree = "<group>"; };
+		5EE1B6AC232684E0008AE177 /* keywordCollectionViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = keywordCollectionViewTableViewCell.swift; sourceTree = "<group>"; };
+		5EE1B6AE23268635008AE177 /* keywordCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = keywordCollectionViewCell.swift; sourceTree = "<group>"; };
 		5EF6BBE223167B7500DACF3D /* CheckListReusableCellTableViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckListReusableCellTableViewHeader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -252,6 +256,7 @@
 		5E6314062319173A0045732E /* RecipesDescriptionPage */ = {
 			isa = PBXGroup;
 			children = (
+				5EE1B6AB232684B8008AE177 /* KeyworkCollectionView */,
 				5EE1B6A623265896008AE177 /* AddToShoppingCart */,
 				5E631407231917600045732E /* NewestRecipeDescriptionViewController.swift */,
 				5E631409231919490045732E /* HeadingImageTableViewCell.swift */,
@@ -347,6 +352,15 @@
 				5EE1B6A7232658C3008AE177 /* IngredientTableViewCell.swift */,
 			);
 			path = AddToShoppingCart;
+			sourceTree = "<group>";
+		};
+		5EE1B6AB232684B8008AE177 /* KeyworkCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				5EE1B6AC232684E0008AE177 /* keywordCollectionViewTableViewCell.swift */,
+				5EE1B6AE23268635008AE177 /* keywordCollectionViewCell.swift */,
+			);
+			path = KeyworkCollectionView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -445,6 +459,7 @@
 				5EDB45A12313B4D100FA7BBB /* CategoriesModel.swift in Sources */,
 				5E96AE882315308700FE632D /* CheckListViewController.swift in Sources */,
 				5E2BFFAB2317955A009FF188 /* NewestRecipiesCollectionViewCell.swift in Sources */,
+				5EE1B6AD232684E0008AE177 /* keywordCollectionViewTableViewCell.swift in Sources */,
 				5E207B7323100DE3001D5FDF /* AppDelegate.swift in Sources */,
 				5E96AE9123154F3800FE632D /* CoreDataFetch.swift in Sources */,
 				5E8B52B1231400FB00E87646 /* CookingDeepnessReusableCellCollectionViewCell.swift in Sources */,
@@ -452,6 +467,7 @@
 				5E16E025231EA8100000D3D8 /* VideoPlayerViewController.swift in Sources */,
 				5EE1B6A8232658C3008AE177 /* IngredientTableViewCell.swift in Sources */,
 				5EE1B6AA23267DB9008AE177 /* PreparationTextTableViewCell.swift in Sources */,
+				5EE1B6AF23268635008AE177 /* keywordCollectionViewCell.swift in Sources */,
 				5E856F6F231FE06B00A2DFC0 /* NotificationSetterViewController.swift in Sources */,
 				5E96AE84231505C600FE632D /* PreparationStepsReusableCellTableViewCell.swift in Sources */,
 				5E8B52AA2313EE8E00E87646 /* TabBar.swift in Sources */,
