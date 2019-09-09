@@ -36,7 +36,7 @@ class AddToCartViewController: UIViewController {
             newTasks.checkListItemIsPurchased = false
             newTasks.checkListItemName = entry
             PersistentService.saveContext()
-            self.dismiss(animated: true, completion: true)
+            self.dismiss(animated: true, completion: nil)
         }
     }
 }
