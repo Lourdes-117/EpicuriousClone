@@ -33,7 +33,7 @@ class NotificationSetterViewController: UIViewController {
 //        setNotification()
 //        initializeScreen()
 //        initializeNotification()
-//        initializeButtons()
+        initializeButtons()
         initializeFloatingButton()
     }
 

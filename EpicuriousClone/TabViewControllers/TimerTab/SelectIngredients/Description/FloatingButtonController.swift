@@ -54,7 +54,7 @@ class FloatingButtonController: UIViewController {
 
     @objc public func onClickStickyButton() {
         let mainStoryboard = UIStoryboard(name: "TimerTab", bundle: Bundle.main)
-        let notificationSetterViewController = mainStoryboard.instantiateViewController(withIdentifier: "NotificationSetterViewController") as! UIViewController
+        let notificationSetterViewController = mainStoryboard.instantiateViewController(withIdentifier: "NotificationSetterViewController")
         guard  let mainViewController = UIApplication.shared.keyWindow!.rootViewController as? UITabBarController else {
             return
         }

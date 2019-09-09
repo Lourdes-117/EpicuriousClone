@@ -19,9 +19,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6Dv-Ld-0SF">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="124" width="414" height="738"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="sectionIndexTrackingBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="NewestVideosHeaderIdentifier" rowHeight="150" id="eMc-0a-ibt" customClass="NewestVideosHeaderTableViewCell" customModule="EpicuriousClone" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="150"/>
@@ -30,17 +33,28 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="149.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NEWEST VIDEOS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SDR-Wp-iQp">
-                                                    <rect key="frame" x="83" y="57" width="248" height="36"/>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="30"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t8w-PF-Q05">
+                                                    <rect key="frame" x="0.0" y="1" width="414" height="148"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NEWEST VIDEOS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SDR-Wp-iQp">
+                                                            <rect key="frame" x="83" y="56" width="248" height="36"/>
+                                                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="30"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" red="0.66799789669999998" green="0.47512125970000002" blue="0.25860109930000003" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstItem="SDR-Wp-iQp" firstAttribute="centerX" secondItem="t8w-PF-Q05" secondAttribute="centerX" id="vW1-3y-9yh"/>
+                                                        <constraint firstItem="SDR-Wp-iQp" firstAttribute="centerY" secondItem="t8w-PF-Q05" secondAttribute="centerY" id="xKe-5I-ZcE"/>
+                                                    </constraints>
+                                                </view>
                                             </subviews>
-                                            <color key="backgroundColor" red="0.12451567500829697" green="0.11206658929586411" blue="0.66029578447341919" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
-                                                <constraint firstItem="SDR-Wp-iQp" firstAttribute="centerX" secondItem="LnZ-hB-PeD" secondAttribute="centerX" id="5sL-2F-mQo"/>
-                                                <constraint firstItem="SDR-Wp-iQp" firstAttribute="centerY" secondItem="LnZ-hB-PeD" secondAttribute="centerY" id="wtU-kl-hg2"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="t8w-PF-Q05" secondAttribute="trailing" constant="-20" id="7b7-we-rmN"/>
+                                                <constraint firstItem="t8w-PF-Q05" firstAttribute="top" secondItem="LnZ-hB-PeD" secondAttribute="topMargin" constant="-10" id="bku-6W-bu9"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="t8w-PF-Q05" secondAttribute="bottom" constant="-10" id="pps-Dh-YOV"/>
+                                                <constraint firstItem="t8w-PF-Q05" firstAttribute="leading" secondItem="LnZ-hB-PeD" secondAttribute="leadingMargin" constant="-20" id="upH-ov-4Tb"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -94,12 +108,12 @@
                                 </prototypes>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" red="0.12451567500829697" green="0.11206658929586411" blue="0.66029578447341919" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Gq6-o7-HBY" firstAttribute="trailing" secondItem="6Dv-Ld-0SF" secondAttribute="trailing" id="0P6-eH-sQF"/>
                             <constraint firstItem="Gq6-o7-HBY" firstAttribute="bottom" secondItem="6Dv-Ld-0SF" secondAttribute="bottom" id="FIE-CH-NVZ"/>
                             <constraint firstItem="6Dv-Ld-0SF" firstAttribute="leading" secondItem="Gq6-o7-HBY" secondAttribute="leading" id="SMK-5r-IOa"/>
-                            <constraint firstItem="6Dv-Ld-0SF" firstAttribute="top" secondItem="Gq6-o7-HBY" secondAttribute="top" id="xZi-cK-e6R"/>
+                            <constraint firstItem="6Dv-Ld-0SF" firstAttribute="top" secondItem="Gq6-o7-HBY" secondAttribute="top" constant="80" id="xZi-cK-e6R"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Gq6-o7-HBY"/>
                     </view>
@@ -110,7 +124,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5hD-FZ-jR1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1359" y="-2251"/>
+            <point key="canvasLocation" x="1357.9710144927537" y="-2251.3392857142858"/>
         </scene>
         <!--Video Player View Controller-->
         <scene sceneID="SzT-C3-7p7">
@@ -179,7 +193,7 @@
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="CJx-h1-8W3">
                                 <rect key="frame" x="0.0" y="108" width="414" height="754"/>
-                                <color key="backgroundColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="Kwa-JS-Bq3">
                                     <size key="itemSize" width="207" height="270"/>
                                     <size key="headerReferenceSize" width="50" height="100"/>
@@ -332,7 +346,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
-                                    <color key="backgroundColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstItem="WN5-O9-jPv" firstAttribute="centerX" secondItem="YQR-hT-bXK" secondAttribute="centerX" id="YhM-Cw-KRY"/>
                                         <constraint firstItem="WN5-O9-jPv" firstAttribute="centerY" secondItem="YQR-hT-bXK" secondAttribute="centerY" id="ka8-Mb-JO2"/>
@@ -340,7 +354,7 @@
                                 </collectionReusableView>
                             </collectionView>
                         </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="M2b-Hd-1Pz" firstAttribute="bottom" secondItem="CJx-h1-8W3" secondAttribute="bottom" id="5hs-S1-xVN"/>
                             <constraint firstItem="CJx-h1-8W3" firstAttribute="top" secondItem="M2b-Hd-1Pz" secondAttribute="top" constant="20" id="AwI-XL-qnH"/>
@@ -713,7 +727,7 @@
         <!--Home Tab Page View Controller-->
         <scene sceneID="19d-p5-Asg">
             <objects>
-                <pageViewController storyboardIdentifier="PageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="I6P-Sx-mMQ" customClass="HomeTabPageViewController" customModule="EpicuriousClone" customModuleProvider="target" sceneMemberID="viewController">
+                <pageViewController storyboardIdentifier="PageViewController" autoresizesArchivedViewToFullSize="NO" modalTransitionStyle="flipHorizontal" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="I6P-Sx-mMQ" customClass="HomeTabPageViewController" customModule="EpicuriousClone" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="Home_Icon" id="Qed-0y-hqU">
                         <color key="badgeColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBarItem>
@@ -730,7 +744,7 @@
                     <view key="view" contentMode="scaleToFill" id="yf0-Ne-ElT">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="0.2755226844" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="g3m-uK-aWb"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="ltZ-So-owW"/>
