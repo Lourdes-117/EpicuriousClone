@@ -378,11 +378,11 @@
             <objects>
                 <viewController id="jBh-bg-XcH" customClass="NewestRecipeDescriptionViewController" customModule="EpicuriousClone" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZAR-gn-Njz">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="1200"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="1500"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9wf-NQ-cPI">
-                                <rect key="frame" x="0.0" y="88" width="414" height="1078"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="1378"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
@@ -693,6 +693,51 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="preparationTextTableViewReusableIdentity" rowHeight="550" id="fpQ-0m-UGA" customClass="PreparationTextTableViewCell" customModule="EpicuriousClone" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="628" width="414" height="550"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fpQ-0m-UGA" id="Oo7-2Z-FpS">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="549.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PREPARATION" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UOv-qZ-QcV">
+                                                    <rect key="frame" x="136.5" y="11" width="141.5" height="40"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="29"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="50" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xVc-1d-wPO">
+                                                    <rect key="frame" x="20" y="77" width="374" height="25"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="25" id="tTK-Tf-Qiw"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ret-oP-e4V">
+                                                    <rect key="frame" x="136.5" y="59" width="141.5" height="3"/>
+                                                    <color key="backgroundColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="3" id="jfP-Eg-4oL"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="xVc-1d-wPO" firstAttribute="leading" secondItem="Oo7-2Z-FpS" secondAttribute="leading" constant="20" id="CgR-tN-LQi"/>
+                                                <constraint firstItem="ret-oP-e4V" firstAttribute="centerX" secondItem="UOv-qZ-QcV" secondAttribute="centerX" id="D7G-XR-u6v"/>
+                                                <constraint firstItem="xVc-1d-wPO" firstAttribute="top" secondItem="ret-oP-e4V" secondAttribute="bottom" constant="15" id="FGV-aI-KYd"/>
+                                                <constraint firstItem="UOv-qZ-QcV" firstAttribute="top" secondItem="Oo7-2Z-FpS" secondAttribute="top" constant="11" id="UUY-rI-NEz"/>
+                                                <constraint firstItem="ret-oP-e4V" firstAttribute="top" secondItem="UOv-qZ-QcV" secondAttribute="bottom" constant="8" id="cEA-eT-J7s"/>
+                                                <constraint firstItem="ret-oP-e4V" firstAttribute="width" secondItem="UOv-qZ-QcV" secondAttribute="width" id="hO4-oV-MTm"/>
+                                                <constraint firstAttribute="trailing" secondItem="xVc-1d-wPO" secondAttribute="trailing" constant="20" id="p0j-Xe-q93"/>
+                                                <constraint firstItem="UOv-qZ-QcV" firstAttribute="centerX" secondItem="Oo7-2Z-FpS" secondAttribute="centerX" id="szO-DR-83M"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="preparationTextLabel" destination="xVc-1d-wPO" id="CIT-e5-0Hx"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </prototypes>
                             </tableView>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hca-dR-cxx">
@@ -749,7 +794,7 @@
                         <viewLayoutGuide key="safeArea" id="BP1-n8-zOJ"/>
                     </view>
                     <navigationItem key="navigationItem" id="mms-a1-1v4"/>
-                    <size key="freeformSize" width="414" height="1200"/>
+                    <size key="freeformSize" width="414" height="1500"/>
                     <connections>
                         <outlet property="recipeDescriptionTableView" destination="9wf-NQ-cPI" id="aMy-Mz-R8k"/>
                         <segue destination="Fog-hn-w9y" kind="unwind" identifier="unwindToNewestRecipiesSegueIdentifier" customClass="ScaleSegue" customModule="EpicuriousClone" customModuleProvider="target" unwindAction="unwindToNewestRecipiesViewControllerFor:towards:" id="GI7-4C-gCR"/>

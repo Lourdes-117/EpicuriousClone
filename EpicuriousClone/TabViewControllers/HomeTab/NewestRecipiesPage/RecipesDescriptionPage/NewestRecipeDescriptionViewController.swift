@@ -19,6 +19,7 @@ class NewestRecipeDescriptionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         recipeDescriptionTableView.dataSource = self
+        recipeDescriptionTableView.delegate = self
         print("Recipe Description View Loaded")
     }
 
@@ -63,7 +64,7 @@ class NewestRecipeDescriptionViewController: UIViewController {
 
 extension NewestRecipeDescriptionViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 4
+        return 5
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -95,10 +96,33 @@ extension NewestRecipeDescriptionViewController: UITableViewDataSource {
             let cell = recipeDescriptionTableView.dequeueReusableCell(withIdentifier: AddToCartButtonTableViewCell.reusableIdentity) as! AddToCartButtonTableViewCell
             cell.setValues(ingredientArray: allRecipies[selectedIndex].ingredients)
             return cell
+        case 4:
+            let cell = recipeDescriptionTableView.dequeueReusableCell(withIdentifier: PreparationTextTableViewCell.reusableIdentity) as! PreparationTextTableViewCell
+            cell.setValue(preparation: allRecipies[selectedIndex].preparation)
+            return cell
         default:
             print("Internal Error In CollectionView")
             let cell = recipeDescriptionTableView.dequeueReusableCell(withIdentifier: HeadingImageTableViewCell.reusableIdentity) as! HeadingImageTableViewCell
             return cell
+        }
+    }
+}
+
+extension NewestRecipeDescriptionViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        switch indexPath.section {
+        case 0:
+            return 200
+        case 1:
+            return 250
+        case 2:
+            return 50
+        case 3:
+            return 100
+        case 4:
+            return 550
+        default:
+            return 250
         }
     }
 }
