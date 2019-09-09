@@ -121,10 +121,6 @@ extension HomeTabPageViewController: UIScrollViewDelegate {
                 HomeTabPageViewController.colorComponents.0 = HomeTabPageViewController.colorComponents.0 + colorChangeToMake
                 HomeTabPageViewController.colorComponents.1 = HomeTabPageViewController.colorComponents.1 - colorChangeToMake
                 HomeTabPageViewController.colorComponents.2 = HomeTabPageViewController.colorComponents.2 - colorChangeToMake
-            } else {
-                HomeTabPageViewController.colorComponents.0 = HomeTabPageViewController.colorComponents.0 - colorChangeToMake
-                HomeTabPageViewController.colorComponents.1 = HomeTabPageViewController.colorComponents.1 - colorChangeToMake
-                HomeTabPageViewController.colorComponents.2 = HomeTabPageViewController.colorComponents.2 + colorChangeToMake
             }
         case 1:
             if(scrollingRight) {
@@ -137,13 +133,9 @@ extension HomeTabPageViewController: UIScrollViewDelegate {
                 HomeTabPageViewController.colorComponents.2 = HomeTabPageViewController.colorComponents.2 - colorChangeToMake
             }
         case 2:
-            if(scrollingRight) {
-                HomeTabPageViewController.colorComponents.0 = HomeTabPageViewController.colorComponents.0 - colorChangeToMake
+            if(!scrollingRight) {
+                HomeTabPageViewController.colorComponents.0 = HomeTabPageViewController.colorComponents.0 + colorChangeToMake
                 HomeTabPageViewController.colorComponents.1 = HomeTabPageViewController.colorComponents.1 - colorChangeToMake
-                HomeTabPageViewController.colorComponents.2 = HomeTabPageViewController.colorComponents.2 + colorChangeToMake
-            } else {
-                HomeTabPageViewController.colorComponents.0 = HomeTabPageViewController.colorComponents.0 - colorChangeToMake
-                HomeTabPageViewController.colorComponents.1 = HomeTabPageViewController.colorComponents.1 + colorChangeToMake
                 HomeTabPageViewController.colorComponents.2 = HomeTabPageViewController.colorComponents.2 - colorChangeToMake
             }
         default:
@@ -151,7 +143,6 @@ extension HomeTabPageViewController: UIScrollViewDelegate {
         }
         view.backgroundColor = UIColor(red: HomeTabPageViewController.colorComponents.0/255, green: HomeTabPageViewController.colorComponents.1/255, blue: HomeTabPageViewController.colorComponents.2/255, alpha: 1)
         checkColorValues()
-        print(HomeTabPageViewController.colorComponents)
     }
 
     fileprivate func checkColorValues() {
