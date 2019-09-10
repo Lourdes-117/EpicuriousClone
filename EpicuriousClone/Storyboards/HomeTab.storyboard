@@ -376,13 +376,13 @@
         <!--Newest Recipe Description View Controller-->
         <scene sceneID="FC0-AI-Pak">
             <objects>
-                <viewController id="jBh-bg-XcH" customClass="NewestRecipeDescriptionViewController" customModule="EpicuriousClone" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NewestRecipiesDescriptionTableViewController" id="jBh-bg-XcH" customClass="NewestRecipeDescriptionViewController" customModule="EpicuriousClone" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZAR-gn-Njz">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="1750"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9wf-NQ-cPI">
-                                <rect key="frame" x="0.0" y="88" width="414" height="1628"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
@@ -1030,7 +1030,6 @@
                         <viewLayoutGuide key="safeArea" id="BP1-n8-zOJ"/>
                     </view>
                     <navigationItem key="navigationItem" id="mms-a1-1v4"/>
-                    <size key="freeformSize" width="414" height="1750"/>
                     <connections>
                         <outlet property="recipeDescriptionTableView" destination="9wf-NQ-cPI" id="aMy-Mz-R8k"/>
                         <segue destination="Fog-hn-w9y" kind="unwind" identifier="unwindToNewestRecipiesSegueIdentifier" customClass="ScaleSegue" customModule="EpicuriousClone" customModuleProvider="target" unwindAction="unwindToNewestRecipiesViewControllerFor:towards:" id="GI7-4C-gCR"/>

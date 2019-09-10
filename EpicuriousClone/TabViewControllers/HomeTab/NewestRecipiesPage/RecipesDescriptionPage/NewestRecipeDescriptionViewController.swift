@@ -44,7 +44,7 @@ class NewestRecipeDescriptionViewController: UIViewController {
     }
 
     @IBAction func onClickBackButton(_ sender: Any) {
-        performSegue(withIdentifier: unwindSegueIdentifier, sender: self)
+        self.dismiss(animated: true, completion: nil)
     }
 
     deinit {
@@ -106,7 +106,7 @@ extension NewestRecipeDescriptionViewController: UITableViewDataSource {
             return cell
         case 6:
             let cell = recipeDescriptionTableView.dequeueReusableCell(withIdentifier: MoreRecipiesCollectionViewTableViewCell.reusableIdentity) as! MoreRecipiesCollectionViewTableViewCell
-            cell.setValues(recipies: allRecipies)
+            cell.setValues(recipies: allRecipies, parent: self)
             return cell
         default:
             print("Internal Error In CollectionView")
