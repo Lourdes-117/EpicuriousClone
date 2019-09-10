@@ -66,7 +66,7 @@ class NewFeedsPageViewController: UIViewController {
 
 extension NewFeedsPageViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return 3
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -93,12 +93,14 @@ extension NewFeedsPageViewController: UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: VideosTableViewCell.reusableIdentity) as! VideosTableViewCell
             cell.setValues(ofVideo: allVideos[indexPath.row])
             return cell
-//        case 2:
-//            print("fds")
+        case 2:
+            let cell  = tableView.dequeueReusableCell(withIdentifier: MoreRecipiesCollectionViewTableViewCell.reusableIdentity) as! MoreRecipiesCollectionViewTableViewCell
+            cell.setValues(recipies: allrecipies, parent: self)
+            return cell
         default:
             let cell = tableView.dequeueReusableCell(withIdentifier: NewFeedsHeadingTableViewCell.reusableIdentity) as! NewFeedsHeadingTableViewCell
             cell.setValues(titleDetails: newFeedsTitle[indexPath.row])
-            print("Internal Error: Unexpected Section at CellForRowAt")
+            print("Internal Error: Unexpected Section caught at CellForRowAt")
             return cell
         }
     }

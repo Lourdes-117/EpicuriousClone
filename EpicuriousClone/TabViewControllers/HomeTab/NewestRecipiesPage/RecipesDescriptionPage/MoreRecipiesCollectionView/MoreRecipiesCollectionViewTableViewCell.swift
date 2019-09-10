@@ -12,10 +12,10 @@ class MoreRecipiesCollectionViewTableViewCell: UITableViewCell {
     public static var selectedIndex:Int = 0
     public static let reusableIdentity:String = "moreRecipiesCollectionViewCellReusableIdentity"
     fileprivate let segueIdentifier:String = "selfSegueIdentifier"
-    var superViewController:NewestRecipeDescriptionViewController!
+    var superViewController:UIViewController!
     @IBOutlet weak var collectionView: UICollectionView!
     var allRecipies:[NewestRecipiesDecodableDataModel]!
-    public func setValues(recipies:[NewestRecipiesDecodableDataModel], parent:NewestRecipeDescriptionViewController) {
+    public func setValues(recipies:[NewestRecipiesDecodableDataModel], parent:UIViewController) {
         self.allRecipies = recipies
         self.superViewController = parent
         collectionView.dataSource = self
@@ -29,10 +29,12 @@ extension MoreRecipiesCollectionViewTableViewCell: UICollectionViewDataSource {
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        print("\(allRecipies.count) elements are getting returned")
         return allRecipies.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        print("CellForRowAt is being called Successfully")
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MoreRecipeCollectionViewCell.reusableIdentity, for: indexPath) as! MoreRecipeCollectionViewCell
         cell.setValues(data: allRecipies[indexPath.row])
         return cell
