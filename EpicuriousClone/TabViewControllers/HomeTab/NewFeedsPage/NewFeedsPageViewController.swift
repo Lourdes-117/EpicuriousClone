@@ -66,7 +66,7 @@ class NewFeedsPageViewController: UIViewController {
 
 extension NewFeedsPageViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return 2
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -74,7 +74,7 @@ extension NewFeedsPageViewController: UITableViewDataSource {
         case 0:
             return newFeedsTitle.count
         case 1:
-            return 1
+            return allVideos.count
         case 2:
             return 1
         default:
@@ -89,8 +89,10 @@ extension NewFeedsPageViewController: UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: NewFeedsHeadingTableViewCell.reusableIdentity) as! NewFeedsHeadingTableViewCell
             cell.setValues(titleDetails: newFeedsTitle[indexPath.row])
             return cell
-//        case 1:
-//            print("fed")
+        case 1:
+            let cell = tableView.dequeueReusableCell(withIdentifier: VideosTableViewCell.reusableIdentity) as! VideosTableViewCell
+            cell.setValues(ofVideo: allVideos[indexPath.row])
+            return cell
 //        case 2:
 //            print("fds")
         default:
