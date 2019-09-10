@@ -29,12 +29,10 @@ extension MoreRecipiesCollectionViewTableViewCell: UICollectionViewDataSource {
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print("\(allRecipies.count) elements are getting returned")
         return allRecipies.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        print("CellForRowAt is being called Successfully")
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MoreRecipeCollectionViewCell.reusableIdentity, for: indexPath) as! MoreRecipeCollectionViewCell
         cell.setValues(data: allRecipies[indexPath.row])
         return cell
@@ -43,11 +41,18 @@ extension MoreRecipiesCollectionViewTableViewCell: UICollectionViewDataSource {
 
 extension MoreRecipiesCollectionViewTableViewCell: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        MoreRecipiesCollectionViewTableViewCell.selectedIndex = indexPath.row
-        let selectedCell = collectionView.cellForItem(at: indexPath) as! MoreRecipeCollectionViewCell
-        let tap = CGPoint(x: 0, y: 0)
-        let point:CGPoint = selectedCell.recipeImage.convert(tap, to: superViewController.view)
-        ScaleSegue.startFrameToAnimate = CGRect(x: point.x, y: point.y, width: selectedCell.recipeImage.frame.width, height: selectedCell.recipeImage.frame.height)
-        superViewController.performSegue(withIdentifier: segueIdentifier, sender: superViewController)
+        if let _ = superViewController as? NewestRecipeDescriptionViewController {
+            MoreRecipiesCollectionViewTableViewCell.selectedIndex = indexPath.row
+            let selectedCell = collectionView.cellForItem(at: indexPath) as! MoreRecipeCollectionViewCell
+            let tap = CGPoint(x: 0, y: 0)
+            let point:CGPoint = selectedCell.recipeImage.convert(tap, to: superViewController.view)
+            ScaleSegue.startFrameToAnimate = CGRect(x: point.x, y: point.y, width: selectedCell.recipeImage.frame.width, height: selectedCell.recipeImage.frame.height)
+            superViewController.performSegue(withIdentifier: segueIdentifier, sender: superViewController)
+        } else {
+            let newestRecipeDescriptionViewController = UIStoryboard.init(name: "HomeTab", bundle: Bundle.main).instantiateViewController(withIdentifier: Constants.ViewControllers.NEWEST_RECIPIES_DESCRIPTION) as! NewestRecipeDescriptionViewController
+            newestRecipeDescriptionViewController.allRecipies = self.allRecipies
+            newestRecipeDescriptionViewController.selectedIndex = indexPath.row
+            superViewController.present(newestRecipeDescriptionViewController, animated: true, completion: nil)
+        }
     }
 }
