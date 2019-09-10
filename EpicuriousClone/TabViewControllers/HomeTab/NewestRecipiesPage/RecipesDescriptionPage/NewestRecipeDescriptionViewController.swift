@@ -64,7 +64,7 @@ class NewestRecipeDescriptionViewController: UIViewController {
 
 extension NewestRecipeDescriptionViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 6
+        return 7
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -103,6 +103,10 @@ extension NewestRecipeDescriptionViewController: UITableViewDataSource {
         case 5:
             let cell = recipeDescriptionTableView.dequeueReusableCell(withIdentifier: keywordCollectionViewTableViewCell.reusableIdentity) as! keywordCollectionViewTableViewCell
             cell.setValue(keywordArray: allRecipies[selectedIndex].keyWords)
+            return cell
+        case 6:
+            let cell = recipeDescriptionTableView.dequeueReusableCell(withIdentifier: MoreRecipiesCollectionViewTableViewCell.reusableIdentity) as! MoreRecipiesCollectionViewTableViewCell
+            cell.setValues(recipies: allRecipies)
             return cell
         default:
             print("Internal Error In CollectionView")

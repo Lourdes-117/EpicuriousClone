@@ -65,6 +65,8 @@
 		5EE1B6AA23267DB9008AE177 /* PreparationTextTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE1B6A923267DB9008AE177 /* PreparationTextTableViewCell.swift */; };
 		5EE1B6AD232684E0008AE177 /* keywordCollectionViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE1B6AC232684E0008AE177 /* keywordCollectionViewTableViewCell.swift */; };
 		5EE1B6AF23268635008AE177 /* keywordCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE1B6AE23268635008AE177 /* keywordCollectionViewCell.swift */; };
+		5EE1B6B223268EAA008AE177 /* MoreRecipiesCollectionViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE1B6B123268EAA008AE177 /* MoreRecipiesCollectionViewTableViewCell.swift */; };
+		5EE1B6B423268F48008AE177 /* MoreRecipeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE1B6B323268F48008AE177 /* MoreRecipeCollectionViewCell.swift */; };
 		5EF6BBE323167B7500DACF3D /* CheckListReusableCellTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF6BBE223167B7500DACF3D /* CheckListReusableCellTableViewHeader.swift */; };
 /* End PBXBuildFile section */
 
@@ -129,6 +131,8 @@
 		5EE1B6A923267DB9008AE177 /* PreparationTextTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreparationTextTableViewCell.swift; sourceTree = "<group>"; };
 		5EE1B6AC232684E0008AE177 /* keywordCollectionViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = keywordCollectionViewTableViewCell.swift; sourceTree = "<group>"; };
 		5EE1B6AE23268635008AE177 /* keywordCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = keywordCollectionViewCell.swift; sourceTree = "<group>"; };
+		5EE1B6B123268EAA008AE177 /* MoreRecipiesCollectionViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreRecipiesCollectionViewTableViewCell.swift; sourceTree = "<group>"; };
+		5EE1B6B323268F48008AE177 /* MoreRecipeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreRecipeCollectionViewCell.swift; sourceTree = "<group>"; };
 		5EF6BBE223167B7500DACF3D /* CheckListReusableCellTableViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckListReusableCellTableViewHeader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -256,6 +260,7 @@
 		5E6314062319173A0045732E /* RecipesDescriptionPage */ = {
 			isa = PBXGroup;
 			children = (
+				5EE1B6B023268E7C008AE177 /* MoreRecipiesCollectionView */,
 				5EE1B6AB232684B8008AE177 /* KeyworkCollectionView */,
 				5EE1B6A623265896008AE177 /* AddToShoppingCart */,
 				5E631407231917600045732E /* NewestRecipeDescriptionViewController.swift */,
@@ -363,6 +368,15 @@
 			path = KeyworkCollectionView;
 			sourceTree = "<group>";
 		};
+		5EE1B6B023268E7C008AE177 /* MoreRecipiesCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				5EE1B6B123268EAA008AE177 /* MoreRecipiesCollectionViewTableViewCell.swift */,
+				5EE1B6B323268F48008AE177 /* MoreRecipeCollectionViewCell.swift */,
+			);
+			path = MoreRecipiesCollectionView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -466,6 +480,7 @@
 				5E96AE8D23154C5500FE632D /* ToDoCheckList+CoreDataClass.swift in Sources */,
 				5E16E025231EA8100000D3D8 /* VideoPlayerViewController.swift in Sources */,
 				5EE1B6A8232658C3008AE177 /* IngredientTableViewCell.swift in Sources */,
+				5EE1B6B423268F48008AE177 /* MoreRecipeCollectionViewCell.swift in Sources */,
 				5EE1B6AA23267DB9008AE177 /* PreparationTextTableViewCell.swift in Sources */,
 				5EE1B6AF23268635008AE177 /* keywordCollectionViewCell.swift in Sources */,
 				5E856F6F231FE06B00A2DFC0 /* NotificationSetterViewController.swift in Sources */,
@@ -488,6 +503,7 @@
 				5E11104D231E8D6700524580 /* NewestVideosDecodableDataModel.swift in Sources */,
 				5E2BFFAD2317ACEA009FF188 /* RecipeCollectionViewCell.swift in Sources */,
 				5EE1B6A523265750008AE177 /* AddToCartViewController.swift in Sources */,
+				5EE1B6B223268EAA008AE177 /* MoreRecipiesCollectionViewTableViewCell.swift in Sources */,
 				5E631408231917600045732E /* NewestRecipeDescriptionViewController.swift in Sources */,
 				5E2BFFA723179440009FF188 /* NewestRecipiesPageViewController.swift in Sources */,
 			);
