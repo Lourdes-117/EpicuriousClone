@@ -9,7 +9,9 @@
 import UIKit
 
 class MoreRecipiesCollectionViewTableViewCell: UITableViewCell {
+    public static var selectedIndex:Int = 0
     public static let reusableIdentity:String = "moreRecipiesCollectionViewCellReusableIdentity"
+    fileprivate let segueIdentifier:String = "selfSegueIdentifier"
     var superViewController:NewestRecipeDescriptionViewController!
     @IBOutlet weak var collectionView: UICollectionView!
     var allRecipies:[NewestRecipiesDecodableDataModel]!
@@ -39,15 +41,11 @@ extension MoreRecipiesCollectionViewTableViewCell: UICollectionViewDataSource {
 
 extension MoreRecipiesCollectionViewTableViewCell: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let storyboard = UIStoryboard(name: "HomeTab", bundle: nil)
-        let secondViewController =  storyboard.instantiateViewController(withIdentifier: Constants.ViewControllers.NEWEST_RECIPIES_DESCRIPTION) as! NewestRecipeDescriptionViewController
-
-        secondViewController.allRecipies = superViewController.allRecipies
-        secondViewController.selectedIndex = indexPath.row
-        guard let navigationController = superViewController.navigationController else {
-            superViewController.present(secondViewController, animated: true)
-            return
-        }
-        navigationController.pushViewController(secondViewController, animated: true)
+        MoreRecipiesCollectionViewTableViewCell.selectedIndex = indexPath.row
+        let selectedCell = collectionView.cellForItem(at: indexPath) as! MoreRecipeCollectionViewCell
+        let tap = CGPoint(x: 0, y: 0)
+        let point:CGPoint = selectedCell.recipeImage.convert(tap, to: superViewController.view)
+        ScaleSegue.startFrameToAnimate = CGRect(x: point.x, y: point.y, width: selectedCell.recipeImage.frame.width, height: selectedCell.recipeImage.frame.height)
+        superViewController.performSegue(withIdentifier: segueIdentifier, sender: superViewController)
     }
 }

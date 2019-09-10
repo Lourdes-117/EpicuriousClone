@@ -815,7 +815,7 @@
                                                     </constraints>
                                                 </view>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="lzv-CN-2j3">
-                                                    <rect key="frame" x="0.0" y="70" width="414" height="269"/>
+                                                    <rect key="frame" x="-12" y="70" width="438" height="271.5"/>
                                                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="25" minimumInteritemSpacing="50" id="FK0-T4-wH7">
                                                         <size key="itemSize" width="207" height="270"/>
@@ -825,7 +825,7 @@
                                                     </collectionViewFlowLayout>
                                                     <cells>
                                                         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MoreRecipieCellReusableIdentity" id="W7O-Nz-LWL" customClass="MoreRecipeCollectionViewCell" customModule="EpicuriousClone" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="-0.5" width="207" height="270"/>
+                                                            <rect key="frame" x="0.0" y="1" width="207" height="270"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                                                 <rect key="frame" x="0.0" y="0.0" width="207" height="270"/>
@@ -952,6 +952,7 @@
                                                                 <outletCollection property="starImageArray" destination="zMg-jD-dzS" collectionClass="NSMutableArray" id="LWs-fF-qbG"/>
                                                                 <outletCollection property="starImageArray" destination="sK0-4A-RmB" collectionClass="NSMutableArray" id="Egy-pr-AIY"/>
                                                                 <outletCollection property="starArray" destination="K7K-a1-fLV" collectionClass="NSMutableArray" id="NRO-iJ-Lyt"/>
+                                                                <segue destination="jBh-bg-XcH" kind="presentation" identifier="selfSegueIdentifier" customClass="ScaleSegue" customModule="EpicuriousClone" customModuleProvider="target" id="Dk3-5X-Mve"/>
                                                             </connections>
                                                         </collectionViewCell>
                                                     </cells>
@@ -1088,8 +1089,8 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kE7-1f-wLS">
-                                <rect key="frame" x="0.0" y="810" width="414" height="84"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kE7-1f-wLS">
+                                <rect key="frame" x="0.0" y="812" width="414" height="84"/>
                                 <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="ADD TO CART">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

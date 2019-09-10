@@ -58,6 +58,9 @@ class NewestRecipeDescriptionViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let addToCartViewController = segue.destination as? AddToCartViewController {
             addToCartViewController.allIngredients = allRecipies[selectedIndex].ingredients
+        } else if let newestRecipeDescriptionViewController = segue.destination as? NewestRecipeDescriptionViewController {
+            newestRecipeDescriptionViewController.allRecipies = self.allRecipies
+            newestRecipeDescriptionViewController.selectedIndex = MoreRecipiesCollectionViewTableViewCell.selectedIndex
         }
     }
 }
