@@ -17,7 +17,71 @@
                     <view key="view" contentMode="scaleToFill" id="KWb-Sv-fFg">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="epicurious" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s0k-Pf-9H7">
+                                <rect key="frame" x="105.5" y="254" width="203" height="50"/>
+                                <fontDescription key="fontDescription" name="GeezaPro-Bold" family="Geeza Pro" pointSize="40"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign in or create a new account to save your favourite recipies" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vQm-ne-J2O">
+                                <rect key="frame" x="40" y="404" width="334" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="10" id="YLb-CS-AYI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rqu-Rc-t2I">
+                                <rect key="frame" x="28" y="44" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="GZ9-cr-TxZ"/>
+                                    <constraint firstAttribute="width" secondItem="rqu-Rc-t2I" secondAttribute="height" multiplier="1:1" id="baz-9F-ckY"/>
+                                </constraints>
+                                <color key="tintColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" image="Settings_Icon"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Pm-5c-tDD">
+                                <rect key="frame" x="40" y="512" width="334" height="45"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="cEt-Yv-yYC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Copperplate-Light" family="Copperplate" pointSize="20"/>
+                                <state key="normal" title="LOGIN">
+                                    <color key="titleColor" red="0.8980392157" green="0.0084072236049999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="83I-6n-hRB">
+                                <rect key="frame" x="40" y="572" width="334" height="45"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="ayf-Xn-T1L"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Copperplate-Light" family="Copperplate" pointSize="20"/>
+                                <state key="normal" title="CREATE ACCOUNT">
+                                    <color key="titleColor" red="0.8980392157" green="0.0084072236049999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="0.8980392157" green="0.0084072236049999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6OT-5E-Qeh" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="83I-6n-hRB" secondAttribute="bottom" constant="20" id="1O2-N0-Gvo"/>
+                            <constraint firstItem="rqu-Rc-t2I" firstAttribute="leading" secondItem="6OT-5E-Qeh" secondAttribute="leading" constant="28" id="4T2-rn-eIg"/>
+                            <constraint firstItem="vQm-ne-J2O" firstAttribute="leading" secondItem="6OT-5E-Qeh" secondAttribute="leading" constant="40" id="8Lf-fc-tnB"/>
+                            <constraint firstItem="vQm-ne-J2O" firstAttribute="top" secondItem="s0k-Pf-9H7" secondAttribute="bottom" priority="750" constant="100" id="IbV-iS-Fq1"/>
+                            <constraint firstItem="83I-6n-hRB" firstAttribute="top" secondItem="8Pm-5c-tDD" secondAttribute="bottom" constant="15" id="MM9-8N-mW7"/>
+                            <constraint firstItem="vQm-ne-J2O" firstAttribute="centerX" secondItem="KWb-Sv-fFg" secondAttribute="centerX" id="Qgo-Ey-fZ2"/>
+                            <constraint firstItem="rqu-Rc-t2I" firstAttribute="top" secondItem="6OT-5E-Qeh" secondAttribute="top" id="RqA-uJ-APX"/>
+                            <constraint firstItem="vQm-ne-J2O" firstAttribute="trailing" secondItem="6OT-5E-Qeh" secondAttribute="trailing" constant="-40" id="a89-1e-hLz"/>
+                            <constraint firstItem="s0k-Pf-9H7" firstAttribute="centerX" secondItem="6OT-5E-Qeh" secondAttribute="centerX" id="h8k-xO-gtY"/>
+                            <constraint firstItem="8Pm-5c-tDD" firstAttribute="leading" secondItem="vQm-ne-J2O" secondAttribute="leading" id="qg3-4B-3we"/>
+                            <constraint firstItem="8Pm-5c-tDD" firstAttribute="top" secondItem="vQm-ne-J2O" secondAttribute="bottom" priority="750" constant="60" id="s2T-A1-3XG"/>
+                            <constraint firstItem="s0k-Pf-9H7" firstAttribute="top" relation="greaterThanOrEqual" secondItem="6OT-5E-Qeh" secondAttribute="top" constant="20" id="uAW-ST-0oT"/>
+                            <constraint firstItem="8Pm-5c-tDD" firstAttribute="width" secondItem="vQm-ne-J2O" secondAttribute="width" id="x0t-H0-FFU"/>
+                            <constraint firstItem="vQm-ne-J2O" firstAttribute="centerY" secondItem="KWb-Sv-fFg" secondAttribute="centerY" constant="-20" id="xyO-AB-MyJ"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6OT-5E-Qeh"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="Favourites_Icon" id="qfg-T5-dq2"/>
@@ -25,10 +89,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qba-Ps-xse" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="448" y="818"/>
+            <point key="canvasLocation" x="447.82608695652175" y="817.63392857142856"/>
         </scene>
     </scenes>
     <resources>
         <image name="Favourites_Icon" width="30" height="30"/>
+        <image name="Settings_Icon" width="30" height="30"/>
     </resources>
 </document>
