@@ -108,6 +108,13 @@ extension NewFeedsPageViewController: UITableViewDataSource {
 
 extension NewFeedsPageViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("A cell got selected by the user")
+        tableView.deselectRow(at: indexPath, animated: true)
+        let selectedCell = tableView.cellForRow(at: indexPath)
+        if let cell = selectedCell as? VideosTableViewCell {
+            let videoPlayerViewController = UIStoryboard.init(name: "HomeTab", bundle: Bundle.main).instantiateViewController(withIdentifier: Constants.ViewControllers.VIDEO_PLAYER) as! VideoPlayerViewController
+            videoPlayerViewController.urlString = cell.videoUrl
+            videoPlayerViewController.descriptionString = cell.description
+            self.present(videoPlayerViewController, animated: true, completion: nil)
+        }
     }
 }

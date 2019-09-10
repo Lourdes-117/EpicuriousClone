@@ -12,7 +12,8 @@ struct Constants {
         public static let NEWEST_RECIPIES:String = "HomeTabNewestRecipiesViewController"
         public static let BEST_GRILLED_VEGETABLES:String = "HomeTabBestGrilledVegetablesViewController"
         public static let NEWEST_VIDEOS:String = "HomeTabNewestVideosViewController"
-        public static let NEWEST_RECIPIES_DESCRIPTION = "NewestRecipiesDescriptionTableViewController"
+        public static let NEWEST_RECIPIES_DESCRIPTION:String = "NewestRecipiesDescriptionTableViewController"
+        public static let VIDEO_PLAYER:String = "VideoPlayerViewStoryboardIdentity"
     }
 
     struct TimerTab {
