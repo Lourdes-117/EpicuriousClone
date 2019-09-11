@@ -91,4 +91,13 @@ struct Constants {
         public static let EDIT:String = "EDIT"
         public static let DONE:String = "DONE"
     }
+
+    struct Regex {
+        static let EMAIL:String = "[A-Z0-9a-z._-]+@[A-Za-z]+\\.[A-Za-z]{2,64}"
+    }
+
+    struct  Status {
+        static let FIELD_EMPTY:String = "Cannot Be Empty"
+        static let INVALID_ENTRY:String = "Is Not Valid"
+    }
 }

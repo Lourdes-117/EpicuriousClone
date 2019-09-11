@@ -15,20 +15,8 @@ extension String {
         return instantiatedViewController
     }
 
-    public func getImge() -> UIImage {
-        switch self {
-        case Constants.TimerTab.STEAK:
-            return #imageLiteral(resourceName: "Steak_Image")
-        case Constants.TimerTab.VEGETABLES:
-            return #imageLiteral(resourceName: "Vegetables_Image")
-        case Constants.TimerTab.CHICKEN_AND_PORK:
-            return #imageLiteral(resourceName: "Chicken_Image")
-        case Constants.TimerTab.SEAFOOD:
-            return #imageLiteral(resourceName: "Seafood_Image")
-        case Constants.TimerTab.EGGS:
-            return #imageLiteral(resourceName: "Eggs_Image")
-        default:
-            return #imageLiteral(resourceName: "Steak_Image")
-        }
+    public func isOfValidFormat(_ format:String) -> Bool {
+        let emailPred = NSPredicate(format:"SELF MATCHES %@", format)
+        return emailPred.evaluate(with: self)
     }
 }
