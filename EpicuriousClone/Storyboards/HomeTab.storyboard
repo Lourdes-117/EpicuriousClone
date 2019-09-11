@@ -143,9 +143,14 @@
                                     <constraint firstAttribute="width" secondItem="yFf-sC-GYT" secondAttribute="height" multiplier="16:9" id="Lcc-Hl-0YF"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ecZ-cZ-bnk">
-                                <rect key="frame" x="369" y="44" width="30" height="52"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="33"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ecZ-cZ-bnk">
+                                <rect key="frame" x="359" y="44" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="ecZ-cZ-bnk" secondAttribute="height" multiplier="1:1" id="XpH-JK-eQh"/>
+                                    <constraint firstAttribute="height" constant="40" id="kDy-Y3-np4"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="X">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -183,7 +188,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hd0-Og-hmx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2360.8695652173915" y="-2251.3392857142858"/>
+            <point key="canvasLocation" x="2360.8695652173915" y="-2252.0089285714284"/>
         </scene>
         <!--Newest Recipies Page View Controller-->
         <scene sceneID="qbx-gC-cnb">
@@ -979,30 +984,27 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hca-dR-cxx">
+                            <navigationBar opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DHd-Ph-gua">
                                 <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <textAttributes key="titleTextAttributes">
-                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                    <color key="textShadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="textColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </textAttributes>
                                 <textAttributes key="largeTitleTextAttributes">
                                     <color key="textColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="textShadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </textAttributes>
-                            </navigationBar>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DHd-Ph-gua">
-                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                                 <items>
-                                    <navigationItem title="Title" largeTitleDisplayMode="always" id="M7V-2w-e1H">
+                                    <navigationItem largeTitleDisplayMode="always" id="M7V-2w-e1H">
                                         <barButtonItem key="backBarButtonItem" title="Back" id="jhg-gl-zMv"/>
                                         <barButtonItem key="leftBarButtonItem" style="plain" id="Mdl-ZU-UkT">
-                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="u2E-d7-uNC">
-                                                <rect key="frame" x="20" y="7" width="92" height="30"/>
+                                            <button key="customView" opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="u2E-d7-uNC">
+                                                <rect key="frame" x="20" y="0.0" width="96" height="44"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="&lt;"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="45" maxY="0.0"/>
+                                                <state key="normal" image="Back_Icon"/>
                                                 <connections>
                                                     <action selector="onClickBackButton:" destination="jBh-bg-XcH" eventType="touchUpInside" id="bIF-0b-laD"/>
                                                 </connections>
@@ -1020,14 +1022,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="BP1-n8-zOJ" firstAttribute="trailing" secondItem="9wf-NQ-cPI" secondAttribute="trailing" id="0Am-eq-bjc"/>
-                            <constraint firstItem="hca-dR-cxx" firstAttribute="top" secondItem="BP1-n8-zOJ" secondAttribute="top" id="Bm0-5b-P2B"/>
                             <constraint firstItem="BP1-n8-zOJ" firstAttribute="trailing" secondItem="DHd-Ph-gua" secondAttribute="trailing" id="MOw-Gl-QWe"/>
                             <constraint firstItem="9wf-NQ-cPI" firstAttribute="leading" secondItem="BP1-n8-zOJ" secondAttribute="leading" id="X4O-2K-q6S"/>
                             <constraint firstItem="DHd-Ph-gua" firstAttribute="leading" secondItem="ZAR-gn-Njz" secondAttribute="leading" id="XOj-d8-cUG"/>
                             <constraint firstItem="BP1-n8-zOJ" firstAttribute="bottom" secondItem="9wf-NQ-cPI" secondAttribute="bottom" id="aml-Nb-uoZ"/>
                             <constraint firstItem="DHd-Ph-gua" firstAttribute="top" secondItem="BP1-n8-zOJ" secondAttribute="top" id="eTd-DW-cMa"/>
-                            <constraint firstItem="hca-dR-cxx" firstAttribute="leading" secondItem="BP1-n8-zOJ" secondAttribute="leading" id="fNO-Jx-3jK"/>
-                            <constraint firstItem="BP1-n8-zOJ" firstAttribute="trailing" secondItem="hca-dR-cxx" secondAttribute="trailing" id="mh8-H9-jiF"/>
                             <constraint firstItem="9wf-NQ-cPI" firstAttribute="top" secondItem="BP1-n8-zOJ" secondAttribute="top" constant="44" id="yvh-Bx-19P"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="BP1-n8-zOJ"/>
@@ -1107,9 +1106,10 @@
                                     <navigationItem title="Add To Shopping List" id="1fl-5n-1j5">
                                         <barButtonItem key="leftBarButtonItem" style="plain" id="vY7-cQ-FpX">
                                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="DNP-Md-17Z">
-                                                <rect key="frame" x="20" y="5" width="30" height="34"/>
+                                                <rect key="frame" x="20" y="6" width="32" height="32"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="X">
+                                                <inset key="imageEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
+                                                <state key="normal" image="Cancel_Icon">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
@@ -1468,6 +1468,8 @@
     </scenes>
     <resources>
         <image name="Acorn_Squash" width="2000" height="1333"/>
+        <image name="Back_Icon" width="96" height="96"/>
+        <image name="Cancel_Icon" width="32" height="32"/>
         <image name="CompletedTask" width="144" height="144"/>
         <image name="Home_Icon" width="24" height="24"/>
         <image name="Reviews_Grey" width="30" height="30"/>
