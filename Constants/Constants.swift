@@ -99,5 +99,6 @@ struct Constants {
     struct  Status {
         static let FIELD_EMPTY:String = "Cannot Be Empty"
         static let INVALID_ENTRY:String = "Is Not Valid"
+        static let DOESNT_MATCH:String  = "Does Not Match"
     }
 }

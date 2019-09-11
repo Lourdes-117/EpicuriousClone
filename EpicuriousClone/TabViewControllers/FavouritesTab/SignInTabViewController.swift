@@ -10,6 +10,9 @@ import UIKit
 
 class SignInTabViewController: UIViewController {
 
+    @IBOutlet weak var bottomViewButton: UIButton!
+    @IBOutlet weak var bottomViewDescription: UILabel!
+    @IBOutlet weak var pageDescription: UILabel!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var emailText: UITextField!
@@ -19,6 +22,10 @@ class SignInTabViewController: UIViewController {
     @IBOutlet weak var passwordText: UITextField!
     @IBOutlet weak var passwordStatus: UILabel!
 
+    @IBOutlet weak var confirmPasswordStatus: UILabel!
+    @IBOutlet weak var confirmPasswordText: UITextField!
+    @IBOutlet weak var confirmPasswordLabel: UILabel!
+    @IBOutlet weak var signUpExtraView: UIView!
     var isSignin:Bool!
 
     override func viewDidLoad() {
@@ -26,11 +33,39 @@ class SignInTabViewController: UIViewController {
         print("Sign In Screen Loaded")
         setDelegates()
         setKeyboardListeners()
+        setUpViews()
+    }
+
+    fileprivate func setUpViews() {
+        let signInDescription:String = "Sign in to view and save all your favourite recipes!"
+        let signUpDescription:String = "Create new account to view and save all your favourite recipes!"
+        let signInBottomViewDescription:String = "Dont have an account?"
+        let signUpBottomViewDescription:String = "Already have an account?"
+        let signInBottomViewButtom:String = "Create One Here!"
+        let signUpBottomViewButtom:String = "Login Here!"
+        let bottomViewButtomAttrubute: [NSAttributedString.Key: Any] = [
+            .font: UIFont.systemFont(ofSize: 15),
+            .foregroundColor: UIColor.white,
+            .underlineStyle: NSUnderlineStyle.single.rawValue]
+        let bottomViewButtonAttributedString:NSAttributedString!
+        if(isSignin) {
+            signUpExtraView.isHidden = true
+            pageDescription.text = signInDescription
+            bottomViewDescription.text = signInBottomViewDescription
+            bottomViewButtonAttributedString = NSMutableAttributedString(string: signInBottomViewButtom, attributes: bottomViewButtomAttrubute)
+        } else {
+            pageDescription.text = signUpDescription
+            signUpExtraView.isHidden = false
+            bottomViewDescription.text = signUpBottomViewDescription
+            bottomViewButtonAttributedString = NSMutableAttributedString(string: signUpBottomViewButtom, attributes: bottomViewButtomAttrubute)
+        }
+        bottomViewButton.setAttributedTitle(bottomViewButtonAttributedString, for: .normal)
     }
 
     fileprivate func setDelegates() {
         emailText.delegate = self
         passwordText.delegate = self
+        confirmPasswordText.delegate = self
     }
 
     fileprivate func setKeyboardListeners() {
@@ -101,6 +136,32 @@ class SignInTabViewController: UIViewController {
         passwordLabel.textColor = UIColor.black
     }
 
+    fileprivate func validateConfirmPassword() {
+        let password = "Password"
+        let enteredConfirmPassword:String = confirmPasswordText.text!
+        guard (enteredConfirmPassword != "") else {
+            confirmPasswordLabel.textColor = UIColor.red
+            confirmPasswordStatus.text = "\(password) \(Constants.Status.FIELD_EMPTY)"
+            confirmPasswordStatus.isHidden = false
+            confirmPasswordText.layer.borderColor = UIColor.red.cgColor
+            confirmPasswordText.layer.borderWidth = 1
+            confirmPasswordText.shake(horizantaly: 5)
+            return
+        }
+        if enteredConfirmPassword != passwordText.text! {
+            confirmPasswordText.layer.borderColor = UIColor.red.cgColor
+            confirmPasswordText.layer.borderWidth = 1
+            confirmPasswordText.shake(horizantaly: 5)
+            confirmPasswordLabel.text = "\(password) \(Constants.Status.DOESNT_MATCH)"
+            confirmPasswordLabel.isHidden = false
+        } else {
+            confirmPasswordStatus.isHidden = true
+            confirmPasswordText.layer.borderColor = UIColor.lightGray.cgColor
+            confirmPasswordText.layer.borderWidth = 1
+            confirmPasswordText.textColor = UIColor.black
+        }
+    }
+
     @IBAction func onClickSigninButton(_ sender: Any) {
         validateEmail()
         validatePassword()
@@ -108,6 +169,17 @@ class SignInTabViewController: UIViewController {
 
     @IBAction func onClickCancelButton(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
+    }
+
+    @IBAction func onClickSignUpButton(_ sender: Any) {
+        validateEmail()
+        validatePassword()
+        validateConfirmPassword()
+    }
+
+    @IBAction func onClickChangeLogin(_ sender: Any) {
+        isSignin = !isSignin
+        setUpViews()
     }
 
     deinit {
@@ -122,7 +194,13 @@ extension SignInTabViewController: UITextFieldDelegate {
         if textField == emailText {
             passwordText.becomeFirstResponder()
         } else if textField == passwordText {
-            onClickSigninButton(0)
+            if(isSignin) {
+                onClickSigninButton(0)
+            } else {
+                confirmPasswordText.becomeFirstResponder()
+            }
+        } else if textField == confirmPasswordText {
+            onClickSignUpButton(0)
         }
         return true
     }

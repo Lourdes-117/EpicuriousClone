@@ -51,6 +51,7 @@
 		5EB937582322465900AF75E8 /* FloatingButtonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB937572322465900AF75E8 /* FloatingButtonController.swift */; };
 		5EBB7D942328B36C00040C69 /* SignInTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EBB7D932328B36C00040C69 /* SignInTabViewController.swift */; };
 		5EBB7D962328B99C00040C69 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EBB7D952328B99C00040C69 /* View.swift */; };
+		5EBB7D982328CDBB00040C69 /* FavouritesTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EBB7D972328CDBB00040C69 /* FavouritesTabViewController.swift */; };
 		5EBBBCBC2321332A00DB8A80 /* ScaleSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EBBBCBB2321332A00DB8A80 /* ScaleSegue.swift */; };
 		5EC4E92D231E34530024CCDD /* IngredientInnerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC4E92C231E34530024CCDD /* IngredientInnerTableViewCell.swift */; };
 		5ED42F7523279AA5008DF5FE /* NewFeedsPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED42F7423279AA5008DF5FE /* NewFeedsPageViewController.swift */; };
@@ -123,6 +124,7 @@
 		5EB937572322465900AF75E8 /* FloatingButtonController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingButtonController.swift; sourceTree = "<group>"; };
 		5EBB7D932328B36C00040C69 /* SignInTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInTabViewController.swift; sourceTree = "<group>"; };
 		5EBB7D952328B99C00040C69 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		5EBB7D972328CDBB00040C69 /* FavouritesTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesTabViewController.swift; sourceTree = "<group>"; };
 		5EBBBCBB2321332A00DB8A80 /* ScaleSegue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaleSegue.swift; sourceTree = "<group>"; };
 		5EC4E92C231E34530024CCDD /* IngredientInnerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientInnerTableViewCell.swift; sourceTree = "<group>"; };
 		5ED42F7423279AA5008DF5FE /* NewFeedsPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewFeedsPageViewController.swift; sourceTree = "<group>"; };
@@ -346,6 +348,7 @@
 			isa = PBXGroup;
 			children = (
 				5EBB7D932328B36C00040C69 /* SignInTabViewController.swift */,
+				5EBB7D972328CDBB00040C69 /* FavouritesTabViewController.swift */,
 			);
 			path = FavouritesTab;
 			sourceTree = "<group>";
@@ -533,6 +536,7 @@
 				5EF6BBE323167B7500DACF3D /* CheckListReusableCellTableViewHeader.swift in Sources */,
 				5E8B52AF231400D700E87646 /* ThinknessReusableCellCollectionViewCell.swift in Sources */,
 				5EBB7D942328B36C00040C69 /* SignInTabViewController.swift in Sources */,
+				5EBB7D982328CDBB00040C69 /* FavouritesTabViewController.swift in Sources */,
 				5E96AE8A231549CF00FE632D /* CheckListReusableCellTableViewCell.swift in Sources */,
 				5EE1B6A323265347008AE177 /* AddToCartButtonTableViewCell.swift in Sources */,
 				5E11104A231E8B1300524580 /* NewestVideosPageViewController.swift in Sources */,
