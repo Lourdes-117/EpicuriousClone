@@ -10,6 +10,7 @@ import UIKit
 
 class SearchTabViewController: UIViewController {
 
+    @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     var data:[SearchTabDecodableDataModel] = []
     let dispatchGroup = DispatchGroup()

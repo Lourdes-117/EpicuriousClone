@@ -14,12 +14,14 @@ class SearchTableViewCell: UITableViewCell {
     public static let reusableIdentity:String = "searchTableViewCellReusableIdentity"
     fileprivate var keywordList:[String] = []
     fileprivate var row:Int!
+    var parentViewController:UIViewController!
     public func setValues(parent:UIViewController, data:SearchTabDecodableDataModel, displayingRow:Int) {
         keywordTitle.text = data.title
         self.keywordList = data.keywords
         collectionView.dataSource = self
         collectionView.delegate = self
         self.row = displayingRow
+        self.parentViewController = parent
     }
 }
 
@@ -40,6 +42,11 @@ extension SearchTableViewCell: UICollectionViewDataSource {
 
 extension SearchTableViewCell: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("Selected a keyword")
+        let selectedCell = collectionView.cellForItem(at: indexPath) as! InnerKeywordCollectionViewCell
+        guard let searchTabViewController = parentViewController as? SearchTabViewController else {
+            print("ParentViewController is not SearchTabViewController")
+            return
+        }
+        searchTabViewController.searchBar.text = selectedCell.keywordLabel.text!
     }
 }
