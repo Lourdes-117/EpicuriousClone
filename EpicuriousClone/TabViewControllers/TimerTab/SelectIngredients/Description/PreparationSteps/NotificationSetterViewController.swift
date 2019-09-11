@@ -30,9 +30,9 @@ class NotificationSetterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         print("Notification Timer View Loaded")
-//        setNotification()
-//        initializeScreen()
-//        initializeNotification()
+        setNotification()
+        initializeScreen()
+        initializeNotification()
         initializeButtons()
         initializeFloatingButton()
     }
