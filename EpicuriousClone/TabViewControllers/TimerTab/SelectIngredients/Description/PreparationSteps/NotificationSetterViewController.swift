@@ -24,6 +24,9 @@ class NotificationSetterViewController: UIViewController {
     var recipeProcedureArray:[(String,String)]!
     var isNotificationRequested:Bool = true
     let segueIdentifier:String = "showProcedureSegueIdentifier"
+    let recipeNameUserDefault:String = "RecipeNameToSetUserDefault"
+    weak var timer: Timer?
+    var timerDispatchSourceTimer : DispatchSourceTimer?
 
     @IBOutlet var backgroundUIView: UIView!
     let notificationCenter = UNUserNotificationCenter.current()
@@ -40,6 +43,15 @@ class NotificationSetterViewController: UIViewController {
                 let todayDateComponents = Calendar.current.dateComponents([.second, .minute, .hour], from: Date())
                 self.secondsToCook = abs(triggerDateComponents.second! - todayDateComponents.second!)
                 self.minutesToCook = abs(triggerDateComponents.minute! - todayDateComponents.minute!)
+                self.recipeNameToSet = UserDefaults.standard.string(forKey: self.recipeNameUserDefault)
+
+                DispatchQueue.main.async { [weak self] in
+                    self!.initializeScreen()
+                    self!.initializeNotification()
+                    self!.initializeButtons()
+                    self!.initializeFloatingButton()
+                    self!.initiateLoop()
+                }
             }
         } else {
             setNotification()
@@ -47,12 +59,41 @@ class NotificationSetterViewController: UIViewController {
             initializeNotification()
             initializeButtons()
             initializeFloatingButton()
+            initiateLoop()
         }
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        if(self.isNotificationRequested) {
+            FloatingButtonController.getInstance().view.isHidden = false
+        }
+    }
+
+    fileprivate func initiateLoop() {
+        timerDispatchSourceTimer = DispatchSource.makeTimerSource(flags: [], queue: DispatchQueue.main)
+        timerDispatchSourceTimer?.schedule(deadline: .now(), repeating: .seconds(1))
+        timerDispatchSourceTimer?.setEventHandler{
+            if(self.secondsToCook > 0 && self.minutesToCook > 0) {
+                self.secondsToCook = self.secondsToCook - 1
+            } else if(self.secondsToCook < 0 && self.minutesToCook > 0) {
+                self.minutesToCook = self.minutesToCook - 1
+                self.secondsToCook = 60
+            }
+            DispatchQueue.main.async { [weak self] in
+                self!.initializeScreen()
+                if(self!.minutesToCook == 0 && self!.secondsToCook == 0) {
+                    self!.dismiss(animated: true, completion: nil)
+                }
+            }
+        }
+        timerDispatchSourceTimer?.resume()
     }
 
     fileprivate func initializeFloatingButton() {
         let floatingButton = FloatingButtonController.getInstance()
         floatingButton.showFloatingButton()
+        floatingButton.view.isHidden = true
     }
 
     fileprivate func initializeScreen() {
@@ -97,6 +138,7 @@ class NotificationSetterViewController: UIViewController {
     }
 
     fileprivate func setNotification() {
+        UserDefaults.standard.set(recipeNameToSet, forKey: recipeNameUserDefault)
         let content = UNMutableNotificationContent()
         content.title = "Done"
         content.body = "Your Recipe Is Ready"
@@ -164,6 +206,8 @@ class NotificationSetterViewController: UIViewController {
     }
 
     deinit {
+        timer?.invalidate()
+        timerDispatchSourceTimer?.cancel()
         print("Notification Timer View Safe From Memory Leaks")
     }
 }
