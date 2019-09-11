@@ -28,14 +28,16 @@ class CheckListViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        initializeData()
         seperateData()
+        tasksTableView.reloadData()
     }
 
     fileprivate func initializeData() {
         let fetchRequest: NSFetchRequest<ToDoCheckList> = ToDoCheckList.fetchRequest()
         do {
             let toDoDataFromCoreData = try PersistentService.context.fetch(fetchRequest)
-            CheckListViewController.allTasksArray.append(contentsOf: toDoDataFromCoreData)
+            CheckListViewController.allTasksArray = toDoDataFromCoreData
         }
         catch {
             print("Error In Fetching Data From Core Data ")
