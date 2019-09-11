@@ -314,8 +314,8 @@
 		5E8B52AB2313FD8500E87646 /* Description */ = {
 			isa = PBXGroup;
 			children = (
-				5E856F6E231FE06B00A2DFC0 /* NotificationSetterViewController.swift */,
 				5E96AE80231502BF00FE632D /* PreparationSteps */,
+				5E856F6E231FE06B00A2DFC0 /* NotificationSetterViewController.swift */,
 				5E8B52AC2313FDA800E87646 /* RecipeDescriptionViewController.swift */,
 				5E8B52AE231400D700E87646 /* ThinknessReusableCellCollectionViewCell.swift */,
 				5E8B52B0231400FB00E87646 /* CookingDeepnessReusableCellCollectionViewCell.swift */,

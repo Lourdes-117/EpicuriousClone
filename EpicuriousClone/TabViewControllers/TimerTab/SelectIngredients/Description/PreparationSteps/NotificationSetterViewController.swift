@@ -30,11 +30,24 @@ class NotificationSetterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         print("Notification Timer View Loaded")
-        setNotification()
-        initializeScreen()
-        initializeNotification()
-        initializeButtons()
-        initializeFloatingButton()
+        if(minutesToCook == nil) {
+            isNotificationRequested = true
+            notificationCenter.getPendingNotificationRequests { (notificationarray) in
+                let notification = notificationarray[0]
+                let trigger = notification.trigger as! UNCalendarNotificationTrigger
+                let triggerRequestedDate = trigger.nextTriggerDate()
+                let triggerDateComponents = Calendar.current.dateComponents([.second, .minute, .hour], from: triggerRequestedDate!)
+                let todayDateComponents = Calendar.current.dateComponents([.second, .minute, .hour], from: Date())
+                self.secondsToCook = abs(triggerDateComponents.second! - todayDateComponents.second!)
+                self.minutesToCook = abs(triggerDateComponents.minute! - todayDateComponents.minute!)
+            }
+        } else {
+            setNotification()
+            initializeScreen()
+            initializeNotification()
+            initializeButtons()
+            initializeFloatingButton()
+        }
     }
 
     fileprivate func initializeFloatingButton() {

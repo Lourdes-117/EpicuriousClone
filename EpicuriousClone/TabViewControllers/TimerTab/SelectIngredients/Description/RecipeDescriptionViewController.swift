@@ -60,8 +60,8 @@ class RecipeDescriptionViewController: UIViewController {
         let (preperationStepOneHeadingString, preparationStepOneDescriptionString):(String, String) = allDescriptionData.steps[0]
         preparationStepOneHeading.text = "Step 1 | \(preperationStepOneHeadingString)"
         preparationStepOne.text = preparationStepOneDescriptionString
-        cookTimeMinutes.text = allDescriptionData.defaultMinutes
-        cookTimeSeconds.text = allDescriptionData.defaultSeconds
+        cookTimeMinutes.text = String(format: "%02d", Int(allDescriptionData.defaultMinutes)!)
+        cookTimeSeconds.text = String(format: "%02d", Int(allDescriptionData.defaultSeconds)!)
         thicknessArray = allDescriptionData.thicknessArray
         cookingDeepnessArray = allDescriptionData.cookingDeepnessArray
         recipeImage.image = allDescriptionData.recipeImage
