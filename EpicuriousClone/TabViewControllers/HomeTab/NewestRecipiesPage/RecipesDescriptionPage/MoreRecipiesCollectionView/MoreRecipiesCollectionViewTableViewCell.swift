@@ -20,6 +20,8 @@ class MoreRecipiesCollectionViewTableViewCell: UITableViewCell {
         self.superViewController = parent
         collectionView.dataSource = self
         collectionView.delegate = self
+        let layout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
+        layout.itemSize = CGSize(width: parent.view.frame.width/2, height: (parent.view.frame.width/2)+70)
     }
 }
 

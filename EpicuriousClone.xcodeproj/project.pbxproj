@@ -110,6 +110,7 @@
 		5E6314042318E84C0045732E /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 		5E631407231917600045732E /* NewestRecipeDescriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewestRecipeDescriptionViewController.swift; sourceTree = "<group>"; };
 		5E631409231919490045732E /* HeadingImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadingImageTableViewCell.swift; sourceTree = "<group>"; };
+		5E7EE1C2232A197B00BF0739 /* EpicuriousClone 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "EpicuriousClone 2.xcdatamodel"; sourceTree = "<group>"; };
 		5E856F6E231FE06B00A2DFC0 /* NotificationSetterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NotificationSetterViewController.swift; path = PreparationSteps/NotificationSetterViewController.swift; sourceTree = "<group>"; };
 		5E8B52A32313C1D400E87646 /* SelectIngredientsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectIngredientsViewController.swift; sourceTree = "<group>"; };
 		5E8B52A72313E3B200E87646 /* SelectIngredientCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectIngredientCell.swift; sourceTree = "<group>"; };
@@ -787,6 +788,7 @@
 		5E207B7923100DE3001D5FDF /* EpicuriousClone.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				5E7EE1C2232A197B00BF0739 /* EpicuriousClone 2.xcdatamodel */,
 				5E207B7A23100DE3001D5FDF /* EpicuriousClone.xcdatamodel */,
 			);
 			currentVersion = 5E207B7A23100DE3001D5FDF /* EpicuriousClone.xcdatamodel */;

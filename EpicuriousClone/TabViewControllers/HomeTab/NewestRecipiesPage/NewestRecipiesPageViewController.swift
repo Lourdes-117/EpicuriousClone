@@ -24,6 +24,10 @@ class NewestRecipiesPageViewController: UIViewController {
         dispatchGroup.notify(queue: .main, execute: {
             self.refreshViewController()
         })
+        setCollectionViewCellSize()
+    }
+
+    fileprivate func setCollectionViewCellSize() {
         let layout = recipiesCollectionView.collectionViewLayout as! UICollectionViewFlowLayout
         layout.itemSize = CGSize(width: view.frame.width/2, height: (view.frame.width/2)+70)
     }

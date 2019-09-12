@@ -730,7 +730,7 @@
                                                     </constraints>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Qv-4V-Mek">
-                                                    <rect key="frame" x="314" y="133" width="100" height="66.5"/>
+                                                    <rect key="frame" x="314" y="10" width="100" height="66.5"/>
                                                     <subviews>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3zm-Ja-i5T">
                                                             <rect key="frame" x="0.0" y="0.0" width="100" height="66.5"/>
@@ -756,11 +756,11 @@
                                                 <constraint firstItem="xVc-1d-wPO" firstAttribute="leading" secondItem="Oo7-2Z-FpS" secondAttribute="leading" constant="20" id="CgR-tN-LQi"/>
                                                 <constraint firstAttribute="trailing" secondItem="6Qv-4V-Mek" secondAttribute="trailing" id="ILZ-o0-Nc4"/>
                                                 <constraint firstItem="TsF-dg-yXa" firstAttribute="width" secondItem="EFw-7H-Ovz" secondAttribute="width" id="O4c-JA-SKZ"/>
-                                                <constraint firstItem="6Qv-4V-Mek" firstAttribute="top" secondItem="xVc-1d-wPO" secondAttribute="bottom" constant="50" id="Q1J-cN-kaC"/>
                                                 <constraint firstItem="EFw-7H-Ovz" firstAttribute="top" secondItem="Oo7-2Z-FpS" secondAttribute="top" constant="10" id="SGi-Af-PUp"/>
                                                 <constraint firstItem="TsF-dg-yXa" firstAttribute="top" secondItem="EFw-7H-Ovz" secondAttribute="bottom" constant="8" id="XdM-ae-Nvf"/>
                                                 <constraint firstItem="xVc-1d-wPO" firstAttribute="top" secondItem="EFw-7H-Ovz" secondAttribute="bottom" constant="8" id="aDM-YH-59r"/>
                                                 <constraint firstItem="EFw-7H-Ovz" firstAttribute="centerX" secondItem="Oo7-2Z-FpS" secondAttribute="centerX" id="ad5-9U-Cji"/>
+                                                <constraint firstItem="3zm-Ja-i5T" firstAttribute="top" secondItem="EFw-7H-Ovz" secondAttribute="top" id="eLq-O3-czG"/>
                                                 <constraint firstAttribute="trailing" secondItem="xVc-1d-wPO" secondAttribute="trailing" constant="20" id="p0j-Xe-q93"/>
                                             </constraints>
                                         </tableViewCellContentView>
