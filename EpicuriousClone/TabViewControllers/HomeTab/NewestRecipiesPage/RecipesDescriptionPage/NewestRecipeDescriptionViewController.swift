@@ -61,6 +61,9 @@ class NewestRecipeDescriptionViewController: UIViewController {
         performSegue(withIdentifier: addToCartSegue, sender: self)
     }
 
+    @IBAction func onClickShowIngredientsFloatingButton(_ sender: Any) {
+        performSegue(withIdentifier: addToCartSegue, sender: self)
+    }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let addToCartViewController = segue.destination as? AddToCartViewController {
             addToCartViewController.allIngredients = allRecipies[selectedIndex].ingredients

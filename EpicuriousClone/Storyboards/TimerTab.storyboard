@@ -516,6 +516,27 @@
                                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gPe-zb-of7">
+                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OFm-qB-99k">
+                                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                        <state key="normal" image="Cancel_Icon"/>
+                                                        <connections>
+                                                            <action selector="onClickOptionalCancelButton:" destination="50f-Pf-BBf" eventType="touchUpInside" id="HeY-z3-rI5"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="0.31571061643835618" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstItem="OFm-qB-99k" firstAttribute="top" secondItem="gPe-zb-of7" secondAttribute="top" id="1gg-qU-dhi"/>
+                                                    <constraint firstAttribute="trailing" secondItem="OFm-qB-99k" secondAttribute="trailing" id="3Jz-ve-i7N"/>
+                                                    <constraint firstAttribute="width" secondItem="gPe-zb-of7" secondAttribute="height" multiplier="1:1" id="XkH-QI-Ndz"/>
+                                                    <constraint firstAttribute="height" constant="50" id="bk0-1l-ofr"/>
+                                                    <constraint firstItem="OFm-qB-99k" firstAttribute="leading" secondItem="gPe-zb-of7" secondAttribute="leading" id="iGT-fc-WEV"/>
+                                                    <constraint firstAttribute="bottom" secondItem="OFm-qB-99k" secondAttribute="bottom" id="jFb-Qf-ueS"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" red="0.11562611786528766" green="0.11799872830178082" blue="0.25569709030547938" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
@@ -524,6 +545,7 @@
                                             <constraint firstItem="23O-fZ-IIh" firstAttribute="top" secondItem="VRM-4X-zUq" secondAttribute="bottom" constant="20" id="77n-oS-fN8"/>
                                             <constraint firstItem="VRM-4X-zUq" firstAttribute="height" secondItem="LcQ-lm-OE8" secondAttribute="height" multiplier="250:725" id="83F-WE-bPK"/>
                                             <constraint firstItem="l0A-UL-eqi" firstAttribute="centerX" secondItem="LcQ-lm-OE8" secondAttribute="centerX" constant="50" id="B20-B2-8yZ"/>
+                                            <constraint firstItem="gPe-zb-of7" firstAttribute="leading" secondItem="VRM-4X-zUq" secondAttribute="leading" id="KQJ-Yu-ebZ"/>
                                             <constraint firstAttribute="trailing" secondItem="VRM-4X-zUq" secondAttribute="trailing" id="LNP-Ks-EUx"/>
                                             <constraint firstItem="pGk-uB-W3g" firstAttribute="top" secondItem="fCT-Rr-V7b" secondAttribute="bottom" constant="8" id="O28-D5-v3K"/>
                                             <constraint firstItem="PzE-Sy-4fN" firstAttribute="leading" secondItem="j9J-jR-Twi" secondAttribute="trailing" constant="30" id="PQ7-Y1-pfU"/>
@@ -536,6 +558,7 @@
                                             <constraint firstItem="VRM-4X-zUq" firstAttribute="top" secondItem="LcQ-lm-OE8" secondAttribute="top" id="XQf-Vk-fYW"/>
                                             <constraint firstAttribute="trailing" secondItem="fCT-Rr-V7b" secondAttribute="trailing" id="bhK-KV-VX5"/>
                                             <constraint firstItem="l0A-UL-eqi" firstAttribute="top" secondItem="pGk-uB-W3g" secondAttribute="top" id="cmJ-X6-v0X"/>
+                                            <constraint firstItem="gPe-zb-of7" firstAttribute="top" secondItem="VRM-4X-zUq" secondAttribute="top" id="dJz-Rf-ecP"/>
                                             <constraint firstItem="j9J-jR-Twi" firstAttribute="width" secondItem="PzE-Sy-4fN" secondAttribute="width" id="dMP-iN-m2T"/>
                                             <constraint firstItem="j9J-jR-Twi" firstAttribute="top" secondItem="e7U-ZV-Pki" secondAttribute="top" id="j4i-J3-BWS"/>
                                             <constraint firstItem="e7U-ZV-Pki" firstAttribute="height" secondItem="j9J-jR-Twi" secondAttribute="height" id="kTJ-Fu-d1M"/>
@@ -569,6 +592,7 @@
                     </view>
                     <connections>
                         <outlet property="backgroundUIView" destination="kUb-hp-qWw" id="4or-R1-XXT"/>
+                        <outlet property="optionalCancelButtonView" destination="gPe-zb-of7" id="CFH-Yv-fUH"/>
                         <outlet property="playButton" destination="j9J-jR-Twi" id="K4F-wx-XmF"/>
                         <outlet property="recipeCookingTime" destination="fCT-Rr-V7b" id="MZZ-pL-PmX"/>
                         <outlet property="recipeImage" destination="VRM-4X-zUq" id="2dw-7w-PgM"/>
@@ -721,6 +745,7 @@
     </scenes>
     <resources>
         <image name="Acorn_Squash" width="2000" height="1333"/>
+        <image name="Cancel_Icon" width="32" height="32"/>
         <image name="Chicken_And_Pork_Image" width="1180" height="800"/>
         <image name="List_Icon" width="50" height="50"/>
         <image name="Pause_Icon" width="50" height="50"/>

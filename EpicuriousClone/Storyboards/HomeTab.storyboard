@@ -385,11 +385,11 @@
             <objects>
                 <viewController storyboardIdentifier="NewestRecipiesDescriptionTableViewController" id="jBh-bg-XcH" customClass="NewestRecipeDescriptionViewController" customModule="EpicuriousClone" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZAR-gn-Njz">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="1500"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9wf-NQ-cPI">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="1378"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
@@ -729,11 +729,34 @@
                                                         <constraint firstAttribute="height" constant="3" id="Sz4-Ig-DZc"/>
                                                     </constraints>
                                                 </view>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Qv-4V-Mek">
+                                                    <rect key="frame" x="314" y="133" width="100" height="66.5"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3zm-Ja-i5T">
+                                                            <rect key="frame" x="0.0" y="0.0" width="100" height="66.5"/>
+                                                            <state key="normal" image="Timer_Icon"/>
+                                                            <connections>
+                                                                <action selector="onClickShowIngredientsFloatingButton:" destination="jBh-bg-XcH" eventType="touchUpInside" id="ElQ-D0-CS1"/>
+                                                            </connections>
+                                                        </button>
+                                                    </subviews>
+                                                    <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="100" id="9Ag-bR-6s3"/>
+                                                        <constraint firstAttribute="trailing" secondItem="3zm-Ja-i5T" secondAttribute="trailing" id="CMh-5x-ILO"/>
+                                                        <constraint firstAttribute="bottom" secondItem="3zm-Ja-i5T" secondAttribute="bottom" id="DlX-UE-AVI"/>
+                                                        <constraint firstItem="3zm-Ja-i5T" firstAttribute="top" secondItem="6Qv-4V-Mek" secondAttribute="top" id="KY0-7A-5kH"/>
+                                                        <constraint firstAttribute="width" secondItem="6Qv-4V-Mek" secondAttribute="height" multiplier="1.5:1" id="X9U-Th-l98"/>
+                                                        <constraint firstItem="3zm-Ja-i5T" firstAttribute="leading" secondItem="6Qv-4V-Mek" secondAttribute="leading" id="tiu-YU-bAP"/>
+                                                    </constraints>
+                                                </view>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="TsF-dg-yXa" firstAttribute="centerX" secondItem="EFw-7H-Ovz" secondAttribute="centerX" id="0ky-oe-xXU"/>
                                                 <constraint firstItem="xVc-1d-wPO" firstAttribute="leading" secondItem="Oo7-2Z-FpS" secondAttribute="leading" constant="20" id="CgR-tN-LQi"/>
+                                                <constraint firstAttribute="trailing" secondItem="6Qv-4V-Mek" secondAttribute="trailing" id="ILZ-o0-Nc4"/>
                                                 <constraint firstItem="TsF-dg-yXa" firstAttribute="width" secondItem="EFw-7H-Ovz" secondAttribute="width" id="O4c-JA-SKZ"/>
+                                                <constraint firstItem="6Qv-4V-Mek" firstAttribute="top" secondItem="xVc-1d-wPO" secondAttribute="bottom" constant="50" id="Q1J-cN-kaC"/>
                                                 <constraint firstItem="EFw-7H-Ovz" firstAttribute="top" secondItem="Oo7-2Z-FpS" secondAttribute="top" constant="10" id="SGi-Af-PUp"/>
                                                 <constraint firstItem="TsF-dg-yXa" firstAttribute="top" secondItem="EFw-7H-Ovz" secondAttribute="bottom" constant="8" id="XdM-ae-Nvf"/>
                                                 <constraint firstItem="xVc-1d-wPO" firstAttribute="top" secondItem="EFw-7H-Ovz" secondAttribute="bottom" constant="8" id="aDM-YH-59r"/>
@@ -1032,6 +1055,7 @@
                         <viewLayoutGuide key="safeArea" id="BP1-n8-zOJ"/>
                     </view>
                     <navigationItem key="navigationItem" id="mms-a1-1v4"/>
+                    <size key="freeformSize" width="414" height="1500"/>
                     <connections>
                         <outlet property="recipeDescriptionTableView" destination="9wf-NQ-cPI" id="aMy-Mz-R8k"/>
                         <segue destination="Fog-hn-w9y" kind="unwind" identifier="unwindToNewestRecipiesSegueIdentifier" customClass="ScaleSegue" customModule="EpicuriousClone" customModuleProvider="target" unwindAction="unwindToNewestRecipiesViewControllerFor:towards:" id="GI7-4C-gCR"/>
@@ -1163,11 +1187,11 @@
             <objects>
                 <viewController storyboardIdentifier="HomeTabBestGrilledVegetablesViewController" id="kl5-Zf-lkc" customClass="NewFeedsPageViewController" customModule="EpicuriousClone" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yf0-Ne-ElT">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="1200"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="y1b-zC-2yg">
-                                <rect key="frame" x="0.0" y="84" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="84" width="414" height="1122"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
@@ -1439,6 +1463,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="ltZ-So-owW"/>
                     <navigationItem key="navigationItem" id="3Rs-aC-wFT"/>
+                    <size key="freeformSize" width="414" height="1200"/>
                     <connections>
                         <outlet property="tableView" destination="y1b-zC-2yg" id="oXj-XQ-ZLO"/>
                     </connections>
@@ -1473,6 +1498,7 @@
         <image name="CompletedTask" width="144" height="144"/>
         <image name="Home_Icon" width="24" height="24"/>
         <image name="Reviews_Grey" width="30" height="30"/>
+        <image name="Timer_Icon" width="24" height="24"/>
         <image name="Video_Icon" width="48" height="48"/>
     </resources>
 </document>

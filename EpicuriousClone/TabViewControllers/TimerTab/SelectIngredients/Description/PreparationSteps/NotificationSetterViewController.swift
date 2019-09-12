@@ -17,6 +17,7 @@ class NotificationSetterViewController: UIViewController {
     @IBOutlet var buttons: [UIButton]!
     @IBOutlet weak var playButton: UIButton!
     
+    @IBOutlet weak var optionalCancelButtonView: UIView!
     var recipeImageToSet:UIImage!
     var minutesToCook:Int!
     var secondsToCook:Int!
@@ -45,12 +46,16 @@ class NotificationSetterViewController: UIViewController {
                 self.minutesToCook = abs(triggerDateComponents.minute! - todayDateComponents.minute!)
                 self.recipeNameToSet = UserDefaults.standard.string(forKey: self.recipeNameUserDefault)
 
+                print("Trigger ", triggerDateComponents)
+                print("Today ", todayDateComponents)
+
                 DispatchQueue.main.async { [weak self] in
-                    self!.initializeScreen()
+                    self!.initializeTime()
                     self!.initializeNotification()
                     self!.initializeButtons()
                     self!.initializeFloatingButton()
                     self!.initiateLoop()
+                    self!.initializeOptionalView()
                 }
             }
         } else {
@@ -61,6 +66,18 @@ class NotificationSetterViewController: UIViewController {
             initializeFloatingButton()
             initiateLoop()
         }
+    }
+
+    fileprivate func initializeOptionalView() {
+        guard  let _ = self.navigationController else {
+            optionalCancelButtonView.isHidden = false
+            optionalCancelButtonView.layer.cornerRadius = 5
+            return
+        }
+    }
+
+    @IBAction func onClickOptionalCancelButton(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -76,7 +93,7 @@ class NotificationSetterViewController: UIViewController {
         timerDispatchSourceTimer?.setEventHandler{
             if(self.secondsToCook > 0 && self.minutesToCook > 0) {
                 self.secondsToCook = self.secondsToCook - 1
-            } else if(self.secondsToCook < 0 && self.minutesToCook > 0) {
+            } else if(self.secondsToCook == 0 && self.minutesToCook > 0) {
                 self.minutesToCook = self.minutesToCook - 1
                 self.secondsToCook = 60
             }
@@ -96,10 +113,14 @@ class NotificationSetterViewController: UIViewController {
         floatingButton.view.isHidden = true
     }
 
-    fileprivate func initializeScreen() {
+    fileprivate func initializeTime() {
         let minutesString:String = String(format: "%02d", minutesToCook)
         let secondsString:String = String(format: "%02d", secondsToCook)
         recipeCookingTime.text = "\(minutesString):\(secondsString)"
+    }
+
+    fileprivate func initializeScreen() {
+        initializeTime()
         recipeImage.image = recipeImageToSet
         recipeName.text = recipeNameToSet
     }
@@ -138,6 +159,7 @@ class NotificationSetterViewController: UIViewController {
     }
 
     fileprivate func setNotification() {
+        initiateLoop()
         UserDefaults.standard.set(recipeNameToSet, forKey: recipeNameUserDefault)
         let content = UNMutableNotificationContent()
         content.title = "Done"
@@ -157,10 +179,12 @@ class NotificationSetterViewController: UIViewController {
     @IBAction func onClickPlayOrPauseButton(_ sender: Any) {
         if(isNotificationRequested) {
             notificationCenter.removeAllPendingNotificationRequests()
+            stopTimer()
             playButton.setImage(UIImage(named: Constants.HomeTab.PLAY_FILLED_ICON), for: .normal)
         } else {
             print("Notification Requested")
             setNotification()
+            initiateLoop()
             let floatingButton = FloatingButtonController.getInstance()
             floatingButton.showFloatingButton()
             playButton.setImage(UIImage(named: Constants.HomeTab.PAUSE_ICON), for: .normal)
@@ -169,8 +193,6 @@ class NotificationSetterViewController: UIViewController {
     }
 
     @IBAction func onClickStopButton(_ sender: Any) {
-        let floatingButton = FloatingButtonController.getInstance()
-        floatingButton.hideFloatingButton()
         createAlertForDeletionConfirmation()
     }
 
@@ -184,7 +206,8 @@ class NotificationSetterViewController: UIViewController {
         let deleteButton:UIAlertAction = UIAlertAction(title: stop, style: .default) { (button) in
             print("Notification Removed")
             let floatingButton = FloatingButtonController.getInstance()
-            floatingButton.showFloatingButton()
+            floatingButton.hideFloatingButton()
+            self.stopTimer()
             self.notificationCenter.removeAllPendingNotificationRequests()
             self.isNotificationRequested = false
             self.playButton.setImage(UIImage(named: Constants.HomeTab.PLAY_FILLED_ICON), for: .normal)
@@ -205,9 +228,13 @@ class NotificationSetterViewController: UIViewController {
         }
     }
 
-    deinit {
+    fileprivate func stopTimer() {
         timer?.invalidate()
         timerDispatchSourceTimer?.cancel()
+    }
+
+    deinit {
+        stopTimer()
         print("Notification Timer View Safe From Memory Leaks")
     }
 }

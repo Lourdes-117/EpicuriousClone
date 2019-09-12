@@ -59,9 +59,19 @@ class FloatingButtonController: UIViewController {
             return
         }
         if let presentedViewController = mainViewController.presentedViewController {
-            presentedViewController.present(notificationSetterViewController, animated: true, completion: nil)
+            guard let navigationController = presentedViewController.navigationController else {
+                presentedViewController.present(notificationSetterViewController, animated: true, completion: nil)
+                return
+            }
+            navigationController.pushViewController(notificationSetterViewController, animated: true)
+
         } else {
-            mainViewController.present(notificationSetterViewController, animated: true, completion: nil)
+            guard let navigationController = mainViewController.navigationController else {
+                mainViewController.present(notificationSetterViewController, animated: true, completion: nil)
+                return
+            }
+            navigationController.pushViewController(notificationSetterViewController, animated: true)
+
         }
     }
 
