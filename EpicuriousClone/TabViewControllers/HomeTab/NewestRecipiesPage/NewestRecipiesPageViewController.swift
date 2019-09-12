@@ -15,16 +15,33 @@ class NewestRecipiesPageViewController: UIViewController {
     var selectedIndex:Int = 0
     let dispatchGroup = DispatchGroup()
 
+    lazy var refresher:UIRefreshControl = {
+        let refreshControl = UIRefreshControl()
+        refreshControl.tintColor = UIColor.white
+        refreshControl.addTarget(self, action: #selector(refreshData), for: .valueChanged)
+        return refreshControl
+    }()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         print("Newest Recipies Page View Loaded")
         recipiesCollectionView.dataSource = self
         recipiesCollectionView.delegate = self
+        refreshData()
+        setCollectionViewCellSize()
+    }
+
+    fileprivate func setupRefreshControl() {
+        recipiesCollectionView.refreshControl = refresher
+    }
+
+    @objc fileprivate func refreshData() {
         initializeData()
+        setupRefreshControl()
         dispatchGroup.notify(queue: .main, execute: {
             self.refreshViewController()
+            self.refresher.endRefreshing()
         })
-        setCollectionViewCellSize()
     }
 
     fileprivate func setCollectionViewCellSize() {
