@@ -118,6 +118,7 @@ extension NewFeedsPageViewController: UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: NewFeedsHeadingTableViewCell.reusableIdentity) as! NewFeedsHeadingTableViewCell
             cell.setValues(titleDetails: newFeedsTitle[indexPath.row])
             print("Internal Error: Unexpected Section caught at CellForRowAt")
+
             return cell
         }
     }

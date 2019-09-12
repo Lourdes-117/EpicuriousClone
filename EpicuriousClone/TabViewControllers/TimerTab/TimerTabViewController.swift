@@ -18,7 +18,6 @@ class TimerTabViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         initializeData()
-        self.navigationController?.isNavigationBarHidden = true
         print("Select Category View Loaded")
     }
 

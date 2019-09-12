@@ -426,7 +426,7 @@
                         <outlet property="recipeName" destination="s6f-QZ-fHx" id="NTe-6p-PcQ"/>
                         <outlet property="thicknessCollectionView" destination="3OH-BU-KX9" id="NZC-4Y-cyH"/>
                         <segue destination="dVu-gJ-dAR" kind="presentation" identifier="PreparationStepsSegueIdentifier" modalTransitionStyle="coverVertical" id="kHd-9W-RVx"/>
-                        <segue destination="50f-Pf-BBf" kind="show" identifier="setTimerSegueIdentifier" id="LPW-Ac-MR3"/>
+                        <segue destination="50f-Pf-BBf" kind="show" identifier="setTimerSegueIdentifier" id="azu-jp-89t"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qtq-kB-pmc" userLabel="First Responder" sceneMemberID="firstResponder"/>

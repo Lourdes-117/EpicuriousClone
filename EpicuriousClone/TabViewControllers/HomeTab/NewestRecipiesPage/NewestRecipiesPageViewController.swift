@@ -27,6 +27,7 @@ class NewestRecipiesPageViewController: UIViewController {
         print("Newest Recipies Page View Loaded")
         recipiesCollectionView.dataSource = self
         recipiesCollectionView.delegate = self
+        self.navigationController!.isNavigationBarHidden = true
         refreshData()
         setupRefreshControl()
         setCollectionViewCellSize()

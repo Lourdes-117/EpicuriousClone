@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6Dv-Ld-0SF">
-                                <rect key="frame" x="0.0" y="124" width="414" height="738"/>
+                                <rect key="frame" x="0.0" y="64" width="414" height="798"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -115,7 +115,7 @@
                             <constraint firstItem="Gq6-o7-HBY" firstAttribute="trailing" secondItem="6Dv-Ld-0SF" secondAttribute="trailing" id="0P6-eH-sQF"/>
                             <constraint firstItem="Gq6-o7-HBY" firstAttribute="bottom" secondItem="6Dv-Ld-0SF" secondAttribute="bottom" id="FIE-CH-NVZ"/>
                             <constraint firstItem="6Dv-Ld-0SF" firstAttribute="leading" secondItem="Gq6-o7-HBY" secondAttribute="leading" id="SMK-5r-IOa"/>
-                            <constraint firstItem="6Dv-Ld-0SF" firstAttribute="top" secondItem="Gq6-o7-HBY" secondAttribute="top" constant="80" id="xZi-cK-e6R"/>
+                            <constraint firstItem="6Dv-Ld-0SF" firstAttribute="top" secondItem="Gq6-o7-HBY" secondAttribute="top" constant="20" id="xZi-cK-e6R"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Gq6-o7-HBY"/>
                     </view>
