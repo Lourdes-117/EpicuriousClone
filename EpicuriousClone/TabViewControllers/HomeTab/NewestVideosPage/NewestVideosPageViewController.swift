@@ -14,14 +14,31 @@ class NewestVideosPageViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     let dispatchGroup = DispatchGroup()
     var selectedIndex:Int!
+    lazy var refresher:UIRefreshControl = {
+        let refreshControl = UIRefreshControl()
+        refreshControl.tintColor = UIColor.white
+        refreshControl.addTarget(self, action: #selector(refreshData), for: .valueChanged)
+        return refreshControl
+    }()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         print("Newest Videos View Loaded")
-        initalizeData()
         tableView.dataSource = self
         tableView.delegate = self
+        refreshData()
+        setupRefreshControl()
+    }
+
+    fileprivate func setupRefreshControl() {
+        tableView.refreshControl = refresher
+    }
+
+    @objc fileprivate func refreshData() {
+        initalizeData()
         dispatchGroup.notify(queue: .main, execute: {
             self.refreshViewController()
+            self.refresher.endRefreshing()
         })
     }
 

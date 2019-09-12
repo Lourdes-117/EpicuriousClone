@@ -28,6 +28,7 @@ class NewestRecipiesPageViewController: UIViewController {
         recipiesCollectionView.dataSource = self
         recipiesCollectionView.delegate = self
         refreshData()
+        setupRefreshControl()
         setCollectionViewCellSize()
     }
 
@@ -37,7 +38,6 @@ class NewestRecipiesPageViewController: UIViewController {
 
     @objc fileprivate func refreshData() {
         initializeData()
-        setupRefreshControl()
         dispatchGroup.notify(queue: .main, execute: {
             self.refreshViewController()
             self.refresher.endRefreshing()
