@@ -49,12 +49,16 @@ extension MoreRecipiesCollectionViewTableViewCell: UICollectionViewDelegate {
             let tap = CGPoint(x: 0, y: 0)
             let point:CGPoint = selectedCell.recipeImage.convert(tap, to: superViewController.view)
             ScaleSegue.startFrameToAnimate = CGRect(x: point.x, y: point.y, width: selectedCell.recipeImage.frame.width, height: selectedCell.recipeImage.frame.height)
-            superViewController.performSegue(withIdentifier: segueIdentifier, sender: superViewController)
+//            superViewController.performSegue(withIdentifier: segueIdentifier, sender: superViewController)
         } else {
             let newestRecipeDescriptionViewController = UIStoryboard.init(name: "HomeTab", bundle: Bundle.main).instantiateViewController(withIdentifier: Constants.ViewControllers.NEWEST_RECIPIES_DESCRIPTION) as! NewestRecipeDescriptionViewController
             newestRecipeDescriptionViewController.allRecipies = self.allRecipies
             newestRecipeDescriptionViewController.selectedIndex = indexPath.row
-            superViewController.present(newestRecipeDescriptionViewController, animated: true, completion: nil)
+            if let navigationController = superViewController.navigationController {
+                navigationController.pushViewController(newestRecipeDescriptionViewController, animated: true)
+            } else {
+                superViewController.present(newestRecipeDescriptionViewController, animated: true, completion: nil)
+            }
         }
     }
 }

@@ -23,12 +23,17 @@ class NewFeedsPageViewController: UIViewController {
     }()
 
     override func viewDidLoad() {
+        hideNavigationBar()
         super.viewDidLoad()
         print("New Feeds Page View Loaded")
         tableView.dataSource = self
         tableView.delegate = self
         refreshData()
         setupRefreshControl()
+    }
+
+    fileprivate func hideNavigationBar() {
+        self.navigationController?.isNavigationBarHidden = true
     }
 
     fileprivate func setupRefreshControl() {

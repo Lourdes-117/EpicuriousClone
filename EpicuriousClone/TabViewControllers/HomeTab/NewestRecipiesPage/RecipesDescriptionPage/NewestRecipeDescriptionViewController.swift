@@ -18,15 +18,18 @@ class NewestRecipeDescriptionViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        showNavigationController()
         recipeDescriptionTableView.dataSource = self
         recipeDescriptionTableView.delegate = self
         print("Recipe Description View Loaded")
-
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.isTranslucent = true
         self.navigationController?.view.backgroundColor = .clear
-        
+    }
+
+    fileprivate func showNavigationController() {
+        self.navigationController!.isNavigationBarHidden = false
     }
 
     override func viewWillAppear(_ animated: Bool) {
