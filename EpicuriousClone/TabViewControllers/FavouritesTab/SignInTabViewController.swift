@@ -10,6 +10,7 @@ import UIKit
 
 class SignInTabViewController: UIViewController {
 
+    @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var bottomViewButton: UIButton!
     @IBOutlet weak var bottomViewDescription: UILabel!
     @IBOutlet weak var pageDescription: UILabel!
@@ -26,7 +27,7 @@ class SignInTabViewController: UIViewController {
     @IBOutlet weak var confirmPasswordText: UITextField!
     @IBOutlet weak var confirmPasswordLabel: UILabel!
     @IBOutlet weak var signUpExtraView: UIView!
-    var isSignin:Bool!
+    var isSignin:Bool = true
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,7 +37,15 @@ class SignInTabViewController: UIViewController {
         setUpViews()
     }
 
+    fileprivate func checkCancelButton() {
+        guard let _ = self.navigationController else {
+            return
+        }
+        cancelButton.isHidden = true
+    }
+
     fileprivate func setUpViews() {
+        checkCancelButton()
         let signInDescription:String = "Sign in to view and save all your favourite recipes!"
         let signUpDescription:String = "Create new account to view and save all your favourite recipes!"
         let signInBottomViewDescription:String = "Dont have an account?"
