@@ -7,7 +7,9 @@
 //
 
 import UIKit
-
+protocol scrollablePageView{
+    
+}
 class HomeTabPageViewController: UIPageViewController {
     var startOffset = CGFloat(0)
     fileprivate static var colorComponents:(CGFloat, CGFloat, CGFloat) = (00.0, 255.0, 00.0)
@@ -58,6 +60,12 @@ class HomeTabPageViewController: UIPageViewController {
 
 extension HomeTabPageViewController: UIPageViewControllerDataSource {
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
+        if let navigationController = viewController as? UINavigationController {
+            print("This is the navigationController")
+            if let _ = navigationController.topViewController as? scrollablePageView {
+                print("This corresponds to protocol")
+            }
+        }
         guard  let viewControllerIndex = orderedViewControllers.firstIndex(of: viewController) else {return nil}
         guard viewControllerIndex > 0 else {return nil}
         let previousViewControllerIndex = viewControllerIndex - 1
@@ -65,6 +73,12 @@ extension HomeTabPageViewController: UIPageViewControllerDataSource {
     }
 
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
+        if let navigationController = viewController as? UINavigationController {
+            print("This is the navigationController")
+            if let _ = navigationController.topViewController as? scrollablePageView {
+                print("This corresponds to protocol")
+            }
+        }
         guard  let viewControllerIndex = orderedViewControllers.firstIndex(of: viewController) else {return nil}
         guard viewControllerIndex < orderedViewControllers.count-1 else {return nil}
         let nextViewControllerIndex = viewControllerIndex + 1

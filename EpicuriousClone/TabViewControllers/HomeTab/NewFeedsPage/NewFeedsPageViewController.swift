@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NewFeedsPageViewController: UIViewController {
+class NewFeedsPageViewController: UIViewController, scrollablePageView {
 
     @IBOutlet weak var tableView: UITableView!
     var allrecipies:[NewestRecipiesDecodableDataModel] = []

@@ -389,7 +389,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9wf-NQ-cPI">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="34" width="414" height="779"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
@@ -407,24 +407,59 @@
                                                     </constraints>
                                                 </imageView>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cYp-JY-9Bb">
-                                                    <rect key="frame" x="364" y="185.5" width="25" height="25"/>
+                                                    <rect key="frame" x="364" y="160.5" width="40" height="40"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eyy-m6-nId">
+                                                            <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                                            <state key="normal" image="Share_Icon"/>
+                                                            <connections>
+                                                                <action selector="onClickShareButton:" destination="jBh-bg-XcH" eventType="touchUpInside" id="dB5-BQ-bif"/>
+                                                            </connections>
+                                                        </button>
+                                                    </subviews>
                                                     <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="25" id="FMa-Ve-eGb"/>
+                                                        <constraint firstAttribute="width" constant="40" id="FMa-Ve-eGb"/>
+                                                        <constraint firstAttribute="trailing" secondItem="Eyy-m6-nId" secondAttribute="trailing" id="Jah-tl-iyY"/>
+                                                        <constraint firstItem="Eyy-m6-nId" firstAttribute="leading" secondItem="cYp-JY-9Bb" secondAttribute="leading" id="OEB-xe-IIL"/>
                                                         <constraint firstAttribute="width" secondItem="cYp-JY-9Bb" secondAttribute="height" multiplier="1:1" id="UWB-ZJ-Q3y"/>
+                                                        <constraint firstItem="Eyy-m6-nId" firstAttribute="top" secondItem="cYp-JY-9Bb" secondAttribute="top" id="UqH-ob-XzT"/>
+                                                        <constraint firstAttribute="bottom" secondItem="Eyy-m6-nId" secondAttribute="bottom" id="dyl-HK-Ou7"/>
+                                                    </constraints>
+                                                </view>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9C1-c8-dPr">
+                                                    <rect key="frame" x="294" y="160.5" width="40" height="40"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T5c-wf-ZHj">
+                                                            <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                                            <state key="normal" image="Add_Icon"/>
+                                                        </button>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstItem="T5c-wf-ZHj" firstAttribute="leading" secondItem="9C1-c8-dPr" secondAttribute="leading" id="7ns-Ea-u4U"/>
+                                                        <constraint firstAttribute="trailing" secondItem="T5c-wf-ZHj" secondAttribute="trailing" id="Euh-FA-Zao"/>
+                                                        <constraint firstAttribute="bottom" secondItem="T5c-wf-ZHj" secondAttribute="bottom" id="Wdo-a8-U6e"/>
+                                                        <constraint firstAttribute="width" constant="40" id="gyG-cW-rVA"/>
+                                                        <constraint firstItem="T5c-wf-ZHj" firstAttribute="top" secondItem="9C1-c8-dPr" secondAttribute="top" id="iNV-LT-U6j"/>
+                                                        <constraint firstAttribute="width" secondItem="9C1-c8-dPr" secondAttribute="height" multiplier="1:1" id="whw-Xq-zls"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="iSI-vb-DI9" firstAttribute="top" secondItem="SUo-gy-1QM" secondAttribute="top" id="CX6-3X-PgF"/>
                                                 <constraint firstItem="cYp-JY-9Bb" firstAttribute="leading" secondItem="iSI-vb-DI9" secondAttribute="trailing" constant="-50" id="Ma9-Zc-Hk6"/>
+                                                <constraint firstItem="cYp-JY-9Bb" firstAttribute="leading" secondItem="9C1-c8-dPr" secondAttribute="trailing" constant="30" id="RUs-zg-iQj"/>
                                                 <constraint firstAttribute="bottom" secondItem="iSI-vb-DI9" secondAttribute="bottom" id="ReW-LP-IPM"/>
-                                                <constraint firstItem="cYp-JY-9Bb" firstAttribute="bottom" secondItem="iSI-vb-DI9" secondAttribute="bottom" constant="10" id="SXn-is-KcC"/>
+                                                <constraint firstItem="cYp-JY-9Bb" firstAttribute="bottom" secondItem="iSI-vb-DI9" secondAttribute="bottom" id="SXn-is-KcC"/>
+                                                <constraint firstItem="9C1-c8-dPr" firstAttribute="width" secondItem="9C1-c8-dPr" secondAttribute="height" multiplier="1:1" id="UH2-fX-LUh"/>
+                                                <constraint firstItem="9C1-c8-dPr" firstAttribute="top" secondItem="cYp-JY-9Bb" secondAttribute="top" id="YWm-Hm-dov"/>
                                                 <constraint firstItem="iSI-vb-DI9" firstAttribute="leading" secondItem="SUo-gy-1QM" secondAttribute="leading" id="ijo-qm-lKe"/>
                                                 <constraint firstAttribute="trailing" secondItem="iSI-vb-DI9" secondAttribute="trailing" id="pft-G8-Jov"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="addToFavouritesButton" destination="9C1-c8-dPr" id="bqS-L7-nZZ"/>
                                             <outlet property="recipeImage" destination="iSI-vb-DI9" id="zLp-CD-PbD"/>
                                             <outlet property="shareButton" destination="cYp-JY-9Bb" id="HXb-ku-mhD"/>
                                         </connections>
@@ -856,7 +891,7 @@
                                                     </constraints>
                                                 </view>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="lzv-CN-2j3">
-                                                    <rect key="frame" x="0.0" y="70" width="414" height="269"/>
+                                                    <rect key="frame" x="-12" y="70" width="438" height="271.5"/>
                                                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="25" minimumInteritemSpacing="50" id="FK0-T4-wH7">
                                                         <size key="itemSize" width="207" height="270"/>
@@ -866,7 +901,7 @@
                                                     </collectionViewFlowLayout>
                                                     <cells>
                                                         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MoreRecipieCellReusableIdentity" id="W7O-Nz-LWL" customClass="MoreRecipeCollectionViewCell" customModule="EpicuriousClone" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="-0.5" width="207" height="270"/>
+                                                            <rect key="frame" x="0.0" y="1" width="207" height="270"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                                                 <rect key="frame" x="0.0" y="0.0" width="207" height="270"/>
@@ -1018,18 +1053,9 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <navigationBar opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DHd-Ph-gua">
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DHd-Ph-gua">
                                 <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <textAttributes key="titleTextAttributes">
-                                    <color key="textColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </textAttributes>
-                                <textAttributes key="largeTitleTextAttributes">
-                                    <color key="textColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <color key="textShadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </textAttributes>
+                                <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <items>
                                     <navigationItem largeTitleDisplayMode="always" id="M7V-2w-e1H">
                                         <barButtonItem key="backBarButtonItem" title="Back" id="jhg-gl-zMv"/>
@@ -1056,7 +1082,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="BP1-n8-zOJ" firstAttribute="trailing" secondItem="9wf-NQ-cPI" secondAttribute="trailing" id="0Am-eq-bjc"/>
-                            <constraint firstItem="9wf-NQ-cPI" firstAttribute="top" secondItem="BP1-n8-zOJ" secondAttribute="top" id="Gbn-EU-ZED"/>
+                            <constraint firstItem="9wf-NQ-cPI" firstAttribute="top" secondItem="BP1-n8-zOJ" secondAttribute="top" constant="-54" id="Gbn-EU-ZED"/>
                             <constraint firstItem="BP1-n8-zOJ" firstAttribute="trailing" secondItem="DHd-Ph-gua" secondAttribute="trailing" id="MOw-Gl-QWe"/>
                             <constraint firstItem="9wf-NQ-cPI" firstAttribute="top" secondItem="DHd-Ph-gua" secondAttribute="bottom" id="RbR-tc-pN5"/>
                             <constraint firstItem="9wf-NQ-cPI" firstAttribute="leading" secondItem="BP1-n8-zOJ" secondAttribute="leading" id="X4O-2K-q6S"/>
@@ -1071,7 +1097,20 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" id="mms-a1-1v4"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="mms-a1-1v4">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="GCm-57-WdP">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="oWO-kr-7hT">
+                                <rect key="frame" x="294" y="0.0" width="100" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <inset key="imageEdgeInsets" minX="4" minY="-2" maxX="43" maxY="-1"/>
+                                <state key="normal" title="Save" image="Add_Icon">
+                                    <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="recipeDescriptionTableView" destination="9wf-NQ-cPI" id="aMy-Mz-R8k"/>
                         <segue destination="Fog-hn-w9y" kind="unwind" identifier="unwindToNewestRecipiesSegueIdentifier" customClass="ScaleSegue" customModule="EpicuriousClone" customModuleProvider="target" unwindAction="unwindToNewestRecipiesViewControllerFor:towards:" id="GI7-4C-gCR"/>
@@ -1507,7 +1546,6 @@
         <!--Navigation Controller-->
         <scene sceneID="dTP-SU-KLx">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="mTE-ok-YXB" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController storyboardIdentifier="HomeTabNewestRecipiesViewController" automaticallyAdjustsScrollViewInsets="NO" id="vpS-zF-NOj" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="13t-dO-mCk">
@@ -1519,17 +1557,20 @@
                         <segue destination="8I8-FM-Ro6" kind="relationship" relationship="rootViewController" id="oZD-I9-HUh"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mTE-ok-YXB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1304" y="-3997"/>
         </scene>
     </scenes>
     <resources>
         <image name="Acorn_Squash" width="2000" height="1333"/>
+        <image name="Add_Icon" width="60" height="60"/>
         <image name="Back_Icon" width="96" height="96"/>
         <image name="Cancel_Icon" width="32" height="32"/>
         <image name="CompletedTask" width="144" height="144"/>
         <image name="Home_Icon" width="24" height="24"/>
         <image name="Reviews_Grey" width="30" height="30"/>
+        <image name="Share_Icon" width="50" height="50"/>
         <image name="Timer_Icon" width="24" height="24"/>
         <image name="Video_Icon" width="48" height="48"/>
     </resources>

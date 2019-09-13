@@ -22,10 +22,6 @@ class NewestRecipeDescriptionViewController: UIViewController {
         recipeDescriptionTableView.dataSource = self
         recipeDescriptionTableView.delegate = self
         print("Recipe Description View Loaded")
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        self.navigationController?.navigationBar.shadowImage = UIImage()
-        self.navigationController?.navigationBar.isTranslucent = true
-        self.navigationController?.view.backgroundColor = .clear
     }
 
     fileprivate func showNavigationController() {
@@ -56,17 +52,19 @@ class NewestRecipeDescriptionViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
 
-    deinit {
-        print("Recipe Description View Safe From Memory Leaks")
-    }
-
     @IBAction func onClickAddToShoppingListButton(_ sender: Any) {
         performSegue(withIdentifier: addToCartSegue, sender: self)
+    }
+
+    @IBAction func onClickShareButton(_ sender: Any) {
+        let shareActivity = UIActivityViewController(activityItems: [self.allRecipies[selectedIndex].recipeName!], applicationActivities: nil)
+        self.present(shareActivity, animated: true, completion: nil)
     }
 
     @IBAction func onClickShowIngredientsFloatingButton(_ sender: Any) {
         performSegue(withIdentifier: addToCartSegue, sender: self)
     }
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let addToCartViewController = segue.destination as? AddToCartViewController {
             addToCartViewController.allIngredients = allRecipies[selectedIndex].ingredients
@@ -74,6 +72,10 @@ class NewestRecipeDescriptionViewController: UIViewController {
             newestRecipeDescriptionViewController.allRecipies = self.allRecipies
             newestRecipeDescriptionViewController.selectedIndex = MoreRecipiesCollectionViewTableViewCell.selectedIndex
         }
+    }
+
+    deinit {
+        print("Recipe Description View Safe From Memory Leaks")
     }
 }
 

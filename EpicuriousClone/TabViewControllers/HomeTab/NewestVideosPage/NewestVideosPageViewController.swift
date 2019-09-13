@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NewestVideosPageViewController: UIViewController {
+class NewestVideosPageViewController: UIViewController, scrollablePageView {
     var allVideos:[NewestVideosDecodableDataModel] = []
 
     @IBOutlet weak var tableView: UITableView!

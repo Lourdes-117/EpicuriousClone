@@ -8,13 +8,12 @@
 
 import UIKit
 
-class NewestRecipiesPageViewController: UIViewController {
+class NewestRecipiesPageViewController: UIViewController, scrollablePageView {
     let segueIdentifier:String = "RecipeDescriptionSegueIdentifier"
     @IBOutlet weak var recipiesCollectionView: UICollectionView!
     var recipesDataToDisplay:[NewestRecipiesDecodableDataModel] = []
     var selectedIndex:Int = 0
     let dispatchGroup = DispatchGroup()
-
     lazy var refresher:UIRefreshControl = {
         let refreshControl = UIRefreshControl()
         refreshControl.tintColor = UIColor.white
@@ -27,10 +26,15 @@ class NewestRecipiesPageViewController: UIViewController {
         print("Newest Recipies Page View Loaded")
         recipiesCollectionView.dataSource = self
         recipiesCollectionView.delegate = self
-        self.navigationController!.isNavigationBarHidden = true
+        hideNavigationBar()
         refreshData()
         setupRefreshControl()
         setCollectionViewCellSize()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        makeNavigationBarTransparent()
     }
 
     fileprivate func setupRefreshControl() {
@@ -43,6 +47,10 @@ class NewestRecipiesPageViewController: UIViewController {
             self.refreshViewController()
             self.refresher.endRefreshing()
         })
+    }
+
+    fileprivate func hideNavigationBar() {
+        self.navigationController!.isNavigationBarHidden = true
     }
 
     fileprivate func setCollectionViewCellSize() {
@@ -61,6 +69,12 @@ class NewestRecipiesPageViewController: UIViewController {
 
     fileprivate func refreshViewController() {
         recipiesCollectionView.reloadData()
+    }
+
+    fileprivate func makeNavigationBarTransparent() {
+        self.navigationController!.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController!.navigationBar.shadowImage = UIImage()
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
     }
 }
 
