@@ -12,9 +12,10 @@ class MoreRecipiesCollectionViewTableViewCell: UITableViewCell {
     public static var selectedIndex:Int = 0
     public static let reusableIdentity:String = "moreRecipiesCollectionViewCellReusableIdentity"
     fileprivate let segueIdentifier:String = "selfSegueIdentifier"
-    var superViewController:UIViewController!
+    weak var superViewController:UIViewController!
     @IBOutlet weak var collectionView: UICollectionView!
     var allRecipies:[NewestRecipiesDecodableDataModel]!
+
     public func setValues(recipies:[NewestRecipiesDecodableDataModel], parent:UIViewController) {
         self.allRecipies = recipies
         self.superViewController = parent

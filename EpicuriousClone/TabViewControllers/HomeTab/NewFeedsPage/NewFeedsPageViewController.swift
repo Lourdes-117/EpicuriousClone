@@ -14,6 +14,7 @@ class NewFeedsPageViewController: UIViewController, scrollablePageView {
     var allrecipies:[NewestRecipiesDecodableDataModel] = []
     var allVideos:[NewestVideosDecodableDataModel] = []
     var newFeedsTitle:[NewFeedsDecodableDataModel] = []
+
     let dispatchGroup = DispatchGroup()
     lazy var refresher:UIRefreshControl = {
         let refreshControl = UIRefreshControl()
@@ -42,9 +43,9 @@ class NewFeedsPageViewController: UIViewController, scrollablePageView {
 
     @objc fileprivate func refreshData() {
         initalizeData()
-        dispatchGroup.notify(queue: .main, execute: {
-            self.refreshViewController()
-            self.refresher.endRefreshing()
+        dispatchGroup.notify(queue: .main, execute: { [weak self] in
+            self?.refreshViewController()
+            self?.refresher.endRefreshing()
         })
     }
 
@@ -58,8 +59,8 @@ class NewFeedsPageViewController: UIViewController, scrollablePageView {
         let fileName:String = "HomeTabNewestRecipePageJSON"
         let fileExtension:String = "json"
         let urlObject = Bundle.main.url(forResource: fileName, withExtension: fileExtension)
-        GetDataFromApi.getJsonArrayFromFile(fromFile: urlObject!, dispatchGroup: dispatchGroup) { (entries: [NewestRecipiesDecodableDataModel]) in
-            self.allrecipies = entries
+        GetDataFromApi.getJsonArrayFromFile(fromFile: urlObject!, dispatchGroup: dispatchGroup) { [weak self] (entries: [NewestRecipiesDecodableDataModel]) in
+            self?.allrecipies = entries
         }
     }
 
@@ -67,8 +68,8 @@ class NewFeedsPageViewController: UIViewController, scrollablePageView {
         let fileName:String = "HomeTabNewestVideosPageJSON"
         let fileExtension:String = "json"
         let urlObject = Bundle.main.url(forResource: fileName, withExtension: fileExtension)
-        GetDataFromApi.getJsonArrayFromFile(fromFile: urlObject!, dispatchGroup: dispatchGroup) { (entries: [NewestVideosDecodableDataModel]) in
-            self.allVideos = entries
+        GetDataFromApi.getJsonArrayFromFile(fromFile: urlObject!, dispatchGroup: dispatchGroup) {[weak self] (entries: [NewestVideosDecodableDataModel]) in
+            self?.allVideos = entries
         }
     }
 
@@ -76,8 +77,8 @@ class NewFeedsPageViewController: UIViewController, scrollablePageView {
         let fileName:String = "HomeTabNewFeedsPageJSON"
         let fileExtension:String = "json"
         let urlObject = Bundle.main.url(forResource: fileName, withExtension: fileExtension)
-        GetDataFromApi.getJsonArrayFromFile(fromFile: urlObject!, dispatchGroup: dispatchGroup) { (entries: [NewFeedsDecodableDataModel]) in
-            self.newFeedsTitle = entries
+        GetDataFromApi.getJsonArrayFromFile(fromFile: urlObject!, dispatchGroup: dispatchGroup) { [weak self] (entries: [NewFeedsDecodableDataModel]) in
+            self?.newFeedsTitle = entries
         }
     }
 

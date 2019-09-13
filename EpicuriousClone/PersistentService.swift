@@ -48,7 +48,7 @@ class PersistentService {
     // MARK: - Core Data Saving support
 
     public static func saveContext () {
-        let context = persistentContainer.viewContext
+        let context = PersistentService.context
         if context.hasChanges {
             do {
                 try context.save()

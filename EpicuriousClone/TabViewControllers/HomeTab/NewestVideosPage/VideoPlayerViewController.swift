@@ -72,6 +72,11 @@ class VideoPlayerViewController: UIViewController {
         initializeSlider()
     }
 
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        player.pause()
+    }
+
     fileprivate func initializePlayer() {
         videoDescription.text = descriptionString
         let url = URL(string: urlString)
@@ -179,6 +184,7 @@ class VideoPlayerViewController: UIViewController {
     }
 
     @IBAction func onClickCloseButton(_ sender: Any) {
+        player.removeObserver(self, forKeyPath: "currentItem.loadedTimeRanges")
         self.dismiss(animated: true, completion: nil)
     }
 }

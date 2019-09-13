@@ -10,6 +10,9 @@ import UIKit
 
 class NewestRecipeDescriptionViewController: UIViewController {
     @IBOutlet weak var recipeDescriptionTableView: UITableView!
+
+
+//    @IBOutlet var miscButtons: [UIView]!
     var allRecipies:[NewestRecipiesDecodableDataModel] = []
     var selectedIndex:Int! = nil
     private let addToCartSegue:String = "addToShoppingListSegueIdentifier"
@@ -19,10 +22,21 @@ class NewestRecipeDescriptionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         showNavigationController()
-        recipeDescriptionTableView.dataSource = self
-        recipeDescriptionTableView.delegate = self
+//        setUpButtons()
+        setupDelegates()
         print("Recipe Description View Loaded")
     }
+
+    fileprivate func setupDelegates() {
+        recipeDescriptionTableView.dataSource = self
+        recipeDescriptionTableView.delegate = self
+    }
+
+//    fileprivate func setUpButtons() {
+//        miscButtons.forEach { (element) in
+//            element.layer.cornerRadius = element.frame.height/2
+//        }
+//    }
 
     fileprivate func showNavigationController() {
         self.navigationController!.isNavigationBarHidden = false

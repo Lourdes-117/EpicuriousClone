@@ -50,12 +50,12 @@ class NotificationSetterViewController: UIViewController {
                 print("Today ", todayDateComponents)
 
                 DispatchQueue.main.async { [weak self] in
-                    self!.initializeTime()
-                    self!.initializeNotification()
-                    self!.initializeButtons()
-                    self!.initializeFloatingButton()
-                    self!.initiateLoop()
-                    self!.initializeOptionalView()
+                    self?.initializeTime()
+                    self?.initializeNotification()
+                    self?.initializeButtons()
+                    self?.initializeFloatingButton()
+                    self?.initiateLoop()
+                    self?.initializeOptionalView()
                 }
             }
         } else {

@@ -14,7 +14,7 @@ class SearchTableViewCell: UITableViewCell {
     public static let reusableIdentity:String = "searchTableViewCellReusableIdentity"
     fileprivate var keywordList:[String] = []
     fileprivate var row:Int!
-    var parentViewController:UIViewController!
+    weak var parentViewController:UIViewController!
     public func setValues(parent:UIViewController, data:SearchTabDecodableDataModel, displayingRow:Int) {
         keywordTitle.text = data.title
         self.keywordList = data.keywords

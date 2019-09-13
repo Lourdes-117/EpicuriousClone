@@ -36,9 +36,9 @@ class NewestVideosPageViewController: UIViewController, scrollablePageView {
 
     @objc fileprivate func refreshData() {
         initalizeData()
-        dispatchGroup.notify(queue: .main, execute: {
-            self.refreshViewController()
-            self.refresher.endRefreshing()
+        dispatchGroup.notify(queue: .main, execute: { [weak self] in
+            self?.refreshViewController()
+            self?.refresher.endRefreshing()
         })
     }
 
@@ -46,8 +46,8 @@ class NewestVideosPageViewController: UIViewController, scrollablePageView {
         let fileName:String = "HomeTabNewestVideosPageJSON"
         let fileExtension:String = "json"
         let urlObject = Bundle.main.url(forResource: fileName, withExtension: fileExtension)
-        GetDataFromApi.getJsonArrayFromFile(fromFile: urlObject!, dispatchGroup: dispatchGroup) { (entries: [NewestVideosDecodableDataModel]) in
-            self.allVideos = entries
+        GetDataFromApi.getJsonArrayFromFile(fromFile: urlObject!, dispatchGroup: dispatchGroup) { [weak self] (entries: [NewestVideosDecodableDataModel]) in
+            self?.allVideos = entries
         }
     }
 
