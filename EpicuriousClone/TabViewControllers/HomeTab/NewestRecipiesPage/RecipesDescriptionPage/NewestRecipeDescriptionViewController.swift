@@ -11,9 +11,29 @@ import UIKit
 class NewestRecipeDescriptionViewController: UIViewController {
     @IBOutlet weak var recipeDescriptionTableView: UITableView!
 
-    @IBOutlet weak var navigationBarSaveButton: UIBarButtonItem!
+    lazy var navigationBarSaveButton: UIButton = {
+        let imageToSet:UIImage = #imageLiteral(resourceName: "Add_Icon");
+        let textToSet:String = "Save";
+        let saveButton = UIButton(type: .system);
+        saveButton.frame = CGRect(x: 0, y: 0, width: 34, height: 34);
+        saveButton.contentMode = UIButton.ContentMode.scaleAspectFit;
+        saveButton.setTitle(textToSet, for: .normal);
+        saveButton.tintColor = UIColor.red;
+        return saveButton;
+    }()
 
-//    @IBOutlet var miscButtons: [UIView]!
+    lazy var navigationBarShareButton: UIButton = {
+        let imageToSet:UIImage = #imageLiteral(resourceName: "Share_Icon_Glyph");
+        let textToSet:String = "Share";
+        let shareButton = UIButton(type: .system);
+        shareButton.frame = CGRect(x: 0, y: 0, width: 34, height: 34);
+        shareButton.setImage(imageToSet, for: .normal);
+        shareButton.contentMode = UIButton.ContentMode.scaleAspectFit;
+        shareButton.setTitle(textToSet, for: .normal);
+        shareButton.tintColor = UIColor.red
+        return shareButton;
+    }()
+
     var headerCell:HeadingImageTableViewCell?
     var allRecipies:[NewestRecipiesDecodableDataModel] = []
     var selectedIndex:Int! = nil
@@ -24,7 +44,7 @@ class NewestRecipeDescriptionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         showNavigationController()
-//        setUpButtons()
+        setUpButtons()
         setupDelegates()
         setScrollViewDelegate()
         print("Recipe Description View Loaded")
@@ -35,11 +55,9 @@ class NewestRecipeDescriptionViewController: UIViewController {
         recipeDescriptionTableView.delegate = self
     }
 
-//    fileprivate func setUpButtons() {
-//        miscButtons.forEach { (element) in
-//            element.layer.cornerRadius = element.frame.height/2
-//        }
-//    }
+    fileprivate func setUpButtons() {
+        navigationItem.rightBarButtonItems = [UIBarButtonItem(customView: navigationBarShareButton), UIBarButtonItem(customView: navigationBarSaveButton)]
+    }
     fileprivate func setScrollViewDelegate() {
         let scrollView = view.subviews.filter { $0 is UIScrollView }.first as! UIScrollView
         scrollView.delegate = self
@@ -208,18 +226,12 @@ extension NewestRecipeDescriptionViewController: UIScrollViewDelegate {
     }
 
     fileprivate func hideNavigationBarButttons() {
-        self.navigationBarSaveButton.isEnabled = false
-        self.navigationBarSaveButton.tintColor = UIColor.clear
-        self.navigationBarSaveButton.title = nil
-        let buttonView: UIView = navigationBarSaveButton.value(forKey: "view") as! UIView
-        buttonView.isHidden = true
+        navigationBarShareButton.isHidden = true
+        navigationBarSaveButton.isHidden = true
     }
 
     fileprivate func showNavigationBarButtons() {
-        self.navigationBarSaveButton.isEnabled = true
-        self.navigationBarSaveButton.tintColor = UIColor.red
-        self.navigationBarSaveButton.title = "Save"
-        let buttonView: UIView = navigationBarSaveButton.value(forKey: "view") as! UIView
-        buttonView.isHidden = false
+        navigationBarShareButton.isHidden = false
+        navigationBarSaveButton.isHidden = false
     }
 }
