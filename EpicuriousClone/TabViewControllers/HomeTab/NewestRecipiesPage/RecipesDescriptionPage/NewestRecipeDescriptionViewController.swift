@@ -15,6 +15,7 @@ class NewestRecipeDescriptionViewController: UIViewController {
         let imageToSet:UIImage = #imageLiteral(resourceName: "Add_Icon");
         let textToSet:String = "Save";
         let saveButton = UIButton(type: .system);
+        saveButton.setImage(imageToSet, for: .normal);
         saveButton.frame = CGRect(x: 0, y: 0, width: 34, height: 34);
         saveButton.contentMode = UIButton.ContentMode.scaleAspectFit;
         saveButton.setTitle(textToSet, for: .normal);
@@ -31,6 +32,7 @@ class NewestRecipeDescriptionViewController: UIViewController {
         shareButton.contentMode = UIButton.ContentMode.scaleAspectFit;
         shareButton.setTitle(textToSet, for: .normal);
         shareButton.tintColor = UIColor.red
+        shareButton.addTarget(self, action: #selector(onClickShareButton(_:)), for: .touchUpInside)
         return shareButton;
     }()
 
