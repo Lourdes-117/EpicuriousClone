@@ -60,6 +60,9 @@
 		5EBB7DA62328ECE200040C69 /* InnerKeywordCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EBB7DA52328ECE200040C69 /* InnerKeywordCollectionViewCell.swift */; };
 		5EBBBCBC2321332A00DB8A80 /* ScaleSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EBBBCBB2321332A00DB8A80 /* ScaleSegue.swift */; };
 		5EC4E92D231E34530024CCDD /* IngredientInnerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC4E92C231E34530024CCDD /* IngredientInnerTableViewCell.swift */; };
+		5ECE5F34232F54EF00D7C6C9 /* IngredientsPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECE5F33232F54EF00D7C6C9 /* IngredientsPageViewController.swift */; };
+		5ECE5F36232F55B600D7C6C9 /* IngredientsViewHeaderCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECE5F35232F55B600D7C6C9 /* IngredientsViewHeaderCellTableViewCell.swift */; };
+		5ECE5F38232F569500D7C6C9 /* IngredientNameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECE5F37232F569500D7C6C9 /* IngredientNameTableViewCell.swift */; };
 		5ED42F7523279AA5008DF5FE /* NewFeedsPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED42F7423279AA5008DF5FE /* NewFeedsPageViewController.swift */; };
 		5ED42F772327A67F008DF5FE /* HomeTabNewFeedsPageJSON.json in Resources */ = {isa = PBXBuildFile; fileRef = 5ED42F762327A67F008DF5FE /* HomeTabNewFeedsPageJSON.json */; };
 		5ED42F792327A759008DF5FE /* NewFeedsHeadingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED42F782327A759008DF5FE /* NewFeedsHeadingTableViewCell.swift */; };
@@ -140,6 +143,9 @@
 		5EBB7DA52328ECE200040C69 /* InnerKeywordCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InnerKeywordCollectionViewCell.swift; sourceTree = "<group>"; };
 		5EBBBCBB2321332A00DB8A80 /* ScaleSegue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaleSegue.swift; sourceTree = "<group>"; };
 		5EC4E92C231E34530024CCDD /* IngredientInnerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientInnerTableViewCell.swift; sourceTree = "<group>"; };
+		5ECE5F33232F54EF00D7C6C9 /* IngredientsPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsPageViewController.swift; sourceTree = "<group>"; };
+		5ECE5F35232F55B600D7C6C9 /* IngredientsViewHeaderCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsViewHeaderCellTableViewCell.swift; sourceTree = "<group>"; };
+		5ECE5F37232F569500D7C6C9 /* IngredientNameTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientNameTableViewCell.swift; sourceTree = "<group>"; };
 		5ED42F7423279AA5008DF5FE /* NewFeedsPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewFeedsPageViewController.swift; sourceTree = "<group>"; };
 		5ED42F762327A67F008DF5FE /* HomeTabNewFeedsPageJSON.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = HomeTabNewFeedsPageJSON.json; sourceTree = "<group>"; };
 		5ED42F782327A759008DF5FE /* NewFeedsHeadingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewFeedsHeadingTableViewCell.swift; sourceTree = "<group>"; };
@@ -291,6 +297,7 @@
 		5E6314062319173A0045732E /* RecipesDescriptionPage */ = {
 			isa = PBXGroup;
 			children = (
+				5ECE5F32232F54CA00D7C6C9 /* IngredientsPage */,
 				5EE1B6B023268E7C008AE177 /* MoreRecipiesCollectionView */,
 				5EE1B6AB232684B8008AE177 /* KeyworkCollectionView */,
 				5EE1B6A623265896008AE177 /* AddToShoppingCart */,
@@ -378,6 +385,16 @@
 				5EBB7DA52328ECE200040C69 /* InnerKeywordCollectionViewCell.swift */,
 			);
 			path = SearchTab;
+			sourceTree = "<group>";
+		};
+		5ECE5F32232F54CA00D7C6C9 /* IngredientsPage */ = {
+			isa = PBXGroup;
+			children = (
+				5ECE5F33232F54EF00D7C6C9 /* IngredientsPageViewController.swift */,
+				5ECE5F35232F55B600D7C6C9 /* IngredientsViewHeaderCellTableViewCell.swift */,
+				5ECE5F37232F569500D7C6C9 /* IngredientNameTableViewCell.swift */,
+			);
+			path = IngredientsPage;
 			sourceTree = "<group>";
 		};
 		5ED42F7323279A79008DF5FE /* NewFeedsPage */ = {
@@ -525,6 +542,7 @@
 				5E8B52A42313C1D400E87646 /* SelectIngredientsViewController.swift in Sources */,
 				5EBBBCBC2321332A00DB8A80 /* ScaleSegue.swift in Sources */,
 				5E111054231E948A00524580 /* NewestVideosHeaderTableViewCell.swift in Sources */,
+				5ECE5F34232F54EF00D7C6C9 /* IngredientsPageViewController.swift in Sources */,
 				5E207B8823100E51001D5FDF /* PersistentService.swift in Sources */,
 				5ED42F7B2327A849008DF5FE /* NewFeedsDecodableDataModel.swift in Sources */,
 				5E8B52A82313E3B200E87646 /* SelectIngredientCell.swift in Sources */,
@@ -561,6 +579,7 @@
 				5E96AE8E23154C5500FE632D /* ToDoCheckList+CoreDataProperties.swift in Sources */,
 				5E111052231E90D700524580 /* VideosTableViewCell.swift in Sources */,
 				5E207B93231016D6001D5FDF /* Strings.swift in Sources */,
+				5ECE5F36232F55B600D7C6C9 /* IngredientsViewHeaderCellTableViewCell.swift in Sources */,
 				5EDB459D2313A97100FA7BBB /* TimerTabCategoryTableViewCell.swift in Sources */,
 				5E8B52B323140ED900E87646 /* DescriptionDataModel.swift in Sources */,
 				5E63140A231919490045732E /* HeadingImageTableViewCell.swift in Sources */,
@@ -581,6 +600,7 @@
 				5EE1B6A523265750008AE177 /* AddToCartViewController.swift in Sources */,
 				5EE1B6B223268EAA008AE177 /* MoreRecipiesCollectionViewTableViewCell.swift in Sources */,
 				5E631408231917600045732E /* NewestRecipeDescriptionViewController.swift in Sources */,
+				5ECE5F38232F569500D7C6C9 /* IngredientNameTableViewCell.swift in Sources */,
 				5E2BFFA723179440009FF188 /* NewestRecipiesPageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

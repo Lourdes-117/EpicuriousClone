@@ -15,12 +15,12 @@ class HeadingImageTableViewCell: UITableViewCell {
     static var reusableIdentity:String = "headingCellReusableIdentity"
     override func awakeFromNib() {
         super.awakeFromNib()
-
+        initializeButtons()
     }
 
     fileprivate func initializeButtons() {
         initializeShareButton()
-
+        initializeAddToFavouritesButton()
     }
 
     fileprivate func initializeShareButton() {

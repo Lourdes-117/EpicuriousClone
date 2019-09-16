@@ -11,8 +11,10 @@ import UIKit
 class NewestRecipeDescriptionViewController: UIViewController {
     @IBOutlet weak var recipeDescriptionTableView: UITableView!
 
+    @IBOutlet weak var navigationBarSaveButton: UIBarButtonItem!
 
 //    @IBOutlet var miscButtons: [UIView]!
+    var headerCell:HeadingImageTableViewCell?
     var allRecipies:[NewestRecipiesDecodableDataModel] = []
     var selectedIndex:Int! = nil
     private let addToCartSegue:String = "addToShoppingListSegueIdentifier"
@@ -24,6 +26,7 @@ class NewestRecipeDescriptionViewController: UIViewController {
         showNavigationController()
 //        setUpButtons()
         setupDelegates()
+        setScrollViewDelegate()
         print("Recipe Description View Loaded")
     }
 
@@ -37,6 +40,10 @@ class NewestRecipeDescriptionViewController: UIViewController {
 //            element.layer.cornerRadius = element.frame.height/2
 //        }
 //    }
+    fileprivate func setScrollViewDelegate() {
+        let scrollView = view.subviews.filter { $0 is UIScrollView }.first as! UIScrollView
+        scrollView.delegate = self
+    }
 
     fileprivate func showNavigationController() {
         self.navigationController!.isNavigationBarHidden = false
@@ -76,7 +83,10 @@ class NewestRecipeDescriptionViewController: UIViewController {
     }
 
     @IBAction func onClickShowIngredientsFloatingButton(_ sender: Any) {
-        performSegue(withIdentifier: addToCartSegue, sender: self)
+        let ingredientsPage:String = "IngredientsPageStoryboardIdentifier"
+        let ingredientsViewController = self.storyboard?.instantiateViewController(withIdentifier: ingredientsPage) as! IngredientsPageViewController
+        ingredientsViewController.ingredients = self.allRecipies[selectedIndex].ingredients
+        self.present(ingredientsViewController, animated: true, completion: nil)
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -114,6 +124,7 @@ extension NewestRecipeDescriptionViewController: UITableViewDataSource {
         case 0:
             let cell = recipeDescriptionTableView.dequeueReusableCell(withIdentifier: HeadingImageTableViewCell.reusableIdentity) as! HeadingImageTableViewCell
             cell.setValue(imageUrl: allRecipies[row].recipeImageUrl)
+            headerCell = cell
             return cell
         case 1:
             let cell = recipeDescriptionTableView.dequeueReusableCell(withIdentifier: RecipeReviewTableViewCell.reusableIdentity) as! RecipeReviewTableViewCell
@@ -167,5 +178,48 @@ extension NewestRecipeDescriptionViewController: UITableViewDelegate {
         default:
             return 250
         }
+    }
+}
+
+extension NewestRecipeDescriptionViewController: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let imageHeight:CGFloat = 200-44
+        var offset = scrollView.contentOffset.y / imageHeight
+        if  offset > 1{
+            offset = 1
+            setOpaqueNavigationBar()
+            showNavigationBarButtons()
+        }
+        else {
+            setClearNavigationBar()
+            hideNavigationBarButttons()
+        }
+    }
+    fileprivate func setClearNavigationBar() {
+        self.navigationController?.navigationBar.tintColor = UIColor.blue
+        self.navigationController?.navigationBar.backgroundColor = UIColor.clear
+        self.navigationController?.navigationBar.barStyle = .black
+    }
+
+    fileprivate func setOpaqueNavigationBar() {
+        self.navigationController?.navigationBar.tintColor = UIColor.black
+        self.navigationController?.navigationBar.backgroundColor = UIColor.white
+        self.navigationController?.navigationBar.barStyle = .default
+    }
+
+    fileprivate func hideNavigationBarButttons() {
+        self.navigationBarSaveButton.isEnabled = false
+        self.navigationBarSaveButton.tintColor = UIColor.clear
+        self.navigationBarSaveButton.title = nil
+        let buttonView: UIView = navigationBarSaveButton.value(forKey: "view") as! UIView
+        buttonView.isHidden = true
+    }
+
+    fileprivate func showNavigationBarButtons() {
+        self.navigationBarSaveButton.isEnabled = true
+        self.navigationBarSaveButton.tintColor = UIColor.red
+        self.navigationBarSaveButton.title = "Save"
+        let buttonView: UIView = navigationBarSaveButton.value(forKey: "view") as! UIView
+        buttonView.isHidden = false
     }
 }
