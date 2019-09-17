@@ -425,7 +425,7 @@
                         <outlet property="recipeImage" destination="Sdq-Qx-VSl" id="4DF-pN-dTc"/>
                         <outlet property="recipeName" destination="s6f-QZ-fHx" id="NTe-6p-PcQ"/>
                         <outlet property="thicknessCollectionView" destination="3OH-BU-KX9" id="NZC-4Y-cyH"/>
-                        <segue destination="dVu-gJ-dAR" kind="presentation" identifier="PreparationStepsSegueIdentifier" modalTransitionStyle="coverVertical" id="kHd-9W-RVx"/>
+                        <segue destination="dVu-gJ-dAR" kind="presentation" identifier="PreparationStepsSegueIdentifier" modalPresentationStyle="overFullScreen" modalTransitionStyle="coverVertical" id="kHd-9W-RVx"/>
                         <segue destination="50f-Pf-BBf" kind="show" identifier="setTimerSegueIdentifier" id="azu-jp-89t"/>
                     </connections>
                 </viewController>
@@ -631,6 +631,7 @@
                                     <constraint firstAttribute="width" constant="46" id="UMx-e3-DAs"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="28"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="X">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>

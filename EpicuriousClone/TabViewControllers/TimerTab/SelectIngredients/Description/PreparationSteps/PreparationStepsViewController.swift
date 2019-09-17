@@ -19,7 +19,26 @@ class PreparationStepsViewController: UIViewController {
         super.viewDidLoad()
         tableView.dataSource = self
         setDefaultValues()
+        setupPanGestureRecognizer()
         print("Preparation Steps View Loaded")
+    }
+
+    fileprivate func setupPanGestureRecognizer() {
+        let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(onPanning(_:)))
+        self.view.addGestureRecognizer(panGestureRecognizer)
+    }
+
+    @objc fileprivate func onPanning(_ gesture:UIPanGestureRecognizer) {
+        let translatedPoint:CGPoint = gesture.translation(in: view)
+        let pointToMove:CGPoint = CGPoint(x: 0, y: translatedPoint.y)
+        moveScreen(toPoint: pointToMove)
+    }
+
+    fileprivate func moveScreen(toPoint point:CGPoint) {
+        view.frame.origin = point
+        if(point.y > view.frame.height/2) {
+            self.dismiss(animated: true, completion: nil)
+        }
     }
 
     fileprivate func setDefaultValues() {
