@@ -85,46 +85,51 @@ class NewFeedsPageViewController: UIViewController, scrollablePageView {
     fileprivate func refreshViewController() {
         tableView.reloadData()
     }
+
+    enum section {
+        case firstSection
+        case secondSection
+        case thirdSection
+    }
+    let sectionEnumAray = [section.firstSection, section.secondSection, section.thirdSection]
+
+    deinit {
+        print("NewFeeds Page Safe From Memory Leaks")
+    }
 }
 
 extension NewFeedsPageViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 3
+        let numberOfSections:Int = 3
+        return numberOfSections
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        switch section {
-        case 0:
+        let sectionToPopulate = sectionEnumAray[section]
+        switch sectionToPopulate {
+        case .firstSection:
             return newFeedsTitle.count
-        case 1:
+        case .secondSection:
             return allVideos.count
-        case 2:
+        case .thirdSection:
             return 1
-        default:
-            print("Internal Error: Unexpected Section")
-            return 0
         }
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        switch indexPath.section {
-        case 0:
+        let sectionToPopulate = sectionEnumAray[indexPath.section]
+        switch sectionToPopulate {
+        case .firstSection:
             let cell = tableView.dequeueReusableCell(withIdentifier: NewFeedsHeadingTableViewCell.reusableIdentity) as! NewFeedsHeadingTableViewCell
             cell.setValues(titleDetails: newFeedsTitle[indexPath.row])
             return cell
-        case 1:
+        case .secondSection:
             let cell = tableView.dequeueReusableCell(withIdentifier: VideosTableViewCell.reusableIdentity) as! VideosTableViewCell
             cell.setValues(ofVideo: allVideos[indexPath.row])
             return cell
-        case 2:
+        case .thirdSection:
             let cell  = tableView.dequeueReusableCell(withIdentifier: MoreRecipiesCollectionViewTableViewCell.reusableIdentity) as! MoreRecipiesCollectionViewTableViewCell
             cell.setValues(recipies: allrecipies, parent: self)
-            return cell
-        default:
-            let cell = tableView.dequeueReusableCell(withIdentifier: NewFeedsHeadingTableViewCell.reusableIdentity) as! NewFeedsHeadingTableViewCell
-            cell.setValues(titleDetails: newFeedsTitle[indexPath.row])
-            print("Internal Error: Unexpected Section caught at CellForRowAt")
-
             return cell
         }
     }

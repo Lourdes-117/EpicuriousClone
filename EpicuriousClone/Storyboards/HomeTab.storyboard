@@ -447,7 +447,7 @@
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mhJ-qF-Znq">
                                                             <rect key="frame" x="20" y="15" width="20" height="20"/>
-                                                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="20" id="03z-YP-8e0"/>
                                                                 <constraint firstAttribute="width" secondItem="mhJ-qF-Znq" secondAttribute="height" multiplier="1:1" id="wiM-Ej-gmf"/>
@@ -554,7 +554,7 @@
                                                             </connections>
                                                         </button>
                                                     </subviews>
-                                                    <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="40" id="FMa-Ve-eGb"/>
                                                         <constraint firstAttribute="trailing" secondItem="Eyy-m6-nId" secondAttribute="trailing" id="Jah-tl-iyY"/>
@@ -598,7 +598,7 @@
                                         <connections>
                                             <outlet property="addToFavouritesButton" destination="9C1-c8-dPr" id="bqS-L7-nZZ"/>
                                             <outlet property="recipeImage" destination="iSI-vb-DI9" id="zLp-CD-PbD"/>
-                                            <outlet property="shareButton" destination="Eyy-m6-nId" id="BMB-NX-ZAE"/>
+                                            <outlet property="shareButton" destination="Eyy-m6-nId" id="TLZ-0a-F9Q"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RecipeReviewCellReusableIdentity" rowHeight="250" id="EyG-Z9-Gdf" customClass="RecipeReviewTableViewCell" customModule="EpicuriousClone" customModuleProvider="target">

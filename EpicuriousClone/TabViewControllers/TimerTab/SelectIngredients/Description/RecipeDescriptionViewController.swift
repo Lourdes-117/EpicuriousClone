@@ -25,10 +25,15 @@ class RecipeDescriptionViewController: UIViewController {
     let preparationSegueIdentifier:String = "PreparationStepsSegueIdentifier"
     let timerSegueIdentifier:String = "setTimerSegueIdentifier"
 
+    weak var timer: Timer?
+    var timerDispatchSourceTimer : DispatchSourceTimer?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         thicknessCollectionView.dataSource = self
         cookingDeepnessCollectionView.dataSource = self
+        cookingDeepnessCollectionView.delegate = self
+        thicknessCollectionView.delegate = self
         setDefaultValues()
         print("Recipe Description Page Loaded")
     }
@@ -52,6 +57,38 @@ class RecipeDescriptionViewController: UIViewController {
 
     @IBAction func onClickStartSmartTimer(_ sender: Any) {
         performSegue(withIdentifier: timerSegueIdentifier, sender: self)
+    }
+
+    fileprivate func updateTimeOnTimer(minutes:Int, seconds:Int) {
+        var isMinutesSet:Bool = false
+        var isSecondsSet:Bool = false
+        timerDispatchSourceTimer = DispatchSource.makeTimerSource(flags: [], queue: DispatchQueue.main)
+        timerDispatchSourceTimer?.schedule(deadline: .now(), repeating: .milliseconds(10))
+        timerDispatchSourceTimer?.setEventHandler(handler: { [weak self] in
+            if(Int((self?.cookTimeMinutes.text)!)! > minutes) {
+                self?.cookTimeMinutes.text = String(Int((self?.cookTimeMinutes.text)!)! - 1)
+            } else if(Int((self?.cookTimeMinutes.text)!)! < minutes) {
+                self?.cookTimeMinutes.text = String(Int((self?.cookTimeMinutes.text)!)! + 1)
+            } else {
+                isMinutesSet = true
+            }
+            if(Int((self?.cookTimeSeconds.text)!)! > seconds) {
+                self?.cookTimeSeconds.text = String(format: "%02d", Int((self?.cookTimeSeconds.text)!)! - 1)
+            } else if(Int((self?.cookTimeSeconds.text)!)! < seconds) {
+                self?.cookTimeSeconds.text = String(format: "%02d", Int((self?.cookTimeSeconds.text)!)! + 1)
+            } else {
+                isSecondsSet = true
+            }
+            if(isMinutesSet && isSecondsSet) {
+                self?.stopTimer()
+            }
+        })
+        timerDispatchSourceTimer?.resume()
+    }
+
+    fileprivate func stopTimer() {
+        timer?.invalidate()
+        timerDispatchSourceTimer?.cancel()
     }
 
     fileprivate func setDefaultValues() {
@@ -90,5 +127,24 @@ extension RecipeDescriptionViewController: UICollectionViewDataSource {
             cell.setText(text)
             return cell
         }
+    }
+}
+
+extension RecipeDescriptionViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let tag:Int = collectionView.tag
+        var minutesToChange:Int = 0
+        var secondsToChange:Int = 0
+        switch tag {
+        case 0:
+            minutesToChange = thicknessArray[indexPath.row].1
+            secondsToChange = thicknessArray[indexPath.row].2
+        case 1:
+            minutesToChange = cookingDeepnessArray[indexPath.row].1
+            secondsToChange = cookingDeepnessArray[indexPath.row].2
+        default:
+            print("Internal Error: Invalid CollectionView Tag")
+        }
+        updateTimeOnTimer(minutes: minutesToChange, seconds: secondsToChange)
     }
 }

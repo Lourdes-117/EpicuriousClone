@@ -46,7 +46,6 @@ class NewestRecipeDescriptionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         showNavigationController()
-        setUpButtons()
         setupDelegates()
         setScrollViewDelegate()
         print("Recipe Description View Loaded")
@@ -73,12 +72,14 @@ class NewestRecipeDescriptionViewController: UIViewController {
         print("Recipe Description View Will Appear")
         super.viewWillAppear(animated)
         hideTabBarController()
+        setUpButtons()
     }
 
     override func viewWillDisappear(_ animated: Bool) {
         print("Recipe Description View Will Disappear")
         super.viewWillDisappear(animated)
         showTabBarController()
+        setClearNavigationBar()
     }
 
     fileprivate func hideTabBarController() {
@@ -207,33 +208,51 @@ extension NewestRecipeDescriptionViewController: UIScrollViewDelegate {
         var offset = scrollView.contentOffset.y / imageHeight
         if  offset > 1{
             offset = 1
-            setOpaqueNavigationBar()
-            showNavigationBarButtons()
+            UIView.animate(withDuration: 0.3) {
+                [weak self] in
+                self?.setOpaqueNavigationBar()
+                self?.showNavigationBarButtons()
+            }
         }
         else {
-            setClearNavigationBar()
-            hideNavigationBarButttons()
+            UIView.animate(withDuration: 0.3) {
+                [weak self] in
+                self?.hideNavigationBarButttons()
+                self?.setClearNavigationBar()
+            }
         }
     }
     fileprivate func setClearNavigationBar() {
         self.navigationController?.navigationBar.tintColor = UIColor.blue
         self.navigationController?.navigationBar.backgroundColor = UIColor.clear
         self.navigationController?.navigationBar.barStyle = .black
+        UIApplication.shared.statusBarView.backgroundColor = UIColor.clear
     }
 
     fileprivate func setOpaqueNavigationBar() {
         self.navigationController?.navigationBar.tintColor = UIColor.black
         self.navigationController?.navigationBar.backgroundColor = UIColor.white
         self.navigationController?.navigationBar.barStyle = .default
+        UIApplication.shared.statusBarView.backgroundColor = UIColor.white
     }
 
     fileprivate func hideNavigationBarButttons() {
+        let previousHiddenState = navigationBarShareButton.isHidden
+        if(previousHiddenState) {
+            navigationBarSaveButton.slideIn(horizontally: -10)
+            navigationBarShareButton.slideIn(horizontally: -10)
+        }
         navigationBarShareButton.isHidden = true
         navigationBarSaveButton.isHidden = true
     }
 
     fileprivate func showNavigationBarButtons() {
+        let previousHiddenState = navigationBarShareButton.isHidden
         navigationBarShareButton.isHidden = false
         navigationBarSaveButton.isHidden = false
+        if(previousHiddenState) {
+            navigationBarSaveButton.slideIn(horizontally: 10)
+            navigationBarShareButton.slideIn(horizontally: 10)
+        }
     }
 }
