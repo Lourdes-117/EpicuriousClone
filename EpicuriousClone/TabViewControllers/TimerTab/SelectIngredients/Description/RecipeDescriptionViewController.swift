@@ -66,9 +66,9 @@ class RecipeDescriptionViewController: UIViewController {
         timerDispatchSourceTimer?.schedule(deadline: .now(), repeating: .milliseconds(10))
         timerDispatchSourceTimer?.setEventHandler(handler: { [weak self] in
             if(Int((self?.cookTimeMinutes.text)!)! > minutes) {
-                self?.cookTimeMinutes.text = String(Int((self?.cookTimeMinutes.text)!)! - 1)
+                self?.cookTimeMinutes.text = String(format: "%02d",Int((self?.cookTimeMinutes.text)!)! - 1)
             } else if(Int((self?.cookTimeMinutes.text)!)! < minutes) {
-                self?.cookTimeMinutes.text = String(Int((self?.cookTimeMinutes.text)!)! + 1)
+                self?.cookTimeMinutes.text = String(format: "%02d",Int((self?.cookTimeMinutes.text)!)! + 1)
             } else {
                 isMinutesSet = true
             }
