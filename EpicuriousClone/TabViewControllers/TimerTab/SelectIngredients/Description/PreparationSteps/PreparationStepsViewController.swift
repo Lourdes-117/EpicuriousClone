@@ -31,13 +31,20 @@ class PreparationStepsViewController: UIViewController {
     @objc fileprivate func onPanning(_ gesture:UIPanGestureRecognizer) {
         let translatedPoint:CGPoint = gesture.translation(in: view)
         let pointToMove:CGPoint = CGPoint(x: 0, y: translatedPoint.y)
-        moveScreen(toPoint: pointToMove)
+        let isPanGestureEnded:Bool = gesture.state == UIGestureRecognizer.State.ended
+        moveScreen(toPoint: pointToMove, isEnded: isPanGestureEnded)
     }
 
-    fileprivate func moveScreen(toPoint point:CGPoint) {
-        view.frame.origin = point
-        if(point.y > view.frame.height/2) {
-            self.dismiss(animated: true, completion: nil)
+    fileprivate func moveScreen(toPoint point:CGPoint, isEnded:Bool) {
+        if(isEnded) {
+            if(point.y > view.frame.height/2) {
+                self.dismiss(animated: true, completion: nil)
+            } else {
+                let originPoint:CGPoint = CGPoint(x: 0, y: 0)
+                view.frame.origin = originPoint
+            }
+        } else {
+            view.frame.origin = point
         }
     }
 
