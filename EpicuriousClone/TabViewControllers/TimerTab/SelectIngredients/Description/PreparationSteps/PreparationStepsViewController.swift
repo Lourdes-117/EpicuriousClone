@@ -94,7 +94,6 @@ extension PreparationStepsViewController: UIScrollViewDelegate {
     }
 
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
-        print("This function is being called")
         isScrollviewDismissing = true
         let scrollOffsetY = abs(scrollView.contentOffset.y)
         let dismissThreshold:CGFloat = self.view.frame.height/4
@@ -107,5 +106,4 @@ extension PreparationStepsViewController: UIScrollViewDelegate {
             isScrollviewDismissing = false
         }
     }
-
 }

@@ -20,7 +20,13 @@ class IngredientsPageViewController: UIViewController {
         setRoundCancelButton()
         setupPanGestureRecognizer()
         setScrollViewDelegate()
+        setUpFloatingButton()
         print("Ingredients Page View Loaded")
+    }
+
+    fileprivate func setUpFloatingButton() {
+        let floatingButton = IngredientsFloatingButton.getInstance()
+        floatingButton.isOnIngredientsPage = true
     }
 
     fileprivate func setScrollViewDelegate() {
@@ -43,6 +49,7 @@ class IngredientsPageViewController: UIViewController {
     fileprivate func moveScreen(toPoint point:CGPoint, isEnded:Bool) {
         if(isEnded) {
             if(point.y > view.frame.height/2) {
+                IngredientsFloatingButton.getInstance().isOnIngredientsPage = false
                 self.dismiss(animated: true, completion: nil)
             } else {
                 let originPoint:CGPoint = CGPoint(x: 0, y: 0)
@@ -60,6 +67,7 @@ class IngredientsPageViewController: UIViewController {
     }
 
     @IBAction func onClickCancelButton(_ sender: Any) {
+        IngredientsFloatingButton.getInstance().isOnIngredientsPage = false
         self.dismiss(animated: true, completion: nil)
     }
 
@@ -112,11 +120,11 @@ extension IngredientsPageViewController: UIScrollViewDelegate {
     }
 
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
-        print("This function is being called")
         isScrollviewDismissing = true
         let scrollOffsetY = abs(scrollView.contentOffset.y)
         let dismissThreshold:CGFloat = self.view.frame.height/4
         if(scrollOffsetY > dismissThreshold) {
+            IngredientsFloatingButton.getInstance().isOnIngredientsPage = false
             self.dismiss(animated: true, completion: nil)
         } else {
             let pointToMove:CGPoint = CGPoint(x: 0, y: scrollOffsetY)
@@ -124,5 +132,4 @@ extension IngredientsPageViewController: UIScrollViewDelegate {
             isScrollviewDismissing = false
         }
     }
-
 }

@@ -61,6 +61,7 @@ class NewestRecipeDescriptionViewController: UIViewController {
         floatingButton.ingredientsList = allRecipies[selectedIndex].ingredients
         navigationItem.rightBarButtonItems = [UIBarButtonItem(customView: navigationBarShareButton), UIBarButtonItem(customView: navigationBarSaveButton)]
     }
+
     fileprivate func setScrollViewDelegate() {
         let scrollView = view.subviews.filter { $0 is UIScrollView }.first as! UIScrollView
         scrollView.delegate = self
@@ -197,7 +198,6 @@ extension NewestRecipeDescriptionViewController: UITableViewDataSource {
 
     fileprivate func hideFloatingButton() {
         let floatingButton = IngredientsFloatingButton.getInstance()
-//        if(!floatingButton.isOverScreen) {return}
         floatingButton.slideOutFloatingButton()
     }
 }
@@ -246,6 +246,7 @@ extension NewestRecipeDescriptionViewController: UIScrollViewDelegate {
             }
         }
     }
+
     fileprivate func setClearNavigationBar() {
         self.navigationController?.navigationBar.tintColor = UIColor.blue
         self.navigationController?.navigationBar.backgroundColor = UIColor.clear

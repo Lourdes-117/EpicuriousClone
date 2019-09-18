@@ -15,7 +15,8 @@ class IngredientsFloatingButton: UIViewController {
     private let window:FloatingButtonWindow = FloatingButtonWindow()
     private static let instance:IngredientsFloatingButton = IngredientsFloatingButton()
     public var isOverScreen:Bool = false
-    public var ingredientsList:[String]? = nil
+    public var ingredientsList:[String]!
+    public var isOnIngredientsPage:Bool = false
     fileprivate var presentedViewControllerObject:UIViewController!
 
     required init?(coder aDecoder: NSCoder) {
@@ -72,12 +73,13 @@ class IngredientsFloatingButton: UIViewController {
     }
 
     @objc public func onClickStickyButton() {
-        guard let ingredientsListUnwrapped = ingredientsList else {
+        print("Ingredients Page \(isOnIngredientsPage)")
+        if(isOnIngredientsPage) {
+            isOnIngredientsPage = false
             presentedViewControllerObject.dismiss(animated: true, completion: nil)
-            return
+        } else {
+            presentIngredientsViewController(ingredients: ingredientsList)
         }
-        ingredientsList = nil
-        presentIngredientsViewController(ingredients: ingredientsListUnwrapped)
     }
 
     fileprivate func presentIngredientsViewController(ingredients ingredientsToAdd:[String]) {
