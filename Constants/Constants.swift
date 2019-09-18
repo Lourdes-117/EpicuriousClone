@@ -81,6 +81,8 @@ struct Constants {
         public static let PLAY_ICON:String = "Play_Icon"
         public static let PAUSE_ICON:String = "Pause_Icon"
         public static let PLAY_FILLED_ICON:String = "play_Filled_Icon"
+        public static let CANCEL_WHITE:String = "Cancel_White_Icon"
+        public static let INGREDIENTS_ICON:String = "Ingredients_Icon"
     }
 
     struct CheckListTab {

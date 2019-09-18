@@ -50,6 +50,7 @@ class IngredientsPageViewController: UIViewController {
         if(isEnded) {
             if(point.y > view.frame.height/2) {
                 IngredientsFloatingButton.getInstance().isOnIngredientsPage = false
+                IngredientsFloatingButton.getInstance().updateImage()
                 self.dismiss(animated: true, completion: nil)
             } else {
                 let originPoint:CGPoint = CGPoint(x: 0, y: 0)
@@ -68,6 +69,7 @@ class IngredientsPageViewController: UIViewController {
 
     @IBAction func onClickCancelButton(_ sender: Any) {
         IngredientsFloatingButton.getInstance().isOnIngredientsPage = false
+        IngredientsFloatingButton.getInstance().updateImage()
         self.dismiss(animated: true, completion: nil)
     }
 
@@ -125,6 +127,7 @@ extension IngredientsPageViewController: UIScrollViewDelegate {
         let dismissThreshold:CGFloat = self.view.frame.height/4
         if(scrollOffsetY > dismissThreshold) {
             IngredientsFloatingButton.getInstance().isOnIngredientsPage = false
+            IngredientsFloatingButton.getInstance().updateImage()
             self.dismiss(animated: true, completion: nil)
         } else {
             let pointToMove:CGPoint = CGPoint(x: 0, y: scrollOffsetY)

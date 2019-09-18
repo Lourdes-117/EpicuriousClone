@@ -59,9 +59,11 @@ class IngredientsFloatingButton: UIViewController {
         let view = UIView()
         let button = UIButton(type: .custom)
         button.backgroundColor = UIColor.red
-        button.frame = CGRect(x: (UIApplication.shared.keyWindow?.frame.width)!-50, y: (UIApplication.shared.keyWindow?.frame.height)!/2 + 100, width: 50, height: 50)
+        button.frame = CGRect(x: (UIApplication.shared.keyWindow?.frame.width)!-50, y: (UIApplication.shared.keyWindow?.frame.height)! * (3/4), width: 50, height: 50)
         button.layer.cornerRadius = 5
         button.addTarget(self, action: #selector(onClickStickyButton), for: .touchUpInside)
+        button.contentMode = .scaleAspectFit
+        button.setImage(UIImage(named: Constants.HomeTab.INGREDIENTS_ICON), for: .normal)
         view.addSubview(button)
         self.view = view
         self.button = button
@@ -79,6 +81,15 @@ class IngredientsFloatingButton: UIViewController {
             presentedViewControllerObject.dismiss(animated: true, completion: nil)
         } else {
             presentIngredientsViewController(ingredients: ingredientsList)
+        }
+        updateImage()
+    }
+
+    public func updateImage() {
+        if(isOnIngredientsPage) {
+            button.setImage(UIImage(named: Constants.HomeTab.CANCEL_WHITE), for: .normal)
+        } else {
+            button.setImage(UIImage(named: Constants.HomeTab.INGREDIENTS_ICON), for: .normal)
         }
     }
 
