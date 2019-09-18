@@ -57,6 +57,8 @@ class NewestRecipeDescriptionViewController: UIViewController {
     }
 
     fileprivate func setUpButtons() {
+        let floatingButton = IngredientsFloatingButton.getInstance()
+        floatingButton.ingredientsList = allRecipies[selectedIndex].ingredients
         navigationItem.rightBarButtonItems = [UIBarButtonItem(customView: navigationBarShareButton), UIBarButtonItem(customView: navigationBarSaveButton)]
     }
     fileprivate func setScrollViewDelegate() {
@@ -73,6 +75,7 @@ class NewestRecipeDescriptionViewController: UIViewController {
         super.viewWillAppear(animated)
         hideTabBarController()
         setUpButtons()
+        IngredientsFloatingButton.getInstance().hideFloatingButton()
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -103,10 +106,6 @@ class NewestRecipeDescriptionViewController: UIViewController {
         self.present(shareActivity, animated: true, completion: nil)
     }
 
-    @IBAction func onClickShowIngredientsFloatingButton(_ sender: Any) {
-        performSegue(withIdentifier: ingredientsSegue, sender: self)
-    }
-
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let addToCartViewController = segue.destination as? AddToCartViewController {
             addToCartViewController.allIngredients = allRecipies[selectedIndex].ingredients
@@ -119,6 +118,7 @@ class NewestRecipeDescriptionViewController: UIViewController {
     }
 
     deinit {
+        hideFloatingButton()
         print("Recipe Description View Safe From Memory Leaks")
     }
 }
@@ -176,6 +176,30 @@ extension NewestRecipeDescriptionViewController: UITableViewDataSource {
             return cell
         }
     }
+
+    fileprivate func checkIfProcedureCellIsVisible() {
+        guard let visibleIndices = recipeDescriptionTableView.indexPathsForVisibleRows else {return}
+        for index in visibleIndices {
+            if(index.section == 4 ) {
+                showFloatingButton()
+                return
+            }
+        }
+        hideFloatingButton()
+        return
+    }
+
+    fileprivate func showFloatingButton() {
+        let floatingButton = IngredientsFloatingButton.getInstance()
+        if(floatingButton.isOverScreen) {return}
+        floatingButton.slideInFloatinButton()
+    }
+
+    fileprivate func hideFloatingButton() {
+        let floatingButton = IngredientsFloatingButton.getInstance()
+//        if(!floatingButton.isOverScreen) {return}
+        floatingButton.slideOutFloatingButton()
+    }
 }
 
 extension NewestRecipeDescriptionViewController: UITableViewDelegate {
@@ -203,18 +227,19 @@ extension NewestRecipeDescriptionViewController: UITableViewDelegate {
 
 extension NewestRecipeDescriptionViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let imageHeight:CGFloat = 200-44
+        checkIfProcedureCellIsVisible()
+        let imageHeight:CGFloat = 200-54
         var offset = scrollView.contentOffset.y / imageHeight
         if  offset > 1{
             offset = 1
-            UIView.animate(withDuration: 0.3) {
+            UIView.animate(withDuration: 0.1) {
                 [weak self] in
                 self?.setOpaqueNavigationBar()
                 self?.showNavigationBarButtons()
             }
         }
         else {
-            UIView.animate(withDuration: 0.3) {
+            UIView.animate(withDuration: 0.1) {
                 [weak self] in
                 self?.hideNavigationBarButttons()
                 self?.setClearNavigationBar()
@@ -255,3 +280,4 @@ extension NewestRecipeDescriptionViewController: UIScrollViewDelegate {
         }
     }
 }
+
