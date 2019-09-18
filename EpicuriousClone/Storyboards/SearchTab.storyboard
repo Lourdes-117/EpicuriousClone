@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Search Tab View Controller-->
+        <!--Search-->
         <scene sceneID="bPK-B4-T9a">
             <objects>
                 <viewController id="CP6-fQ-Q2P" customClass="SearchTabViewController" customModule="EpicuriousClone" customModuleProvider="target" sceneMemberID="viewController">
@@ -129,7 +129,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="2fp-Mn-ZmI"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="Search_Icon" id="PPC-f2-1tU"/>
+                    <tabBarItem key="tabBarItem" title="Search" image="Search_Icon" id="PPC-f2-1tU"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="searchBar" destination="P0T-YN-nPv" id="4fW-tr-97s"/>

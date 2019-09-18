@@ -49,6 +49,7 @@ class CheckListReusableCellTableViewCell: UITableViewCell {
     }
 
     @IBAction func onClickDeleteButton(_ sender: Any) {
+        if(selectedTask == nil) {return}
         let indexToDelete:Int = CheckListViewController.allTasksArray.firstIndex(of: selectedTask)!
         PersistentService.context.delete(CheckListViewController.allTasksArray[indexToDelete])
         CheckListViewController.allTasksArray.remove(at: indexToDelete)

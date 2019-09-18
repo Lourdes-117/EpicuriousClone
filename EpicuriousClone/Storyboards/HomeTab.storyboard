@@ -1351,11 +1351,11 @@
             </objects>
             <point key="canvasLocation" x="4488.4057971014499" y="-3997.0982142857142"/>
         </scene>
-        <!--Home Tab Page View Controller-->
+        <!--Home-->
         <scene sceneID="19d-p5-Asg">
             <objects>
                 <pageViewController storyboardIdentifier="PageViewController" autoresizesArchivedViewToFullSize="NO" modalTransitionStyle="flipHorizontal" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="I6P-Sx-mMQ" customClass="HomeTabPageViewController" customModule="EpicuriousClone" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="Home_Icon" id="Qed-0y-hqU">
+                    <tabBarItem key="tabBarItem" title="Home" image="Home_Icon" id="Qed-0y-hqU">
                         <color key="badgeColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBarItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>

@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Check List View Controller-->
+        <!--Shopping-->
         <scene sceneID="K4O-cf-KoK">
             <objects>
                 <viewController id="cb7-z6-iDF" customClass="CheckListViewController" customModule="EpicuriousClone" customModuleProvider="target" sceneMemberID="viewController">
@@ -166,7 +166,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="pzp-6e-tFi"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="Checklist_Icon" id="on9-H3-ohn"/>
+                    <tabBarItem key="tabBarItem" title="Shopping" image="Checklist_Icon" id="on9-H3-ohn"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="editButton" destination="bNN-4w-Xss" id="f0S-iN-g58"/>

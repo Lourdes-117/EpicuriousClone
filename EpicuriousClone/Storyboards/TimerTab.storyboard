@@ -723,11 +723,11 @@
             </objects>
             <point key="canvasLocation" x="4579.7101449275369" y="-1418.3035714285713"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Timer-->
         <scene sceneID="8T2-I6-zqO">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="VFO-ef-Lhb" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="Timer_Icon" id="gu3-Rs-be2"/>
+                    <tabBarItem key="tabBarItem" title="Timer" image="Timer_Icon" id="gu3-Rs-be2"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="WRv-zS-fR9">
