@@ -17,7 +17,35 @@ class IngredientsPageViewController: UIViewController {
         super.viewDidLoad()
         tableView.dataSource = self
         setRoundCancelButton()
+        setupPanGestureRecognizer()
         print("Ingredients Page View Loaded")
+    }
+
+    fileprivate func setupPanGestureRecognizer() {
+        let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(onPanning(_:)))
+        self.view.addGestureRecognizer(panGestureRecognizer)
+    }
+
+    @objc fileprivate func onPanning(_ gesture:UIPanGestureRecognizer) {
+        let translatedPoint:CGPoint = gesture.translation(in: view)
+        let pointToMove:CGPoint = CGPoint(x: 0, y: translatedPoint.y)
+        let isPanGestureEnded:Bool = gesture.state == UIGestureRecognizer.State.ended
+        moveScreen(toPoint: pointToMove, isEnded: isPanGestureEnded)
+    }
+
+    fileprivate func moveScreen(toPoint point:CGPoint, isEnded:Bool) {
+        if(isEnded) {
+            if(point.y > view.frame.height/2) {
+                self.dismiss(animated: true, completion: nil)
+            } else {
+                let originPoint:CGPoint = CGPoint(x: 0, y: 0)
+                UIView.animate(withDuration: 0.3) { [weak self] in
+                    self?.view.frame.origin = originPoint
+                }
+            }
+        } else {
+            view.frame.origin = point
+        }
     }
 
     fileprivate func setRoundCancelButton() {

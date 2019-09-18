@@ -13,6 +13,7 @@ class PreparationStepsViewController: UIViewController {
     @IBOutlet weak var recipeName: UILabel!
     @IBOutlet weak var tableView: UITableView!
 
+    var isScrollviewDismissing:Bool = false
     var recipeNameString:String!
     var recipeProcedureArray:[(String, String)] = []
     override func viewDidLoad() {
@@ -20,7 +21,13 @@ class PreparationStepsViewController: UIViewController {
         tableView.dataSource = self
         setDefaultValues()
         setupPanGestureRecognizer()
+        setScrollViewDelegate()
         print("Preparation Steps View Loaded")
+    }
+
+    fileprivate func setScrollViewDelegate() {
+        let scrollView = view.subviews.filter { $0 is UIScrollView }.first as! UIScrollView
+        scrollView.delegate = self
     }
 
     fileprivate func setupPanGestureRecognizer() {
@@ -41,7 +48,9 @@ class PreparationStepsViewController: UIViewController {
                 self.dismiss(animated: true, completion: nil)
             } else {
                 let originPoint:CGPoint = CGPoint(x: 0, y: 0)
-                view.frame.origin = originPoint
+                UIView.animate(withDuration: 0.3) { [weak self] in
+                    self?.view.frame.origin = originPoint
+                }
             }
         } else {
             view.frame.origin = point
@@ -72,4 +81,31 @@ extension PreparationStepsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return recipeProcedureArray.count
     }
+}
+
+extension PreparationStepsViewController: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if(isScrollviewDismissing) {return}
+        let scrollOffsetY = scrollView.contentOffset.y
+        if(scrollOffsetY <= 0) {
+            let pointToScroll:CGPoint = CGPoint(x: 0, y: abs(scrollOffsetY))
+            moveScreen(toPoint: pointToScroll, isEnded: false)
+        }
+    }
+
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        print("This function is being called")
+        isScrollviewDismissing = true
+        let scrollOffsetY = abs(scrollView.contentOffset.y)
+        let dismissThreshold:CGFloat = self.view.frame.height/4
+        print(scrollOffsetY, " ", dismissThreshold)
+        if(scrollOffsetY > dismissThreshold) {
+            self.dismiss(animated: true, completion: nil)
+        } else {
+            let pointToMove:CGPoint = CGPoint(x: 0, y: scrollOffsetY)
+            moveScreen(toPoint: pointToMove, isEnded: true)
+            isScrollviewDismissing = false
+        }
+    }
+
 }

@@ -600,7 +600,7 @@
                         <outletCollection property="buttons" destination="e7U-ZV-Pki" collectionClass="NSMutableArray" id="8sK-Jz-jft"/>
                         <outletCollection property="buttons" destination="j9J-jR-Twi" collectionClass="NSMutableArray" id="mjM-yr-xhd"/>
                         <outletCollection property="buttons" destination="PzE-Sy-4fN" collectionClass="NSMutableArray" id="iEx-An-Xpo"/>
-                        <segue destination="dVu-gJ-dAR" kind="presentation" identifier="showProcedureSegueIdentifier" id="n8e-Pg-Mii"/>
+                        <segue destination="dVu-gJ-dAR" kind="presentation" identifier="showProcedureSegueIdentifier" modalPresentationStyle="overFullScreen" modalTransitionStyle="coverVertical" id="n8e-Pg-Mii"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yDG-53-8hw" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -754,6 +754,6 @@
         <image name="Timer_Icon" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="kHd-9W-RVx"/>
+        <segue reference="n8e-Pg-Mii"/>
     </inferredMetricsTieBreakers>
 </document>
