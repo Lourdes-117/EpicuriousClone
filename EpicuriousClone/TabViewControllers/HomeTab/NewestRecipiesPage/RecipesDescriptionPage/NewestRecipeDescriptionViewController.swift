@@ -10,7 +10,7 @@ import UIKit
 
 class NewestRecipeDescriptionViewController: UIViewController {
     @IBOutlet weak var recipeDescriptionTableView: UITableView!
-
+    let ingredientsSegue:String = "ingredientsPageSegueIdentifier"
     lazy var navigationBarSaveButton: UIButton = {
         let imageToSet:UIImage = #imageLiteral(resourceName: "Add_Icon");
         let textToSet:String = "Save";
@@ -104,10 +104,7 @@ class NewestRecipeDescriptionViewController: UIViewController {
     }
 
     @IBAction func onClickShowIngredientsFloatingButton(_ sender: Any) {
-        let ingredientsPage:String = "IngredientsPageStoryboardIdentifier"
-        let ingredientsViewController = self.storyboard?.instantiateViewController(withIdentifier: ingredientsPage) as! IngredientsPageViewController
-        ingredientsViewController.ingredients = self.allRecipies[selectedIndex].ingredients
-        self.present(ingredientsViewController, animated: true, completion: nil)
+        performSegue(withIdentifier: ingredientsSegue, sender: self)
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -116,6 +113,8 @@ class NewestRecipeDescriptionViewController: UIViewController {
         } else if let newestRecipeDescriptionViewController = segue.destination as? NewestRecipeDescriptionViewController {
             newestRecipeDescriptionViewController.allRecipies = self.allRecipies
             newestRecipeDescriptionViewController.selectedIndex = MoreRecipiesCollectionViewTableViewCell.selectedIndex
+        } else if let ingredientsViewController = segue.destination as? IngredientsPageViewController{
+            ingredientsViewController.ingredients = self.allRecipies[selectedIndex].ingredients
         }
     }
 

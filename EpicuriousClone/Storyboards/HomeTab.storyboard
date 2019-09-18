@@ -1241,6 +1241,7 @@
                         <outlet property="recipeDescriptionTableView" destination="9wf-NQ-cPI" id="aMy-Mz-R8k"/>
                         <segue destination="Fog-hn-w9y" kind="unwind" identifier="unwindToNewestRecipiesSegueIdentifier" customClass="ScaleSegue" customModule="EpicuriousClone" customModuleProvider="target" unwindAction="unwindToNewestRecipiesViewControllerFor:towards:" id="GI7-4C-gCR"/>
                         <segue destination="KcL-o3-1hU" kind="presentation" identifier="addToShoppingListSegueIdentifier" id="w8i-wW-6Rj"/>
+                        <segue destination="AL1-bn-xPh" kind="presentation" identifier="ingredientsPageSegueIdentifier" modalPresentationStyle="overFullScreen" modalTransitionStyle="coverVertical" id="aX2-JO-jkb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zkt-bT-3M5" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -13,12 +13,19 @@ class IngredientsPageViewController: UIViewController {
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
     var ingredients:[String] = []
+    var isScrollviewDismissing:Bool = false
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
         setRoundCancelButton()
         setupPanGestureRecognizer()
+        setScrollViewDelegate()
         print("Ingredients Page View Loaded")
+    }
+
+    fileprivate func setScrollViewDelegate() {
+        let scrollView = view.subviews.filter { $0 is UIScrollView }.first as! UIScrollView
+        scrollView.delegate = self
     }
 
     fileprivate func setupPanGestureRecognizer() {
@@ -92,4 +99,31 @@ extension IngredientsPageViewController: UITableViewDataSource {
             return cell
         }
     }
+}
+
+extension IngredientsPageViewController: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if(isScrollviewDismissing) {return}
+        let scrollOffsetY = scrollView.contentOffset.y
+        if(scrollOffsetY <= 0) {
+            let pointToScroll:CGPoint = CGPoint(x: 0, y: abs(scrollOffsetY))
+            moveScreen(toPoint: pointToScroll, isEnded: false)
+        }
+    }
+
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        print("This function is being called")
+        isScrollviewDismissing = true
+        let scrollOffsetY = abs(scrollView.contentOffset.y)
+        let dismissThreshold:CGFloat = self.view.frame.height/4
+        print(scrollOffsetY, " ", dismissThreshold)
+        if(scrollOffsetY > dismissThreshold) {
+            self.dismiss(animated: true, completion: nil)
+        } else {
+            let pointToMove:CGPoint = CGPoint(x: 0, y: scrollOffsetY)
+            moveScreen(toPoint: pointToMove, isEnded: true)
+            isScrollviewDismissing = false
+        }
+    }
+
 }
