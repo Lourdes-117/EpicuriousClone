@@ -45,6 +45,8 @@
                                                     </subviews>
                                                     <color key="backgroundColor" red="0.66799789669999998" green="0.47512125970000002" blue="0.25860109930000003" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
+                                                        <constraint firstAttribute="bottom" secondItem="SDR-Wp-iQp" secondAttribute="bottom" constant="56" id="8zp-TX-W2k"/>
+                                                        <constraint firstItem="SDR-Wp-iQp" firstAttribute="top" secondItem="t8w-PF-Q05" secondAttribute="top" constant="56" id="Qjt-j8-vfc"/>
                                                         <constraint firstItem="SDR-Wp-iQp" firstAttribute="centerX" secondItem="t8w-PF-Q05" secondAttribute="centerX" id="vW1-3y-9yh"/>
                                                         <constraint firstItem="SDR-Wp-iQp" firstAttribute="centerY" secondItem="t8w-PF-Q05" secondAttribute="centerY" id="xKe-5I-ZcE"/>
                                                     </constraints>

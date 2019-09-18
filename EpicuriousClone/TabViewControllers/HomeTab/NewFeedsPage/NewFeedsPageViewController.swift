@@ -33,8 +33,19 @@ class NewFeedsPageViewController: UIViewController, scrollablePageView {
         setupRefreshControl()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        makeNavigationBarTransparent()
+    }
+
     fileprivate func hideNavigationBar() {
         self.navigationController?.isNavigationBarHidden = true
+    }
+
+    fileprivate func makeNavigationBarTransparent() {
+        self.navigationController!.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController!.navigationBar.shadowImage = UIImage()
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
     }
 
     fileprivate func setupRefreshControl() {
@@ -142,7 +153,7 @@ extension NewFeedsPageViewController: UITableViewDelegate {
         if let cell = selectedCell as? VideosTableViewCell {
             let videoPlayerViewController = UIStoryboard.init(name: "HomeTab", bundle: Bundle.main).instantiateViewController(withIdentifier: Constants.ViewControllers.VIDEO_PLAYER) as! VideoPlayerViewController
             videoPlayerViewController.urlString = cell.videoUrl
-            videoPlayerViewController.descriptionString = cell.description
+            videoPlayerViewController.descriptionString = cell.videoDescription.text!
             self.present(videoPlayerViewController, animated: true, completion: nil)
         }
     }

@@ -116,7 +116,6 @@ extension IngredientsPageViewController: UIScrollViewDelegate {
         isScrollviewDismissing = true
         let scrollOffsetY = abs(scrollView.contentOffset.y)
         let dismissThreshold:CGFloat = self.view.frame.height/4
-        print(scrollOffsetY, " ", dismissThreshold)
         if(scrollOffsetY > dismissThreshold) {
             self.dismiss(animated: true, completion: nil)
         } else {
